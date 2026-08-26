@@ -1,0 +1,126 @@
+# ---------------------------------------------------------------------------
+# Datasets - NEVER commit. Multi-GB, licensed, and datasets/ is read-only
+# per the engineering blueprint (raw data is never modified by code).
+# ---------------------------------------------------------------------------
+datasets/
+data/
+drop/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Fundus imagery of any kind, anywhere
+*.dcm
+**/images/**/*.jpg
+**/images/**/*.jpeg
+**/images/**/*.png
+**/images/**/*.tif
+**/images/**/*.tiff
+
+# Exception: small committed test fixtures MUST be tracked
+!tests/fixtures/**
+!fixtures/**
+
+# ---------------------------------------------------------------------------
+# Model artefacts - large binaries, tracked by the model registry not by git
+# ---------------------------------------------------------------------------
+models/**/*.mat
+models/**/*.onnx
+models/**/*.pt
+models/**/*.pth
+models/**/*.h5
+models/**/*.pb
+models/**/*.ckpt
+checkpoints/
+
+# Experiment outputs are machine-written, never hand-edited
+experiments/
+results/
+runs/
+wandb/
+
+# ---------------------------------------------------------------------------
+# MATLAB
+# ---------------------------------------------------------------------------
+*.asv
+*.m~
+*.mex*
+*.slxc
+slprj/
+sccprj/
+codegen/
+*.autosave
+octave-workspace
+
+# Simulink cache and backup
+*.slx.r*
+*.mdl.r*
+*.slx.autosave
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# ---------------------------------------------------------------------------
+# Node / frontend
+# ---------------------------------------------------------------------------
+node_modules/
+.next/
+.nuxt/
+.vite/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Secrets and local config - NEVER commit
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ---------------------------------------------------------------------------
+# Databases
+# ---------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
