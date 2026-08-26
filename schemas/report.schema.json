@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://retina-guard/schemas/report.schema.json",
+  "title": "RetinaGuard Report",
+  "description": "Report contract v1.0.0 - see docs/report-contract.md for the annotated version.",
+  "type": "object",
+  "required": [
+    "schema_version", "case_uuid", "patient_id", "laterality", "laterality_source",
+    "captured_at", "device_id", "operator_id", "attempt_number",
+    "quality", "prediction", "triage", "lesions", "anatomy",
+    "artifacts", "limits", "recommendation", "versions"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^1\\." },
+    "case_uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "patient_id": { "type": "string", "minLength": 1 },
+    "laterality": { "enum": ["OD", "OS", "unknown"] },
+    "laterality_source": { "enum": ["metadata", "inferred"] },
+    "captured_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+    },
+    "device_id": { "type": "string", "minLength": 1 },
+    "operator_id": { "type": "string", "minLength": 1 },
+    "attempt_number": { "type": "integer", "minimum": 1 },
+
+    "quality": {
+      "type": "object",
+      "required": ["grade", "decision", "reason", "features"],
+      "additionalProperties": false,
+      "properties": {
+        "grade": { "enum": ["A", "B", "C"] },
+        "decision": { "enum": ["proceed", "enhanced", "recapture", "ungradeable"] },
+        "reason": { "type": ["string", "null"] },
+        "features": {
+          "type": "object",
+          "required": [
+            "focus_score", "illumination_uniformity", "vessel_resolvability",
+            "field_coverage", "contrast", "saturated_fraction", "crushed_fraction",
+            "optic_disc_detectable", "macula_visible"
+          ],
+          "properties": {
+            "focus_score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "illumination_uniformity": { "type": "number", "minimum": 0, "maximum": 1 },
+            "vessel_resolvability": { "type": "number", "minimum": 0, "maximum": 1 },
+            "field_coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+            "contrast": { "type": "number", "minimum": 0, "maximum": 1 },
+            "saturated_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+            "crushed_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+            "optic_disc_detectable": { "type": "boolean" },
+            "macula_visible": { "type": "boolean" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "grade": { "const": "B" } } },
+          "then": { "properties": { "reason": { "type": "string", "minLength": 1 } } }
+        },
+        {
+          "if": { "properties": { "grade": { "const": "C" } } },
+          "then": { "properties": { "reason": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+
+    "prediction": {
+      "type": ["object", "null"],
+      "required": [
+        "grade", "grade_label", "ordinal", "referable", "referable_threshold",
+        "confidence", "confidence_band", "calibrated", "monotonicity_ok"
+      ],
+      "properties": {
+        "grade": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "grade_label": {
+          "enum": ["no_dr", "mild_npdr", "moderate_npdr", "severe_npdr", "proliferative_dr"]
+        },
+        "ordinal": {
+          "type": "object",
+          "required": ["p_ge_1", "p_ge_2", "p_ge_3", "p_ge_4"],
+          "properties": {
+            "p_ge_1": { "type": "number", "minimum": 0, "maximum": 1 },
+            "p_ge_2": { "type": "number", "minimum": 0, "maximum": 1 },
+            "p_ge_3": { "type": "number", "minimum": 0, "maximum": 1 },
+            "p_ge_4": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "referable": { "type": "boolean" },
+        "referable_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence_band": { "enum": ["high", "moderate", "low"] },
+        "calibrated": { "type": "boolean" },
+        "monotonicity_ok": { "type": "boolean" }
+      }
+    },
+
+    "triage": {
+      "type": "object",
+      "required": ["level", "abstained", "escalation_rules_fired"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "enum": ["P0", "P1", "P2", "P3"] },
+        "abstained": { "type": "boolean" },
+        "escalation_rules_fired": {
+          "type": "array",
+          "items": { "enum": ["E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9"] }
+        }
+      }
+    },
+
+    "lesions": {
+      "type": "object",
+      "required": ["red_lesions", "hard_exudates", "soft_exudates"],
+      "properties": {
+        "red_lesions": { "$ref": "#/definitions/lesionGroup" },
+        "hard_exudates": { "$ref": "#/definitions/lesionGroup" },
+        "soft_exudates": { "$ref": "#/definitions/lesionGroup" }
+      }
+    },
+
+    "anatomy": {
+      "type": "object",
+      "required": ["optic_disc", "fovea", "disc_diameter_px", "geometry_selftest_passed"],
+      "properties": {
+        "optic_disc": {
+          "type": ["object", "null"],
+          "properties": {
+            "cx": { "type": "number" }, "cy": { "type": "number" },
+            "radius_px": { "type": "number" }, "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "fovea": {
+          "type": ["object", "null"],
+          "properties": {
+            "cx": { "type": "number" }, "cy": { "type": "number" },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "disc_diameter_px": { "type": ["number", "null"] },
+        "geometry_selftest_passed": { "type": "boolean" }
+      }
+    },
+
+    "artifacts": {
+      "type": "object",
+      "required": ["thumb", "review"],
+      "properties": {
+        "thumb": { "type": "string" },
+        "review": { "type": "string" },
+        "overlay_cam": { "type": ["string", "null"] },
+        "overlay_lesions": { "type": ["string", "null"] },
+        "original": { "type": ["string", "null"] }
+      }
+    },
+
+    "limits": {
+      "type": "object",
+      "required": ["min_detectable_lesion_um", "not_assessed"],
+      "properties": {
+        "min_detectable_lesion_um": { "type": ["number", "null"] },
+        "not_assessed": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "recommendation": {
+      "type": "object",
+      "required": ["code", "text"],
+      "properties": {
+        "code": { "enum": ["RESCREEN_ROUTINE", "REFER_ROUTINE", "REFER_URGENT", "CANNOT_ASSESS"] },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "versions": {
+      "type": "object",
+      "required": ["model_version", "preprocessing_hash", "dataset_version", "pipeline_commit"],
+      "properties": {
+        "model_version": { "type": ["string", "null"] },
+        "preprocessing_hash": { "type": ["string", "null"] },
+        "dataset_version": { "type": ["string", "null"] },
+        "pipeline_commit": { "type": ["string", "null"] }
+      }
+    }
+  },
+
+  "definitions": {
+    "lesionGroup": {
+      "type": "object",
+      "required": ["count", "mean_probability"],
+      "properties": {
+        "count": { "type": "integer", "minimum": 0 },
+        "mean_probability": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}
