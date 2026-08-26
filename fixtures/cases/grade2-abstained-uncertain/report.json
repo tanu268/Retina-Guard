@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "case_uuid": "00000000-0000-4000-8000-000000000005",
+  "patient_id": "PSEUDO-08334",
+  "laterality": "OD",
+  "laterality_source": "inferred",
+  "captured_at": "2026-08-26T10:32:11Z",
+  "device_id": "CAM-FIXTURE-01",
+  "operator_id": "TECH-FIXTURE",
+  "attempt_number": 1,
+  "quality": {
+    "grade": "B",
+    "decision": "enhanced",
+    "reason": "Borderline illumination - enhanced and re-assessed, still uncertain.",
+    "features": {
+      "focus_score": 0.55,
+      "illumination_uniformity": 0.88,
+      "vessel_resolvability": 0.5,
+      "field_coverage": 0.97,
+      "contrast": 0.79,
+      "saturated_fraction": 0.002,
+      "crushed_fraction": 0.001,
+      "optic_disc_detectable": true,
+      "macula_visible": true
+    }
+  },
+  "prediction": null,
+  "triage": {
+    "level": "P0",
+    "abstained": true,
+    "escalation_rules_fired": [
+      "E2"
+    ]
+  },
+  "lesions": {
+    "red_lesions": {
+      "count": 7,
+      "mean_probability": 0.71,
+      "within_1dd_of_fovea": 4
+    },
+    "hard_exudates": {
+      "count": 2,
+      "mean_probability": 0.78
+    },
+    "soft_exudates": {
+      "count": 0,
+      "mean_probability": null
+    }
+  },
+  "anatomy": {
+    "optic_disc": {
+      "cx": 341,
+      "cy": 256,
+      "radius_px": 65,
+      "confidence": 0.93
+    },
+    "fovea": {
+      "cx": 235,
+      "cy": 268,
+      "confidence": 0.81
+    },
+    "disc_diameter_px": 130,
+    "geometry_selftest_passed": true
+  },
+  "artifacts": {
+    "thumb": "thumb.jpg",
+    "review": "review_1536.jpg",
+    "overlay_cam": null,
+    "overlay_lesions": null,
+    "original": null
+  },
+  "limits": {
+    "min_detectable_lesion_um": 70,
+    "not_assessed": [
+      "neovascularisation",
+      "diabetic_macular_oedema"
+    ]
+  },
+  "recommendation": {
+    "code": "CANNOT_ASSESS",
+    "text": "Prediction confidence too low for automatic triage. Routed to reviewer."
+  },
+  "versions": {
+    "model_version": "fixture-v0",
+    "preprocessing_hash": "sha256:fixture",
+    "dataset_version": "fixture",
+    "pipeline_commit": "fixture"
+  }
+}
