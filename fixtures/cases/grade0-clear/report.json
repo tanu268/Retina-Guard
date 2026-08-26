@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "case_uuid": "00000000-0000-4000-8000-000000000000",
+  "patient_id": "PSEUDO-55630",
+  "laterality": "OD",
+  "laterality_source": "inferred",
+  "captured_at": "2026-08-26T10:32:11Z",
+  "device_id": "CAM-FIXTURE-01",
+  "operator_id": "TECH-FIXTURE",
+  "attempt_number": 1,
+  "quality": {
+    "grade": "A",
+    "decision": "proceed",
+    "reason": null,
+    "features": {
+      "focus_score": 0.91,
+      "illumination_uniformity": 0.88,
+      "vessel_resolvability": 0.84,
+      "field_coverage": 0.97,
+      "contrast": 0.79,
+      "saturated_fraction": 0.002,
+      "crushed_fraction": 0.001,
+      "optic_disc_detectable": true,
+      "macula_visible": true
+    }
+  },
+  "prediction": {
+    "grade": 0,
+    "grade_label": "no_dr",
+    "ordinal": {
+      "p_ge_1": 0.05,
+      "p_ge_2": 0.02,
+      "p_ge_3": 0.01,
+      "p_ge_4": 0.0
+    },
+    "referable": false,
+    "referable_threshold": 0.41,
+    "confidence": 0.97,
+    "confidence_band": "high",
+    "calibrated": true,
+    "monotonicity_ok": true
+  },
+  "triage": {
+    "level": "P3",
+    "abstained": false,
+    "escalation_rules_fired": []
+  },
+  "lesions": {
+    "red_lesions": {
+      "count": 0,
+      "mean_probability": null,
+      "within_1dd_of_fovea": 0
+    },
+    "hard_exudates": {
+      "count": 0,
+      "mean_probability": null
+    },
+    "soft_exudates": {
+      "count": 0,
+      "mean_probability": null
+    }
+  },
+  "anatomy": {
+    "optic_disc": {
+      "cx": 341,
+      "cy": 256,
+      "radius_px": 65,
+      "confidence": 0.93
+    },
+    "fovea": {
+      "cx": 235,
+      "cy": 268,
+      "confidence": 0.81
+    },
+    "disc_diameter_px": 130,
+    "geometry_selftest_passed": true
+  },
+  "artifacts": {
+    "thumb": "thumb.jpg",
+    "review": "review_1536.jpg",
+    "overlay_cam": null,
+    "overlay_lesions": null,
+    "original": null
+  },
+  "limits": {
+    "min_detectable_lesion_um": 45,
+    "not_assessed": [
+      "neovascularisation",
+      "diabetic_macular_oedema"
+    ]
+  },
+  "recommendation": {
+    "code": "RESCREEN_ROUTINE",
+    "text": "No referable DR detected in this image. Routine annual rescreen."
+  },
+  "versions": {
+    "model_version": "fixture-v0",
+    "preprocessing_hash": "sha256:fixture",
+    "dataset_version": "fixture",
+    "pipeline_commit": "fixture"
+  }
+}
