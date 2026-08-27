@@ -1,0 +1,56 @@
+# RetinaGuard — local / demo composition.
+#
+#   docker compose -f docker/docker-compose.yml up --build
+#
+# The edge API always starts. The district PostgreSQL node is only meaningful
+# once DISTRICT_SYNC_ENABLED=true and PG_HOST=district-db are set in ../.env —
+# the edge node must run identically with district-db absent.
+
+services:
+  edge-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: retinaguard-backend:latest
+    container_name: retinaguard-edge-api
+    restart: unless-stopped
+    env_file: ../.env
+    environment:
+      SQLITE_PATH: /app/data/retinaguard.db
+      UPLOAD_DIR: /app/uploads
+    ports:
+      - "${PORT:-4000}:4000"
+    volumes:
+      - edge-data:/app/data
+      - edge-uploads:/app/uploads
+    # If you enable the `district` profile below, start district-db first and
+    # set DISTRICT_SYNC_ENABLED=true / PG_HOST=district-db in ../.env.
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:4000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  district-db:
+    image: postgres:16-alpine
+    container_name: retinaguard-district-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PG_DATABASE:-retinaguard_district}
+      POSTGRES_USER: ${PG_USER:-retinaguard}
+      POSTGRES_PASSWORD: ${PG_PASSWORD:-change-me}
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    volumes:
+      - district-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-retinaguard} -d ${PG_DATABASE:-retinaguard_district}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    profiles: ["district"]
+
+volumes:
+  edge-data:
+  edge-uploads:
+  district-db-data:
