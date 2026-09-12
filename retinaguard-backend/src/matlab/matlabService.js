@@ -85,6 +85,17 @@ class MatlabService {
         });
       }
 
+      // No diagnostic model integrated on this adapter: abstain cleanly before
+      // any of the diagnostic stages run, rather than let them fabricate a
+      // grade, lesion set or attention map. Quality assessment above still
+      // ran for real (it gates the capture workflow's recapture logic), but
+      // nothing downstream of it executes. See mockAdapter.js.
+      if (this.adapter.modelIntegrated === false) {
+        return this.#abstention({
+          reason: 'MODEL_NOT_INTEGRATED', quality, timings, totalMs: total(), warnings,
+        });
+      }
+
       const preprocess = await stage('preprocess', () => this.preprocessImage({ imagePath, sha256 }));
       const anatomy = await stage('anatomy_detection', () => this.detectAnatomy({ imagePath, sha256 }));
       const grading = await stage('dr_grading', () => this.gradeDR({

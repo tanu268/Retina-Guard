@@ -12,6 +12,15 @@ class UserRepository extends BaseRepository {
     return this.findBy({ role, is_active: 1 }, { orderBy: 'full_name ASC', limit, offset });
   }
 
+  /**
+   * All users including disabled ones, for the admin Users page. listActive
+   * filters to is_active = 1, which would hide a disabled account entirely —
+   * and an account you cannot see is one you cannot re-enable.
+   */
+  async listAll({ role, limit = 100, offset = 0 } = {}) {
+    return this.findBy({ role }, { orderBy: 'is_active DESC, full_name ASC', limit, offset });
+  }
+
   async recordLoginSuccess(id) {
     await this.db.run(
       'UPDATE users SET last_login_at = ?, failed_logins = 0, locked_until = NULL WHERE id = ?',

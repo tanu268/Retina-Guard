@@ -36,8 +36,8 @@ function buildConsultationsRouter(deps) {
    *     responses:
    *       200: { description: Paginated consultations }
    */
-  router.post('/', auth, authorize('technician', 'admin'), idem, validate(createConsultationSchema), controller.create);
-  router.get('/', auth, validate(listConsultationsQuerySchema, 'query'), controller.list);
+  router.post('/', auth, authorize('technician'), idem, validate(createConsultationSchema), controller.create);
+  router.get('/', auth, authorize('technician', 'reviewer', 'district'), validate(listConsultationsQuerySchema, 'query'), controller.list);
 
   /**
    * @openapi
@@ -51,7 +51,7 @@ function buildConsultationsRouter(deps) {
    *       200: { description: Consultation }
    *       404: { $ref: '#/components/responses/NotFound' }
    */
-  router.get('/:id', auth, controller.get);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
 
   /**
    * @openapi
@@ -67,7 +67,7 @@ function buildConsultationsRouter(deps) {
    *       200: { description: Updated }
    *       409: { description: Illegal status transition or version conflict }
    */
-  router.patch('/:id', auth, authorize('technician', 'reviewer', 'admin'), validate(updateConsultationSchema), controller.update);
+  router.patch('/:id', auth, authorize('technician', 'reviewer'), validate(updateConsultationSchema), controller.update);
 
   return router;
 }

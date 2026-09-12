@@ -1,0 +1,335 @@
+@import '@fontsource-variable/oswald';
+@import '@fontsource/merriweather/400.css';
+@import '@fontsource/merriweather/700.css';
+@import 'tailwindcss';
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RetinaGuard design tokens — single source of truth.
+
+   Every component inherits from here. No component defines its own radius,
+   spacing, shadow, font or motion timing.
+
+   Fonts are bundled, never fetched from a CDN: this application runs at a
+   primary health centre with no reliable network. A webfont that 404s offline
+   is a broken interface.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── Brand ramp ──────────────────────────────────────────────────────────
+     Derived from the supplied palette tint #9FB3DF. The tints themselves
+     cannot carry text or controls (2.1:1 against white at best), so the ramp
+     extends into shades that clear AA while staying in the same hue family. */
+  --color-brand-50:  #f2f5fc;
+  --color-brand-100: #e4eaf7;
+  --color-brand-200: #c9d6ef;
+  --color-brand-300: #9fb3df;  /* palette tint 1 */
+  --color-brand-400: #7a93cc;
+  --color-brand-500: #5673b4;
+  --color-brand-600: #3d5896;
+  --color-brand-700: #2c4478;
+  --color-brand-800: #1e3a6e;  /* primary action — 11.14:1 on white */
+  --color-brand-900: #16305c;
+  --color-brand-950: #0f2447;
+
+  /* Supplied palette, held as named surface tints */
+  --color-sky-tint:  #9ec6f3;
+  --color-mist-tint: #bddde4;
+  --color-sand-tint: #fff1d5;
+
+  /* Semantic aliases — components reference these, not raw ramp steps */
+  --color-primary: var(--color-brand-800);
+  --color-primary-hover: var(--color-brand-900);
+  --color-primary-active: var(--color-brand-950);
+  --color-secondary: var(--color-brand-600);
+  --color-accent: var(--color-sky-tint);
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f4f6fb;
+  --color-surface-raised: #ffffff;
+  --color-background: #f7f9fd;
+  --color-border: #d8dfec;
+  --color-border-strong: #b9c4d8;
+  --color-hover: #eef2fa;
+  --color-disabled: #a8b2c4;
+  --color-ink: #0f1b31;
+  --color-ink-muted: #4a5a76;
+  --color-ink-subtle: #6b7a94;
+
+  /* Navy — surfaces that carry the clinical register */
+  --color-navy-700: #334155;
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0f172a;
+  --color-navy-950: #020617;
+
+  /* Triage tiers. Always paired with a text label in the UI — never colour
+     alone. Around 8% of men have a colour vision deficiency and a screening
+     queue must not depend on hue to communicate urgency. These are clinical
+     signals and are deliberately excluded from the brand palette. */
+  --color-p0: #dc2626;
+  --color-p0-bg: #fef2f2;
+  --color-p0-ring: #fecaca;
+  --color-p1: #ea580c;
+  --color-p1-bg: #fff7ed;
+  --color-p1-ring: #fed7aa;
+  --color-p2: #ca8a04;
+  --color-p2-bg: #fefce8;
+  --color-p2-ring: #fef08a;
+  --color-p3: #059669;
+  --color-p3-bg: #ecfdf5;
+  --color-p3-ring: #a7f3d0;
+
+  /* Semantic status */
+  --color-success: #047857;
+  --color-success-bg: #ecfdf5;
+  --color-warning: #b45309;
+  --color-warning-bg: #fffbeb;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-info: #0e7490;
+  --color-info-bg: #ecfeff;
+
+  /* Evidence layers — each explainability layer keeps one colour everywhere it
+     appears, so a reviewer learns the mapping once. */
+  --color-layer-gradcam: #e11d48;
+  --color-layer-lesion: #7c3aed;
+  --color-layer-anatomy: #0891b2;
+
+  /* ── Type ────────────────────────────────────────────────────────────────
+     Oswald carries display and headings; Merriweather carries prose. A system
+     UI stack carries dense chrome (tables, labels, inputs) where Merriweather's
+     stroke contrast becomes noise at 12–13px. */
+  --font-display: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-sans: var(--font-ui);
+
+  /* Type scale — fluid, clamped at both ends */
+  --text-display-1: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
+  --text-display-2: clamp(2.25rem, 1.5rem + 3.4vw, 4.25rem);
+  --text-h1: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --text-h2: clamp(1.625rem, 1.25rem + 1.7vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+  --text-h4: 1.125rem;
+
+  --leading-display: 1.02;
+  --leading-heading: 1.12;
+  --leading-body: 1.7;
+  --tracking-display: -0.03em;
+  --tracking-heading: -0.02em;
+
+  /* ── Radius ──────────────────────────────────────────────────────────────
+     The system is square. --radius-hairline exists only where a hard 0 reads
+     as a rendering fault (focus rings, progress fills, scrollbar thumbs). */
+  --radius-none: 0px;
+  --radius-hairline: 2px;
+  --radius-card: 0px;
+  --radius-control: 0px;
+
+  /* ── Spacing scale ───────────────────────────────────────────────────────*/
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-section: clamp(4rem, 2rem + 8vw, 9rem);
+
+  /* ── Shadows — subtle depth, never excessive ─────────────────────────────*/
+  --shadow-xs: 0 1px 2px 0 rgb(15 27 49 / 0.04);
+  --shadow-sm: 0 1px 2px 0 rgb(15 27 49 / 0.04), 0 1px 3px 0 rgb(15 27 49 / 0.06);
+  --shadow-md: 0 2px 4px -1px rgb(15 27 49 / 0.04), 0 4px 12px -2px rgb(15 27 49 / 0.08);
+  --shadow-lg: 0 4px 8px -2px rgb(15 27 49 / 0.05), 0 12px 28px -6px rgb(15 27 49 / 0.10);
+  --shadow-xl: 0 8px 16px -4px rgb(15 27 49 / 0.06), 0 24px 48px -12px rgb(15 27 49 / 0.14);
+  --shadow-glass: inset 0 1px 0 0 rgb(255 255 255 / 0.55), 0 2px 8px -2px rgb(15 27 49 / 0.08);
+
+  /* ── Motion ──────────────────────────────────────────────────────────────*/
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-instant: 90ms;
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+  --duration-slow: 420ms;
+  --duration-reveal: 620ms;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-ui);
+    /* The global gradient canvas sits behind this; the body stays transparent
+       so it is never painted over. The fallback colour shows only if WebGL is
+       unavailable and the canvas never mounts. */
+    background: var(--color-background);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: var(--tracking-heading);
+    line-height: var(--leading-heading);
+    margin: 0;
+  }
+
+  p, li, dd, blockquote {
+    font-family: var(--font-body);
+    line-height: var(--leading-body);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-800);
+    outline-offset: 2px;
+    border-radius: var(--radius-hairline);
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-brand-950);
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: var(--radius-hairline);
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-ink-subtle); background-clip: content-box; }
+}
+
+@layer utilities {
+  /* Clinical identifiers — case numbers, patient codes, model hashes — are
+     records, not prose. Monospace signals "copy this exactly". Neither display
+     nor body font takes these over. */
+  .clinical-id {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  .font-ui { font-family: var(--font-ui); }
+
+  /* Display type — Oswald at its condensed, tight-tracked register. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-display);
+    text-transform: none;
+  }
+
+  .text-display-1 { font-size: var(--text-display-1); }
+  .text-display-2 { font-size: var(--text-display-2); }
+  .text-h1 { font-size: var(--text-h1); }
+  .text-h2 { font-size: var(--text-h2); }
+  .text-h3 { font-size: var(--text-h3); }
+
+  /* Section label — the small caps eyebrow above each section heading. */
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-subtle);
+  }
+
+  .scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* Glass — the lit-edge treatment carried over from the card spec. The inset
+     highlight on the top edge is what makes it read as lit glass rather than a
+     flat translucent panel. */
+  .glass {
+    background: rgb(255 255 255 / 0.72);
+    backdrop-filter: blur(18px) saturate(170%);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-dark {
+    background: rgb(15 27 49 / 0.62);
+    backdrop-filter: blur(18px) saturate(170%);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+  }
+
+  /* Readability veil — sits between the gradient canvas and app content so
+     dense clinical UI keeps AA contrast over an animated background. */
+  .veil {
+    background: rgb(247 249 253 / 0.86);
+  }
+
+  .grid-faint {
+    background-image:
+      linear-gradient(to right, rgb(15 27 49 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 27 49 / 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────────────────*/
+@keyframes rg-sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes rg-pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.5; }
+  70%  { transform: scale(1.2); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+@keyframes rg-shimmer { 100% { transform: translateX(100%); } }
+@keyframes rg-marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+
+.animate-sweep { animation: rg-sweep 16s linear infinite; transform-origin: center; }
+.animate-pulse-ring { animation: rg-pulse-ring 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e4e9f2;
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.65), transparent);
+  animation: rg-shimmer 1.6s infinite;
+}
+
+/* A technician may work a full shift in a dim screening room. Respecting
+   reduced-motion is a floor, not a feature. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* A4 report printing */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}

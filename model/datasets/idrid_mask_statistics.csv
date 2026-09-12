@@ -1,0 +1,406 @@
+image_id,split,mask_type,mask_path,status,width,height,mode,unique_pixel_values,pixel_min,pixel_max,foreground_pixels,total_pixels,foreground_percentage
+IDRiD_01,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_01_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6941,12212224,0.056836494319134664
+IDRiD_01,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_01_HE.tif,AVAILABLE,4288,2848,P,2,0,1,35430,12212224,0.29011914619319135
+IDRiD_01,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_01_EX.tif,AVAILABLE,4288,2848,P,2,0,1,113286,12212224,0.9276443013164515
+IDRiD_01,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_01,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_01_OD.tif,AVAILABLE,4288,2848,P,2,0,1,213851,12212224,1.7511224818673485
+IDRiD_02,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_02_MA.tif,AVAILABLE,4288,2848,P,2,0,1,9446,12212224,0.07734872861814522
+IDRiD_02,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_02_HE.tif,AVAILABLE,4288,2848,P,2,0,1,17356,12212224,0.14211989560623847
+IDRiD_02,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_02_EX.tif,AVAILABLE,4288,2848,P,2,0,1,135394,12212224,1.1086760282156631
+IDRiD_02,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_02,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_02_OD.tif,AVAILABLE,4288,2848,P,2,0,1,203568,12212224,1.6669199647828272
+IDRiD_03,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_03_MA.tif,AVAILABLE,4288,2848,P,2,0,1,11288,12212224,0.09243197635418414
+IDRiD_03,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_03_HE.tif,AVAILABLE,4288,2848,P,2,0,1,162605,12212224,1.3314937557647157
+IDRiD_03,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_03_EX.tif,AVAILABLE,4288,2848,P,2,0,1,301586,12212224,2.4695419933338925
+IDRiD_03,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_03_SE.tif,AVAILABLE,4288,2848,P,2,0,1,3318,12212224,0.02716949836491699
+IDRiD_03,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_03_OD.tif,AVAILABLE,4288,2848,P,2,0,1,239059,12212224,1.957538610493879
+IDRiD_04,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_04_MA.tif,AVAILABLE,4288,2848,P,2,0,1,804,12212224,0.006583567415730337
+IDRiD_04,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_04_HE.tif,AVAILABLE,4288,2848,P,2,0,1,59383,12212224,0.4862586863785007
+IDRiD_04,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_04_EX.tif,AVAILABLE,4288,2848,P,2,0,1,5557,12212224,0.045503587225389906
+IDRiD_04,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_04,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_04_OD.tif,AVAILABLE,4288,2848,P,2,0,1,183591,12212224,1.5033379669419755
+IDRiD_05,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_05_MA.tif,AVAILABLE,4288,2848,P,2,0,1,3994,12212224,0.03270493564480966
+IDRiD_05,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_05_HE.tif,AVAILABLE,4288,2848,P,2,0,1,9850,12212224,0.08065688935938287
+IDRiD_05,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_05_EX.tif,AVAILABLE,4288,2848,P,2,0,1,8286,12212224,0.0678500492621164
+IDRiD_05,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_05,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_05_OD.tif,AVAILABLE,4288,2848,P,2,0,1,216213,12212224,1.770463758280228
+IDRiD_06,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_06_MA.tif,AVAILABLE,4288,2848,P,2,0,1,9923,12212224,0.08125465107747777
+IDRiD_06,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_06_HE.tif,AVAILABLE,4288,2848,P,2,0,1,25507,12212224,0.2088644951157136
+IDRiD_06,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_06_EX.tif,AVAILABLE,4288,2848,P,2,0,1,59053,12212224,0.4835564758720443
+IDRiD_06,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_06,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_06_OD.tif,AVAILABLE,4288,2848,P,2,0,1,271648,12212224,2.224394180781486
+IDRiD_07,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_07_MA.tif,AVAILABLE,4288,2848,P,2,0,1,12623,12212224,0.10336364613030354
+IDRiD_07,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_07_HE.tif,AVAILABLE,4288,2848,P,2,0,1,31951,12212224,0.2616312966417911
+IDRiD_07,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_07_EX.tif,AVAILABLE,4288,2848,P,2,0,1,167489,12212224,1.3714864712602717
+IDRiD_07,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_07,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_07_OD.tif,AVAILABLE,4288,2848,P,2,0,1,205432,12212224,1.6821833598859632
+IDRiD_08,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_08_MA.tif,AVAILABLE,4288,2848,P,2,0,1,4188,12212224,0.03429350788193862
+IDRiD_08,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_08_HE.tif,AVAILABLE,4288,2848,P,2,0,1,37203,12212224,0.3046373862778803
+IDRiD_08,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_08_EX.tif,AVAILABLE,4288,2848,P,2,0,1,20368,12212224,0.16678370786516852
+IDRiD_08,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_08_SE.tif,AVAILABLE,4288,2848,P,2,0,1,38340,12212224,0.3139477297501258
+IDRiD_08,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_08_OD.tif,AVAILABLE,4288,2848,P,2,0,1,205755,12212224,1.6848282507756163
+IDRiD_09,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_09_MA.tif,AVAILABLE,4288,2848,P,2,0,1,35141,12212224,0.28775266487087037
+IDRiD_09,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_09_HE.tif,AVAILABLE,4288,2848,P,2,0,1,84849,12212224,0.6947874523100788
+IDRiD_09,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_09_EX.tif,AVAILABLE,4288,2848,P,2,0,1,254276,12212224,2.0821432689082675
+IDRiD_09,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_09,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_09_OD.tif,AVAILABLE,4288,2848,P,2,0,1,259259,12212224,2.122946647555761
+IDRiD_10,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_10_MA.tif,AVAILABLE,4288,2848,P,2,0,1,33484,12212224,0.27418429272178435
+IDRiD_10,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_10_HE.tif,AVAILABLE,4288,2848,P,2,0,1,92658,12212224,0.7587315791128627
+IDRiD_10,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_10_EX.tif,AVAILABLE,4288,2848,P,2,0,1,805250,12212224,6.593803061588127
+IDRiD_10,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_10,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_10_OD.tif,AVAILABLE,4288,2848,P,2,0,1,214988,12212224,1.7604328253395942
+IDRiD_11,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_11_MA.tif,AVAILABLE,4288,2848,P,2,0,1,21345,12212224,0.174783888667617
+IDRiD_11,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_11_HE.tif,AVAILABLE,4288,2848,P,2,0,1,56797,12212224,0.4650831822279054
+IDRiD_11,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_11_EX.tif,AVAILABLE,4288,2848,P,2,0,1,291123,12212224,2.3838655432458493
+IDRiD_11,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_11,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_11_OD.tif,AVAILABLE,4288,2848,P,2,0,1,203119,12212224,1.6632433207907094
+IDRiD_12,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_12_MA.tif,AVAILABLE,4288,2848,P,2,0,1,3952,12212224,0.03236101794398792
+IDRiD_12,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_12_HE.tif,AVAILABLE,4288,2848,P,2,0,1,26843,12212224,0.2198043534085192
+IDRiD_12,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_12_EX.tif,AVAILABLE,4288,2848,P,2,0,1,6626,12212224,0.05425711156297166
+IDRiD_12,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_12,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_12_OD.tif,AVAILABLE,4288,2848,P,2,0,1,337365,12212224,2.7625189318505785
+IDRiD_13,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_13_MA.tif,AVAILABLE,4288,2848,P,2,0,1,34267,12212224,0.2805959012871038
+IDRiD_13,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_13_HE.tif,AVAILABLE,4288,2848,P,2,0,1,37412,12212224,0.3063487862653027
+IDRiD_13,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_13_EX.tif,AVAILABLE,4288,2848,P,2,0,1,214397,12212224,1.7555934119780312
+IDRiD_13,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_13_SE.tif,AVAILABLE,4288,2848,P,2,0,1,71243,12212224,0.5833744942772094
+IDRiD_13,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_13_OD.tif,AVAILABLE,4288,2848,P,2,0,1,216047,12212224,1.7691044645103138
+IDRiD_14,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_14_MA.tif,AVAILABLE,4288,2848,P,2,0,1,25362,12212224,0.20767716019620996
+IDRiD_14,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_14_HE.tif,AVAILABLE,4288,2848,P,2,0,1,62616,12212224,0.512732160825088
+IDRiD_14,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_14_EX.tif,AVAILABLE,4288,2848,P,2,0,1,165659,12212224,1.3565014857244675
+IDRiD_14,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_14_SE.tif,AVAILABLE,4288,2848,P,2,0,1,10855,12212224,0.08888634862904578
+IDRiD_14,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_14_OD.tif,AVAILABLE,4288,2848,P,2,0,1,226387,12212224,1.85377372704595
+IDRiD_15,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_15_MA.tif,AVAILABLE,4288,2848,P,2,0,1,2042,12212224,0.016720951073285258
+IDRiD_15,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_15_HE.tif,AVAILABLE,4288,2848,P,2,0,1,3215,12212224,0.026326081146235115
+IDRiD_15,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_15_EX.tif,AVAILABLE,4288,2848,P,2,0,1,42697,12212224,0.3496250969520376
+IDRiD_15,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_15,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_15_OD.tif,AVAILABLE,4288,2848,P,2,0,1,280146,12212224,2.2939801955810832
+IDRiD_16,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_16_MA.tif,AVAILABLE,4288,2848,P,2,0,1,3872,12212224,0.03170593660908938
+IDRiD_16,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_16_HE.tif,AVAILABLE,4288,2848,P,2,0,1,18663,12212224,0.15282228691514338
+IDRiD_16,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_16_EX.tif,AVAILABLE,4288,2848,P,2,0,1,115804,12212224,0.948262986332383
+IDRiD_16,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_16,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_16_OD.tif,AVAILABLE,4288,2848,P,2,0,1,291732,12212224,2.3888523499077645
+IDRiD_17,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_17_MA.tif,AVAILABLE,4288,2848,P,2,0,1,14207,12212224,0.11633425656129466
+IDRiD_17,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_17_HE.tif,AVAILABLE,4288,2848,P,2,0,1,1821322,12212224,14.913925588001007
+IDRiD_17,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_17_EX.tif,AVAILABLE,4288,2848,P,2,0,1,201316,12212224,1.6484794252054336
+IDRiD_17,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_17_SE.tif,AVAILABLE,4288,2848,P,2,0,1,48111,12212224,0.3939577262912964
+IDRiD_17,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_17_OD.tif,AVAILABLE,4288,2848,P,2,0,1,202624,12212224,1.6591900050310244
+IDRiD_18,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_18_MA.tif,AVAILABLE,4288,2848,P,2,0,1,24706,12212224,0.2023054932500419
+IDRiD_18,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_18_HE.tif,AVAILABLE,4288,2848,P,2,0,1,89854,12212224,0.7357709783246688
+IDRiD_18,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_18_EX.tif,AVAILABLE,4288,2848,P,2,0,1,106281,12212224,0.870283741929398
+IDRiD_18,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_18_SE.tif,AVAILABLE,4288,2848,P,2,0,1,40970,12212224,0.3354835286349153
+IDRiD_18,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_18_OD.tif,AVAILABLE,4288,2848,P,2,0,1,229440,12212224,1.8787732684890157
+IDRiD_19,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_19_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6092,12212224,0.0498844436525239
+IDRiD_19,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_19_HE.tif,AVAILABLE,4288,2848,P,2,0,1,62604,12212224,0.5126338986248533
+IDRiD_19,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_19_EX.tif,AVAILABLE,4288,2848,P,2,0,1,17431,12212224,0.14273403435770585
+IDRiD_19,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_19_SE.tif,AVAILABLE,4288,2848,P,2,0,1,81903,12212224,0.67066408215244
+IDRiD_19,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_19_OD.tif,AVAILABLE,4288,2848,P,2,0,1,222880,12212224,1.8250565990273353
+IDRiD_20,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_20_MA.tif,AVAILABLE,4288,2848,P,2,0,1,26027,12212224,0.21312252379255409
+IDRiD_20,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_20_HE.tif,AVAILABLE,4288,2848,P,2,0,1,66672,12212224,0.5459447845044441
+IDRiD_20,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_20_EX.tif,AVAILABLE,4288,2848,P,2,0,1,183732,12212224,1.5044925477947342
+IDRiD_20,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_20,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_20_OD.tif,AVAILABLE,4288,2848,P,2,0,1,268686,12212224,2.2001397943568675
+IDRiD_21,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_21_MA.tif,AVAILABLE,4288,2848,P,2,0,1,21573,12212224,0.17665087047207784
+IDRiD_21,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_21_HE.tif,AVAILABLE,4288,2848,P,2,0,1,102308,12212224,0.8377507651349992
+IDRiD_21,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_21_EX.tif,AVAILABLE,4288,2848,P,2,0,1,192428,12212224,1.5756998888982057
+IDRiD_21,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_21,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_21_OD.tif,AVAILABLE,4288,2848,P,2,0,1,262202,12212224,2.147045452163341
+IDRiD_22,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_22_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10367,12212224,0.08489035248616468
+IDRiD_22,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_22_HE.tif,AVAILABLE,4288,2848,P,2,0,1,254991,12212224,2.0879980583389233
+IDRiD_22,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_22_EX.tif,AVAILABLE,4288,2848,P,2,0,1,94020,12212224,0.7698843388395102
+IDRiD_22,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_22_SE.tif,AVAILABLE,4288,2848,P,2,0,1,108091,12212224,0.8851049571314775
+IDRiD_22,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_22_OD.tif,AVAILABLE,4288,2848,P,2,0,1,184811,12212224,1.5133279572991782
+IDRiD_23,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_23_MA.tif,AVAILABLE,4288,2848,P,2,0,1,4531,12212224,0.037102169105316114
+IDRiD_23,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_23_HE.tif,AVAILABLE,4288,2848,P,2,0,1,111482,12212224,0.9128722172144893
+IDRiD_23,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_23_EX.tif,AVAILABLE,4288,2848,P,2,0,1,14812,12212224,0.12128830915646488
+IDRiD_23,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_23_SE.tif,AVAILABLE,4288,2848,P,2,0,1,59663,12212224,0.4885514710506456
+IDRiD_23,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_23_OD.tif,AVAILABLE,4288,2848,P,2,0,1,225739,12212224,1.8484675682332716
+IDRiD_24,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_24_MA.tif,AVAILABLE,4288,2848,P,2,0,1,1354,12212224,0.011087251593157807
+IDRiD_24,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_24_HE.tif,AVAILABLE,4288,2848,P,2,0,1,27085,12212224,0.2217859744465873
+IDRiD_24,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_24_EX.tif,AVAILABLE,4288,2848,P,2,0,1,8245,12212224,0.06751432007798087
+IDRiD_24,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_24,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_24_OD.tif,AVAILABLE,4288,2848,P,2,0,1,210359,12212224,1.7225281815990274
+IDRiD_25,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_25_MA.tif,AVAILABLE,4288,2848,P,2,0,1,23423,12212224,0.19179962634160658
+IDRiD_25,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_25_HE.tif,AVAILABLE,4288,2848,P,2,0,1,332458,12212224,2.7223378804712395
+IDRiD_25,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_25_EX.tif,AVAILABLE,4288,2848,P,2,0,1,616742,12212224,5.05020215809995
+IDRiD_25,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_25_SE.tif,AVAILABLE,4288,2848,P,2,0,1,23030,12212224,0.1885815392839175
+IDRiD_25,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_25_OD.tif,AVAILABLE,4288,2848,P,2,0,1,193571,12212224,1.5850593634705683
+IDRiD_26,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_26_MA.tif,AVAILABLE,4288,2848,P,2,0,1,19627,12212224,0.16071601700067079
+IDRiD_26,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_26_HE.tif,AVAILABLE,4288,2848,P,2,0,1,104527,12212224,0.8559210836617475
+IDRiD_26,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_26_EX.tif,AVAILABLE,4288,2848,P,2,0,1,2506,12212224,0.020520422815696795
+IDRiD_26,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_26,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_26_OD.tif,AVAILABLE,4288,2848,P,2,0,1,241553,12212224,1.9779607711093412
+IDRiD_27,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_27_MA.tif,AVAILABLE,4288,2848,P,2,0,1,25746,12212224,0.21082155060372296
+IDRiD_27,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_27_HE.tif,AVAILABLE,4288,2848,P,2,0,1,65344,12212224,0.5350704343451282
+IDRiD_27,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_27_EX.tif,AVAILABLE,4288,2848,P,2,0,1,69734,12212224,0.5710180225976857
+IDRiD_27,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_27,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_27_OD.tif,AVAILABLE,4288,2848,P,2,0,1,199568,12212224,1.6341658980379001
+IDRiD_28,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_28_MA.tif,AVAILABLE,4288,2848,P,2,0,1,4805,12212224,0.03934582267734362
+IDRiD_28,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_28_HE.tif,AVAILABLE,4288,2848,P,2,0,1,32395,12212224,0.265266998050478
+IDRiD_28,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_28_EX.tif,AVAILABLE,4288,2848,P,2,0,1,4725,12212224,0.03869074134244508
+IDRiD_28,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_28,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_28_OD.tif,AVAILABLE,4288,2848,P,2,0,1,222601,12212224,1.8227720028718766
+IDRiD_29,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_29_MA.tif,AVAILABLE,4288,2848,P,2,0,1,4525,12212224,0.03705303800519873
+IDRiD_29,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_29_HE.tif,AVAILABLE,4288,2848,P,2,0,1,2149,12212224,0.017597122358712056
+IDRiD_29,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_29_EX.tif,AVAILABLE,4288,2848,P,2,0,1,2343,12212224,0.01918569459584102
+IDRiD_29,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_29,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_29_OD.tif,AVAILABLE,4288,2848,P,2,0,1,238406,12212224,1.9521915090977695
+IDRiD_30,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_30_MA.tif,AVAILABLE,4288,2848,P,2,0,1,7308,12212224,0.05984167994298172
+IDRiD_30,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_30_HE.tif,AVAILABLE,4288,2848,P,2,0,1,53438,12212224,0.4375779546788529
+IDRiD_30,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_30_EX.tif,AVAILABLE,4288,2848,P,2,0,1,22501,12212224,0.18424981395690088
+IDRiD_30,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_30_SE.tif,AVAILABLE,4288,2848,P,2,0,1,14627,12212224,0.11977343356951199
+IDRiD_30,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_30_OD.tif,AVAILABLE,4288,2848,P,2,0,1,192456,12212224,1.57592916736542
+IDRiD_31,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_31_MA.tif,AVAILABLE,4288,2848,P,2,0,1,8156,12212224,0.06678554209290626
+IDRiD_31,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_31_HE.tif,AVAILABLE,4288,2848,P,2,0,1,216935,12212224,1.7763758673276873
+IDRiD_31,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_31_EX.tif,AVAILABLE,4288,2848,P,2,0,1,48998,12212224,0.4012209405919839
+IDRiD_31,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_31_SE.tif,AVAILABLE,4288,2848,P,2,0,1,158077,12212224,1.2944161522094584
+IDRiD_31,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_31_OD.tif,AVAILABLE,4288,2848,P,2,0,1,174243,12212224,1.426791712959081
+IDRiD_32,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_32_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6068,12212224,0.04968791925205433
+IDRiD_32,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_32_HE.tif,AVAILABLE,4288,2848,P,2,0,1,86486,12212224,0.7081920541254402
+IDRiD_32,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_32_EX.tif,AVAILABLE,4288,2848,P,2,0,1,84975,12212224,0.695819205412544
+IDRiD_32,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_32_SE.tif,AVAILABLE,4288,2848,P,2,0,1,39910,12212224,0.32680370094750966
+IDRiD_32,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_32_OD.tif,AVAILABLE,4288,2848,P,2,0,1,213932,12212224,1.7517857517189335
+IDRiD_33,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_33_MA.tif,AVAILABLE,4288,2848,P,2,0,1,36212,12212224,0.2965225662418246
+IDRiD_33,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_33_HE.tif,AVAILABLE,4288,2848,P,2,0,1,330744,12212224,2.708302762871038
+IDRiD_33,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_33_EX.tif,AVAILABLE,4288,2848,P,2,0,1,58229,12212224,0.4768091381225893
+IDRiD_33,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_33_SE.tif,AVAILABLE,4288,2848,P,2,0,1,5571,12212224,0.04561822645899715
+IDRiD_33,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_33_OD.tif,AVAILABLE,4288,2848,P,2,0,1,231467,12212224,1.8953713918120074
+IDRiD_34,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_34_MA.tif,AVAILABLE,4288,2848,P,2,0,1,12563,12212224,0.10287233512912962
+IDRiD_34,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_34_HE.tif,AVAILABLE,4288,2848,P,2,0,1,415359,12212224,3.4011741022765385
+IDRiD_34,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_34_EX.tif,AVAILABLE,4288,2848,P,2,0,1,26720,12212224,0.2187971658561127
+IDRiD_34,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_34,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_34_OD.tif,AVAILABLE,4288,2848,P,2,0,1,186568,12212224,1.5277151811168874
+IDRiD_35,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_35_MA.tif,AVAILABLE,4288,2848,P,2,0,1,13997,12212224,0.11461466805718597
+IDRiD_35,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_35_HE.tif,AVAILABLE,4288,2848,P,2,0,1,368997,12212224,3.0215380916694614
+IDRiD_35,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_35_EX.tif,AVAILABLE,4288,2848,P,2,0,1,19873,12212224,0.16273039210548382
+IDRiD_35,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_35_SE.tif,AVAILABLE,4288,2848,P,2,0,1,41300,12212224,0.3381857391413718
+IDRiD_35,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_35_OD.tif,AVAILABLE,4288,2848,P,2,0,1,189183,12212224,1.5491281522513836
+IDRiD_36,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_36_MA.tif,AVAILABLE,4288,2848,P,2,0,1,9857,12212224,0.08071420897618649
+IDRiD_36,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_36_HE.tif,AVAILABLE,4288,2848,P,2,0,1,58339,12212224,0.47770987495807476
+IDRiD_36,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_36_EX.tif,AVAILABLE,4288,2848,P,2,0,1,5893,12212224,0.04825492883196378
+IDRiD_36,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_36,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_36_OD.tif,AVAILABLE,4288,2848,P,2,0,1,219306,12212224,1.795790840390743
+IDRiD_37,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_37_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6464,12212224,0.052930571859802114
+IDRiD_37,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_37_HE.tif,AVAILABLE,4288,2848,P,2,0,1,50017,12212224,0.40956503909525405
+IDRiD_37,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_37_EX.tif,AVAILABLE,4288,2848,P,2,0,1,25759,12212224,0.21092800132064396
+IDRiD_37,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_37,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_37_OD.tif,AVAILABLE,4288,2848,P,2,0,1,210717,12212224,1.7254596705726983
+IDRiD_38,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_38_MA.tif,AVAILABLE,4288,2848,P,2,0,1,9359,12212224,0.07663632766644307
+IDRiD_38,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_38_HE.tif,AVAILABLE,4288,2848,P,2,0,1,14028,12212224,0.11486851207445917
+IDRiD_38,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_38_EX.tif,AVAILABLE,4288,2848,P,2,0,1,12551,12212224,0.10277407292889486
+IDRiD_38,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_38_SE.tif,AVAILABLE,4288,2848,P,2,0,1,18516,12212224,0.15161857496226733
+IDRiD_38,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_38_OD.tif,AVAILABLE,4288,2848,P,2,0,1,250001,12212224,2.0471373600746268
+IDRiD_39,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_39_MA.tif,AVAILABLE,4288,2848,P,2,0,1,38066,12212224,0.31170407617809825
+IDRiD_39,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_39_HE.tif,AVAILABLE,4288,2848,P,2,0,1,250350,12212224,2.0499951523981217
+IDRiD_39,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_39_EX.tif,AVAILABLE,4288,2848,P,2,0,1,18733,12212224,0.1533954830831796
+IDRiD_39,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_39_SE.tif,AVAILABLE,4288,2848,P,2,0,1,85288,12212224,0.6983822111353346
+IDRiD_39,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_39_OD.tif,AVAILABLE,4288,2848,P,2,0,1,249331,12212224,2.0416510538948516
+IDRiD_40,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_40_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6592,12212224,0.053978701995639776
+IDRiD_40,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_40_HE.tif,AVAILABLE,4288,2848,P,2,0,1,3642,12212224,0.02982257777125608
+IDRiD_40,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_40_EX.tif,AVAILABLE,4288,2848,P,2,0,1,7779,12212224,0.06369847130219687
+IDRiD_40,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_40,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_40_OD.tif,AVAILABLE,4288,2848,P,2,0,1,282209,12212224,2.310873105504779
+IDRiD_41,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_41_MA.tif,AVAILABLE,4288,2848,P,2,0,1,5486,12212224,0.04492220254066745
+IDRiD_41,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_41_HE.tif,AVAILABLE,4288,2848,P,2,0,1,4266,12212224,0.0349322121834647
+IDRiD_41,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_41_EX.tif,AVAILABLE,4288,2848,P,2,0,1,8250,12212224,0.06755526266141204
+IDRiD_41,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_41,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_41_OD.tif,AVAILABLE,4288,2848,P,2,0,1,209842,12212224,1.7182947184722457
+IDRiD_42,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_42_MA.tif,AVAILABLE,4288,2848,P,2,0,1,2522,12212224,0.020651439082676505
+IDRiD_42,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_42_HE.tif,AVAILABLE,4288,2848,P,2,0,1,4404,12212224,0.03606222748616469
+IDRiD_42,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_42_EX.tif,AVAILABLE,4288,2848,P,2,0,1,25201,12212224,0.20635880900972664
+IDRiD_42,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_42,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_42_OD.tif,AVAILABLE,4288,2848,P,2,0,1,234967,12212224,1.9240312002138185
+IDRiD_43,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_43_MA.tif,AVAILABLE,4288,2848,P,2,0,1,914,12212224,0.007484304251215831
+IDRiD_43,train,Haemorrhages,MISSING,MISSING,,,,,,,,,
+IDRiD_43,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_43_EX.tif,AVAILABLE,4288,2848,P,2,0,1,61341,12212224,0.5022918020501426
+IDRiD_43,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_43,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_43_OD.tif,AVAILABLE,4288,2848,P,2,0,1,221594,12212224,1.8145261665688412
+IDRiD_44,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_44_MA.tif,AVAILABLE,4288,2848,P,2,0,1,1932,12212224,0.015820214237799765
+IDRiD_44,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_44_HE.tif,AVAILABLE,4288,2848,P,2,0,1,5906,12212224,0.04836137954888479
+IDRiD_44,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_44_EX.tif,AVAILABLE,4288,2848,P,2,0,1,24798,12212224,0.20305883678517522
+IDRiD_44,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_44,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_44_OD.tif,AVAILABLE,4288,2848,P,2,0,1,130198,12212224,1.066128495514003
+IDRiD_45,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_45_MA.tif,AVAILABLE,4288,2848,P,2,0,1,2548,12212224,0.02086434051651853
+IDRiD_45,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_45_HE.tif,AVAILABLE,4288,2848,P,2,0,1,13236,12212224,0.1083832068589636
+IDRiD_45,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_45_EX.tif,AVAILABLE,4288,2848,P,2,0,1,47341,12212224,0.38765256844289786
+IDRiD_45,train,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_45,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_45_OD.tif,AVAILABLE,4288,2848,P,2,0,1,122675,12212224,1.0045262844834815
+IDRiD_46,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_46_MA.tif,AVAILABLE,4288,2848,P,2,0,1,11628,12212224,0.09521607202750293
+IDRiD_46,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_46_HE.tif,AVAILABLE,4288,2848,P,2,0,1,192856,12212224,1.5792045740399128
+IDRiD_46,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_46_EX.tif,AVAILABLE,4288,2848,P,2,0,1,21191,12212224,0.17352285709793727
+IDRiD_46,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_46_SE.tif,AVAILABLE,4288,2848,P,2,0,1,100367,12212224,0.8218568542470233
+IDRiD_46,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_46_OD.tif,AVAILABLE,4288,2848,P,2,0,1,164170,12212224,1.3443087843786683
+IDRiD_47,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_47_MA.tif,AVAILABLE,4288,2848,P,2,0,1,3986,12212224,0.032639427511319805
+IDRiD_47,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_47_HE.tif,AVAILABLE,4288,2848,P,2,0,1,68527,12212224,0.561134482957404
+IDRiD_47,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_47_EX.tif,AVAILABLE,4288,2848,P,2,0,1,38582,12212224,0.31592935078819384
+IDRiD_47,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_47_SE.tif,AVAILABLE,4288,2848,P,2,0,1,33761,12212224,0.27645251184387054
+IDRiD_47,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_47_OD.tif,AVAILABLE,4288,2848,P,2,0,1,319170,12212224,2.6135288707445916
+IDRiD_48,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_48_MA.tif,AVAILABLE,4288,2848,P,2,0,1,22353,12212224,0.18303791348733858
+IDRiD_48,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_48_HE.tif,AVAILABLE,4288,2848,P,2,0,1,133197,12212224,1.090685857056012
+IDRiD_48,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_48_EX.tif,AVAILABLE,4288,2848,P,2,0,1,154434,12212224,1.264585385921516
+IDRiD_48,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_48_SE.tif,AVAILABLE,4288,2848,P,2,0,1,58746,12212224,0.48104260124937115
+IDRiD_48,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_48_OD.tif,AVAILABLE,4288,2848,P,2,0,1,218943,12212224,1.7928184088336407
+IDRiD_49,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_49_MA.tif,AVAILABLE,4288,2848,P,2,0,1,16520,12212224,0.1352742956565487
+IDRiD_49,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_49_HE.tif,AVAILABLE,4288,2848,P,2,0,1,178309,12212224,1.4600862218052992
+IDRiD_49,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_49_EX.tif,AVAILABLE,4288,2848,P,2,0,1,221897,12212224,1.8170072871247696
+IDRiD_49,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_49_SE.tif,AVAILABLE,4288,2848,P,2,0,1,42441,12212224,0.3475288366803622
+IDRiD_49,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_49_OD.tif,AVAILABLE,4288,2848,P,2,0,1,178717,12212224,1.4634271366132818
+IDRiD_50,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_50_MA.tif,AVAILABLE,4288,2848,P,2,0,1,5202,12212224,0.04259666380177763
+IDRiD_50,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_50_HE.tif,AVAILABLE,4288,2848,P,2,0,1,34176,12212224,0.2798507462686567
+IDRiD_50,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_50_EX.tif,AVAILABLE,4288,2848,P,2,0,1,120675,12212224,0.9881492511110179
+IDRiD_50,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_50_SE.tif,AVAILABLE,4288,2848,P,2,0,1,36775,12212224,0.3011327011361731
+IDRiD_50,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_50_OD.tif,AVAILABLE,4288,2848,P,2,0,1,182334,12212224,1.4930450014673822
+IDRiD_51,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_51_MA.tif,AVAILABLE,4288,2848,P,2,0,1,14362,12212224,0.11760347664766058
+IDRiD_51,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_51_HE.tif,AVAILABLE,4288,2848,P,2,0,1,48296,12212224,0.3954726018782492
+IDRiD_51,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_51_EX.tif,AVAILABLE,4288,2848,P,2,0,1,19228,12212224,0.15744879884286433
+IDRiD_51,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_51_SE.tif,AVAILABLE,4288,2848,P,2,0,1,78562,12212224,0.6433062479037397
+IDRiD_51,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_51_OD.tif,AVAILABLE,4288,2848,P,2,0,1,223408,12212224,1.8293801358376656
+IDRiD_52,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_52_MA.tif,AVAILABLE,4288,2848,P,2,0,1,6671,12212224,0.05462559481385209
+IDRiD_52,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_52_HE.tif,AVAILABLE,4288,2848,P,2,0,1,3354,12212224,0.02746428496562133
+IDRiD_52,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_52_EX.tif,AVAILABLE,4288,2848,P,2,0,1,2974,12212224,0.02435264862485326
+IDRiD_52,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_52_SE.tif,AVAILABLE,4288,2848,P,2,0,1,9750,12212224,0.07983803769075969
+IDRiD_52,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_52_OD.tif,AVAILABLE,4288,2848,P,2,0,1,240681,12212224,1.9708203845589467
+IDRiD_53,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_53_MA.tif,AVAILABLE,4288,2848,P,2,0,1,26531,12212224,0.21724953620241488
+IDRiD_53,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_53_HE.tif,AVAILABLE,4288,2848,P,2,0,1,91360,12212224,0.7481028844541339
+IDRiD_53,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_53_EX.tif,AVAILABLE,4288,2848,P,2,0,1,10985,12212224,0.0899508557982559
+IDRiD_53,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_53_SE.tif,AVAILABLE,4288,2848,P,2,0,1,9022,12212224,0.07387679754318296
+IDRiD_53,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_53_OD.tif,AVAILABLE,4288,2848,P,2,0,1,192143,12212224,1.5733661616426295
+IDRiD_54,train,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\1. Microaneurysms\IDRiD_54_MA.tif,AVAILABLE,4288,2848,P,2,0,1,24011,12212224,0.19661447415311087
+IDRiD_54,train,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\2. Haemorrhages\IDRiD_54_HE.tif,AVAILABLE,4288,2848,P,2,0,1,38734,12212224,0.3171740053245011
+IDRiD_54,train,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\3. Hard Exudates\IDRiD_54_EX.tif,AVAILABLE,4288,2848,P,2,0,1,9450,12212224,0.07738148268489016
+IDRiD_54,train,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\4. Soft Exudates\IDRiD_54_SE.tif,AVAILABLE,4288,2848,P,2,0,1,30804,12212224,0.2522390680026832
+IDRiD_54,train,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\a. Training Set\5. Optic Disc\IDRiD_54_OD.tif,AVAILABLE,4288,2848,P,2,0,1,197479,12212224,1.6170600866803622
+IDRiD_55,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_55_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10410,12212224,0.08524245870367264
+IDRiD_55,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_55_HE.tif,AVAILABLE,4288,2848,P,2,0,1,102377,12212224,0.8383157727863492
+IDRiD_55,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_55_EX.tif,AVAILABLE,4288,2848,P,2,0,1,497671,12212224,4.075187287753647
+IDRiD_55,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_55_SE.tif,AVAILABLE,4288,2848,P,2,0,1,2832,12212224,0.023189879255408354
+IDRiD_55,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_55_OD.tif,AVAILABLE,4288,2848,P,2,0,1,184393,12212224,1.5099051573243334
+IDRiD_56,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_56_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10726,12212224,0.08783002997652188
+IDRiD_56,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_56_HE.tif,AVAILABLE,4288,2848,P,2,0,1,204479,12212224,1.6743797034839845
+IDRiD_56,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_56_EX.tif,AVAILABLE,4288,2848,P,2,0,1,13370,12212224,0.10948046809491865
+IDRiD_56,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_56_SE.tif,AVAILABLE,4288,2848,P,2,0,1,58393,12212224,0.4781520548591313
+IDRiD_56,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_56_OD.tif,AVAILABLE,4288,2848,P,2,0,1,174870,12212224,1.4319259129213482
+IDRiD_57,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_57_MA.tif,AVAILABLE,4288,2848,P,2,0,1,2101,12212224,0.017204073557772932
+IDRiD_57,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_57_HE.tif,AVAILABLE,4288,2848,P,2,0,1,2795,12212224,0.022886904138017777
+IDRiD_57,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_57_EX.tif,AVAILABLE,4288,2848,P,2,0,1,43380,12212224,0.35521785384873383
+IDRiD_57,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_57,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_57_OD.tif,AVAILABLE,4288,2848,P,2,0,1,231445,12212224,1.8951912444449104
+IDRiD_58,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_58_MA.tif,AVAILABLE,4288,2848,P,2,0,1,7408,12212224,0.0606605316116049
+IDRiD_58,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_58_HE.tif,AVAILABLE,4288,2848,P,2,0,1,80671,12212224,0.6605758295950026
+IDRiD_58,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_58_EX.tif,AVAILABLE,4288,2848,P,2,0,1,69235,12212224,0.5669319527712561
+IDRiD_58,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_58,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_58_OD.tif,AVAILABLE,4288,2848,P,2,0,1,246576,12212224,2.019091690424283
+IDRiD_59,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_59_MA.tif,AVAILABLE,4288,2848,P,2,0,1,11551,12212224,0.09458555624266309
+IDRiD_59,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_59_HE.tif,AVAILABLE,4288,2848,P,2,0,1,72209,12212224,0.5912846013961094
+IDRiD_59,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_59_EX.tif,AVAILABLE,4288,2848,P,2,0,1,89348,12212224,0.7316275888814355
+IDRiD_59,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_59_SE.tif,AVAILABLE,4288,2848,P,2,0,1,175600,12212224,1.4379035301022975
+IDRiD_59,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_59_OD.tif,AVAILABLE,4288,2848,P,2,0,1,250163,12212224,2.048463899777796
+IDRiD_60,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_60_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10137,12212224,0.08300699364833138
+IDRiD_60,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_60_HE.tif,AVAILABLE,4288,2848,P,2,0,1,39814,12212224,0.32601760334563135
+IDRiD_60,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_60_EX.tif,AVAILABLE,4288,2848,P,2,0,1,52629,12212224,0.4309534446796914
+IDRiD_60,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_60_SE.tif,AVAILABLE,4288,2848,P,2,0,1,79936,12212224,0.6545572698306221
+IDRiD_60,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_60_OD.tif,AVAILABLE,4288,2848,P,2,0,1,271026,12212224,2.2193009234026495
+IDRiD_61,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_61_MA.tif,AVAILABLE,4288,2848,P,2,0,1,18568,12212224,0.15204437782995137
+IDRiD_61,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_61_HE.tif,AVAILABLE,4288,2848,P,2,0,1,1186642,12212224,9.71683781758343
+IDRiD_61,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_61_EX.tif,AVAILABLE,4288,2848,P,2,0,1,32900,12212224,0.269402198977025
+IDRiD_61,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_61_SE.tif,AVAILABLE,4288,2848,P,2,0,1,17787,12212224,0.14564914629800438
+IDRiD_61,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_61_OD.tif,AVAILABLE,4288,2848,P,2,0,1,221949,12212224,1.8174330899924533
+IDRiD_62,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_62_MA.tif,AVAILABLE,4288,2848,P,2,0,1,3233,12212224,0.02647347444658729
+IDRiD_62,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_62_HE.tif,AVAILABLE,4288,2848,P,2,0,1,10829,12212224,0.08867344719520376
+IDRiD_62,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_62_EX.tif,AVAILABLE,4288,2848,P,2,0,1,44427,12212224,0.3637912308192185
+IDRiD_62,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_62,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_62_OD.tif,AVAILABLE,4288,2848,P,2,0,1,167620,12212224,1.372559166946168
+IDRiD_63,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_63_MA.tif,AVAILABLE,4288,2848,P,2,0,1,2173,12212224,0.01779364675918162
+IDRiD_63,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_63_HE.tif,AVAILABLE,4288,2848,P,2,0,1,12603,12212224,0.1031998757965789
+IDRiD_63,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_63_EX.tif,AVAILABLE,4288,2848,P,2,0,1,92542,12212224,0.7577817111772598
+IDRiD_63,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_63,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_63_OD.tif,AVAILABLE,4288,2848,P,2,0,1,281077,12212224,2.301603704615965
+IDRiD_64,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_64_MA.tif,AVAILABLE,4288,2848,P,2,0,1,12343,12212224,0.10107086145815865
+IDRiD_64,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_64_HE.tif,AVAILABLE,4288,2848,P,2,0,1,23818,12212224,0.19503409043266812
+IDRiD_64,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_64_EX.tif,AVAILABLE,4288,2848,P,2,0,1,68089,12212224,0.5575479126488344
+IDRiD_64,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_64_SE.tif,AVAILABLE,4288,2848,P,2,0,1,40473,12212224,0.33141383584185813
+IDRiD_64,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_64_OD.tif,AVAILABLE,4288,2848,P,2,0,1,282939,12212224,2.3168507226857287
+IDRiD_65,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_65_MA.tif,AVAILABLE,4288,2848,P,2,0,1,16973,12212224,0.13898369371541172
+IDRiD_65,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_65_HE.tif,AVAILABLE,4288,2848,P,2,0,1,42485,12212224,0.3478891314145564
+IDRiD_65,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_65_EX.tif,AVAILABLE,4288,2848,P,2,0,1,70528,12212224,0.5775197048465537
+IDRiD_65,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_65,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_65_OD.tif,AVAILABLE,4288,2848,P,2,0,1,235581,12212224,1.929058949459165
+IDRiD_66,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_66_MA.tif,AVAILABLE,4288,2848,P,2,0,1,9144,12212224,0.07487579657890324
+IDRiD_66,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_66_HE.tif,AVAILABLE,4288,2848,P,2,0,1,24156,12212224,0.19780180907261447
+IDRiD_66,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_66_EX.tif,AVAILABLE,4288,2848,P,2,0,1,917148,12212224,7.510081701744088
+IDRiD_66,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_66,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_66_OD.tif,AVAILABLE,4288,2848,P,2,0,1,196717,12212224,1.6108204369654537
+IDRiD_67,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_67_MA.tif,AVAILABLE,4288,2848,P,2,0,1,13242,12212224,0.108432337959081
+IDRiD_67,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_67_HE.tif,AVAILABLE,4288,2848,P,2,0,1,329922,12212224,2.7015718021549553
+IDRiD_67,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_67_EX.tif,AVAILABLE,4288,2848,P,2,0,1,31950,12212224,0.2616231081251048
+IDRiD_67,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_67_SE.tif,AVAILABLE,4288,2848,P,2,0,1,38602,12212224,0.3160931211219185
+IDRiD_67,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_67_OD.tif,AVAILABLE,4288,2848,P,2,0,1,208222,12212224,1.70502932144055
+IDRiD_68,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_68_MA.tif,AVAILABLE,4288,2848,P,2,0,1,7450,12212224,0.06100444931242663
+IDRiD_68,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_68_HE.tif,AVAILABLE,4288,2848,P,2,0,1,296560,12212224,2.4283865084688916
+IDRiD_68,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_68_EX.tif,AVAILABLE,4288,2848,P,2,0,1,18689,12212224,0.1530351883489854
+IDRiD_68,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_68_SE.tif,AVAILABLE,4288,2848,P,2,0,1,68865,12212224,0.5639022015973504
+IDRiD_68,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_68_OD.tif,AVAILABLE,4288,2848,P,2,0,1,192203,12212224,1.5738574726438033
+IDRiD_69,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_69_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10767,12212224,0.08816575916065739
+IDRiD_69,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_69_HE.tif,AVAILABLE,4288,2848,P,2,0,1,292747,12212224,2.3971636943442896
+IDRiD_69,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_69_EX.tif,AVAILABLE,4288,2848,P,2,0,1,57400,12212224,0.47002085778970315
+IDRiD_69,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_69,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_69_OD.tif,AVAILABLE,4288,2848,P,2,0,1,195739,12212224,1.6028120676463191
+IDRiD_70,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_70_MA.tif,AVAILABLE,4288,2848,P,2,0,1,8693,12212224,0.07118277555341271
+IDRiD_70,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_70_HE.tif,AVAILABLE,4288,2848,P,2,0,1,101922,12212224,0.8345899976941138
+IDRiD_70,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_70_EX.tif,AVAILABLE,4288,2848,P,2,0,1,62285,12212224,0.5100217618019454
+IDRiD_70,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_70_SE.tif,AVAILABLE,4288,2848,P,2,0,1,21717,12212224,0.1778300168748952
+IDRiD_70,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_70_OD.tif,AVAILABLE,4288,2848,P,2,0,1,221207,12212224,1.8113572106112696
+IDRiD_71,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_71_MA.tif,AVAILABLE,4288,2848,P,2,0,1,21182,12212224,0.1734491604477612
+IDRiD_71,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_71_HE.tif,AVAILABLE,4288,2848,P,2,0,1,50940,12212224,0.41712303999664596
+IDRiD_71,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_71_EX.tif,AVAILABLE,4288,2848,P,2,0,1,282256,12212224,2.311257965789032
+IDRiD_71,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_71_SE.tif,AVAILABLE,4288,2848,P,2,0,1,18081,12212224,0.14805657020375648
+IDRiD_71,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_71_OD.tif,AVAILABLE,4288,2848,P,2,0,1,182258,12212224,1.4924226741992286
+IDRiD_72,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_72_MA.tif,AVAILABLE,4288,2848,P,2,0,1,8355,12212224,0.06841505691346637
+IDRiD_72,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_72_HE.tif,AVAILABLE,4288,2848,P,2,0,1,8454,12212224,0.06922572006540331
+IDRiD_72,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_72_EX.tif,AVAILABLE,4288,2848,P,2,0,1,164636,12212224,1.3481246331544525
+IDRiD_72,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_72_SE.tif,AVAILABLE,4288,2848,P,2,0,1,16079,12212224,0.1316631597979205
+IDRiD_72,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_72_OD.tif,AVAILABLE,4288,2848,P,2,0,1,168797,12212224,1.3821970510858628
+IDRiD_73,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_73_MA.tif,AVAILABLE,4288,2848,P,2,0,1,10305,12212224,0.08438266445161831
+IDRiD_73,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_73_HE.tif,AVAILABLE,4288,2848,P,2,0,1,25636,12212224,0.20992081376823746
+IDRiD_73,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_73_EX.tif,AVAILABLE,4288,2848,P,2,0,1,10821,12212224,0.08860793906171391
+IDRiD_73,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_73_SE.tif,AVAILABLE,4288,2848,P,2,0,1,31729,12212224,0.2598134459374476
+IDRiD_73,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_73_OD.tif,AVAILABLE,4288,2848,P,2,0,1,244291,12212224,2.0003809297962434
+IDRiD_74,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_74_MA.tif,AVAILABLE,4288,2848,P,2,0,1,17343,12212224,0.14201344488931747
+IDRiD_74,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_74_HE.tif,AVAILABLE,4288,2848,P,2,0,1,101462,12212224,0.8308232800184471
+IDRiD_74,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_74_EX.tif,AVAILABLE,4288,2848,P,2,0,1,26025,12212224,0.2131061467591816
+IDRiD_74,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_74_SE.tif,AVAILABLE,4288,2848,P,2,0,1,11730,12212224,0.09605130072949858
+IDRiD_74,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_74_OD.tif,AVAILABLE,4288,2848,P,2,0,1,148371,12212224,1.2149384092528928
+IDRiD_75,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_75_MA.tif,AVAILABLE,4288,2848,P,2,0,1,25490,12212224,0.20872529033204762
+IDRiD_75,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_75_HE.tif,AVAILABLE,4288,2848,P,2,0,1,144770,12212224,1.1854515606657723
+IDRiD_75,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_75_EX.tif,AVAILABLE,4288,2848,P,2,0,1,20253,12212224,0.1658420284462519
+IDRiD_75,test,Soft Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\4. Soft Exudates\IDRiD_75_SE.tif,AVAILABLE,4288,2848,P,2,0,1,14068,12212224,0.11519605274190843
+IDRiD_75,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_75_OD.tif,AVAILABLE,4288,2848,P,2,0,1,153862,12212224,1.2599015543769914
+IDRiD_76,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_76_MA.tif,AVAILABLE,4288,2848,P,2,0,1,25151,12212224,0.20594938317541506
+IDRiD_76,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_76_HE.tif,AVAILABLE,4288,2848,P,2,0,1,81162,12212224,0.6645963912879423
+IDRiD_76,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_76_EX.tif,AVAILABLE,4288,2848,P,2,0,1,71267,12212224,0.583571018677679
+IDRiD_76,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_76,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_76_OD.tif,AVAILABLE,4288,2848,P,2,0,1,214117,12212224,1.7533006273058864
+IDRiD_77,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_77_MA.tif,AVAILABLE,4288,2848,P,2,0,1,12850,12212224,0.10522243941807816
+IDRiD_77,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_77_HE.tif,AVAILABLE,4288,2848,P,2,0,1,37789,12212224,0.30943585705601206
+IDRiD_77,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_77_EX.tif,AVAILABLE,4288,2848,P,2,0,1,99236,12212224,0.8125956418748952
+IDRiD_77,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_77,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_77_OD.tif,AVAILABLE,4288,2848,P,2,0,1,203117,12212224,1.6632269437573368
+IDRiD_78,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_78_MA.tif,AVAILABLE,4288,2848,P,2,0,1,14364,12212224,0.11761985368103303
+IDRiD_78,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_78_HE.tif,AVAILABLE,4288,2848,P,2,0,1,64753,12212224,0.5302310209835653
+IDRiD_78,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_78_EX.tif,AVAILABLE,4288,2848,P,2,0,1,94566,12212224,0.7743552689501929
+IDRiD_78,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_78,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_78_OD.tif,AVAILABLE,4288,2848,P,2,0,1,231959,12212224,1.8994001420216333
+IDRiD_79,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_79_MA.tif,AVAILABLE,4288,2848,P,2,0,1,20921,12212224,0.17131195759265472
+IDRiD_79,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_79_HE.tif,AVAILABLE,4288,2848,P,2,0,1,114139,12212224,0.9346291060498071
+IDRiD_79,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_79_EX.tif,AVAILABLE,4288,2848,P,2,0,1,327387,12212224,2.680813912355358
+IDRiD_79,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_79,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_79_OD.tif,AVAILABLE,4288,2848,P,2,0,1,192370,12212224,1.5752249549304043
+IDRiD_80,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_80_MA.tif,AVAILABLE,4288,2848,P,2,0,1,689,12212224,0.0056418879968136845
+IDRiD_80,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_80_HE.tif,AVAILABLE,4288,2848,P,2,0,1,17227,12212224,0.14106357695371458
+IDRiD_80,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_80_EX.tif,AVAILABLE,4288,2848,P,2,0,1,6964,12212224,0.057024830202917993
+IDRiD_80,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_80,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_80_OD.tif,AVAILABLE,4288,2848,P,2,0,1,194183,12212224,1.5900707356825423
+IDRiD_81,test,Microaneurysms,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\1. Microaneurysms\IDRiD_81_MA.tif,AVAILABLE,4288,2848,P,2,0,1,12327,12212224,0.10093984519117893
+IDRiD_81,test,Haemorrhages,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\2. Haemorrhages\IDRiD_81_HE.tif,AVAILABLE,4288,2848,P,2,0,1,46158,12212224,0.3779655532030857
+IDRiD_81,test,Hard Exudates,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\3. Hard Exudates\IDRiD_81_EX.tif,AVAILABLE,4288,2848,RGBA,2,0,255,12525142,48848896,25.64058356610557
+IDRiD_81,test,Soft Exudates,MISSING,MISSING,,,,,,,,,
+IDRiD_81,test,Optic Disc,D:\RetinaGuard_Data\idrid\A. Segmentation\2. All Segmentation Groundtruths\b. Testing Set\5. Optic Disc\IDRiD_81_OD.tif,AVAILABLE,4288,2848,P,2,0,1,213642,12212224,1.7494110818799262

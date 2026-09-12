@@ -78,11 +78,13 @@ async function buildContainer({ migrate = true } = {}) {
   });
   const reportService = new ReportService({
     reportRepository, consultationRepository, analysisRepository, explainabilityRepository,
-    imageRepository, reviewRepository, patientRepository, pdfService, qrService,
+    imageRepository, reviewRepository, patientRepository, userRepository, pdfService, qrService,
     storageService, auditService, syncService, config,
   });
   const adminService = new AdminService({
-    userRepository, consultationRepository, analysisRepository, storageService, matlabService, syncService, config,
+    userRepository, consultationRepository, analysisRepository, patientRepository,
+    auditRepository, storageService, matlabService, syncService, passwordService,
+    auditService, config,
   });
 
   async function close() {

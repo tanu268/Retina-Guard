@@ -40,6 +40,15 @@ class PatientRepository extends BaseRepository {
     ));
   }
 
+  /** District-wise patient counts, for the admin overview's regional breakdown. */
+  async countByDistrict() {
+    const rows = await this.db.all(
+      "SELECT COALESCE(district, 'Unspecified') AS district, COUNT(*) AS count " +
+      'FROM patients WHERE deleted_at IS NULL GROUP BY district ORDER BY count DESC',
+    );
+    return rows.map((r) => ({ district: r.district, count: Number(r.count) }));
+  }
+
   async nextPatientCode(sitePrefix) {
     const row = await this.db.get(
       "SELECT COUNT(*) AS c FROM patients WHERE patient_code LIKE ?",

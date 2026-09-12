@@ -97,48 +97,115 @@ class PdfService {
     doc.moveDown(0.25).fillColor(INK.text).font('Helvetica').fontSize(10);
   }
 
+  /**
+   * Two-column key/value grid. Row height is measured from the rendered text
+   * rather than fixed, so a long value (a village name, a reviewer note) pushes
+   * the following row down instead of overlapping it.
+   */
   keyValues(doc, pairs, columns = 2) {
     const usable = doc.page.width - doc.page.margins.left - doc.page.margins.right;
     const colWidth = usable / columns;
-    const startY = doc.y;
-    let maxY = startY;
-    pairs.forEach(([label, value], i) => {
-      const col = i % columns;
-      const row = Math.floor(i / columns);
-      const x = doc.page.margins.left + col * colWidth;
-      const y = startY + row * 30;
-      doc.fillColor(INK.muted).fontSize(8).text(String(label).toUpperCase(), x, y, { width: colWidth - 12 });
-      doc.fillColor(INK.text).fontSize(10).text(value === null || value === undefined || value === '' ? '—' : String(value),
-        x, y + 11, { width: colWidth - 12 });
-      maxY = Math.max(maxY, y + 28);
-    });
-    doc.y = maxY + 4;
+    const cellWidth = colWidth - 14;
+    let y = doc.y;
+
+    for (let i = 0; i < pairs.length; i += columns) {
+      const row = pairs.slice(i, i + columns);
+      let rowHeight = 0;
+
+      row.forEach(([label, value], col) => {
+        const x = doc.page.margins.left + col * colWidth;
+        const text = value === null || value === undefined || value === '' ? '—' : String(value);
+        doc.fillColor(INK.muted).fontSize(8).text(String(label).toUpperCase(), x, y, { width: cellWidth });
+        const labelH = doc.heightOfString(String(label).toUpperCase(), { width: cellWidth });
+        doc.fillColor(INK.text).fontSize(10).text(text, x, y + labelH + 2, { width: cellWidth });
+        const valueH = doc.heightOfString(text, { width: cellWidth });
+        rowHeight = Math.max(rowHeight, labelH + valueH + 10);
+      });
+
+      y += rowHeight;
+      // Start a new page before a row would run off the bottom margin.
+      if (y > doc.page.height - doc.page.margins.bottom - 60) {
+        doc.addPage();
+        y = doc.page.margins.top;
+      }
+    }
+    doc.y = y + 2;
   }
 
   patientBlock(doc, body) {
-    this.sectionTitle(doc, 'Patient and case');
+    const p = body.patient || {};
+    const c = body.case || {};
+
+    this.sectionTitle(doc, 'Patient information');
     this.keyValues(doc, [
-      ['Patient', body.patient?.name],
-      ['Patient ID', body.patient?.code],
-      ['Age / Sex', `${body.patient?.ageYears ?? '—'} / ${body.patient?.sex ?? '—'}`],
-      ['Village / District', `${body.patient?.village || '—'}, ${body.patient?.district || '—'}`],
-      ['Case number', body.case?.caseNumber],
-      ['Screened on', body.case?.createdAt ? new Date(body.case.createdAt).toLocaleString('en-IN') : '—'],
-      ['Technician', body.case?.technicianName],
-      ['Duration of diabetes', body.patient?.diabetesDurationYears != null ? `${body.patient.diabetesDurationYears} years` : '—'],
+      ['Patient ID', p.code],
+      ['Patient name', p.name],
+      ['Age / Gender', `${p.ageYears ?? '\u2014'} / ${PdfService.titleCase(p.sex)}`],
+      ['Phone number', p.phone],
+      ['State', p.state],
+      ['District', p.district],
+      ['Village', p.village],
+      ['Screening date', c.createdAt ? new Date(c.createdAt).toLocaleString('en-IN') : '\u2014'],
     ]);
+
+    this.sectionTitle(doc, 'Clinical information');
+
+    // Duration and HbA1c appear only when diabetes history is 'yes'. For 'no'
+    // or 'unknown' they are omitted rather than rendered as an em dash: a blank
+    // HbA1c row on a clinical report reads as "tested, result missing", which
+    // misrepresents what was actually recorded.
+    const clinical = [
+      ['Diabetes history', PdfService.titleCase(p.diabetesHistory)],
+    ];
+    if (p.diabetesHistory === 'yes') {
+      clinical.push(['Duration of diabetes',
+        p.diabetesDurationYears != null ? `${p.diabetesDurationYears} years` : 'Not recorded']);
+      clinical.push(['HbA1c', p.hba1c != null ? `${p.hba1c}%` : 'Not recorded']);
+    }
+    clinical.push(['Eye screened', PdfService.lateralityText(body.image?.laterality)]);
+    clinical.push(['Case number', c.caseNumber]);
+    clinical.push(['Technician', c.technicianName]);
+    this.keyValues(doc, clinical);
+  }
+
+  static titleCase(value) {
+    if (!value) return '\u2014';
+    return String(value).replace(/_/g, ' ').replace(/\b\w/g, (ch) => ch.toUpperCase());
+  }
+
+  static lateralityText(value) {
+    return { left: 'Left eye (OS)', right: 'Right eye (OD)', both: 'Both eyes (OU)' }[value] || '\u2014';
   }
 
   findingBlock(doc, body) {
     this.sectionTitle(doc, 'AI-assisted screening output (not a diagnosis)');
-    const a = body.analysis || {};
-    if (a.abstained) {
-      doc.fillColor(INK.warn).font('Helvetica-Bold').fontSize(11)
-        .text('Model abstained — no suggested grade');
+    const a = body.analysis;
+
+    // No analysis record exists yet for this case (report requested before
+    // screening ran, or before a model is integrated on this node). This is
+    // distinct from an abstention — nothing was attempted, so nothing failed.
+    if (!a) {
+      doc.fillColor(INK.muted).font('Helvetica-Bold').fontSize(11)
+        .text('Pending AI Analysis');
       doc.fillColor(INK.text).font('Helvetica').fontSize(10)
-        .text(a.abstainReason === 'LOW_CONFIDENCE'
-          ? 'Confidence fell below the configured abstention threshold. The case was routed to a human reviewer without a suggested grade.'
-          : 'The pipeline could not produce a confident output. The case was routed to a human reviewer.');
+        .text('Automated screening has not yet been performed for this case. '
+          + 'The report will update once analysis is available, or the case may proceed to manual clinical review.');
+      doc.moveDown(0.3);
+      return;
+    }
+
+    if (a.abstained) {
+      const isPending = a.abstainReason === 'MODEL_NOT_INTEGRATED';
+      doc.fillColor(isPending ? INK.muted : INK.warn).font('Helvetica-Bold').fontSize(11)
+        .text(isPending ? 'Pending AI Analysis' : 'Model abstained — no suggested grade');
+      doc.fillColor(INK.text).font('Helvetica').fontSize(10)
+        .text(
+          isPending
+            ? 'The diagnostic model has not yet been integrated on this node. This case requires manual grading by the reviewer; no automated grade is available.'
+            : a.abstainReason === 'LOW_CONFIDENCE'
+              ? 'Confidence fell below the configured abstention threshold. The case was routed to a human reviewer without a suggested grade.'
+              : 'The pipeline could not produce a confident output. The case was routed to a human reviewer.',
+        );
     } else {
       doc.fillColor(INK.text).font('Helvetica-Bold').fontSize(14).text(a.drGrade || '—');
       doc.font('Helvetica').fontSize(10).fillColor(INK.muted)
@@ -146,10 +213,16 @@ class PdfService {
           + ` · P(referable) ${a.referableProbability != null ? (a.referableProbability * 100).toFixed(1) : '—'}%`);
     }
     doc.moveDown(0.4);
+    // The triage priority is real even for a pending case — abstention always
+    // routes to at least P1, so it is genuine information worth keeping. The
+    // model-version line is not: printing a version string for a model that
+    // never actually ran would misattribute the (absent) decision to it.
     doc.fillColor(PdfService.priorityColour(a.priority)).font('Helvetica-Bold').fontSize(10)
       .text(`Triage: ${PdfService.priorityText(a.priority)}`);
-    doc.fillColor(INK.muted).font('Helvetica').fontSize(9)
-      .text(`Model ${a.modelVersion || '—'} · mode ${a.matlabMode || '—'} · image quality Grade ${body.image?.qualityGrade || '—'}`);
+    if (a.abstainReason !== 'MODEL_NOT_INTEGRATED') {
+      doc.fillColor(INK.muted).font('Helvetica').fontSize(9)
+        .text(`Model ${a.modelVersion || '—'} · mode ${a.matlabMode || '—'} · image quality Grade ${body.image?.qualityGrade || '—'}`);
+    }
     doc.moveDown(0.3);
   }
 

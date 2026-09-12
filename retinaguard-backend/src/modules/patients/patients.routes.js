@@ -47,8 +47,8 @@ function buildPatientsRouter(deps) {
    *     responses:
    *       200: { description: Paginated patients }
    */
-  router.post('/', auth, authorize('technician', 'admin'), idem, validate(registerPatientSchema), controller.create);
-  router.get('/', auth, validate(listPatientsQuerySchema, 'query'), controller.list);
+  router.post('/', auth, authorize('technician'), idem, validate(registerPatientSchema), controller.create);
+  router.get('/', auth, authorize('technician', 'reviewer', 'district'), validate(listPatientsQuerySchema, 'query'), controller.list);
 
   /**
    * @openapi
@@ -72,8 +72,8 @@ function buildPatientsRouter(deps) {
    *       200: { description: Updated }
    *       409: { $ref: '#/components/responses/Conflict' }
    */
-  router.get('/:id', auth, controller.get);
-  router.put('/:id', auth, authorize('technician', 'admin'), validate(updatePatientSchema), controller.update);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
+  router.put('/:id', auth, authorize('technician'), validate(updatePatientSchema), controller.update);
 
   return router;
 }

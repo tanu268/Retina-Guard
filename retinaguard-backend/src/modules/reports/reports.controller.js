@@ -14,10 +14,20 @@ function buildReportsController({ reportService }) {
     } });
   });
 
+  /**
+   * `?download=1` forces a save dialog; the default stays inline so the reviewer
+   * can preview the report in the browser without leaving the case.
+   */
   const getPdf = asyncHandler(async (req, res) => {
-    const { stream, report } = await reportService.getPdfStream(req.params.consultationId);
+    const { stream, filename } = await reportService.getPdfStream(req.params.consultationId);
+    const disposition = req.query.download === undefined ? 'inline' : 'attachment';
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `inline; filename="${report.report_number}.pdf"`);
+    res.setHeader('Content-Disposition', `${disposition}; filename="${filename}"`);
+    res.setHeader('Cache-Control', 'private, no-store');
+    stream.on('error', (err) => {
+      if (!res.headersSent) res.status(500).json({ error: { code: 'REPORT_STREAM_FAILED', message: err.message } });
+      else res.destroy(err);
+    });
     stream.pipe(res);
   });
 

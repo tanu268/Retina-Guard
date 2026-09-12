@@ -33,7 +33,7 @@ function buildAnalysisRouter(deps) {
    *       201: { description: Analysis completed or abstained, content: { application/json: { schema: { $ref: '#/components/schemas/AnalysisResponse' } } } }
    *       409: { description: Image not quality-passed }
    */
-  router.post('/run', auth, authorize('technician', 'admin'), idem, validate(runAnalysisSchema), controller.run);
+  router.post('/run', auth, authorize('technician'), idem, validate(runAnalysisSchema), controller.run);
 
   /**
    * @openapi
@@ -46,7 +46,7 @@ function buildAnalysisRouter(deps) {
    *     responses:
    *       200: { description: Analysis result }
    */
-  router.get('/:id', auth, controller.get);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
 
   /**
    * @openapi
@@ -59,7 +59,7 @@ function buildAnalysisRouter(deps) {
    *     responses:
    *       200: { description: Three-layer explanation }
    */
-  router.get('/:id/explainability', auth, controller.explainability);
+  router.get('/:id/explainability', auth, authorize('technician', 'reviewer', 'district'), controller.explainability);
 
   return router;
 }

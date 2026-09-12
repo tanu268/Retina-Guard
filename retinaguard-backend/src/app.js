@@ -16,6 +16,7 @@ const { standardLimiter } = require('./middleware/rateLimiters');
 
 const buildAuthRouter = require('./modules/auth/auth.routes');
 const buildPatientsRouter = require('./modules/patients/patients.routes');
+const buildGeoRouter = require('./modules/geo/geo.routes');
 const buildConsultationsRouter = require('./modules/consultations/consultations.routes');
 const buildImagesRouter = require('./modules/images/images.routes');
 const buildAnalysisRouter = require('./modules/analysis/analysis.routes');
@@ -73,6 +74,7 @@ function buildApp(container) {
   app.use('/health', buildHealthRouter(deps));
   app.use('/auth', buildAuthRouter(deps));
   app.use('/patients', buildPatientsRouter(deps));
+  app.use('/geo', buildGeoRouter());
   app.use('/consultations', buildConsultationsRouter(deps));
   app.use('/images', buildImagesRouter(deps));
   app.use('/analysis', buildAnalysisRouter(deps));

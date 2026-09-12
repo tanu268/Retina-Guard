@@ -47,6 +47,7 @@ const ABSTAIN_REASONS = Object.freeze({
   EXPLANATION_DISAGREEMENT:'Attention map and lesion evidence disagree.',
   STAGE_FAILURE:           'A pipeline stage failed; no partial result is issued.',
   BORDERLINE_THRESHOLD:    'Referable probability sits within the borderline band.',
+  MODEL_NOT_INTEGRATED:    'The diagnostic model has not yet been integrated on this node. This case requires manual grading by the reviewer.',
 });
 
 const PIPELINE_STAGES = Object.freeze([

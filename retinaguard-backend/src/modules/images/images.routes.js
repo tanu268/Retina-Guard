@@ -40,7 +40,7 @@ function buildImagesRouter(deps) {
    *       409: { $ref: '#/components/responses/ClinicalSafety' }
    *       415: { description: Unsupported image type }
    */
-  router.post('/upload', auth, authorize('technician', 'admin'),
+  router.post('/upload', auth, authorize('technician'),
     upload.single('image'), validate(uploadImageSchema), controller.upload);
 
   /**
@@ -62,8 +62,8 @@ function buildImagesRouter(deps) {
    *       200: { description: Deleted }
    *       409: { description: Image already analysed — part of the case record }
    */
-  router.get('/:id', auth, controller.get);
-  router.delete('/:id', auth, authorize('technician', 'admin'), controller.remove);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
+  router.delete('/:id', auth, authorize('technician'), controller.remove);
 
   /**
    * @openapi
@@ -76,7 +76,7 @@ function buildImagesRouter(deps) {
    *     responses:
    *       200: { description: Images for the consultation }
    */
-  router.get('/by-consultation/:consultationId', auth, controller.listByConsultation);
+  router.get('/by-consultation/:consultationId', auth, authorize('technician', 'reviewer', 'district'), controller.listByConsultation);
 
   return router;
 }

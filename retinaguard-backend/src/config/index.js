@@ -53,8 +53,8 @@ const config = {
   uploads: {
     dir: path.resolve(root, process.env.UPLOAD_DIR || './uploads'),
     maxBytes: num(process.env.MAX_UPLOAD_BYTES, 25 * 1024 * 1024),
-    allowedMime: list(process.env.ALLOWED_MIME, ['image/jpeg', 'image/png', 'image/tiff']),
-    allowedExt: ['.jpg', '.jpeg', '.png', '.tif', '.tiff'],
+    allowedMime: list(process.env.ALLOWED_MIME, ['image/jpeg', 'image/jpg', 'image/png', 'image/x-png', 'image/tiff']),
+    allowedExt: ['.jpg', '.jpeg', '.jfif', '.png', '.tif', '.tiff'],
   },
 
   clinical: {

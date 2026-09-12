@@ -50,6 +50,21 @@ class AuditRepository extends BaseRepository {
   }
 
   /** Walks the chain and reports the first broken link, if any. */
+  /**
+   * Recent activity for the admin dashboard summary widget. Returns only
+   * action metadata — never before_state/after_state, which can carry PHI
+   * (patient names, clinical values). The full audit trail with state diffs
+   * remains behind the separate /audit page and its own access control.
+   */
+  async recent(limit = 15) {
+    const rows = await this.db.all(
+      `SELECT id, action, entity_type, actor_role, case_id, created_at
+       FROM audit_logs ORDER BY created_at DESC LIMIT ?`,
+      [limit],
+    );
+    return rows;
+  }
+
   async verifyChain({ caseId } = {}) {
     const rows = caseId
       ? await this.listByCase(caseId, { limit: 10000 })

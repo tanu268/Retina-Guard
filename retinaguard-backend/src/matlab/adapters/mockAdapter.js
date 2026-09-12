@@ -18,8 +18,18 @@ const {
  * as a measured result — see the claim taxonomy in the blueprint.
  */
 class MockMatlabAdapter {
+  /**
+   * `modelIntegrated = false` marks this adapter as having no real diagnostic
+   * model behind it. matlabService checks this flag and abstains before
+   * calling gradeDR/detectLesions/generateGradCAM at all, so no fabricated
+   * clinical output is ever produced or persisted. Swap MATLAB_ADAPTER=cli
+   * once a trained model is available — see cliAdapter.js, which implements
+   * the same six-method contract against the real MATLAB pipeline and has no
+   * such flag.
+   */
   constructor({ config, fixturesDir = path.join(__dirname, '..', 'fixtures') }) {
     this.name = 'mock';
+    this.modelIntegrated = false;
     this.config = config;
     this.fixturesDir = fixturesDir;
   }
@@ -108,106 +118,35 @@ class MockMatlabAdapter {
     };
   }
 
-  async detectLesions({ sha256: imageSha, severityHint }) {
-    const lap = stopwatch();
-    const rand = this.#rng(imageSha, 'lesions');
-    const severity = severityHint ?? Math.floor(rand() * 5);
-    const budget = [0, 3, 9, 18, 26][severity] || 0;
-
-    const lesions = [];
-    for (let i = 0; i < budget; i += 1) {
-      const type = severity >= 4 && i % 7 === 0
-        ? 'neovascularisation'
-        : LESION_TYPES[Math.floor(rand() * (severity >= 3 ? LESION_TYPES.length : 3))];
-      lesions.push({
-        type,
-        bbox: {
-          x: Number(rand().toFixed(4)),
-          y: Number(rand().toFixed(4)),
-          w: Number((0.01 + rand() * 0.04).toFixed(4)),
-          h: Number((0.01 + rand() * 0.04).toFixed(4)),
-        },
-        areaPx: Math.round(20 + rand() * 400),
-        confidence: Number((0.55 + rand() * 0.44).toFixed(3)),
-        quadrant: ['superior_nasal', 'superior_temporal', 'inferior_nasal', 'inferior_temporal'][Math.floor(rand() * 4)],
-      });
-    }
-
-    const counts = LESION_TYPES.reduce((acc, t) => {
-      acc[t] = lesions.filter((l) => l.type === t).length;
-      return acc;
-    }, {});
-
-    return {
-      lesions,
-      counts,
-      totalLesions: lesions.length,
-      quadrantsInvolved: [...new Set(lesions.map((l) => l.quadrant))].length,
-      durationMs: lap(),
-    };
+  async detectLesions() {
+    // Previously fabricated lesion boxes and per-lesion confidence scores
+    // from a seeded PRNG. Removed for the same reason as gradeDR — see there.
+    throw new Error(
+      'MockMatlabAdapter: lesion detection model is not integrated. '
+      + 'Set MATLAB_ADAPTER=cli once a trained model is available.',
+    );
   }
 
-  async gradeDR({ sha256: imageSha, qualityGrade }) {
-    const lap = stopwatch();
-    const fixture = this.#fixtureFor(imageSha, 'grading');
-    if (fixture) return { ...fixture, durationMs: lap() };
-
-    const rand = this.#rng(imageSha, 'grading');
-    // Skewed towards lower grades, roughly mirroring a screening population.
-    const draw = rand();
-    const code = draw < 0.45 ? 0 : draw < 0.65 ? 1 : draw < 0.85 ? 2 : draw < 0.95 ? 3 : 4;
-    const grade = gradeByCode(code);
-
-    // Grade B images get a deliberately flatter (less certain) distribution.
-    const sharpness = qualityGrade === 'B' ? 2.2 : 4.0;
-    const raw = DR_GRADES.map((g) => Math.exp(-Math.abs(g.code - code) * sharpness + rand() * 0.15));
-    const sum = raw.reduce((a, b) => a + b, 0);
-    const probs = raw.map((v) => Number((v / sum).toFixed(6)));
-
-    const referableProbability = Number((probs[2] + probs[3] + probs[4]).toFixed(6));
-    const confidence = Number(Math.max(...probs).toFixed(6));
-
-    return {
-      drGradeCode: code,
-      drGrade: grade.label,
-      gradeProbabilities: probs,
-      confidence,
-      referableProbability,
-      referable: referableProbability >= this.config.clinical.referableProbabilityThreshold,
-      modelVersion: this.config.matlab.modelVersion,
-      modelHash: this.config.matlab.modelHash,
-      calibration: { method: 'temperature_scaling', temperature: 1.0, status: 'TO_BE_VERIFIED' },
-      durationMs: lap(),
-    };
+  async gradeDR() {
+    // Previously fabricated a DR grade, confidence and class-probability
+    // distribution from a seeded PRNG. Removed: no synthetic clinical output
+    // may be produced. matlabService.runPipeline() checks modelIntegrated and
+    // abstains before this is ever called; this throw is a backstop for any
+    // direct caller.
+    throw new Error(
+      'MockMatlabAdapter: DR grading model is not integrated. '
+      + 'Set MATLAB_ADAPTER=cli once a trained model is available.',
+    );
   }
 
-  async generateGradCAM({ sha256: imageSha, outputPath, drGradeCode }) {
-    const lap = stopwatch();
-    const rand = this.#rng(imageSha, 'gradcam');
-    const regions = [];
-    const n = Math.min(4, Math.max(1, drGradeCode || 1));
-    for (let i = 0; i < n; i += 1) {
-      regions.push({
-        x: Number(rand().toFixed(4)),
-        y: Number(rand().toFixed(4)),
-        w: Number((0.08 + rand() * 0.15).toFixed(4)),
-        h: Number((0.08 + rand() * 0.15).toFixed(4)),
-        intensity: Number((0.5 + rand() * 0.5).toFixed(3)),
-      });
-    }
-    // Write a placeholder artefact so downstream file plumbing is exercised end-to-end.
-    if (outputPath) {
-      fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-      fs.writeFileSync(outputPath, MockMatlabAdapter.PLACEHOLDER_PNG);
-    }
-    return {
-      heatmapPath: outputPath || null,
-      targetLayer: 'features.7.conv',
-      method: 'grad-cam',
-      regions,
-      peakIntensity: Math.max(...regions.map((r) => r.intensity)),
-      durationMs: lap(),
-    };
+  async generateGradCAM() {
+    // Previously fabricated attention regions and an "agreement score" against
+    // lesion evidence — a confidence-shaped number with nothing real behind
+    // it. Removed for the same reason as gradeDR — see there.
+    throw new Error(
+      'MockMatlabAdapter: Grad-CAM explainability model is not integrated. '
+      + 'Set MATLAB_ADAPTER=cli once a trained model is available.',
+    );
   }
 
   async health() {
@@ -222,11 +161,5 @@ class MockMatlabAdapter {
     try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return null; }
   }
 }
-
-// 1×1 transparent PNG.
-MockMatlabAdapter.PLACEHOLDER_PNG = Buffer.from(
-  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==',
-  'base64',
-);
 
 module.exports = MockMatlabAdapter;
