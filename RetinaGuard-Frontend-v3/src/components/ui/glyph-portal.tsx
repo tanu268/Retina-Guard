@@ -134,7 +134,7 @@ export default function GlyphPortal({
     // Preload custom faces before mounting; pending/failed faces use the supplied fallback stack.
     glyph.style.fontFamily = fontFamily;
     const computedFamily = getComputedStyle(glyph).fontFamily;
-    const families = computedFamily.match(/(?:[^,"']+|"[^"]*"|'[^']*')+/g) ?? [];
+    const families: string[] = computedFamily.match(/(?:[^,"']+|"[^"]*"|'[^']*')+/g) ?? [];
     const available = families.filter((family) => {
       try { return document.fonts.check(`${weight} 100px ${family.trim()}`, text); }
       catch { return false; }

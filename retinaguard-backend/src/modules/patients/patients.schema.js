@@ -42,7 +42,7 @@ const basePatientShape = {
   state: z.enum(STATES).optional(),
   diabetesHistory: z.enum(DIABETES_HISTORY).optional(),
   diabetesType: z.enum(['type1', 'type2', 'gestational', 'unknown']).optional(),
-  diabetesDurationYears: z.number().min(0).max(80).optional(),
+  diabetesDurationYears: z.number().int().min(1).max(100).optional(),
   hba1c: z.number().min(0).max(20).optional(),
   patientCode: z.string().max(60).optional(),
   facilityId: z.string().max(100).optional(),

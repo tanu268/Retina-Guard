@@ -263,7 +263,7 @@ export default function PatientRegistration() {
                     'w-7 h-7 rounded-none flex items-center justify-center text-[12px] font-semibold shrink-0 transition-colors duration-200',
                     complete ? 'bg-[#4338CA] text-white'
                       : current ? 'bg-indigo-100 text-[#4338CA] ring-2 ring-[#4338CA]'
-                      : 'bg-slate-100 text-slate-400',
+                        : 'bg-slate-100 text-slate-400',
                   )}
                 >
                   {complete ? <IconCheck size={13} /> : i + 1}

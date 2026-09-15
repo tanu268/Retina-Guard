@@ -1,6 +1,4 @@
 @import '@fontsource-variable/oswald';
-@import '@fontsource/merriweather/400.css';
-@import '@fontsource/merriweather/700.css';
 @import 'tailwindcss';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -19,20 +17,22 @@
      Derived from the supplied palette tint #9FB3DF. The tints themselves
      cannot carry text or controls (2.1:1 against white at best), so the ramp
      extends into shades that clear AA while staying in the same hue family. */
-  --color-brand-50:  #f2f5fc;
+  --color-brand-50: #f2f5fc;
   --color-brand-100: #e4eaf7;
   --color-brand-200: #c9d6ef;
-  --color-brand-300: #9fb3df;  /* palette tint 1 */
+  --color-brand-300: #9fb3df;
+  /* palette tint 1 */
   --color-brand-400: #7a93cc;
   --color-brand-500: #5673b4;
   --color-brand-600: #3d5896;
   --color-brand-700: #2c4478;
-  --color-brand-800: #1e3a6e;  /* primary action — 11.14:1 on white */
+  --color-brand-800: #1e3a6e;
+  /* primary action — 11.14:1 on white */
   --color-brand-900: #16305c;
   --color-brand-950: #0f2447;
 
   /* Supplied palette, held as named surface tints */
-  --color-sky-tint:  #9ec6f3;
+  --color-sky-tint: #9ec6f3;
   --color-mist-tint: #bddde4;
   --color-sand-tint: #fff1d5;
 
@@ -98,10 +98,10 @@
      UI stack carries dense chrome (tables, labels, inputs) where Merriweather's
      stroke contrast becomes noise at 12–13px. */
   --font-display: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
-  --font-body: 'Merriweather', Georgia, 'Times New Roman', serif;
-  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
+  --font-ui: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, 'Cascadia Mono', monospace;
-  --font-sans: var(--font-ui);
+  --font-sans: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
 
   /* Type scale — fluid, clamped at both ends */
   --text-display-1: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
@@ -113,9 +113,10 @@
 
   --leading-display: 1.02;
   --leading-heading: 1.12;
-  --leading-body: 1.7;
+  --leading-body: 1.6;
   --tracking-display: -0.03em;
   --tracking-heading: -0.02em;
+  --tracking-body: 0.01em;
 
   /* ── Radius ──────────────────────────────────────────────────────────────
      The system is square. --radius-hairline exists only where a hard 0 reads
@@ -174,7 +175,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     font-weight: 600;
     letter-spacing: var(--tracking-heading);
@@ -182,9 +188,14 @@
     margin: 0;
   }
 
-  p, li, dd, blockquote {
+  p,
+  li,
+  dd,
+  blockquote {
     font-family: var(--font-body);
     line-height: var(--leading-body);
+    letter-spacing: var(--tracking-body);
+    font-weight: 400;
   }
 
   :focus-visible {
@@ -198,18 +209,30 @@
     color: var(--color-brand-950);
   }
 
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   ::-webkit-scrollbar-thumb {
     background: var(--color-border-strong);
     border-radius: var(--radius-hairline);
     border: 3px solid transparent;
     background-clip: content-box;
   }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-ink-subtle); background-clip: content-box; }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-subtle);
+    background-clip: content-box;
+  }
 }
 
 @layer utilities {
+
   /* Clinical identifiers — case numbers, patient codes, model hashes — are
      records, not prose. Monospace signals "copy this exactly". Neither display
      nor body font takes these over. */
@@ -219,11 +242,21 @@
     letter-spacing: -0.02em;
   }
 
-  .tnum { font-variant-numeric: tabular-nums; }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
 
-  .font-display { font-family: var(--font-display); }
-  .font-body { font-family: var(--font-body); }
-  .font-ui { font-family: var(--font-ui); }
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-ui {
+    font-family: var(--font-ui);
+  }
 
   /* Display type — Oswald at its condensed, tight-tracked register. */
   .display {
@@ -234,11 +267,25 @@
     text-transform: none;
   }
 
-  .text-display-1 { font-size: var(--text-display-1); }
-  .text-display-2 { font-size: var(--text-display-2); }
-  .text-h1 { font-size: var(--text-h1); }
-  .text-h2 { font-size: var(--text-h2); }
-  .text-h3 { font-size: var(--text-h3); }
+  .text-display-1 {
+    font-size: var(--text-display-1);
+  }
+
+  .text-display-2 {
+    font-size: var(--text-display-2);
+  }
+
+  .text-h1 {
+    font-size: var(--text-h1);
+  }
+
+  .text-h2 {
+    font-size: var(--text-h2);
+  }
+
+  .text-h3 {
+    font-size: var(--text-h3);
+  }
 
   /* Section label — the small caps eyebrow above each section heading. */
   .eyebrow {
@@ -250,8 +297,13 @@
     color: var(--color-ink-subtle);
   }
 
-  .scrollbar-none { scrollbar-width: none; }
-  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Glass — the lit-edge treatment carried over from the card spec. The inset
      highlight on the top edge is what makes it read as lit glass rather than a
@@ -284,23 +336,64 @@
 }
 
 /* ── Keyframes ──────────────────────────────────────────────────────────────*/
-@keyframes rg-sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-@keyframes rg-pulse-ring {
-  0%   { transform: scale(0.9); opacity: 0.5; }
-  70%  { transform: scale(1.2); opacity: 0; }
-  100% { transform: scale(1.2); opacity: 0; }
-}
-@keyframes rg-shimmer { 100% { transform: translateX(100%); } }
-@keyframes rg-marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+@keyframes rg-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
 
-.animate-sweep { animation: rg-sweep 16s linear infinite; transform-origin: center; }
-.animate-pulse-ring { animation: rg-pulse-ring 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rg-pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  70% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rg-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rg-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-sweep {
+  animation: rg-sweep 16s linear infinite;
+  transform-origin: center;
+}
+
+.animate-pulse-ring {
+  animation: rg-pulse-ring 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
 .skeleton {
   position: relative;
   overflow: hidden;
   background: #e4e9f2;
 }
+
 .skeleton::after {
   content: '';
   position: absolute;
@@ -313,8 +406,13 @@
 /* A technician may work a full shift in a dim screening room. Respecting
    reduced-motion is a floor, not a feature. */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -323,9 +421,19 @@
 
 /* A4 report printing */
 @media print {
-  @page { size: A4; margin: 14mm; }
-  body { background: #fff; }
-  .no-print { display: none !important; }
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
   .print-page {
     box-shadow: none !important;
     border: none !important;

@@ -7,7 +7,7 @@ import type { MarqueeImage } from '../../data/marquee';
 interface MarqueeHeroProps {
   tagline: string;
   title: ReactNode;
-  description: string;
+  description?: string;
   primaryCta: { label: string; onClick: () => void };
   secondaryCta: { label: string; onClick: () => void };
   images: MarqueeImage[];
@@ -88,12 +88,14 @@ export function MarqueeHero({
           {title}
         </motion.h1>
 
-        <motion.p
-          initial="hidden" animate="show" custom={0.18} variants={fadeUp}
-          className="mt-7 max-w-2xl font-body text-base leading-[var(--leading-body)] text-[var(--color-ink-muted)] md:text-lg"
-        >
-          {description}
-        </motion.p>
+        {description && (
+          <motion.p
+            initial="hidden" animate="show" custom={0.18} variants={fadeUp}
+            className="mt-7 max-w-2xl font-body text-base leading-[var(--leading-body)] text-[var(--color-ink-muted)] md:text-lg"
+          >
+            {description}
+          </motion.p>
+        )}
 
         <motion.div
           initial="hidden" animate="show" custom={0.26} variants={fadeUp}

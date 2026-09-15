@@ -13,7 +13,7 @@ const createPatientSchema = z.object({
   village: z.string().trim().max(120).optional(),
   block: z.string().trim().max(120).optional(),
   districtCode: z.string().trim().max(40).optional(),
-  diabetesDurationYears: z.coerce.number().min(0).max(80).optional(),
+  diabetesDurationYears: z.coerce.number().int().min(1).max(100).optional(),
   nationalId: z.string().trim().min(4).max(32).optional(),
 }).refine((v) => v.dateOfBirth || v.ageYears !== undefined, {
   message: 'Either dateOfBirth or ageYears is required',
@@ -28,7 +28,7 @@ const updatePatientSchema = z.object({
   phone: z.string().trim().regex(/^[0-9+\-\s]{6,15}$/).optional(),
   village: z.string().trim().max(120).optional(),
   block: z.string().trim().max(120).optional(),
-  diabetesDurationYears: z.coerce.number().min(0).max(80).optional(),
+  diabetesDurationYears: z.coerce.number().int().min(1).max(100).optional(),
   expectedVersion: z.coerce.number().int().min(1).optional(),
 }).refine((v) => Object.keys(v).length > 0, { message: 'At least one field must be supplied' });
 

@@ -7,6 +7,7 @@ import {
 import type {
   AbstainReason, ConsultationStatus, DrGradeCode, QualityGrade, SqlBool, SyncState, TriagePriority,
 } from '../../types';
+import { GlowCard } from '../ui/spotlight-card';
 import { IconAlert, IconCheck, IconClock, IconSync, IconWifiOff } from '../ui/icons';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -17,10 +18,10 @@ import { IconAlert, IconCheck, IconClock, IconSync, IconWifiOff } from '../ui/ic
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const TRIAGE_STYLES: Record<TriagePriority, { fg: string; bg: string; ring: string }> = {
-  P0: { fg: '#dc2626', bg: '#fef2f2', ring: '#fecaca' },
-  P1: { fg: '#ea580c', bg: '#fff7ed', ring: '#fed7aa' },
-  P2: { fg: '#ca8a04', bg: '#fefce8', ring: '#fef08a' },
-  P3: { fg: '#059669', bg: '#ecfdf5', ring: '#a7f3d0' },
+  P0: { fg: 'var(--color-p0)', bg: 'transparent', ring: 'var(--color-hairline)' },
+  P1: { fg: 'var(--color-p1)', bg: 'transparent', ring: 'var(--color-hairline)' },
+  P2: { fg: 'var(--color-p2)', bg: 'transparent', ring: 'var(--color-hairline)' },
+  P3: { fg: 'var(--color-p3)', bg: 'transparent', ring: 'var(--color-hairline)' },
 };
 
 export function PriorityChip({
@@ -33,7 +34,7 @@ export function PriorityChip({
 }) {
   if (!priority) {
     return (
-      <span className={cx('inline-flex items-center gap-1.5 rounded-none bg-slate-100 text-slate-500 font-medium',
+      <span className={cx('inline-flex items-center gap-1.5 rounded-full bg-[var(--color-surface-pearl)] border border-[var(--color-hairline)] text-[var(--color-ink-muted-48)] font-medium',
         size === 'sm' ? 'h-6 px-2 text-[11px]' : 'h-7 px-2.5 text-xs', className)}>
         Not triaged
       </span>
@@ -48,8 +49,8 @@ export function PriorityChip({
 
   return (
     <span
-      className={cx('inline-flex items-center rounded-none font-semibold border', sizeCx, className)}
-      style={{ color: style.fg, background: style.bg, borderColor: style.ring }}
+      className={cx('inline-flex items-center rounded-full font-semibold border', sizeCx, className)}
+      style={{ color: 'var(--color-ink)', background: style.bg, borderColor: style.ring }}
       title={`${priority} — ${tier.meaning} ${tier.targetWindow}.`}
     >
       <span
@@ -69,12 +70,12 @@ export function PriorityChip({
 type BadgeTone = 'neutral' | 'success' | 'warning' | 'danger' | 'info' | 'brand';
 
 const BADGE_TONES: Record<BadgeTone, string> = {
-  neutral: 'bg-slate-100 text-slate-600 border-slate-200',
-  success: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  warning: 'bg-amber-50 text-amber-700 border-amber-200',
-  danger: 'bg-red-50 text-red-700 border-red-200',
-  info: 'bg-cyan-50 text-cyan-700 border-cyan-200',
-  brand: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+  neutral: 'bg-transparent text-[var(--color-ink-muted-48)] border-[var(--color-hairline)]',
+  success: 'bg-transparent text-[var(--color-p3)] border-[var(--color-hairline)]',
+  warning: 'bg-transparent text-[var(--color-p2)] border-[var(--color-hairline)]',
+  danger: 'bg-transparent text-[var(--color-p0)] border-[var(--color-hairline)]',
+  info: 'bg-transparent text-[var(--color-primary-on-dark)] border-[var(--color-hairline)]',
+  brand: 'bg-transparent text-[var(--color-primary)] border-[var(--color-hairline)]',
 };
 
 export function StatusBadge({
@@ -85,7 +86,7 @@ export function StatusBadge({
 }) {
   return (
     <span className={cx(
-      'inline-flex items-center gap-1.5 rounded-none border font-medium whitespace-nowrap',
+      'inline-flex items-center gap-1.5 rounded-full border font-medium whitespace-nowrap',
       size === 'sm' ? 'h-6 px-2 text-[11px]' : 'h-7 px-2.5 text-xs',
       BADGE_TONES[tone], className,
     )}>
@@ -375,11 +376,11 @@ export function MetricCard({
   loading?: boolean;
 }) {
   const toneStyles = {
-    neutral: { icon: 'bg-slate-100 text-slate-500', value: 'text-slate-900' },
-    brand: { icon: 'bg-indigo-50 text-[#4338CA]', value: 'text-slate-900' },
-    success: { icon: 'bg-emerald-50 text-emerald-600', value: 'text-slate-900' },
-    warning: { icon: 'bg-amber-50 text-amber-600', value: 'text-slate-900' },
-    danger: { icon: 'bg-red-50 text-red-600', value: 'text-slate-900' },
+    neutral: { icon: 'bg-[var(--color-surface-pearl)] text-[var(--color-ink-muted-48)]', value: 'text-[var(--color-ink)]' },
+    brand: { icon: 'bg-[var(--color-primary-on-dark)] text-white', value: 'text-[var(--color-ink)]' },
+    success: { icon: 'bg-[var(--color-p3)] text-white', value: 'text-[var(--color-ink)]' },
+    warning: { icon: 'bg-[var(--color-p2)] text-white', value: 'text-[var(--color-ink)]' },
+    danger: { icon: 'bg-[var(--color-p0)] text-white', value: 'text-[var(--color-ink)]' },
   }[tone];
 
   const Wrapper = onClick ? 'button' : 'div';
@@ -388,29 +389,33 @@ export function MetricCard({
     <Wrapper
       onClick={onClick}
       className={cx(
-        'rounded-none bg-white border border-slate-200/80 p-5 text-left w-full',
-        'shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)]',
-        onClick && 'transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)] cursor-pointer',
+        'w-full text-left transition-colors duration-[var(--duration-fast)] cursor-pointer',
+        onClick && 'hover:bg-[var(--color-surface-pearl)] group',
       )}
     >
+      <GlowCard customSize glowColor="blue" className={cx(
+        'rounded-[var(--radius-lg)] bg-[var(--color-canvas)] border border-[var(--color-hairline)] p-5 text-left w-full shadow-none transition-colors',
+        onClick && 'group-hover:border-[var(--color-ink-muted-48)]'
+      )}>
       <div className="flex items-start justify-between gap-3 mb-3.5">
-        <span className="text-[12px] font-medium text-slate-500 leading-tight">{label}</span>
+        <span className="text-body font-medium text-[var(--color-ink-muted-48)] leading-tight">{label}</span>
         {icon && (
-          <span className={cx('w-8 h-8 rounded-none flex items-center justify-center shrink-0', toneStyles.icon)}>
+          <span className={cx('w-8 h-8 rounded-full flex items-center justify-center shrink-0', toneStyles.icon)}>
             {icon}
           </span>
         )}
       </div>
       {loading ? (
-        <div className="skeleton h-8 w-20 rounded-none" />
+        <div className="skeleton h-8 w-20 rounded-[var(--radius-sm)]" />
       ) : (
-        <div className={cx('text-[30px] font-semibold leading-none tracking-[-0.02em]', toneStyles.value)}>
+        <div className={cx('text-display-lg font-semibold tracking-tight', toneStyles.value)}>
           {typeof value === 'number'
             ? <AnimatedCounter value={value} decimals={decimals} suffix={suffix} />
             : value}
         </div>
       )}
-      {sublabel && <div className="text-[12px] text-slate-500 mt-2">{sublabel}</div>}
+      {sublabel && <div className="text-caption text-[var(--color-ink-muted-48)] mt-2">{sublabel}</div>}
+      </GlowCard>
     </Wrapper>
   );
 }

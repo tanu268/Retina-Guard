@@ -15,6 +15,14 @@ class ReportRepository extends BaseRepository {
 
   findByNumber(reportNumber) { return this.findOneBy('report_number', reportNumber); }
 
+  async nextReportNumber(sitePrefix) {
+    const row = await this.db.get(
+      "SELECT COUNT(*) AS c FROM reports WHERE report_number LIKE ?",
+      [`${sitePrefix}-%`],
+    );
+    return `${sitePrefix}-${String(Number(row?.c || 0) + 1).padStart(6, '0')}`;
+  }
+
   supersedeForConsultation(consultationId, keepId) {
     return this.db.run(
       "UPDATE reports SET status = 'superseded' WHERE consultation_id = ? AND id <> ?",

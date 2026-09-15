@@ -11,6 +11,7 @@ import {
 import {
   PriorityChip, QualityBadge, StatusBadge, WaitingTime,
 } from '../../components/clinical/indicators';
+import { GlowCard } from '../../components/ui/spotlight-card';
 import { IconArrowRight, IconQueue, IconRefresh, IconAlert } from '../../components/ui/icons';
 import type { ReviewQueueItem, TriagePriority } from '../../types';
 
@@ -23,18 +24,22 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
   const abstained = isTrue(item.abstained);
 
   return (
-    <motion.button
+    <motion.div
       variants={staggerItem}
-      onClick={onOpen}
       whileHover={{ y: -2 }}
-      className={cx(
-        'w-full text-left rounded-none bg-white border border-slate-200 p-5',
-        'shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)]',
-        'transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)]',
-        'relative overflow-hidden',
-      )}
     >
-      <span
+      <GlowCard
+        customSize
+        glowColor="blue"
+        onClick={onOpen}
+        className={cx(
+          'w-full text-left bg-white border border-slate-200 p-5 cursor-pointer',
+          'shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)]',
+          'transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)]',
+          'relative overflow-hidden',
+        )}
+      >
+        <span
         className="absolute left-0 inset-y-0 w-1"
         style={{ background: TIER_ACCENT[item.triage_priority] }}
         aria-hidden="true"
@@ -88,7 +93,8 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
       <p className="mt-3 pt-3 border-t border-slate-100 text-[11px] text-slate-400 clinical-id truncate">
         {item.case_number}
       </p>
-    </motion.button>
+      </GlowCard>
+    </motion.div>
   );
 }
 
@@ -135,7 +141,7 @@ export default function ReviewQueue() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Tabs
           value={filter}
-          onChange={setFilter}
+          onChange={(val) => setFilter(val as TriagePriority | 'all')}
           tabs={[
             { id: 'all' as const, label: 'All', count: total },
             ...TRIAGE_ORDER.map((t) => ({

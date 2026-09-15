@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Activity, BarChart3, Building2, CheckCircle2, ClipboardList, Cpu, Database,
+  Activity, BarChart3, Building2, CheckCircle2, ChevronRight, ClipboardList, Cpu, Database,
   Eye, FileText, Layers, ListChecks, MapPin, ScanEye,
   ShieldCheck, Stethoscope, UserCog, UserPlus, Users,
 } from 'lucide-react';
 import { Button, Card } from '../../components/ui';
+import { GlowCard } from '../../components/ui/spotlight-card';
 import { LandingNav } from '../../components/landing/LandingNav';
-import { MarqueeHero } from '../../components/landing/MarqueeHero';
-import { MARQUEE_IMAGES } from '../../data/marquee';
+import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 
@@ -56,9 +56,9 @@ function SectionHeader({
       className={cx('max-w-3xl', align === 'center' ? 'mx-auto text-center' : 'text-left')}
     >
       <p className="eyebrow">{label}</p>
-      <h2 className="display mt-4 text-h2 text-[var(--color-brand-950)]">{title}</h2>
+      <h2 className="text-display-lg mt-4 text-[var(--color-ink)]">{title}</h2>
       {lead && (
-        <p className="mt-5 font-body text-base leading-[var(--leading-body)] text-[var(--color-ink-muted)]">
+        <p className="mt-5 text-lead-airy text-[var(--color-ink-muted-48)]">
           {lead}
         </p>
       )}
@@ -139,16 +139,63 @@ export default function Landing() {
 
       <main>
         {/* ── 1. Hero ─────────────────────────────────────────────────────── */}
-        <div id="home">
-          <MarqueeHero
-            tagline="AI-Powered Rural Healthcare"
-            title="Explainable AI for Diabetic Retinopathy Screening in India"
-            description=" rural healthcare with fast, accurate, and interpretable retinal screening that assists clinicians in detecting diabetic retinopathy before vision is lost."
-            primaryCta={{ label: 'Start Screening', onClick: startScreening }}
-            secondaryCta={{ label: 'Learn More', onClick: learnMore }}
-            images={MARQUEE_IMAGES}
-          />
-        </div>
+        <section
+          id="home"
+          className="relative flex min-h-[90vh] w-full flex-col justify-end overflow-hidden bg-black"
+        >
+          {/* Edge-to-edge Photography */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src={heroImage}
+              alt="RetinaGuard Platform"
+              className="h-full w-full object-cover object-center"
+            />
+            {/* Subtle overlay only to guarantee white text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+          </div>
+
+          {/* Foreground Content */}
+          <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 pb-24 pt-32 sm:px-8 md:pb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.62, ease: [0.25, 1, 0.5, 1] }}
+              className="max-w-4xl"
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <span className="h-[2px] w-8 bg-white"></span>
+                <p className="text-[14px] font-bold uppercase tracking-[1.5px] text-white">
+                  AI-Powered Rural Healthcare
+                </p>
+              </div>
+
+              <h1 className="mb-8 text-[40px] font-bold uppercase leading-[1.05] tracking-tight text-white sm:text-[48px] md:text-[56px] lg:text-[64px]">
+                Explainable AI for Diabetic Retinopathy Screening in India
+              </h1>
+
+              <p className="mb-12 max-w-2xl text-[16px] font-light leading-[1.5] text-[#e6e6e6] md:text-[18px]">
+                A lightweight, clinician-assisted platform designed to improve early detection across India's healthcare ecosystem. Every prediction is backed by transparent lesion evidence.
+              </p>
+
+              <div className="flex flex-col items-start gap-4 sm:flex-row">
+                <button
+                  type="button"
+                  onClick={startScreening}
+                  className="inline-flex h-[48px] items-center justify-center rounded-none bg-white px-8 text-[14px] font-bold uppercase tracking-[1.5px] text-black transition-colors hover:bg-[#e6e6e6]"
+                >
+                  Start Screening
+                </button>
+                <button
+                  type="button"
+                  onClick={learnMore}
+                  className="inline-flex h-[48px] items-center justify-center rounded-none border border-white bg-transparent px-8 text-[14px] font-bold uppercase tracking-[1.5px] text-white transition-colors hover:bg-white/10"
+                >
+                  Learn More
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* ── 2. Features ─────────────────────────────────────────────────── */}
         <motion.section
@@ -165,22 +212,30 @@ export default function Landing() {
             lead="A lightweight, explainable, and clinician-assisted platform designed to improve early diabetic retinopathy detection across India's healthcare ecosystem."
           />
 
-          <div className="mt-16 grid grid-cols-1 gap-px border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <motion.div
                 key={title}
                 variants={reveal}
-                className="group bg-white p-8 transition-colors duration-[var(--duration-normal)] hover:bg-[var(--color-brand-50)]"
+                className="h-full"
               >
-                <span className="flex h-12 w-12 items-center justify-center border border-[var(--color-brand-200)] bg-[var(--color-brand-50)] text-[var(--color-primary)] transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] group-hover:-translate-y-0.5">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <h3 className="mt-7 font-display text-h3 font-semibold text-[var(--color-brand-950)]">
-                  {title}
-                </h3>
-                <p className="mt-3 font-body text-sm leading-[var(--leading-body)] text-[var(--color-ink-muted)]">
-                  {desc}
-                </p>
+                <GlowCard 
+                  customSize 
+                  glowColor="blue" 
+                  className="h-full w-full p-8 border border-[var(--color-border)] bg-[var(--color-surface-sunken)]"
+                >
+                  <div className="group relative z-10 flex h-full flex-col">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface-pearl)] text-[var(--color-ink)] transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] group-hover:scale-110">
+                      <Icon className="h-5 w-5" strokeWidth={1.5} />
+                    </span>
+                    <h3 className="mt-7 text-body-strong font-semibold text-[var(--color-ink)]">
+                      {title}
+                    </h3>
+                    <p className="mt-3 text-body text-[var(--color-ink-muted-48)]">
+                      {desc}
+                    </p>
+                  </div>
+                </GlowCard>
               </motion.div>
             ))}
           </div>
@@ -200,50 +255,61 @@ export default function Landing() {
             title="Three Connected Roles. One Intelligent Screening System."
           />
 
-          <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="mt-16 flex flex-col gap-6">
             {WORKFLOW.map(({ role, icon: RoleIcon, summary, steps }, roleIndex) => (
               <motion.div key={role} variants={reveal}>
-                <Card variant="interactive" padded={false} className="flex h-full flex-col">
-                  <div className="flex items-start gap-4 border-b border-[var(--color-border)] p-7">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[var(--color-primary)] text-white">
-                      <RoleIcon className="h-5 w-5" strokeWidth={1.75} />
+                <GlowCard customSize glowColor="blue" className="flex flex-col lg:flex-row bg-[var(--color-surface-pearl)] overflow-hidden w-full border border-[var(--color-border)]">
+                  
+                  {/* Left Column (25%) */}
+                  <div className="flex flex-col justify-center border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] p-8 lg:w-1/4 lg:border-b-0 lg:border-r">
+                    <span className="mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--color-ink)] text-white">
+                      <RoleIcon className="h-6 w-6" strokeWidth={1.5} />
                     </span>
                     <div>
                       <p className="eyebrow">Level {roleIndex + 1}</p>
-                      <h3 className="mt-1.5 font-display text-h3 font-semibold text-[var(--color-brand-950)]">
+                      <h3 className="mt-1.5 text-display-md font-semibold tracking-tight text-[var(--color-ink)]">
                         {role}
                       </h3>
+                      <p className="mt-4 text-body text-[var(--color-ink-muted-48)]">
+                        {summary}
+                      </p>
                     </div>
                   </div>
 
-                  <p className="px-7 pt-6 font-body text-sm leading-[var(--leading-body)] text-[var(--color-ink-muted)]">
-                    {summary}
-                  </p>
-
-                  <ol className="mt-6 flex flex-col">
-                    {steps.map(({ icon: StepIcon, name, desc }, i) => (
-                      <li
-                        key={name}
-                        className="group/step flex gap-4 border-t border-[var(--color-border)] px-7 py-5 transition-colors duration-[var(--duration-fast)] hover:bg-[var(--color-brand-50)]"
-                      >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[var(--color-border)] bg-white text-[var(--color-ink-subtle)] transition-colors duration-[var(--duration-fast)] group-hover/step:border-[var(--color-brand-300)] group-hover/step:text-[var(--color-primary)]">
-                          <StepIcon className="h-4 w-4" strokeWidth={1.75} />
-                        </span>
-                        <div className="min-w-0">
-                          <p className="font-ui text-[13px] font-semibold text-[var(--color-brand-950)]">
-                            <span className="clinical-id mr-2 text-[var(--color-ink-subtle)]">
-                              {String(i + 1).padStart(2, '0')}
-                            </span>
+                  {/* Right Column (75%) */}
+                  <div className="relative grid flex-1 grid-cols-1 gap-8 p-8 sm:grid-cols-3 lg:w-3/4">
+                    {steps.slice(0, 3).map(({ icon: StepIcon, name, desc }, i) => (
+                      <div key={name} className="group/step relative flex min-w-0 flex-col">
+                        
+                        {/* Connecting Divider for Desktop/Tablet */}
+                        {i < 2 && (
+                          <>
+                            {/* Horizontal Line */}
+                            <div className="absolute left-6 top-6 -z-10 hidden h-[1px] w-[calc(100%+2rem)] bg-[var(--color-hairline)] sm:block" />
+                            {/* Chevron Icon (Desktop) */}
+                            <div className="absolute left-[100%] top-6 z-10 ml-4 hidden h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-[var(--color-surface-pearl)] text-[var(--color-ink-muted-48)] sm:flex">
+                              <ChevronRight className="h-4 w-4" />
+                            </div>
+                            {/* Mobile connector line */}
+                            <div className="absolute bottom-[-2rem] left-6 h-8 w-[1px] bg-[var(--color-hairline)] sm:hidden" />
+                          </>
+                        )}
+                        
+                        <div className="flex h-full min-w-0 flex-col">
+                          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-canvas-parchment)] text-[var(--color-ink-muted-48)] transition-colors duration-[var(--duration-fast)] group-hover/step:bg-[var(--color-primary)] group-hover/step:text-white">
+                            <StepIcon className="h-5 w-5" strokeWidth={1.5} />
+                          </span>
+                          <h4 className="mt-5 text-body-strong font-semibold text-[var(--color-ink)] transition-colors group-hover/step:text-[var(--color-primary)]">
                             {name}
-                          </p>
-                          <p className="mt-1 font-body text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
+                          </h4>
+                          <p className="mt-2 text-caption text-[var(--color-ink-muted-48)]">
                             {desc}
                           </p>
                         </div>
-                      </li>
+                      </div>
                     ))}
-                  </ol>
-                </Card>
+                  </div>
+                </GlowCard>
               </motion.div>
             ))}
           </div>
@@ -263,7 +329,7 @@ export default function Landing() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {TEAM.map((member) => (
               <motion.div key={member.id} variants={reveal}>
-                <Card variant="interactive" padded={false} className="h-full">
+                <GlowCard customSize glowColor="blue" className="h-full w-full bg-white border border-[var(--color-border)]">
                   <div className="flex flex-col items-start p-8">
                     {member.avatar ? (
                       <img
@@ -272,23 +338,23 @@ export default function Landing() {
                         width={96}
                         height={96}
                         loading="lazy"
-                        className="h-24 w-24 border border-[var(--color-border)] object-cover"
+                        className="h-24 w-24 rounded-full border border-[var(--color-hairline)] object-cover"
                       />
                     ) : (
                       <span
                         aria-hidden="true"
-                        className="flex h-24 w-24 items-center justify-center border border-[var(--color-brand-200)] bg-[var(--color-brand-50)] font-display text-2xl font-semibold text-[var(--color-primary)]"
+                        className="flex h-24 w-24 items-center justify-center rounded-full border border-[var(--color-hairline)] bg-[var(--color-canvas-parchment)] text-display-md font-semibold text-[var(--color-ink)]"
                       >
                         {initialsOf(member.name)}
                       </span>
                     )}
 
-                    <h3 className="mt-6 font-display text-h4 font-semibold text-[var(--color-brand-950)]">
+                    <h3 className="mt-6 text-body-strong font-semibold text-[var(--color-ink)]">
                       {member.name}
                     </h3>
-                    <p className="mt-1 font-ui text-sm text-[var(--color-ink-subtle)]">{member.role}</p>
+                    <p className="mt-1 text-caption text-[var(--color-ink-muted-48)]">{member.role}</p>
                     {member.blurb && (
-                      <p className="mt-3 font-body text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
+                      <p className="mt-3 text-caption leading-relaxed text-[var(--color-ink-muted-48)]">
                         {member.blurb}
                       </p>
                     )}
@@ -300,7 +366,7 @@ export default function Landing() {
                           target="_blank"
                           rel="noreferrer noopener"
                           aria-label={`${member.name} on GitHub`}
-                          className="inline-flex h-9 w-9 items-center justify-center border border-[var(--color-border)] text-[var(--color-ink-subtle)] transition-colors duration-[var(--duration-fast)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-surface-pearl)] text-[var(--color-ink)] transition-colors duration-[var(--duration-fast)] hover:bg-[var(--color-canvas-parchment)]"
                         >
                           <Github className="h-4 w-4" />
                         </a>
@@ -311,14 +377,14 @@ export default function Landing() {
                           target="_blank"
                           rel="noreferrer noopener"
                           aria-label={`${member.name} on LinkedIn`}
-                          className="inline-flex h-9 w-9 items-center justify-center border border-[var(--color-border)] text-[var(--color-ink-subtle)] transition-colors duration-[var(--duration-fast)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-surface-pearl)] text-[var(--color-ink)] transition-colors duration-[var(--duration-fast)] hover:bg-[var(--color-canvas-parchment)]"
                         >
                           <Linkedin className="h-4 w-4" />
                         </a>
                       )}
                     </div>
                   </div>
-                </Card>
+                </GlowCard>
               </motion.div>
             ))}
           </div>
@@ -334,21 +400,13 @@ export default function Landing() {
         >
           <motion.div
             variants={reveal}
-            className="relative overflow-hidden border border-[var(--color-brand-800)] bg-[var(--color-brand-900)] px-8 py-20 text-center sm:px-16"
+            className="relative overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-navy-950)] px-8 py-20 text-center sm:px-16"
           >
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 opacity-[0.14]"
-              style={{
-                backgroundImage:
-                  'radial-gradient(ellipse 70% 90% at 50% 0%, #9EC6F3 0%, transparent 70%)',
-              }}
-            />
             <div className="relative">
-              <h2 className="display mx-auto max-w-3xl text-h2 text-white">
+              <h2 className="text-display-lg mx-auto max-w-3xl text-white">
                 Ready to Transform Rural Eye Care?
               </h2>
-              <p className="mx-auto mt-6 max-w-2xl font-body text-base leading-[var(--leading-body)] text-[var(--color-brand-200)]">
+              <p className="mx-auto mt-6 max-w-2xl text-lead-airy text-white/70">
                 Bringing intelligent eye care to every village through explainable AI and
                 clinician-assisted diabetic retinopathy screening.
               </p>
@@ -357,7 +415,7 @@ export default function Landing() {
                   size="lg"
                   variant="primary"
                   onClick={startScreening}
-                  className="border-white bg-white text-[var(--color-brand-900)] hover:border-[var(--color-brand-100)] hover:bg-[var(--color-brand-100)] active:bg-[var(--color-brand-200)]"
+                  className="border-white bg-white !text-[var(--color-brand-900)] hover:border-[var(--color-brand-100)] hover:bg-[var(--color-brand-100)] active:bg-[var(--color-brand-200)]"
                 >
                   Explore RetinaGuard
                 </Button>

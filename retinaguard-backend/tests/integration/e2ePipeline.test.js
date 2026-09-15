@@ -24,7 +24,8 @@ describe('End-to-end screening pipeline (HTTP)', () => {
   it('completes the full case lifecycle and generates a report', async () => {
     const patientRes = await request(app).post('/patients')
       .set('Authorization', `Bearer ${techToken}`)
-      .send({ fullName: 'Sunita Devi', age: 58, gender: 'female', village: 'Mhow', district: 'Indore', diabetesType: 'type2' });
+      .send({ fullName: 'Sunita Devi', age: 58, gender: 'female', village: 'Mhow', district: 'Indore', state: 'Madhya Pradesh', diabetesType: 'type2', diabetesHistory: 'yes' });
+    if (patientRes.status !== 201) console.log(patientRes.body);
     expect(patientRes.status).toBe(201);
     const patientId = patientRes.body.patient.id;
 

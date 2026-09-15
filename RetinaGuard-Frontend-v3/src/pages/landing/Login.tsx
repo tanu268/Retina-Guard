@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ScanEye, ShieldCheck, Stethoscope, UserCog } from 'lucide-react';
 import { Alert, Button, Card } from '../../components/ui';
+import { GlowCard } from '../../components/ui/spotlight-card';
 import { useAuth } from '../../contexts/AuthContext';
 import { ROLE_HOME } from '../../services/authService';
 import type { Role } from '../../types';
@@ -42,7 +43,7 @@ export default function Login() {
     } catch (err) {
       setError(
         err instanceof Error
-          ? `${err.message} Check that the edge server is running on port 4000.`
+          ? `${err.message} Check that the edge server is running on port 4001.`
           : 'Could not enter the workspace.',
       );
     } finally {
@@ -90,7 +91,7 @@ export default function Login() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.08 * i, ease: [0.25, 1, 0.5, 1] }}
             >
-              <Card variant="interactive" padded={false} className="flex h-full flex-col">
+              <GlowCard customSize glowColor="blue" className="flex h-full flex-col w-full bg-white border border-[var(--color-border)]">
                 <div className="flex flex-1 flex-col p-7">
                   <span className="flex h-11 w-11 items-center justify-center border border-[var(--color-brand-200)] bg-[var(--color-brand-50)] text-[var(--color-primary)]">
                     <Icon className="h-5 w-5" strokeWidth={1.75} />
@@ -102,7 +103,7 @@ export default function Login() {
                     {blurb}
                   </p>
                   <Button
-                    variant={i === 0 ? 'primary' : 'outline'}
+                    variant="primary"
                     fullWidth
                     className="mt-7"
                     loading={pending === id}
@@ -112,7 +113,7 @@ export default function Login() {
                     Continue as {label}
                   </Button>
                 </div>
-              </Card>
+              </GlowCard>
             </motion.div>
           ))}
         </div>

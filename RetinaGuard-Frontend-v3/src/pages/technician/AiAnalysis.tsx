@@ -259,19 +259,19 @@ export default function AiAnalysis() {
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <Button
-                  variant="outline" size="sm" onClick={triggerSync} loading={isSyncing}
+                  variant="outline" onClick={triggerSync} loading={isSyncing}
                   icon={!isSyncing ? <IconSync size={14} /> : undefined}
                 >
                   Sync now
                 </Button>
                 <Button
-                  variant="secondary" size="sm"
+                  variant="secondary"
                   onClick={() => navigate(`/app/cases/${consultationId}`)}
                 >
                   Save and close
                 </Button>
                 <Button
-                  size="sm" onClick={submitForReview} disabled={submitted}
+                  onClick={submitForReview} disabled={submitted}
                   icon={<IconArrowRight size={14} />}
                 >
                   {submitted ? 'Submitted' : 'Submit for review'}

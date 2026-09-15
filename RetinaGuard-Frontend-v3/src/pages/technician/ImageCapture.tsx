@@ -153,7 +153,7 @@ function EyePanel({
                 'rounded-none px-3.5 py-2.5 text-[12px] leading-relaxed',
                 grade === 'C' ? 'bg-red-50 text-red-800'
                   : grade === 'B' ? 'bg-amber-50 text-amber-800'
-                  : 'bg-emerald-50 text-emerald-800',
+                    : 'bg-emerald-50 text-emerald-800',
               )}>
                 {QUALITY_GRADES[grade].guidance}
               </div>
@@ -357,7 +357,6 @@ export default function ImageCapture() {
               icon={<IconCheck size={17} />}
               action={
                 <Button
-                  size="sm"
                   onClick={() => navigate(`/app/technician/analysis/${consultationId}`)}
                   icon={<IconArrowRight size={14} />}
                 >

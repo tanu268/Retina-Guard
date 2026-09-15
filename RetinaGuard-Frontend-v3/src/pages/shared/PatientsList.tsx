@@ -8,6 +8,7 @@ import {
   Button, EmptyState, Input, SectionHeader, SkeletonRows, stagger, staggerItem,
 } from '../../components/ui';
 import { SyncStateBadge } from '../../components/clinical/indicators';
+import { GlowCard } from '../../components/ui/spotlight-card';
 import { IconArrowRight, IconPatients, IconSearch, IconUserPlus } from '../../components/ui/icons';
 
 export default function PatientsList() {
@@ -63,13 +64,17 @@ export default function PatientsList() {
         <>
           <motion.div variants={stagger} initial="initial" animate="animate" className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {patients.map((p) => (
-              <motion.button
+              <motion.div
                 key={p.id}
                 variants={staggerItem}
-                onClick={() => navigate(`/app/patients/${p.id}`)}
                 whileHover={{ y: -2 }}
-                className="text-left rounded-none bg-white border border-slate-200 p-5 shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)] transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)]"
               >
+                <GlowCard
+                  customSize
+                  glowColor="blue"
+                  onClick={() => navigate(`/app/patients/${p.id}`)}
+                  className="text-left bg-white border border-slate-200 p-5 shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)] transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)] cursor-pointer"
+                >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="min-w-0">
                     <p className="text-[15px] font-semibold text-slate-900 truncate">{p.full_name}</p>
@@ -101,7 +106,8 @@ export default function PatientsList() {
                   <span className="text-[11.5px] text-slate-400">Registered {formatRelative(p.created_at)}</span>
                   <span className="text-slate-300"><IconArrowRight size={14} /></span>
                 </div>
-              </motion.button>
+                </GlowCard>
+              </motion.div>
             ))}
           </motion.div>
 

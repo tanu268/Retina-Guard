@@ -478,13 +478,12 @@ export default function ReviewWorkspace() {
               ) : (
                 <div className="flex items-center gap-2">
                   <Button
-                    variant="outline" size="sm" className="flex-1"
+                    variant="outline" className="flex-1"
                     onClick={() => navigate('/app/review/queue')}
                   >
                     Back to queue
                   </Button>
                   <Button
-                    size="sm" className="flex-[2]"
                     onClick={submit}
                     disabled={!canSubmit}
                     loading={submitting}

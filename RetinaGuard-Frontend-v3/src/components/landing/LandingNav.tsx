@@ -73,17 +73,12 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
       className={cx(
         'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter]',
         'duration-[var(--duration-normal)] ease-[var(--ease-in-out-soft)]',
-        scrolled
-          ? 'border-b border-[var(--color-border)] bg-white/72 backdrop-blur-xl backdrop-saturate-150'
-          : 'border-b border-transparent bg-transparent',
+        scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 text-white' : 'bg-transparent text-white'
       )}
     >
-      <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+      <nav className="mx-auto flex h-[44px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-2.5" aria-label="RetinaGuard home">
-          <span className="flex h-8 w-8 items-center justify-center bg-[var(--color-primary)]">
-            <span className="font-display text-sm font-bold text-white">R</span>
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-[var(--color-brand-950)]">
+          <span className="font-semibold text-[var(--text-nav-link)] tracking-[var(--tracking-fine-print)] flex items-center gap-2">
             RetinaGuard
           </span>
         </Link>
@@ -98,9 +93,9 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
           ))}
         </ul>
 
-        <div className="hidden md:block">
-          <Button size="sm" variant="primary" onClick={onStartScreening}>
-            Start Screening
+        <div className="hidden items-center gap-4 md:flex">
+          <Button size="sm" variant="outline" onClick={onStartScreening}>
+            Sign In
           </Button>
         </div>
 
@@ -110,7 +105,7 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
           aria-expanded={open}
           aria-controls="landing-mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="inline-flex h-10 w-10 items-center justify-center border border-[var(--color-border)] bg-white/70 text-[var(--color-ink)] md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-[var(--color-body-on-dark)] md:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -124,11 +119,11 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.24, ease: [0.25, 1, 0.5, 1] }}
-            className="overflow-hidden border-t border-[var(--color-border)] bg-white/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-[var(--color-surface-tile-2)] bg-[var(--color-surface-black)] md:hidden"
           >
             <ul className="flex flex-col px-5 py-4">
               {SECTIONS.map((s) => (
-                <li key={s.id} className="border-b border-[var(--color-border)] last:border-0">
+                <li key={s.id} className="border-b border-[var(--color-surface-tile-2)] last:border-0">
                   <AnchorNavLink
                     href={`#${s.id}`}
                     isActive={active === s.id}
@@ -141,9 +136,9 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
                 </li>
               ))}
             </ul>
-            <div className="px-5 pb-5">
-              <Button fullWidth size="md" variant="primary" onClick={onStartScreening}>
-                Start Screening
+            <div className="px-5 pb-5 pt-2">
+              <Button fullWidth size="md" variant="outline" onClick={onStartScreening}>
+                Sign In
               </Button>
             </div>
           </motion.div>
