@@ -41,6 +41,7 @@ function buildApp(container) {
 
   app.use(helmet({
     contentSecurityPolicy: config.isProd ? undefined : false,
+    crossOriginResourcePolicy: false,
   }));
   app.use(cors({ origin: config.http.corsOrigins, credentials: true }));
   app.use(compression());
