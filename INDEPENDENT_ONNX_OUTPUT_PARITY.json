@@ -1,0 +1,14 @@
+{
+  "logits": {
+    "max_logit_abs_diff": 0.12834900617599487,
+    "mean_logit_abs_diff": 0.02511036179959774,
+    "RMSE_logits": 0.034590905679073844
+  },
+  "probabilities": {
+    "max_probability_abs_diff": 0.02461345171324092,
+    "mean_probability_abs_diff": 0.002536580562001057,
+    "RMSE_probability": 0.00554051651823173
+  },
+  "grade_matches": "10/10",
+  "referable_matches": "10/10"
+}

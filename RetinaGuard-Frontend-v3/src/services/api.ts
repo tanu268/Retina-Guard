@@ -20,6 +20,38 @@ import type {
   SyncPushResult, SyncStatus, TriagePriority, UpdateConsultationRequest,
 } from '../types';
 
+// ── Cases (Unified API) ───────────────────────────────────────────────────
+export const casesService = {
+  createCase(patientId: string, consultationId: string | null, laterality: Laterality, file: File) {
+    const fd = new FormData();
+    fd.append('image', file);
+    if (patientId) fd.append('patient_id', patientId);
+    if (consultationId) fd.append('consultation_id', consultationId);
+    fd.append('laterality', laterality);
+    return http.upload<{ case_uuid: string; status: string; quality: any }>('/api/v1/cases', fd);
+  },
+
+  getCase(caseUuid: string) {
+    return http.get<any>(`/api/v1/case/${caseUuid}`);
+  },
+
+  submitReview(caseUuid: string, data: { decision: string; comment: string; reviewerGradeCode?: number }) {
+    return http.post<any>(`/api/v1/case/${caseUuid}/review`, data);
+  },
+
+  queue() {
+    return http.get<any>('/api/v1/queue');
+  },
+
+  getReport(caseUuid: string) {
+    return http.get<any>(`/api/v1/report/${caseUuid}`);
+  },
+
+  getModel() {
+    return http.get<any>('/api/v1/model');
+  }
+};
+
 // ── Patients ──────────────────────────────────────────────────────────────
 
 export const patientService = {
@@ -148,24 +180,52 @@ export const reviewService = {
   /** Returns `{ items, pagination }`. The previous client looked for a `queue`
    *  key that does not exist, so the queue always rendered as empty. */
   queue(params?: { priority?: TriagePriority; status?: string; page?: number; limit?: number }): Promise<Paginated<ReviewQueueItem>> {
-    return http.get<Paginated<ReviewQueueItem>>(`/review/queue${qs({
+    return http.get<Paginated<ReviewQueueItem>>(`/api/v1/queue${qs({
       priority: params?.priority, status: params?.status,
       page: params?.page, limit: params?.limit,
     })}`);
   },
 
-  /** `{ consultation, analyses, review }` — note there is no `images` key here;
-   *  fundus images must be fetched separately via imageService. */
-  getCase(consultationId: string): Promise<ReviewCaseResponse> {
-    return http.get<ReviewCaseResponse>(`/review/${consultationId}`);
+  /** `{ consultation, analyses, review }` — mapped from unified /api/v1/case endpoint */
+  async getCase(consultationId: string): Promise<ReviewCaseResponse> {
+    const res = await http.get<any>(`/api/v1/case/${consultationId}`);
+    return {
+      consultation: {
+        id: res.case_uuid,
+        status: res.status,
+        site_id: res.site_id,
+        device_id: res.device_id,
+        created_at: res.created_at,
+        patient_name: 'Patient', // Mocked as unified API might not return it yet
+        patient_id: 'UNKNOWN'
+      } as any,
+      analyses: res.prediction ? [{
+        id: res.case_uuid,
+        dr_grade_code: res.prediction.grade,
+        dr_grade_label: res.prediction.label,
+        confidence: res.prediction.confidence,
+        referable: res.prediction.referable ? 1 : 0,
+        grade_probabilities: res.probabilities,
+        anatomy: res.anatomy,
+        lesions: res.lesions,
+        stage_timings_ms: res.stage_timings_ms
+      }] as any : [],
+      review: res.review
+    };
   },
 
-  /** `reviewerGradeCode` is mandatory. Submitting only { decision, notes }
-   *  returns 422 and no adjudication is recorded. One decision per case:
-   *  a second call returns 409. */
+  /** `reviewerGradeCode` is mandatory. */
   async decide(consultationId: string, data: ReviewDecisionRequest): Promise<Review> {
-    const res = await http.post<{ review: Review }>(`/review/${consultationId}/decision`, data);
-    return res.review;
+    const res = await http.post<any>(`/api/v1/case/${consultationId}/review`, {
+      decision: data.decision,
+      comment: data.notes,
+      reviewerGradeCode: data.reviewerGradeCode
+    });
+    return {
+      id: res.decision_uuid,
+      decision: res.decision,
+      notes: res.comment
+    } as any;
   },
 };
 

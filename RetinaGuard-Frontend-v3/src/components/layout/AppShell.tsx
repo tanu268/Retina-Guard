@@ -12,7 +12,6 @@ import {
   IconFile, IconHistory, IconLogout, IconMenu, IconPatients, IconQueue,
   IconSync, IconUserPlus, IconUsers, IconX, RetinaMark,
 } from '../ui/icons';
-import { GradientBackground } from '../ui/jade-sky';
 
 interface NavItem {
   to: string;

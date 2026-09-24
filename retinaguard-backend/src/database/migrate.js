@@ -22,23 +22,28 @@ const targets = () => {
   return list;
 };
 
-(async () => {
+const migrate = async (opts = {}) => {
   const command = process.argv[2] || 'up';
   for (const t of targets()) {
     if (command === 'status') {
       const rows = await migrationStatus(t.db, t.dir);
-      process.stdout.write(`\n${t.name}\n`);
-      rows.forEach((r) => process.stdout.write(`  [${r.applied ? 'x' : ' '}] ${r.file}\n`));
+      if (!opts.silent) process.stdout.write(`\n${t.name}\n`);
+      if (!opts.silent) rows.forEach((r) => process.stdout.write(`  [${r.applied ? 'x' : ' '}] ${r.file}\n`));
     } else {
       const rows = await runMigrations(t.db, t.dir);
-      process.stdout.write(`\n${t.name}\n`);
-      rows.forEach((r) => process.stdout.write(`  ${r.status.padEnd(8)} ${r.file}\n`));
+      if (!opts.silent) process.stdout.write(`\n${t.name}\n`);
+      if (!opts.silent) rows.forEach((r) => process.stdout.write(`  ${r.status.padEnd(8)} ${r.file}\n`));
     }
     await t.db.close?.();
   }
-  process.stdout.write('\nDone.\n');
-  process.exit(0);
-})().catch((err) => {
-  process.stderr.write(`Migration failed: ${err.message}\n`);
-  process.exit(1);
-});
+  if (!opts.silent) process.stdout.write('\nDone.\n');
+};
+
+if (require.main === module) {
+  migrate().then(() => process.exit(0)).catch((err) => {
+    process.stderr.write(`Migration failed: ${err.message}\n`);
+    process.exit(1);
+  });
+}
+
+module.exports = { migrate };

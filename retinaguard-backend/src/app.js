@@ -26,6 +26,7 @@ const buildSyncRouter = require('./modules/sync/sync.routes');
 const buildAuditRouter = require('./modules/audit/audit.routes');
 const buildAdminRouter = require('./modules/admin/admin.routes');
 const buildHealthRouter = require('./modules/health/health.routes');
+const buildCasesRouter = require('./modules/cases/cases.routes');
 
 /**
  * Builds the Express application. Pure function of `container` so the same
@@ -84,6 +85,7 @@ function buildApp(container) {
   app.use('/sync', buildSyncRouter(deps));
   app.use('/audit', buildAuditRouter(deps));
   app.use('/admin', buildAdminRouter(deps));
+  app.use('/api/v1', buildCasesRouter(deps));
 
   app.get('/', (req, res) => {
     res.json({

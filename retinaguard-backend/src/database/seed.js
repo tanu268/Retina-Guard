@@ -11,7 +11,7 @@ const DEMO_USERS = [
   { username: 'admin', password: 'AdminRG#2026Secure', fullName: 'RetinaGuard Administrator', role: 'admin' },
 ];
 
-(async () => {
+const seed = async () => {
   const container = await buildContainer();
   const { services } = container;
 
@@ -26,9 +26,13 @@ const DEMO_USERS = [
   DEMO_USERS.forEach((u) => logger.info(`  ${u.role.padEnd(11)} ${u.username} / ${u.password}`));
 
   await container.close();
-  process.exit(0);
-})().catch((err) => {
-  // eslint-disable-next-line no-console
-  console.error('Seed failed:', err);
-  process.exit(1);
-});
+};
+
+if (require.main === module) {
+  seed().then(() => process.exit(0)).catch((err) => {
+    console.error('Seed failed:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { seed };

@@ -2,6 +2,7 @@
 const path = require('path');
 const MockMatlabAdapter = require('./adapters/mockAdapter');
 const MatlabCliAdapter = require('./adapters/cliAdapter');
+const OnnxAdapter = require('../inference/adapters/onnxAdapter');
 const {
   PIPELINE_STAGES, ABSTAIN_REASONS, gradeByCode,
   assertGradingResponse, assertQualityResponse,
@@ -24,9 +25,15 @@ const logger = require('../utils/logger');
 class MatlabService {
   constructor({ config, adapter }) {
     this.config = config;
-    this.adapter = adapter || (config.matlab.adapter === 'cli'
-      ? new MatlabCliAdapter({ config })
-      : new MockMatlabAdapter({ config }));
+    if (adapter) {
+      this.adapter = adapter;
+    } else if (config.matlab.adapter === 'cli') {
+      this.adapter = new MatlabCliAdapter({ config });
+    } else if (config.matlab.adapter === 'onnx') {
+      this.adapter = new OnnxAdapter({ config });
+    } else {
+      this.adapter = new MockMatlabAdapter({ config });
+    }
     logger.info({ adapter: this.adapter.name }, 'MATLAB adapter selected');
   }
 

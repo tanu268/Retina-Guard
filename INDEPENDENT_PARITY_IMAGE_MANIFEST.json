@@ -1,0 +1,54 @@
+﻿{
+    "images":  [
+                   {
+                       "path":  "local_dataset/test_images/0005cfc8afb6.png",
+                       "sha256":  "E001C14DCB9C61B90D1FE48F72C2CA86B333C426902D68140D5C430D53836602",
+                       "filename":  "0005cfc8afb6.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/003f0afdcd15.png",
+                       "sha256":  "7A2788507137CDFFFE20F42903FA755DB13C87FBF4864547D949A9392C4231CC",
+                       "filename":  "003f0afdcd15.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/006efc72b638.png",
+                       "sha256":  "5F82049508338B1E86ADEA0991C314614EA96E213505D933C1E1C21CED5C873B",
+                       "filename":  "006efc72b638.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/00836aaacf06.png",
+                       "sha256":  "84E34DBFC3CB7E028401B308C1CBEABFA55BEB82313C651C2B5A1AD8600847DF",
+                       "filename":  "00836aaacf06.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/009245722fa4.png",
+                       "sha256":  "E38547568DF0C3C2480E5168FB4BA9CBE4BF9E9F7A105EC4E74AB27EB005669A",
+                       "filename":  "009245722fa4.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/009c019a7309.png",
+                       "sha256":  "FCAB3466B12ACDA6BDBE0FD93369B533A8917CEBA5555CE9537657B172EC53C0",
+                       "filename":  "009c019a7309.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/010d915e229a.png",
+                       "sha256":  "27BD56C9EA5146ADD92C3FBE2F2E86BBE8D0D086381FE31B180B0DC6A4041AD1",
+                       "filename":  "010d915e229a.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/0111b949947e.png",
+                       "sha256":  "4C6D20BD10502D8D99730BB559EB229DFD205D67D7014F863FED6270AFBED812",
+                       "filename":  "0111b949947e.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/01499815e469.png",
+                       "sha256":  "7CF6A290047F45EDBC2038D952B148645AD2BC6D6797E3003574DF024865C91A",
+                       "filename":  "01499815e469.png"
+                   },
+                   {
+                       "path":  "local_dataset/test_images/0167076e7089.png",
+                       "sha256":  "DC239009C9B45A35570B7794DB4FFCC83B8990BA7226ED3607B11D26DABDD629",
+                       "filename":  "0167076e7089.png"
+                   }
+               ]
+}

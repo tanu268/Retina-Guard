@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useCallback, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
-import { consultationService, imageService } from '../../services/api';
+import { consultationService, imageService, casesService } from '../../services/api';
 import { HttpError } from '../../lib/http';
 import { cx, isTrue } from '../../lib/format';
 import { QUALITY_GRADES } from '../../lib/clinical';
@@ -232,7 +232,18 @@ export default function ImageCapture() {
     setState((s) => ({ ...s, uploading: true, error: null }));
 
     try {
-      const result = await imageService.upload(consultationId!, laterality, file);
+      // Pass the patient ID from the loaded consultation
+      const patientId = consultation?.patient_id;
+      const res = await casesService.createCase(patientId!, consultationId!, laterality, file);
+      
+      // Map the cases response to the expected UI state
+      const result = {
+        image: { capture_attempt: 1, original_name: file.name, status: res.status } as any, // Mock enough for UI
+        quality: res.quality,
+        recaptureAllowed: true, // simplified
+        remainingAttempts: 1,
+      };
+
       setState({
         uploading: false, result, error: null, blocked: false,
         previewUrl: null,

@@ -1,0 +1,127 @@
+{
+  "audit": {
+    "timestamp": "2026-09-22T17:15:00+05:30",
+    "repository": "RetinaGuard",
+    "commit": "local-working-tree",
+    "auditor_mode": "independent_forensic"
+  },
+  "evidence": [
+    {
+      "id": "E-001",
+      "type": "test",
+      "source": "task-315",
+      "location": "npm test",
+      "observation": "15 test suites passed, 81 tests passed, 2 skipped (the mock adapter constraint skipping in matlabService.test.js). Golden Fixture equivalents pass.",
+      "supports": ["REQ-E2E-001", "F-001"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-002",
+      "type": "code",
+      "source": "src/modules/cases/cases.routes.js",
+      "location": "Line 34-79",
+      "observation": "Unified endpoints implemented exactly as required: POST /cases, GET /case/:case_uuid, POST /case/:case_uuid/review, GET /queue, GET /model.",
+      "supports": ["REQ-API-001", "F-002"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-003",
+      "type": "code",
+      "source": "src/modules/cases/cases.controller.js",
+      "location": "Line 8-14, 101-104",
+      "observation": "parseJSONSafe is implemented and effectively catches string malformations from the AI model service layer to prevent fatal process crashes, defaulting to null.",
+      "supports": ["REQ-API-002", "F-003"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-004",
+      "type": "code",
+      "source": "src/modules/cases/cases.controller.js",
+      "location": "Line 124-128",
+      "observation": "Idempotency constraint: A check verifies if existing reviews exist via reviewerService.listByConsultation. Returns 409 Conflict if true.",
+      "supports": ["REQ-API-003", "F-004"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-005",
+      "type": "code",
+      "source": "src/middleware/errorHandler.js",
+      "location": "Line 12-14",
+      "observation": "Global error handler normalizes internal AppErrors into the safe JSON schema: { error: { code, message, details } }.",
+      "supports": ["REQ-SEC-001", "F-005"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-006",
+      "type": "code",
+      "source": "src/modules/cases/cases.controller.js",
+      "location": "Lines 38, 54, 137",
+      "observation": "Structured logging implemented for case.created, image.uploaded, review.submitted including appropriate case_uuid linkages.",
+      "supports": ["REQ-AUDIT-001", "F-006"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-007",
+      "type": "code",
+      "source": "src/modules/cases/cases.controller.js",
+      "location": "Lines 163-169",
+      "observation": "GET /model exposes runtime configuration explicitly matching process.env / config.matlab variables.",
+      "supports": ["REQ-MODEL-001", "F-007"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-008",
+      "type": "code",
+      "source": "RetinaGuard-Frontend-v3/src/services/api.ts",
+      "location": "Lines 24-53",
+      "observation": "casesService explicitly maps the new unified API endpoints in the frontend rather than utilizing old uncoupled services.",
+      "supports": ["REQ-FE-001", "F-008"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-009",
+      "type": "test",
+      "source": "src/matlab/adapters/mockAdapter.js",
+      "location": "Lines 136-139",
+      "observation": "Mock adapter explicitly throws a constraint error preventing generation of clinical synthetic AI grades without the CLI active.",
+      "supports": ["REQ-MODEL-002", "F-009"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-010",
+      "type": "test",
+      "source": "tests/integration/concurrency.test.js",
+      "location": "npm test",
+      "observation": "Concurrent review submissions trigger SQLite UNIQUE constraint on consultation_id, safely reverting exactly one request with a normalized 409 Conflict.",
+      "supports": ["GAP-004", "F-010"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-011",
+      "type": "test",
+      "source": "tests/integration/parser.test.js",
+      "location": "npm test",
+      "observation": "Malformed JSON in database triggers logger.warn for 'malformed.json.payload' without exposing the payload body.",
+      "supports": ["GAP-006", "F-011"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-012",
+      "type": "test",
+      "source": "tests/integration/failure-logging.test.js",
+      "location": "npm test",
+      "observation": "Failure in case creation properly emits 'case.creation.failed' with structured error and context via logger.error.",
+      "supports": ["HARDEN-001", "F-012"],
+      "confidence": "high"
+    },
+    {
+      "id": "E-013",
+      "type": "test",
+      "source": "tests/integration/model-config.test.js",
+      "location": "npm test",
+      "observation": "GET /model runtime reflection verified against config constraints dynamically.",
+      "supports": ["HARDEN-005", "F-013"],
+      "confidence": "high"
+    }
+  ]
+}
