@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useCallback, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
-import { analysisService, consultationService, imageService, casesService } from '../../services/api';
+import { analysisService, consultationService, imageService } from '../../services/api';
 import { useSync } from '../../contexts/SyncContext';
 
 import {
@@ -47,12 +47,25 @@ export default function AiAnalysis() {
   const primary: ImageRecord | null = gradeable[0] ?? null;
 
   const runAnalysis = useCallback(async () => {
-    if (!primary || !consultationId) return;
+    if (!primary || !consultationId || running) return; // guard duplicate calls
     setRunning(true);
     setError(null);
+
+    // 30-second timeout so the UI does not spin forever on a slow node.
+    const TIMEOUT_MS = 30_000;
+    const timeoutId = setTimeout(() => {
+      setRunning(false);
+      setError(
+        'Analysis is taking longer than expected. The node may be under load. ' +
+        'Wait a few seconds and try again, or check the edge server logs.',
+      );
+    }, TIMEOUT_MS);
+
     try {
       const res = await analysisService.run(primary.id, consultationId);
+      clearTimeout(timeoutId);
       setResult(res);
+
       // Explainability is a separate call: the run response carries the grade,
       // the layers carry the coordinates the viewer draws from.
       try {
@@ -60,37 +73,16 @@ export default function AiAnalysis() {
       } catch {
         setLayers(null);
       }
-      
-      // Fetch the unified case response and overwrite result to map to the UI
-      try {
-        const caseData = await casesService.getCase(consultationId);
-        if (caseData.prediction) {
-          setResult({
-            analysis: {
-              id: caseData.case_uuid, // Mock ID for rendering
-              dr_grade_code: caseData.prediction.grade,
-              dr_grade_label: caseData.prediction.label,
-              confidence: caseData.prediction.confidence,
-              referable: caseData.prediction.referable ? 1 : 0,
-              abstained: caseData.prediction.abstained,
-              abstain_reason: caseData.prediction.abstain_reason,
-              anatomy: caseData.anatomy,
-              lesions: caseData.lesions,
-              stage_timings_ms: caseData.stage_timings_ms
-            } as any
-          } as any);
-        }
-      } catch(err) {
-        console.warn('Failed to fetch unified case', err);
-      }
-      
+
       refetchCase();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Analysis could not complete.');
+      clearTimeout(timeoutId);
+      // Only update error if the timeout handler hasn't already set it.
+      setError((prev) => prev ?? (err instanceof Error ? err.message : 'Analysis could not complete.'));
     } finally {
       setRunning(false);
     }
-  }, [primary, consultationId, refetchCase]);
+  }, [primary, consultationId, running, refetchCase]);
 
   const submitForReview = useCallback(async () => {
     if (!consultationId) return;

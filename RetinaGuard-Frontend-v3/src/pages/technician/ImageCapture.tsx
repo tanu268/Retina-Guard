@@ -14,7 +14,7 @@ import { QualityMetricBars } from '../../components/clinical/ResultPanel';
 import {
   IconAlert, IconArrowRight, IconBrain, IconCamera, IconCheck, IconUpload, IconX,
 } from '../../components/ui/icons';
-import type { ImageRecord, Laterality, UploadImageResponse } from '../../types';
+import type { ImageRecord, Laterality, SqlBool, UploadImageResponse } from '../../types';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Image capture.
@@ -29,6 +29,24 @@ import type { ImageRecord, Laterality, UploadImageResponse } from '../../types';
    keep photographing.
    ═══════════════════════════════════════════════════════════════════════════ */
 
+const ALLOWED_MIME = new Set([
+  'image/jpeg', 'image/jpg', 'image/png', 'image/x-png', 'image/tiff',
+]);
+const MAX_BYTES = 25 * 1024 * 1024; // 25 MB
+
+function validateFile(file: File): string | null {
+  if (!file || file.size === 0) return 'The selected file is empty.';
+  if (file.size > MAX_BYTES) return `File exceeds the 25 MB limit (${(file.size / 1024 / 1024).toFixed(1)} MB).`;
+  if (!ALLOWED_MIME.has(file.type) && !['image/tiff'].includes(file.type)) {
+    // TIFF may report as application/octet-stream on some OS.
+    const ext = file.name.split('.').pop()?.toLowerCase();
+    if (!['jpg', 'jpeg', 'jfif', 'png', 'tif', 'tiff'].includes(ext ?? '')) {
+      return `Unsupported file type: ${file.type || ext}. Use JPEG, PNG, or TIFF.`;
+    }
+  }
+  return null;
+}
+
 interface EyeState {
   uploading: boolean;
   result: UploadImageResponse | null;
@@ -40,6 +58,10 @@ interface EyeState {
 const EMPTY_EYE: EyeState = {
   uploading: false, result: null, error: null, blocked: false, previewUrl: null,
 };
+
+function revokePreview(url: string | null) {
+  if (url) { try { URL.revokeObjectURL(url); } catch { /* ignore */ } }
+}
 
 function EyePanel({
   laterality, state, existing, onFile, onClear, disabled,
@@ -89,6 +111,36 @@ function EyePanel({
       </div>
 
       <div className="p-5">
+        {/* Image preview — shown after file selection, before result arrives */}
+        {state.previewUrl && !state.result && (
+          <div className="mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-500 mb-2">
+              Preview — {title}
+            </p>
+            <div className="relative rounded-none overflow-hidden bg-slate-900 w-full" style={{ maxHeight: 220 }}>
+              <img
+                src={state.previewUrl}
+                alt={`Fundus preview for ${title}`}
+                className="w-full h-full object-contain"
+                style={{ maxHeight: 220 }}
+                onError={() => { /* preview failed — silently remove */ }}
+              />
+              {state.uploading && (
+                <div className="absolute inset-0 bg-slate-900/60 flex flex-col items-center justify-center gap-2">
+                  <motion.span
+                    className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center"
+                    animate={{ scale: [1, 1.15, 1] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    <IconCamera size={18} />
+                  </motion.span>
+                  <p className="text-[12px] text-white font-medium">Running quality assessment…</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {!hasResult ? (
           <div
             onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
@@ -181,7 +233,11 @@ function EyePanel({
                 {state.result?.image.original_name ?? existing?.original_name ?? ''}
               </span>
               {state.result?.recaptureAllowed && !state.blocked ? (
-                <Button size="sm" variant="outline" onClick={onClear} icon={<IconCamera size={14} />}>
+                <Button
+                  size="sm" variant="outline"
+                  onClick={() => { revokePreview(state.previewUrl); onClear(); }}
+                  icon={<IconCamera size={14} />}
+                >
                   Recapture
                 </Button>
               ) : (
@@ -229,29 +285,55 @@ export default function ImageCapture() {
 
   const upload = useCallback(async (laterality: Laterality, file: File) => {
     const setState = laterality === 'left' ? setLeft : setRight;
-    setState((s) => ({ ...s, uploading: true, error: null }));
+
+    // Client-side validation before any network call.
+    const validationError = validateFile(file);
+    if (validationError) {
+      setState((s) => ({ ...s, error: validationError }));
+      return;
+    }
+
+    // Guard: consultation must be loaded before we can extract patient_id.
+    if (!consultation?.patient_id) {
+      setState((s) => ({ ...s, error: 'Case not loaded yet — please wait a moment and try again.' }));
+      return;
+    }
+
+    // Create a preview URL immediately so the technician can verify the correct eye.
+    // This is revoked when the component state is cleared or when a recapture starts.
+    const previewUrl = URL.createObjectURL(file);
+    setState((s) => ({ ...s, uploading: true, error: null, previewUrl }));
 
     try {
-      // Pass the patient ID from the loaded consultation
-      const patientId = consultation?.patient_id;
-      const res = await casesService.createCase(patientId!, consultationId!, laterality, file);
-      
-      // Map the cases response to the expected UI state
-      const result = {
-        image: { capture_attempt: 1, original_name: file.name, status: res.status } as any, // Mock enough for UI
+      const res = await casesService.createCase(
+        consultation.patient_id,
+        consultationId!,
+        laterality,
+        file,
+      );
+
+      // Map the /api/v1/cases response to the shape EyePanel expects.
+      // The unified endpoint does not return the full ImageRecord, so we
+      // reconstruct the minimum fields needed for the quality display.
+      const result: UploadImageResponse = {
+        image: {
+          capture_attempt: 1,
+          original_name: file.name,
+          status: res.status as ImageRecord['status'],
+        } as ImageRecord,
         quality: res.quality,
-        recaptureAllowed: true, // simplified
+        recaptureAllowed: 1 as SqlBool,
         remainingAttempts: 1,
       };
 
-      setState({
+      setState((s) => ({
         uploading: false, result, error: null, blocked: false,
-        previewUrl: null,
-      });
+        previewUrl: s.previewUrl, // keep preview after upload
+      }));
       refetchImages();
     } catch (err) {
       // 409 CLINICAL_SAFETY_VIOLATION means the recapture limit is exhausted.
-      // The technician must escalate, not keep retaking.
+      // The technician must escalate rather than keep retaking.
       const isLimit = err instanceof HttpError && err.code === 'CLINICAL_SAFETY_VIOLATION';
       setState((s) => ({
         ...s,
@@ -259,10 +341,12 @@ export default function ImageCapture() {
         blocked: isLimit,
         error: isLimit
           ? 'Recapture limit reached for this eye. Do not photograph again — escalate this case to a reviewer as it stands.'
-          : err instanceof Error ? err.message : 'Upload failed.',
+          : (err instanceof HttpError && err.isOffline)
+            ? 'No connection to the edge server. The image cannot be uploaded until the connection returns.'
+            : err instanceof Error ? err.message : 'Upload failed.',
       }));
     }
-  }, [consultationId, refetchImages]);
+  }, [consultation, consultationId, refetchImages]);
 
   const capturedCount = [
     left.result || existingLeft,

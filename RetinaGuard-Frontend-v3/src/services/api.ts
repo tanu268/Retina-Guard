@@ -186,31 +186,73 @@ export const reviewService = {
     })}`);
   },
 
-  /** `{ consultation, analyses, review }` — mapped from unified /api/v1/case endpoint */
+  /** `{ consultation, analyses, review }` — mapped from unified /api/v1/case endpoint.
+   *
+   * The unified endpoint does not return a full ConsultationWithPatient row, so
+   * we construct the minimum shape ReviewWorkspace needs. Fields absent from the
+   * unified response default to null rather than sentinel strings like 'UNKNOWN'. */
   async getCase(consultationId: string): Promise<ReviewCaseResponse> {
     const res = await http.get<any>(`/api/v1/case/${consultationId}`);
     return {
       consultation: {
-        id: res.case_uuid,
+        id: res.case_uuid ?? consultationId,
+        case_number: res.case_number ?? consultationId,
         status: res.status,
-        site_id: res.site_id,
-        device_id: res.device_id,
-        created_at: res.created_at,
-        patient_name: 'Patient', // Mocked as unified API might not return it yet
-        patient_id: 'UNKNOWN'
+        site_id: res.site_id ?? null,
+        device_id: res.device_id ?? null,
+        created_at: res.created_at ?? new Date().toISOString(),
+        // Patient fields are not present on the unified endpoint; ReviewWorkspace
+        // loads them separately via imageService.listByConsultation.
+        patient_name: res.patient_name ?? null,
+        patient_id: res.patient_id ?? '',
+        age: res.age ?? null,
+        gender: res.gender ?? null,
+        village: res.village ?? null,
+        district: res.district ?? null,
+        state: res.state ?? null,
+        diabetes_type: res.diabetes_type ?? null,
+        diabetes_duration_years: res.diabetes_duration_years ?? null,
+        patient_code: res.patient_code ?? null,
+        triage_priority: res.triage_priority ?? null,
+        // Required Consultation fields
+        technician_id: null, reviewer_id: null,
+        notes: null, identity_confirmed: 0, recapture_attempts: 0,
+        final_grade_code: null, final_referable: null,
+        consultation_date: res.created_at ?? null, closed_at: null,
+        version: 1, sync_state: 'pending' as const,
+        updated_at: res.created_at ?? new Date().toISOString(), deleted_at: null,
       } as any,
+
       analyses: res.prediction ? [{
-        id: res.case_uuid,
-        dr_grade_code: res.prediction.grade,
-        dr_grade_label: res.prediction.label,
-        confidence: res.prediction.confidence,
-        referable: res.prediction.referable ? 1 : 0,
-        grade_probabilities: res.probabilities,
-        anatomy: res.anatomy,
-        lesions: res.lesions,
-        stage_timings_ms: res.stage_timings_ms
+        id: res.analysis_id ?? res.case_uuid,
+        image_id: res.image_id ?? null,
+        consultation_id: consultationId,
+        status: res.prediction.abstained ? 'abstained' : 'completed',
+        model_version: res.model_version ?? 'unknown',
+        model_hash: res.model_hash ?? '',
+        preprocessing_hash: res.preprocessing_hash ?? '',
+        dr_grade_code: res.prediction.abstained ? null : res.prediction.grade,
+        dr_grade_label: res.prediction.abstained ? null : res.prediction.label,
+        confidence: res.prediction.abstained ? null : res.prediction.confidence,
+        referable_probability: res.prediction.abstained ? null : (res.prediction.referable_probability ?? null),
+        referable: res.prediction.abstained ? null : (res.prediction.referable ? 1 : 0),
+        grade_probabilities: res.probabilities ?? null,
+        abstained: res.prediction.abstained ? 1 : 0,
+        abstain_reason: res.prediction.abstain_reason ?? null,
+        triage_priority: res.triage_priority ?? null,
+        anatomy: res.anatomy ?? null,
+        lesions: res.lesions ?? null,
+        stage_timings_ms: res.stage_timings_ms ?? null,
+        warnings: res.warnings ?? null,
+        error_message: null,
+        audit_sampled: 0,
+        started_at: null,
+        completed_at: res.created_at ?? null,
+        sync_state: 'pending' as const,
+        created_at: res.created_at ?? new Date().toISOString(),
+        updated_at: res.created_at ?? new Date().toISOString(),
       }] as any : [],
-      review: res.review
+      review: res.review ?? null,
     };
   },
 
