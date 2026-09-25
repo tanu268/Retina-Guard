@@ -1,0 +1,4402 @@
+[
+  {
+    "filename": "3178559fbf57.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.999503853260559,
+      0.0001633800426346094,
+      0.0001647206996964142,
+      0.00003105429297212355,
+      0.0001369917041378886
+    ],
+    "logits": [
+      7.061939716339111,
+      -1.6569955348968506,
+      -1.6488232612609863,
+      -3.3173375129699707,
+      -1.8331542015075684
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "47b756014447.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00867039122808195,
+      0.0516737790595418,
+      0.6164288708217769,
+      0.18794153113120235,
+      0.135285427759397
+    ],
+    "logits": [
+      -2.3670008182525635,
+      -0.5819642543792725,
+      1.8970282077789307,
+      0.7092161774635315,
+      0.3804720938205719
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "475c7ded0f7a.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00021053091123245676,
+      0.09972013412873933,
+      0.7345415662992446,
+      0.006679191273394309,
+      0.15884857738738925
+    ],
+    "logits": [
+      -4.895993232727051,
+      1.26449716091156,
+      3.261376142501831,
+      -1.438873529434204,
+      1.7300809621810913
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "7102f29e052e.png",
+    "actual_grade": 2,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00006338816162237271,
+      0.004201181021595783,
+      0.22120635892043444,
+      0.07004813899426836,
+      0.704480932902079
+    ],
+    "logits": [
+      -5.838495254516602,
+      -1.6446514129638672,
+      2.3190789222717285,
+      1.1691656112670898,
+      3.4774441719055176
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ea6a53e54d0f.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9989560079809886,
+      0.0007969363859549072,
+      0.0002127331957270174,
+      0.000013079771512157832,
+      0.0000212426658173825
+    ],
+    "logits": [
+      7.2490692138671875,
+      0.11537805199623108,
+      -1.2053580284118652,
+      -3.9943299293518066,
+      -3.509385108947754
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b9127e38d9b9.png",
+    "actual_grade": 2,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0001268397321029661,
+      0.005241948588208148,
+      0.190712502131583,
+      0.515010942156854,
+      0.2889077673912519
+    ],
+    "logits": [
+      -5.651279926300049,
+      -1.929755687713623,
+      1.6643180847167969,
+      2.6577391624450684,
+      2.0796585083007812
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "4360a112db10.png",
+    "actual_grade": 3,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.011418448503346633,
+      0.0313456603723157,
+      0.04232636704892396,
+      0.9028317682941496,
+      0.012077755781264162
+    ],
+    "logits": [
+      -1.7120164632797241,
+      -0.7021709680557251,
+      -0.4018365740776062,
+      2.6582894325256348,
+      -1.655881404876709
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b8ac328009e0.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00003412264992011995,
+      0.011416873618511007,
+      0.611730658288385,
+      0.16514575781025198,
+      0.21167258763293184
+    ],
+    "logits": [
+      -6.622962951660156,
+      -0.8100766539573669,
+      3.1711230278015137,
+      1.8616594076156616,
+      2.1098716259002686
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ff59d44a70a7.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9985450807287608,
+      0.0007013913784914269,
+      0.0006128836976425633,
+      0.000037643653771648944,
+      0.00010300054133362641
+    ],
+    "logits": [
+      6.474393844604492,
+      -0.7865946888923645,
+      -0.9214855432510376,
+      -3.711496353149414,
+      -2.7049264907836914
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "60edda7b4871.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9746560937668685,
+      0.01027603219616585,
+      0.004113166746412742,
+      0.0035485998622011906,
+      0.007406107428351821
+    ],
+    "logits": [
+      3.9699549674987793,
+      -0.5823155045509338,
+      -1.497936487197876,
+      -1.6455765962600708,
+      -0.9098247289657593
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c0a0828e01b4.png",
+    "actual_grade": 3,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000009711335476190195,
+      0.00153691780513277,
+      0.731759744053444,
+      0.052995254876328626,
+      0.21369837192961844
+    ],
+    "logits": [
+      -6.954853057861328,
+      -1.8906126022338867,
+      4.275060653686523,
+      1.649810791015625,
+      3.0441739559173584
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9a56cfb980ec.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9884717226471584,
+      0.0035459432405647363,
+      0.004072918129376948,
+      0.002057922548190989,
+      0.0018514934347089093
+    ],
+    "logits": [
+      4.532238960266113,
+      -1.0981168746948242,
+      -0.9595613479614258,
+      -1.6422240734100342,
+      -1.747928500175476
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a11c62cb3f86.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9986157673522015,
+      0.0003963990734694816,
+      0.0009103399122710534,
+      0.000012486160092725444,
+      0.00006500750196538801
+    ],
+    "logits": [
+      6.884953022003174,
+      -0.9467508792877197,
+      -0.11535428464412689,
+      -4.4045515060424805,
+      -2.754669666290283
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "7f2cce721e19.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996579839444331,
+      0.00017485629994428543,
+      0.00009370530440753954,
+      0.000018922877050389846,
+      0.000054531574164483716
+    ],
+    "logits": [
+      7.485757827758789,
+      -1.165446162223816,
+      -1.7892558574676514,
+      -3.3890390396118164,
+      -2.3306307792663574
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9ed666e982cd.png",
+    "actual_grade": 1,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.019564009119977827,
+      0.4519231147907103,
+      0.4935365319010627,
+      0.011357679418182358,
+      0.023618664770066758
+    ],
+    "logits": [
+      -1.1519756317138672,
+      1.9878448247909546,
+      2.075929641723633,
+      -1.6957731246948242,
+      -0.963629961013794
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b1197f2cc9b3.png",
+    "actual_grade": 1,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0007954962017854287,
+      0.4517475655781803,
+      0.537973475669734,
+      0.0004519560872591327,
+      0.009031506463041237
+    ],
+    "logits": [
+      -3.04099178314209,
+      3.3009209632873535,
+      3.475606679916382,
+      -3.606372833251953,
+      -0.6114833950996399
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e9678824215d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9981642720107732,
+      0.0005593052157797771,
+      0.0006189129864809904,
+      0.00012335556914575357,
+      0.0005341542178203846
+    ],
+    "logits": [
+      6.046047210693359,
+      -1.4409306049346924,
+      -1.3396612405776978,
+      -2.952554941177368,
+      -1.4869413375854492
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6155cf375354.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996953685432314,
+      0.0002026963395427265,
+      0.00006923894125883994,
+      0.0000073676075241351206,
+      0.000025328568442665042
+    ],
+    "logits": [
+      7.889458656311035,
+      -0.6140382289886475,
+      -1.6881837844848633,
+      -3.928654193878174,
+      -2.693814277648926
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ec363f48867b.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.999594378509918,
+      0.000287690515487731,
+      0.00009267381902512188,
+      0.000005584468110181901,
+      0.000019672687458960198
+    ],
+    "logits": [
+      7.86229944229126,
+      -0.29092010855674744,
+      -1.4237194061279297,
+      -4.232816219329834,
+      -2.973574161529541
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "541db13517e2.png",
+    "actual_grade": 2,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.001426908098736101,
+      0.029504479682662236,
+      0.219138077051224,
+      0.5442940073920826,
+      0.20563652777529504
+    ],
+    "logits": [
+      -3.9613037109375,
+      -0.9322715401649475,
+      1.0728883743286133,
+      1.9826759099960327,
+      1.0092965364456177
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b8e9a8f4617d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9994624436259854,
+      0.00016338749158370948,
+      0.0002566072546253049,
+      0.000017601359937097376,
+      0.00009996026786851295
+    ],
+    "logits": [
+      7.2621307373046875,
+      -1.4567174911499023,
+      -1.0052953958511353,
+      -3.684865951538086,
+      -1.9480693340301514
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3f6bccf21ce8.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9997866233510749,
+      0.00011613783304990012,
+      0.00005561176282107714,
+      0.00000969577209107708,
+      0.00003193128096296779
+    ],
+    "logits": [
+      7.891530990600586,
+      -1.1689884662628174,
+      -1.9053714275360107,
+      -3.652076244354248,
+      -2.4601800441741943
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f920ccd926db.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0006514692957399985,
+      0.06254736933291552,
+      0.8440355908592824,
+      0.011651986957722058,
+      0.08111358355433991
+    ],
+    "logits": [
+      -3.863792657852173,
+      0.700656533241272,
+      3.302927017211914,
+      -0.9797909259796143,
+      0.9605827927589417
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "aebe87a423c8.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9964344409071779,
+      0.0003241472504349467,
+      0.001392255629018228,
+      0.0009570824655740997,
+      0.0008920737477949706
+    ],
+    "logits": [
+      5.2962799072265625,
+      -2.7344608306884766,
+      -1.2769782543182373,
+      -1.6517691612243652,
+      -1.7221099138259888
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9f436886e056.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.024495859569677095,
+      0.01204782309948226,
+      0.708517571344708,
+      0.01836288710704253,
+      0.23657585887908994
+    ],
+    "logits": [
+      -1.1436176300048828,
+      -1.8532377481460571,
+      2.221053123474121,
+      -1.4317901134490967,
+      1.1241471767425537
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9b32e8ef0ca0.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0010611844280508259,
+      0.2490719501901478,
+      0.7029949579263097,
+      0.002485763985126082,
+      0.044386143470365694
+    ],
+    "logits": [
+      -3.2088804244995117,
+      2.2494757175445557,
+      3.287083625793457,
+      -2.3576860427856445,
+      0.5246612429618835
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0db1d8dcf219.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.984414342469009,
+      0.005079220438678356,
+      0.0033064193261923983,
+      0.003583808409995359,
+      0.0036162093561247404
+    ],
+    "logits": [
+      4.246272563934326,
+      -1.0206165313720703,
+      -1.4499084949493408,
+      -1.3693482875823975,
+      -1.3603479862213135
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f35d80bb1a22.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9992162325690329,
+      0.00027024008485436744,
+      0.0002779046256538891,
+      0.00003764983953876465,
+      0.00019797288091995353
+    ],
+    "logits": [
+      6.799157619476318,
+      -1.4162580966949463,
+      -1.3882908821105957,
+      -3.387240171432495,
+      -1.7274388074874878
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a06e5ac695ce.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9779059438510064,
+      0.004483259914515195,
+      0.008050780339076486,
+      0.0038291446099359364,
+      0.005730871285465967
+    ],
+    "logits": [
+      3.986246347427368,
+      -1.398816704750061,
+      -0.8133981227874756,
+      -1.556525707244873,
+      -1.1532995700836182
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "705f508d1e42.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9997555107461106,
+      0.00007802677166280535,
+      0.00009337499807317581,
+      0.000016524002266998163,
+      0.000056563481886403055
+    ],
+    "logits": [
+      7.602080345153809,
+      -1.8561336994171143,
+      -1.6765620708465576,
+      -3.408371686935425,
+      -2.1778221130371094
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "13c191b59ed0.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9943307697776197,
+      0.0032581296014537716,
+      0.0014093368224597034,
+      0.00026034239454402966,
+      0.0007414214039227741
+    ],
+    "logits": [
+      5.376977920532227,
+      -0.3439387083053589,
+      -1.1819727420806885,
+      -2.870849609375,
+      -1.8242781162261963
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c9485c38fdd5.png",
+    "actual_grade": 1,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000021307578637489982,
+      0.03756631025507544,
+      0.9420844237323512,
+      0.01029180307469342,
+      0.010036155359242292
+    ],
+    "logits": [
+      -6.102309226989746,
+      1.3724908828735352,
+      4.594478130340576,
+      0.07773099839687347,
+      0.05257734656333923
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6810410187a0.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0022034591130898878,
+      0.09814979772544694,
+      0.6957976207655419,
+      0.03378081128441769,
+      0.1700683111115036
+    ],
+    "logits": [
+      -3.4615375995635986,
+      0.33492881059646606,
+      2.2934927940368652,
+      -0.7316731214523315,
+      0.8846341371536255
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e4730ddde408.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000127197233692696,
+      0.010727601630018716,
+      0.48318680740138,
+      0.37651186498554884,
+      0.12944652874935983
+    ],
+    "logits": [
+      -5.585853576660156,
+      -1.151017189025879,
+      2.6565661430358887,
+      2.4071123600006104,
+      1.3394306898117065
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "13073f075a56.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995659766581777,
+      0.00024830473256070093,
+      0.00012836557018570282,
+      0.000012032087636006437,
+      0.000045320951439785796
+    ],
+    "logits": [
+      7.447532653808594,
+      -0.8528870344161987,
+      -1.5126615762710571,
+      -3.8799667358398438,
+      -2.553774356842041
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ae49cc60f251.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995522744935301,
+      0.0001799463718093874,
+      0.00016388214297864838,
+      0.000025215296605514484,
+      0.00007868169507666536
+    ],
+    "logits": [
+      7.188668251037598,
+      -1.4337356090545654,
+      -1.5272469520568848,
+      -3.3989436626434326,
+      -2.260983943939209
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0fb1053285cf.png",
+    "actual_grade": 1,
+    "predicted_grade": 1,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.012550566083860086,
+      0.5254836351441837,
+      0.4574694542599258,
+      0.0019397167778441137,
+      0.0025566277341862033
+    ],
+    "logits": [
+      -0.8971766829490662,
+      2.837376594543457,
+      2.69876766204834,
+      -2.7644004821777344,
+      -2.488253355026245
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e599151ca14b.png",
+    "actual_grade": 2,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0006822295517387181,
+      0.014039499743404687,
+      0.158454230471414,
+      0.6923743499594887,
+      0.13444969027395395
+    ],
+    "logits": [
+      -4.3050432205200195,
+      -1.2807793617248535,
+      1.14281165599823,
+      2.6174726486206055,
+      0.9785359501838684
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0232dfea7547.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.998535802720779,
+      0.00044393840144941744,
+      0.0007749148959063656,
+      0.00006352014072565272,
+      0.00018182384113953916
+    ],
+    "logits": [
+      6.4159255027771,
+      -1.302433967590332,
+      -0.7453665733337402,
+      -3.246762752532959,
+      -2.1950814723968506
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e893e86dde94.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9999488953631157,
+      0.000035361455919659335,
+      0.000005646664388291617,
+      8.609342368165046e-7,
+      0.000009235582339592559
+    ],
+    "logits": [
+      9.349005699157715,
+      -0.9008313417434692,
+      -2.73538875579834,
+      -4.6161909103393555,
+      -2.2433900833129883
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "89ed6a0dd53f.png",
+    "actual_grade": 1,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.001993793459305394,
+      0.1191944747463691,
+      0.8107966525532818,
+      0.057953843458617156,
+      0.010061235782426469
+    ],
+    "logits": [
+      -3.0455048084259033,
+      1.0452125072479248,
+      2.9624733924865723,
+      0.3241029977798462,
+      -1.426853895187378
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "2cbfc6182ba2.png",
+    "actual_grade": 2,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0009493725465031064,
+      0.019122621107770035,
+      0.19525554725470518,
+      0.12629568818699258,
+      0.6583767709040291
+    ],
+    "logits": [
+      -4.2888898849487305,
+      -1.2860639095306396,
+      1.0373733043670654,
+      0.6016899943351746,
+      2.2528414726257324
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "7fe7309d0b4f.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9977694465378201,
+      0.0007013728165079345,
+      0.001342063899662163,
+      0.00006702569205255326,
+      0.00012009105395700134
+    ],
+    "logits": [
+      6.226931571960449,
+      -1.033306360244751,
+      -0.3843820095062256,
+      -3.381269931793213,
+      -2.798095703125
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6d454444f17c.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00858340878466935,
+      0.283576855788311,
+      0.6342847787283409,
+      0.033818084005763714,
+      0.039736872692915134
+    ],
+    "logits": [
+      -2.13368821144104,
+      1.3639638423919678,
+      2.168978691101074,
+      -0.7625236511230469,
+      -0.601239800453186
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f252046c0fe6.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9998257854069793,
+      0.00006053727594301299,
+      0.00007052721842269257,
+      0.000005244275065449051,
+      0.000037905823589393194
+    ],
+    "logits": [
+      8.06491470336914,
+      -1.6471623182296753,
+      -1.4944229125976562,
+      -4.093284606933594,
+      -2.115316867828369
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "519c6e8f78dc.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9898589911763701,
+      0.003830130826238884,
+      0.0023601958840072297,
+      0.0018319784538515657,
+      0.0021187036595319143
+    ],
+    "logits": [
+      4.575047492980957,
+      -0.9796160459518433,
+      -1.4637703895568848,
+      -1.717118501663208,
+      -1.5717105865478516
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c9e697117f3f.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9991560414891141,
+      0.00039942155421116417,
+      0.0002412740716645135,
+      0.000033273465158787056,
+      0.00016998941985147358
+    ],
+    "logits": [
+      6.836923599243164,
+      -0.9877252578735352,
+      -1.4918091297149658,
+      -3.472982406616211,
+      -1.8420064449310303
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "acc9f29538c4.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0005098686239778261,
+      0.03439222867015096,
+      0.8353862760069515,
+      0.042824125709602305,
+      0.08688750098931743
+    ],
+    "logits": [
+      -4.447192192077637,
+      -0.23575937747955322,
+      2.9543042182922363,
+      -0.01648837700486183,
+      0.6910241842269897
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6f3b62e5b7f5.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9977569811479845,
+      0.0013298544050023519,
+      0.0007561593112798394,
+      0.00003066864614783749,
+      0.00012633648958564753
+    ],
+    "logits": [
+      6.327178955078125,
+      -0.29326131939888,
+      -0.857833981513977,
+      -4.062845230102539,
+      -2.64713716506958
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f361060eda3e.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.999410521187146,
+      0.00016513658225279166,
+      0.00021802348540427133,
+      0.00002593685236263425,
+      0.00018038189283446488
+    ],
+    "logits": [
+      6.965102195739746,
+      -1.7430458068847656,
+      -1.4652159214019775,
+      -3.594153881072998,
+      -1.6547424793243408
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "eae901557a84.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00008132305461273523,
+      0.4269968081986156,
+      0.5033030000835611,
+      0.007775196570595452,
+      0.06184367209261515
+    ],
+    "logits": [
+      -5.87860631942749,
+      2.6874959468841553,
+      2.851911783218384,
+      -1.318341851234436,
+      0.7553291916847229
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "bb7e0a2544cd.png",
+    "actual_grade": 3,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000001251280436731346,
+      0.00008985774998019499,
+      0.011904757791746982,
+      0.4661300247064906,
+      0.5218741084713454
+    ],
+    "logits": [
+      -8.130481719970703,
+      -3.8564212322235107,
+      1.0300443172454834,
+      4.69757080078125,
+      4.810532569885254
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "26453eb7e989.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.009664694898597746,
+      0.09085523703536993,
+      0.8327607820728703,
+      0.022015547575240695,
+      0.044703738417921544
+    ],
+    "logits": [
+      -2.396488666534424,
+      -0.15570077300071716,
+      2.0597782135009766,
+      -1.5732192993164062,
+      -0.8649110794067383
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "236f56771ec6.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00017204091681633497,
+      0.05599670277796611,
+      0.9301948503549514,
+      0.008862156828083872,
+      0.004774249122182308
+    ],
+    "logits": [
+      -4.243710517883301,
+      1.5416052341461182,
+      4.351706504821777,
+      -0.30189740657806396,
+      -0.9204508662223816
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "8a67f1efa315.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0002961117629399402,
+      0.019352342748523998,
+      0.5477279868070811,
+      0.4062751073727013,
+      0.02634845130875363
+    ],
+    "logits": [
+      -4.751643180847168,
+      -0.5718113780021667,
+      2.7711539268493652,
+      2.4724056720733643,
+      -0.2632153630256653
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3ac92ac3d65a.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9983486618162782,
+      0.0005284857160288647,
+      0.00031754811727214487,
+      0.00023661944574059033,
+      0.0005686849046800135
+    ],
+    "logits": [
+      6.1350998878479,
+      -1.4087421894073486,
+      -1.9181286096572876,
+      -2.2123048305511475,
+      -1.335431456565857
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d436c06f0490.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9976273831946825,
+      0.0013777620909423789,
+      0.0007017248230599568,
+      0.0000249677160228619,
+      0.0002681621752923117
+    ],
+    "logits": [
+      6.338593482971191,
+      -0.24632585048675537,
+      -0.9210003018379211,
+      -4.2569580078125,
+      -1.882949709892273
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f9d52509c571.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.999717121149711,
+      0.00020021498180227006,
+      0.000054455155395924555,
+      0.000007180656796652911,
+      0.00002102805629410234
+    ],
+    "logits": [
+      7.942496299743652,
+      -0.5733396410942078,
+      -1.8753538131713867,
+      -3.9013404846191406,
+      -2.826873779296875
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0ef4c61dc056.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9979750194175647,
+      0.0008990564935158959,
+      0.0007142578624897615,
+      0.00010748750938633919,
+      0.00030417871704314426
+    ],
+    "logits": [
+      5.947812080383301,
+      -1.0643255710601807,
+      -1.2944273948669434,
+      -3.1882967948913574,
+      -2.1480560302734375
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6cfb7b44ef6f.png",
+    "actual_grade": 4,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.034866421347545716,
+      0.1597809635222373,
+      0.051016403078118625,
+      0.11046100871046785,
+      0.6438752033416305
+    ],
+    "logits": [
+      -1.5695194005966187,
+      -0.04723972827196121,
+      -1.1888964176177979,
+      -0.41638103127479553,
+      1.346461296081543
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "da3a2275c850.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9993850146516488,
+      0.00021779488716890138,
+      0.0002279420263696222,
+      0.000023668921682479894,
+      0.00014557951313014984
+    ],
+    "logits": [
+      7.013513565063477,
+      -1.41782808303833,
+      -1.3722904920578003,
+      -3.637218952178955,
+      -1.8206593990325928
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3f49f8d100e9.png",
+    "actual_grade": 3,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000046146467294485525,
+      0.0009036405792755876,
+      0.3026440412209457,
+      0.31936694841941854,
+      0.3770392233130657
+    ],
+    "logits": [
+      -6.261220932006836,
+      -3.286609649658203,
+      2.527271270751953,
+      2.5810546875,
+      2.747063159942627
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b82d5f1f1145.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0004748378530158374,
+      0.04682415648286278,
+      0.6594771248713002,
+      0.22893028276814043,
+      0.0642935980246808
+    ],
+    "logits": [
+      -4.751211166381836,
+      -0.1600300371646881,
+      2.485018014907837,
+      1.4269882440567017,
+      0.15703079104423523
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "282bc792d23a.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.005065899297826091,
+      0.11456709708056653,
+      0.8584628660046149,
+      0.007866737516534958,
+      0.014037400100457752
+    ],
+    "logits": [
+      -2.123577117919922,
+      0.9950518608093262,
+      3.0090346336364746,
+      -1.6834653615951538,
+      -1.1043835878372192
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3d2ecffe0386.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9688009246730891,
+      0.004452721947811843,
+      0.015754969003202845,
+      0.0033246201582394345,
+      0.0076667642176567775
+    ],
+    "logits": [
+      3.7746543884277344,
+      -1.607889175415039,
+      -0.3442489504814148,
+      -1.9000493288040161,
+      -1.0645101070404053
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ee02294cc3d9.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0000403120143382049,
+      0.005681984791219052,
+      0.6687555723362992,
+      0.2749232275595477,
+      0.05059890329859575
+    ],
+    "logits": [
+      -6.162311553955078,
+      -1.2139052152633667,
+      3.554212808609009,
+      2.665286064147949,
+      0.9727240800857544
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3c28fd846b43.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995514367205415,
+      0.0002630615460366296,
+      0.00012142303565564228,
+      0.000007946005535819444,
+      0.00005613269223063988
+    ],
+    "logits": [
+      7.5255937576293945,
+      -0.7170801162719727,
+      -1.4901875257492065,
+      -4.216798782348633,
+      -2.261749744415283
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a49b0b4484ea.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.016258246453007084,
+      0.24172469479638373,
+      0.6737666471357663,
+      0.001308962793117649,
+      0.0669414488217254
+    ],
+    "logits": [
+      -1.3501652479171753,
+      1.3490339517593384,
+      2.3741183280944824,
+      -3.869530439376831,
+      0.06505283713340759
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "1411c8ab7161.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0005976962213833732,
+      0.023618281046963056,
+      0.3617055161599471,
+      0.27036152569857774,
+      0.3437169808731286
+    ],
+    "logits": [
+      -4.885673522949219,
+      -1.208979845046997,
+      1.519829511642456,
+      1.2287591695785522,
+      1.4688177108764648
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "2665f72e2dd3.png",
+    "actual_grade": 3,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0014945898739686253,
+      0.0034846919677235188,
+      0.03242459132537433,
+      0.9407374935275451,
+      0.021858633305388443
+    ],
+    "logits": [
+      -2.7622785568237305,
+      -1.9157507419586182,
+      0.31478673219680786,
+      3.6825337409973145,
+      -0.07953443378210068
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a45d77edf8d9.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.02476416055014326,
+      0.11879889644934112,
+      0.7143679549440316,
+      0.0011817956478645277,
+      0.14088719240861944
+    ],
+    "logits": [
+      -0.793043851852417,
+      0.7749907970428467,
+      2.5689568519592285,
+      -3.8354063034057617,
+      0.9455181956291199
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3580a545016d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9993668404577637,
+      0.0003630744852082718,
+      0.0001961819232560538,
+      0.000010986949685881496,
+      0.0000629161840860532
+    ],
+    "logits": [
+      7.303990364074707,
+      -0.6162788271903992,
+      -1.231844425201416,
+      -4.114178657531738,
+      -2.3690834045410156
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "973b0facfa9b.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996562820656965,
+      0.00011501173512972458,
+      0.00012135755296004388,
+      0.0000212979534358645,
+      0.00008605069277796967
+    ],
+    "logits": [
+      7.362759590148926,
+      -1.707373023033142,
+      -1.6536660194396973,
+      -3.39379620552063,
+      -1.9974706172943115
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "8d4d14a4ab07.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9988230140235476,
+      0.0006406949697870076,
+      0.00032684411502145614,
+      0.00004403930344968032,
+      0.0001654075881942785
+    ],
+    "logits": [
+      6.548829078674316,
+      -0.8029503226280212,
+      -1.4760204553604126,
+      -3.480421304702759,
+      -2.1570911407470703
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "74eee788edee.png",
+    "actual_grade": 3,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00024410693510576724,
+      0.008936227429949461,
+      0.38524080084298246,
+      0.3734916461393051,
+      0.23208721865265733
+    ],
+    "logits": [
+      -5.016481399536133,
+      -1.4162189960479736,
+      2.347536087036133,
+      2.316563129425049,
+      1.8407807350158691
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "15c24478ac72.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996746569976648,
+      0.00011184775551473381,
+      0.00009565864762312716,
+      0.00001641587508871816,
+      0.00010142072410860828
+    ],
+    "logits": [
+      7.484559059143066,
+      -1.6134874820709229,
+      -1.7698400020599365,
+      -3.532377243041992,
+      -1.7113486528396606
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c755a0c4edcc.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9956372585501118,
+      0.0016131716340307143,
+      0.0012977150618101662,
+      0.0009336332276949997,
+      0.0005182215263525474
+    ],
+    "logits": [
+      5.190377235412598,
+      -1.234803557395935,
+      -1.4524006843566895,
+      -1.7816773653030396,
+      -2.3703582286834717
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c2f3281cf528.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.999735299412998,
+      0.00011068492420420535,
+      0.00007416138623915761,
+      0.00001567886783433628,
+      0.00006417540872423043
+    ],
+    "logits": [
+      7.536755561828613,
+      -1.5718026161193848,
+      -1.9722466468811035,
+      -3.5261764526367188,
+      -2.116870164871216
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "2b2f5a0f880d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9810333828727981,
+      0.003910562154825496,
+      0.00523661778036582,
+      0.005623478745935333,
+      0.004195958446075249
+    ],
+    "logits": [
+      4.036068439483643,
+      -1.4888569116592407,
+      -1.1968622207641602,
+      -1.1255875825881958,
+      -1.4184162616729736
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "aba3063c5413.png",
+    "actual_grade": 3,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.001185730639849028,
+      0.039113898056112324,
+      0.7379155649896152,
+      0.17590437003076437,
+      0.045880436283658975
+    ],
+    "logits": [
+      -3.5778746604919434,
+      -0.08175596594810486,
+      2.855595588684082,
+      1.4217066764831543,
+      0.07780498266220093
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f03d3c4ce7fb.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00011726377596991318,
+      0.009597036371032099,
+      0.7312113027938676,
+      0.10247517229531991,
+      0.15659922476381036
+    ],
+    "logits": [
+      -5.380160331726074,
+      -0.9753766059875488,
+      3.3578715324401855,
+      1.392789602279663,
+      1.8168588876724243
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a8263d248523.png",
+    "actual_grade": 0,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.15430553062468952,
+      0.008581741870300537,
+      0.4879557912998006,
+      0.04055874115937431,
+      0.3085981950458349
+    ],
+    "logits": [
+      0.16908904910087585,
+      -2.7202086448669434,
+      1.3203792572021484,
+      -1.1670942306518555,
+      0.8621945381164551
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ceaa5803d780.png",
+    "actual_grade": 2,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0004299361206294476,
+      0.016291844252202953,
+      0.2892366887536407,
+      0.3160927748724644,
+      0.3779487560010624
+    ],
+    "logits": [
+      -4.941644668579102,
+      -1.306861400604248,
+      1.5697193145751953,
+      1.6585097312927246,
+      1.8372325897216797
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "840a06a9c690.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9992775439275764,
+      0.0002598744838383408,
+      0.00022904736664786055,
+      0.00004686349403606316,
+      0.00018667072790143273
+    ],
+    "logits": [
+      6.769742012023926,
+      -1.484847068786621,
+      -1.6111170053482056,
+      -3.1978068351745605,
+      -1.815699577331543
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d160ebef4117.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9993885122247814,
+      0.00030826217196147,
+      0.00024174330737438966,
+      0.000010193833526094285,
+      0.000051288462356709316
+    ],
+    "logits": [
+      7.1682448387146,
+      -0.9157034158706665,
+      -1.1587775945663452,
+      -4.324871063232422,
+      -2.709188222885132
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a4d41c495666.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00002077765133860031,
+      0.018902662667271922,
+      0.9339771660025512,
+      0.007849844552604191,
+      0.039249549126233955
+    ],
+    "logits": [
+      -6.402371406555176,
+      0.4108087122440338,
+      4.310957908630371,
+      -0.4680003523826599,
+      1.1414458751678467
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "99240ee00485.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995721675318257,
+      0.00012294598732271567,
+      0.00016116981811330642,
+      0.000030380509779781644,
+      0.00011333615295871973
+    ],
+    "logits": [
+      7.239797115325928,
+      -1.7635403871536255,
+      -1.4928269386291504,
+      -3.1614842414855957,
+      -1.8449273109436035
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e1b8acb1cea1.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9986999802681169,
+      0.0008979309718879204,
+      0.0002508009275883594,
+      0.000033620115123983615,
+      0.00011766771728287837
+    ],
+    "logits": [
+      6.694270133972168,
+      -0.31984636187553406,
+      -1.5952800512313843,
+      -3.6048150062561035,
+      -2.3520748615264893
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "869bbd3170cc.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000010947709406449654,
+      0.005796792454435589,
+      0.9805433572788043,
+      0.0010634159121613942,
+      0.012585486645192214
+    ],
+    "logits": [
+      -5.818692207336426,
+      0.4532375633716583,
+      5.584039688110352,
+      -1.2425808906555176,
+      1.228477120399475
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "7ddcfcea7369.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9741376167500395,
+      0.005669930883643994,
+      0.0033005002293359557,
+      0.003471371904780149,
+      0.013420580232200293
+    ],
+    "logits": [
+      3.938654899597168,
+      -1.2077207565307617,
+      -1.748823642730713,
+      -1.698347806930542,
+      -0.3461083173751831
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "cf8f1bc7a215.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9429064961303496,
+      0.01042143109776299,
+      0.03134254932006892,
+      0.007206688030536196,
+      0.008122835421282318
+    ],
+    "logits": [
+      3.375971794128418,
+      -1.1291309595108032,
+      -0.028018750250339508,
+      -1.49798583984375,
+      -1.378316044807434
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "4731e708ede3.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9924321124379186,
+      0.004514063848457272,
+      0.0019822119464177734,
+      0.0003091692107201233,
+      0.0007624425564860822
+    ],
+    "logits": [
+      5.183834552764893,
+      -0.20912623405456543,
+      -1.0321106910705566,
+      -2.890190601348877,
+      -1.9875521659851074
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6733544ae7a6.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00013155591362579153,
+      0.029937971839151232,
+      0.9083810588699941,
+      0.04821352250038038,
+      0.013335890876848501
+    ],
+    "logits": [
+      -5.190387725830078,
+      0.2370632290840149,
+      3.649599552154541,
+      0.7135751247406006,
+      -0.5716054439544678
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3b9c1f42c2f2.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0012508256707386956,
+      0.03712292073837399,
+      0.8275136673414346,
+      0.06008480164449244,
+      0.07402778460496039
+    ],
+    "logits": [
+      -3.6673378944396973,
+      -0.27690717577934265,
+      2.8272838592529297,
+      0.20461516082286835,
+      0.41329872608184814
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "eda29a9d78f3.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9990555039607837,
+      0.0005548533347340874,
+      0.00032179299075199184,
+      0.000016761995735462902,
+      0.00005108771799509018
+    ],
+    "logits": [
+      7.11873722076416,
+      -0.3771245777606964,
+      -0.9219199419021606,
+      -3.8767142295837402,
+      -2.762284278869629
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "8a9bef2fbd4e.png",
+    "actual_grade": 3,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00024511424912296217,
+      0.008176188843809183,
+      0.3368550890097402,
+      0.6439457294108907,
+      0.010777878486436838
+    ],
+    "logits": [
+      -4.468014717102051,
+      -0.9607577323913574,
+      2.757668972015381,
+      3.405630588531494,
+      -0.6844881176948547
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ba2624883599.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0010371041336013369,
+      0.07329413839075445,
+      0.9048984979207098,
+      0.008453456771278314,
+      0.012316802783655885
+    ],
+    "logits": [
+      -3.228327989578247,
+      1.0297203063964844,
+      3.543062448501587,
+      -1.1301848888397217,
+      -0.7537959218025208
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "cfd1bd0fcbb4.png",
+    "actual_grade": 1,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.7720309508409048,
+      0.1088912300853458,
+      0.11407521887722462,
+      0.000858918212884673,
+      0.004143681983640261
+    ],
+    "logits": [
+      2.922654628753662,
+      0.9639794826507568,
+      1.0104880332946777,
+      -3.8784515857696533,
+      -2.3047852516174316
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "7877be80901c.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00004265182323568073,
+      0.022965202986364393,
+      0.8139891001981093,
+      0.10446606108947493,
+      0.0585369839028156
+    ],
+    "logits": [
+      -6.339761257171631,
+      -0.05109584331512451,
+      3.5168709754943848,
+      1.463786244392395,
+      0.8845827579498291
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "bfa30ebf63a8.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996233617532676,
+      0.0001074624224983782,
+      0.00012254200106081125,
+      0.00001884709383860901,
+      0.000127786729334536
+    ],
+    "logits": [
+      7.317302703857422,
+      -1.8206899166107178,
+      -1.6893773078918457,
+      -3.5614724159240723,
+      -1.6474684476852417
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ea1d045f9fea.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0005489568713323447,
+      0.06744571570267315,
+      0.5744593954660411,
+      0.2249586889243527,
+      0.13258724303560077
+    ],
+    "logits": [
+      -4.680947303771973,
+      0.13011115789413452,
+      2.2722175121307373,
+      1.334704875946045,
+      0.8060289621353149
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "77a1f1398fdb.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995784962972678,
+      0.0003561979144593803,
+      0.00005226723100588682,
+      0.000004248282667110897,
+      0.000008790274600038297
+    ],
+    "logits": [
+      8.011542320251465,
+      0.0719398707151413,
+      -1.8471770286560059,
+      -4.35703182220459,
+      -3.6299006938934326
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "33b91def2035.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9969397818163046,
+      0.0004903935338360101,
+      0.001756134739223648,
+      0.0003733878460055279,
+      0.00044030206463001445
+    ],
+    "logits": [
+      5.649514675140381,
+      -1.967722773551941,
+      -0.6920604705810547,
+      -2.2403132915496826,
+      -2.075469970703125
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d8404680bba6.png",
+    "actual_grade": 2,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000010660979895043342,
+      0.0025639321643931632,
+      0.34262848582393257,
+      0.06836000988834628,
+      0.586436911143433
+    ],
+    "logits": [
+      -7.354616165161133,
+      -1.8719091415405273,
+      3.023195505142212,
+      1.4113367795944214,
+      3.5606138706207275
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e76a9cbb2a8c.png",
+    "actual_grade": 3,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000001251280436731346,
+      0.00008985774998019499,
+      0.011904757791746982,
+      0.4661300247064906,
+      0.5218741084713454
+    ],
+    "logits": [
+      -8.130481719970703,
+      -3.8564212322235107,
+      1.0300443172454834,
+      4.69757080078125,
+      4.810532569885254
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "687759336b0d.png",
+    "actual_grade": 3,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0000027814303755633365,
+      0.0024036800367058086,
+      0.5919066433949354,
+      0.3906529908040702,
+      0.015033904333913113
+    ],
+    "logits": [
+      -8.225648880004883,
+      -1.4638580083847046,
+      4.042490005493164,
+      3.6269607543945312,
+      0.36944901943206787
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e4ae1ee6aada.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995156163786889,
+      0.00023937809362587718,
+      0.00010770018931381148,
+      0.00003356566944908,
+      0.00010373966892218989
+    ],
+    "logits": [
+      7.138893127441406,
+      -1.1980886459350586,
+      -1.996781587600708,
+      -3.1626291275024414,
+      -2.0342483520507812
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e907d23cce3d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9794063271671636,
+      0.0028044775304988763,
+      0.0036468262083683284,
+      0.007072451712890666,
+      0.007069917381078649
+    ],
+    "logits": [
+      3.9578986167907715,
+      -1.8978307247161865,
+      -1.635190725326538,
+      -0.9728407859802246,
+      -0.973199188709259
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "76f3473df8a6.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9958829446434208,
+      0.0019769075076096175,
+      0.0008980176314062004,
+      0.0005058348361515613,
+      0.0007362953814118704
+    ],
+    "logits": [
+      5.454901695251465,
+      -0.7671942710876465,
+      -1.5562936067581177,
+      -2.1302731037139893,
+      -1.7548519372940063
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b55d2ddb3e75.png",
+    "actual_grade": 4,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00006613857710677128,
+      0.001079334689428934,
+      0.3395769945868854,
+      0.5621418960768355,
+      0.09713563606974354
+    ],
+    "logits": [
+      -5.486039161682129,
+      -2.6936912536621094,
+      3.057664632797241,
+      3.561718225479126,
+      1.8060722351074219
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "261c6bd63bff.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00010680647743957143,
+      0.07877061533446843,
+      0.9109052545118661,
+      0.0018324494969094004,
+      0.008384874179316569
+    ],
+    "logits": [
+      -4.549765586853027,
+      2.053511142730713,
+      4.501410007476807,
+      -1.7073752880096436,
+      -0.1865994930267334
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "191a711852bd.png",
+    "actual_grade": 3,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000019766723086354522,
+      0.002456029984392357,
+      0.05115263346709171,
+      0.10797091414801292,
+      0.8384006556774167
+    ],
+    "logits": [
+      -6.636427879333496,
+      -1.8141262531280518,
+      1.2221415042877197,
+      1.9691894054412842,
+      4.018823623657227
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "fa3e544a7401.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000203467050362718,
+      0.05214637630147919,
+      0.8502891606273062,
+      0.01184617733510468,
+      0.08551481868574734
+    ],
+    "logits": [
+      -5.214807033538818,
+      0.3314988613128662,
+      3.123020648956299,
+      -1.1505506038665771,
+      0.8261338472366333
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "cc3d2e961768.png",
+    "actual_grade": 4,
+    "predicted_grade": 3,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0021031892586340635,
+      0.003432051082428458,
+      0.12163605748617669,
+      0.6791801271070047,
+      0.19364857506575622
+    ],
+    "logits": [
+      -3.0493316650390625,
+      -2.559628486633301,
+      1.008246898651123,
+      2.728099822998047,
+      1.4732584953308105
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a61723fc38c2.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995493090987194,
+      0.0001696275424956097,
+      0.00018292832136296847,
+      0.00002166436869569783,
+      0.0000764706687262805
+    ],
+    "logits": [
+      7.2855329513549805,
+      -1.3959217071533203,
+      -1.320432424545288,
+      -3.453857898712158,
+      -2.192619562149048
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0182152c50de.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995049883878047,
+      0.00020558834966225223,
+      0.00016072224512369418,
+      0.000012475879535514336,
+      0.00011622513787383234
+    ],
+    "logits": [
+      7.2811150550842285,
+      -1.208024501800537,
+      -1.4542226791381836,
+      -4.010103225708008,
+      -1.7783712148666382
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d51b3fe0fa1b.png",
+    "actual_grade": 4,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000003818529753999262,
+      0.00019083134006016476,
+      0.04235202610934123,
+      0.20950865792254764,
+      0.747944666098297
+    ],
+    "logits": [
+      -7.492371559143066,
+      -3.5808470249176025,
+      1.821534514427185,
+      3.420283317565918,
+      4.69284725189209
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "1ade1e949383.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0032626680448148517,
+      0.1103158678972978,
+      0.8462158655678765,
+      0.011490391095546412,
+      0.028715207394464527
+    ],
+    "logits": [
+      -2.5994317531585693,
+      0.9213707447052002,
+      2.9587974548339844,
+      -1.3404659032821655,
+      -0.4245501756668091
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "af133a85ea0c.png",
+    "actual_grade": 1,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.6981831906367404,
+      0.2572530133914735,
+      0.03677217405799518,
+      0.0008482180992549147,
+      0.006943403814535965
+    ],
+    "logits": [
+      2.8205785751342773,
+      1.8221571445465088,
+      -0.12316152453422546,
+      -3.8925204277038574,
+      -1.7901108264923096
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6cd606dc52e9.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0006396759979327286,
+      0.38029014155884083,
+      0.5910731137878179,
+      0.00593897837673979,
+      0.02205809027866866
+    ],
+    "logits": [
+      -3.873990774154663,
+      2.513737201690674,
+      2.954742431640625,
+      -1.645660161972046,
+      -0.333517849445343
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "75369248dba0.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995378722160005,
+      0.0002607217897418583,
+      0.00012435038857096112,
+      0.000009766791317079462,
+      0.00006728881436978475
+    ],
+    "logits": [
+      7.503512382507324,
+      -0.7480820417404175,
+      -1.4884326457977295,
+      -4.032547950744629,
+      -2.102541923522949
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d26bb2ed6e71.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9769436906581459,
+      0.005031670413822941,
+      0.005120759285822431,
+      0.003064780896446377,
+      0.00983909874576226
+    ],
+    "logits": [
+      3.948667049407959,
+      -1.3200099468231201,
+      -1.3024592399597168,
+      -1.8157858848571777,
+      -0.6493978500366211
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9519a590985d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.998789078000103,
+      0.000483009336058756,
+      0.0005315002049622091,
+      0.000043554429445242717,
+      0.0001528580294309165
+    ],
+    "logits": [
+      6.583916664123535,
+      -1.0503462553024292,
+      -0.9546786546707153,
+      -3.4563708305358887,
+      -2.2008726596832275
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0790515cf5af.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9997085178375618,
+      0.0001602720326893787,
+      0.0001021506799410758,
+      0.0000037394600306426536,
+      0.000025319989777152415
+    ],
+    "logits": [
+      8.089804649353027,
+      -0.6485418081283569,
+      -1.0989654064178467,
+      -4.406473159790039,
+      -2.4938201904296875
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "66b88a4bc474.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9940922950471512,
+      0.0013156137600272234,
+      0.001663528042812012,
+      0.0010750599924730468,
+      0.0018535031575362476
+    ],
+    "logits": [
+      5.040955543518066,
+      -1.586571216583252,
+      -1.3519338369369507,
+      -1.788498044013977,
+      -1.2437970638275146
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "289a47dcbb82.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9620029524159311,
+      0.00684741982001536,
+      0.008106468898099857,
+      0.00978407937843178,
+      0.013259079487521691
+    ],
+    "logits": [
+      3.542609214782715,
+      -1.402536392211914,
+      -1.2337459325790405,
+      -1.0456517934799194,
+      -0.741725742816925
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d1f1ea894da1.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0005715803227006187,
+      0.019982420143557448,
+      0.6557371136326063,
+      0.11556300452282658,
+      0.20814588137830906
+    ],
+    "logits": [
+      -4.490074634552002,
+      -0.9358714818954468,
+      2.5550355911254883,
+      0.8190914988517761,
+      1.4075148105621338
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "77e7c7a160c8.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.31389227425192784,
+      0.03076850394585379,
+      0.4442369140330116,
+      0.020459112746584966,
+      0.19064319502262178
+    ],
+    "logits": [
+      0.927483081817627,
+      -1.3950752019882202,
+      1.2747912406921387,
+      -1.8031383752822876,
+      0.4288368225097656
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b3a994760537.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9998360452182822,
+      0.00007257491382191892,
+      0.00003723315140599648,
+      0.000021709549300230334,
+      0.00003243716718956201
+    ],
+    "logits": [
+      7.786687850952148,
+      -1.7440394163131714,
+      -2.41145920753479,
+      -2.95090651512146,
+      -2.549353837966919
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f4d3169b468a.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996541604310445,
+      0.00014343878825237005,
+      0.00014270135362298575,
+      0.000013601764731397321,
+      0.00004609766234854701
+    ],
+    "logits": [
+      7.509164810180664,
+      -1.3400914669036865,
+      -1.3452458381652832,
+      -3.695800304412842,
+      -2.4752376079559326
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c06024f05a16.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9993641759357725,
+      0.0002146730534168011,
+      0.0003282072095476836,
+      0.00000927304402106176,
+      0.00008367075724178397
+    ],
+    "logits": [
+      7.193565368652344,
+      -1.2521929740905762,
+      -0.8276640176773071,
+      -4.394197463989258,
+      -2.1944196224212646
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d1a24527a15d.png",
+    "actual_grade": 4,
+    "predicted_grade": 1,
+    "actual_referable": true,
+    "predicted_referable": false,
+    "probabilities": [
+      0.2523440599406257,
+      0.4695791451041436,
+      0.16225258998568523,
+      0.006336699481287409,
+      0.10948750548825809
+    ],
+    "logits": [
+      0.7422838807106018,
+      1.3633272647857666,
+      0.30064472556114197,
+      -2.9421515464782715,
+      -0.09269915521144867
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "89ee1fa16f90.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0006749279271931694,
+      0.36398967073617416,
+      0.6245569274915984,
+      0.0020936945506078775,
+      0.008684779294426457
+    ],
+    "logits": [
+      -3.398681879043579,
+      2.8915929794311523,
+      3.4315099716186523,
+      -2.2666022777557373,
+      -0.8439605236053467
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a76132e79688.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9999281206932147,
+      0.000030289896678175796,
+      0.000019232362285795518,
+      0.000005981032553726295,
+      0.000016376015267832013
+    ],
+    "logits": [
+      8.59406852722168,
+      -1.8105559349060059,
+      -2.2647757530212402,
+      -3.432776927947998,
+      -2.4255523681640625
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ef4121e9bb67.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9998397191961911,
+      0.00009989154605275589,
+      0.000039193078221142666,
+      0.0000054036434518708435,
+      0.000015792536083219734
+    ],
+    "logits": [
+      8.25106430053711,
+      -0.9602009057998657,
+      -1.8957858085632324,
+      -3.8772125244140625,
+      -2.80474853515625
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "91cbe1c775ef.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00013497671440963622,
+      0.03659332967419879,
+      0.9370562186642751,
+      0.01886500879390127,
+      0.007350466153215145
+    ],
+    "logits": [
+      -4.863860607147217,
+      0.7386583685874939,
+      3.9815356731414795,
+      0.07610121369361877,
+      -0.8664438724517822
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ae5d31979f19.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.8879285012544804,
+      0.10162680008573761,
+      0.006986770210268558,
+      0.00023395526269348946,
+      0.0032239731868199113
+    ],
+    "logits": [
+      4.038522720336914,
+      1.870938777923584,
+      -0.8063501119613647,
+      -4.202993869781494,
+      -1.5797539949417114
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c7c3d363bc86.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9928711631129755,
+      0.005791134568363511,
+      0.0011435367689245114,
+      0.00004280937684606899,
+      0.00015135617289025794
+    ],
+    "logits": [
+      5.960589408874512,
+      0.8163167238235474,
+      -0.8058856129646301,
+      -4.091009616851807,
+      -2.8281309604644775
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "3206171db5be.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0017986076419567976,
+      0.30895289252281877,
+      0.5391836811288768,
+      0.020474891235515918,
+      0.1295899274708317
+    ],
+    "logits": [
+      -3.5416147708892822,
+      1.60456120967865,
+      2.161428689956665,
+      -1.1094282865524292,
+      0.7357474565505981
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "58529a8638d0.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00031618668261190833,
+      0.046399990581825624,
+      0.8358282481079454,
+      0.005203230809482661,
+      0.11225234381813444
+    ],
+    "logits": [
+      -4.360043525695801,
+      0.6286782026290894,
+      3.5198020935058594,
+      -1.559341311454773,
+      1.5121283531188965
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "1bf30c84bbad.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0005138643065008997,
+      0.1810865050899353,
+      0.8129100068999378,
+      0.0003496883933067035,
+      0.0051399353103193214
+    ],
+    "logits": [
+      -3.054722309112549,
+      2.8100485801696777,
+      4.311694145202637,
+      -3.439639091491699,
+      -0.7518857717514038
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "780be525036d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9998817805131491,
+      0.00008950925656105043,
+      0.00001673810846889224,
+      0.00000215691401299825,
+      0.000009815207807814712
+    ],
+    "logits": [
+      8.789862632751465,
+      -0.5311876535415649,
+      -2.207841634750366,
+      -4.2568511962890625,
+      -2.7415966987609863
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "2e79041ef722.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000010946128298682117,
+      0.00794312304195385,
+      0.9218633765900819,
+      0.00372014407000994,
+      0.06646241016965561
+    ],
+    "logits": [
+      -6.70803165435791,
+      -0.12095566093921661,
+      4.633134841918945,
+      -0.8794997930526733,
+      2.0033743381500244
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "895fe2bfc5b6.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9784419874774213,
+      0.007692787244846904,
+      0.009727107585724423,
+      0.001880117490992803,
+      0.0022580002010146
+    ],
+    "logits": [
+      4.172674179077148,
+      -0.673004150390625,
+      -0.4383707344532013,
+      -2.0819530487060547,
+      -1.8988077640533447
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "1594ca6c30d3.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00003130184136673113,
+      0.006026307960499935,
+      0.5424112053871735,
+      0.17794584962595814,
+      0.27358533518500155
+    ],
+    "logits": [
+      -6.634957313537598,
+      -1.3747444152832031,
+      3.125145435333252,
+      2.0106003284454346,
+      2.440734624862671
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b549af91bd30.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9997529177488793,
+      0.00010120820250992517,
+      0.0000696058966273152,
+      0.000012960428965208121,
+      0.00006330772301830603
+    ],
+    "logits": [
+      7.7324748039245605,
+      -1.465608835220337,
+      -1.8399393558502197,
+      -3.520887851715088,
+      -1.9347813129425049
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "20f86e068276.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9993796978575734,
+      0.00016933552602680505,
+      0.0004204699903855303,
+      0.000010124900933029948,
+      0.000020371725081297235
+    ],
+    "logits": [
+      7.5671186447143555,
+      -1.115889310836792,
+      -0.20639830827713013,
+      -3.9327735900878906,
+      -3.233623504638672
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "150fc7127582.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9998538720028578,
+      0.0000793120551810631,
+      0.000040549348494316664,
+      0.000004577227323900875,
+      0.000021689366143011847
+    ],
+    "logits": [
+      8.199098587036133,
+      -1.2428756952285767,
+      -1.9137461185455322,
+      -4.09517240524292,
+      -2.5394437313079834
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "0eb52045349f.png",
+    "actual_grade": 1,
+    "predicted_grade": 1,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.0030057484848724004,
+      0.679474154252237,
+      0.29774172138501936,
+      0.0020882372785358035,
+      0.01769013859933557
+    ],
+    "logits": [
+      -2.296386241912842,
+      3.124406337738037,
+      2.299313545227051,
+      -2.660592555999756,
+      -0.5239055156707764
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ea588d1e5d96.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.005554414002736216,
+      0.20307088702165627,
+      0.7186167609979813,
+      0.030931409808225837,
+      0.04182652816940042
+    ],
+    "logits": [
+      -2.496119737625122,
+      1.1028424501419067,
+      2.3666155338287354,
+      -0.7789404988288879,
+      -0.47718188166618347
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c639d837f5e4.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9852126902731719,
+      0.004694391671513607,
+      0.004196826110177327,
+      0.00406263921137592,
+      0.0018334527337613236
+    ],
+    "logits": [
+      4.370090484619141,
+      -0.9763985276222229,
+      -1.0884385108947754,
+      -1.120934247970581,
+      -1.9165661334991455
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "4aa3d771c5e4.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9995225488149899,
+      0.00008732628401296484,
+      0.00017178074575921495,
+      0.00004245615978684142,
+      0.00017588799545088592
+    ],
+    "logits": [
+      7.126891136169434,
+      -2.2184903621673584,
+      -1.541922926902771,
+      -2.9396698474884033,
+      -1.5182944536209106
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a804cef3e51f.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00875487984078756,
+      0.2518569005475864,
+      0.720287149062297,
+      0.001393033007137379,
+      0.01770803754219169
+    ],
+    "logits": [
+      -1.3346683979034424,
+      2.0245814323425293,
+      3.0753703117370605,
+      -3.1727962493896484,
+      -0.6302610039710999
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "51da6aebba8f.png",
+    "actual_grade": 3,
+    "predicted_grade": 4,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000015846602469114717,
+      0.00394450998287551,
+      0.36724151730557764,
+      0.2223468900501208,
+      0.40645123605895705
+    ],
+    "logits": [
+      -7.175487518310547,
+      -1.658362627029419,
+      2.8753323554992676,
+      2.373551368713379,
+      2.976776599884033
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f0860c21533b.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9991713203512732,
+      0.000519933251030641,
+      0.0002139877733503078,
+      0.000010268388476701898,
+      0.0000844902358690822
+    ],
+    "logits": [
+      7.123284339904785,
+      -0.43769675493240356,
+      -1.3254783153533936,
+      -4.3623270988464355,
+      -2.254761219024658
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "1a1b4b2450ca.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.002966892018547962,
+      0.04691723841629256,
+      0.9433843520977173,
+      0.0028067335045560858,
+      0.003924783962885907
+    ],
+    "logits": [
+      -1.7059657573699951,
+      1.0549044609069824,
+      4.05599308013916,
+      -1.7614593505859375,
+      -1.4261693954467773
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "80964d8e0863.png",
+    "actual_grade": 4,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0006608810802500976,
+      0.012068477379073655,
+      0.5809646628061174,
+      0.11287385882103242,
+      0.2934321199135265
+    ],
+    "logits": [
+      -4.301551818847656,
+      -1.3967735767364502,
+      2.4773194789886475,
+      0.8389004468917847,
+      1.7942758798599243
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "f0a2dc580009.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9982326785125019,
+      0.0003396396286853703,
+      0.0007011535960765327,
+      0.0002603928560203391,
+      0.0004661354067161587
+    ],
+    "logits": [
+      5.905837059020996,
+      -2.080019474029541,
+      -1.355177640914917,
+      -2.3457131385803223,
+      -1.7634284496307373
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "17f6c7072f61.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996651154021138,
+      0.00016405518790434505,
+      0.00012224426049143718,
+      0.000011570044837123087,
+      0.0000370151046535113
+    ],
+    "logits": [
+      7.6226301193237305,
+      -1.0923426151275635,
+      -1.3865243196487427,
+      -3.744126081466675,
+      -2.581219434738159
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "75a7bc945b7d.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0015021033681730691,
+      0.08330699327530229,
+      0.805250066144016,
+      0.035209446170105275,
+      0.07473139104240348
+    ],
+    "logits": [
+      -3.472726345062256,
+      0.5429397821426392,
+      2.8115601539611816,
+      -0.31827831268310547,
+      0.4343075156211853
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "e17507a4a1f5.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00007421051960760603,
+      0.12665994666291536,
+      0.7935925766742591,
+      0.03851027523503973,
+      0.0411629909081782
+    ],
+    "logits": [
+      -5.9364776611328125,
+      1.5058776140213013,
+      3.340941905975342,
+      0.31529679894447327,
+      0.3819112777709961
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "58eb3809f456.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9942088235602209,
+      0.0018906347004840989,
+      0.0022924051150804477,
+      0.00046636280958650895,
+      0.0011417738146281566
+    ],
+    "logits": [
+      5.208172798156738,
+      -1.0568618774414062,
+      -0.8641729354858398,
+      -2.4565658569335938,
+      -1.561191439628601
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "d56d32a1d62d.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9751560560702042,
+      0.005823561046584107,
+      0.004956924872617035,
+      0.005316787041128412,
+      0.00874667096946614
+    ],
+    "logits": [
+      3.9442057609558105,
+      -1.1764798164367676,
+      -1.3376061916351318,
+      -1.2675225734710693,
+      -0.769718587398529
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ce754234d760.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9994850681669321,
+      0.00026717762993189805,
+      0.00016481162759432935,
+      0.000008222393273302767,
+      0.00007472018226838298
+    ],
+    "logits": [
+      7.45960807800293,
+      -0.7674736976623535,
+      -1.2505842447280884,
+      -4.248526096343994,
+      -2.0416371822357178
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "9c088d2d1559.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.00032630306708056903,
+      0.2445066984693627,
+      0.6460864768374961,
+      0.003700881456575936,
+      0.1053796401694848
+    ],
+    "logits": [
+      -4.719980239868164,
+      1.89919114112854,
+      2.8708817958831787,
+      -2.291480541229248,
+      1.0575178861618042
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "8c84e96d9b01.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.997778423125723,
+      0.0009777358175748528,
+      0.0011320800244346931,
+      0.000023697707155628935,
+      0.00008806332511196842
+    ],
+    "logits": [
+      6.468066692352295,
+      -0.459980309009552,
+      -0.31340786814689636,
+      -4.1798415184021,
+      -2.86716365814209
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "76fe19ff64fb.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.005961005550778492,
+      0.1270356439349096,
+      0.6789890841278406,
+      0.07868743034272514,
+      0.10932683604374618
+    ],
+    "logits": [
+      -2.8578104972839355,
+      0.20141802728176117,
+      1.8775553703308105,
+      -0.27756625413894653,
+      0.051292210817337036
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6531070bf03c.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000006952767110202946,
+      0.0013219428922329765,
+      0.659746768170868,
+      0.17341073860294615,
+      0.16551359756684256
+    ],
+    "logits": [
+      -7.488367080688477,
+      -2.2406489849090576,
+      3.972104549407959,
+      2.635911464691162,
+      2.589301824569702
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "6f4e0538d1e4.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.07512702792186543,
+      0.3885511772043996,
+      0.4603956801987094,
+      0.03648253755599863,
+      0.03944357711902691
+    ],
+    "logits": [
+      -0.5960534811019897,
+      1.0471910238265991,
+      1.2168524265289307,
+      -1.3184001445770264,
+      -1.2403626441955566
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "c365c598ad4e.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9996436822072329,
+      0.00017585140186546246,
+      0.00009906981657633302,
+      0.000008317685121098654,
+      0.00007307888920421955
+    ],
+    "logits": [
+      7.572667598724365,
+      -1.0728472471237183,
+      -1.6466617584228516,
+      -4.124102592468262,
+      -1.9509470462799072
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a386ec9aabde.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.0015379969228353867,
+      0.08686094986166633,
+      0.7731081205130014,
+      0.07673251454883588,
+      0.0617604181536611
+    ],
+    "logits": [
+      -3.5922255516052246,
+      0.4416021406650543,
+      2.6277124881744385,
+      0.31761911511421204,
+      0.10055625438690186
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "005b95c28852.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9595111326046333,
+      0.008834615913109118,
+      0.01446779407556485,
+      0.009463978574867618,
+      0.0077224788318254484
+    ],
+    "logits": [
+      3.3759427070617676,
+      -1.3118035793304443,
+      -0.8185561299324036,
+      -1.2429883480072021,
+      -1.4463458061218262
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "75a071608ea6.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9994454887656267,
+      0.0003217532853933006,
+      0.00019140468273991568,
+      0.000013006995497795545,
+      0.000028346270742456946
+    ],
+    "logits": [
+      7.388039588928223,
+      -0.6531312465667725,
+      -1.1725263595581055,
+      -3.86142897605896,
+      -3.082420825958252
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "a4359815f152.png",
+    "actual_grade": 2,
+    "predicted_grade": 2,
+    "actual_referable": true,
+    "predicted_referable": true,
+    "probabilities": [
+      0.000030152429267975507,
+      0.0039827641958443405,
+      0.9183663664066968,
+      0.0710488045565612,
+      0.006571912411629599
+    ],
+    "logits": [
+      -5.837337493896484,
+      -0.9538716077804565,
+      4.486748695373535,
+      1.9275193214416504,
+      -0.4530428349971771
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "ef8109305128.png",
+    "actual_grade": 1,
+    "predicted_grade": 2,
+    "actual_referable": false,
+    "predicted_referable": true,
+    "probabilities": [
+      0.019656521697761838,
+      0.4194782188202064,
+      0.4845829860934852,
+      0.017831346828679078,
+      0.05845092655986749
+    ],
+    "logits": [
+      -1.4993221759796143,
+      1.5612802505493164,
+      1.7055573463439941,
+      -1.596773386001587,
+      -0.40954381227493286
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  },
+  {
+    "filename": "b553e7909535.png",
+    "actual_grade": 0,
+    "predicted_grade": 0,
+    "actual_referable": false,
+    "predicted_referable": false,
+    "probabilities": [
+      0.9997503998505012,
+      0.0000797851082367989,
+      0.00006171836406840544,
+      0.000014623148443095461,
+      0.00009347352875060239
+    ],
+    "logits": [
+      7.7260918617248535,
+      -1.7098321914672852,
+      -1.9665875434875488,
+      -3.4065632820129395,
+      -1.5514907836914062
+    ],
+    "model_hash": "BF7D89053B1133AB2832EB58E1AC293E425A5F64A18C814B30390BE0CB1F15DF",
+    "preprocessing_version": "1.0.1-remediated",
+    "runtime": "onnxruntime-node",
+    "execution_path": "node-production"
+  }
+]
