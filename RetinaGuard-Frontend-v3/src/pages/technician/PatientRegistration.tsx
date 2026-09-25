@@ -209,7 +209,11 @@ export default function PatientRegistration() {
         setDuplicates(res.possibleDuplicates ?? []);
         setStepIndex(3);
       } catch (err) {
-        setSubmitError(err instanceof Error ? err.message : 'Could not register the patient.');
+        if (err instanceof HttpError && err.code === 'VALIDATION_ERROR' && typeof err.details === 'object' && err.details) {
+          setErrors(err.details as Partial<Record<keyof FormState, string>>);
+        } else {
+          setSubmitError(err instanceof Error ? err.message : 'Could not register the patient.');
+        }
       } finally {
         setBusy(false);
       }
@@ -567,13 +571,7 @@ export default function PatientRegistration() {
         </div>
       </Card>
 
-      {stepIndex < 3 && (
-        <p className="text-[12px] text-slate-400 flex items-center gap-2">
-          <IconUserPlus size={13} />
-          The patient record is created at the end of step 3, so duplicates can be
-          checked before a screening session begins.
-        </p>
-      )}
+
     </div>
   );
 }

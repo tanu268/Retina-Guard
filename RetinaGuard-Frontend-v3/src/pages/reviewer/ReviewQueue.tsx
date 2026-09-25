@@ -11,7 +11,6 @@ import {
 import {
   PriorityChip, QualityBadge, StatusBadge, WaitingTime,
 } from '../../components/clinical/indicators';
-import { GlowCard } from '../../components/ui/spotlight-card';
 import { IconArrowRight, IconQueue, IconRefresh, IconAlert } from '../../components/ui/icons';
 import type { ReviewQueueItem, TriagePriority } from '../../types';
 
@@ -26,26 +25,23 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
   return (
     <motion.div
       variants={staggerItem}
-      whileHover={{ y: -2 }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onOpen}
+      className={cx(
+        'w-full text-left bg-white border border-slate-200 rounded-lg p-5 cursor-pointer group',
+        'shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)]',
+        'transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)]',
+        'relative overflow-hidden',
+      )}
     >
-      <GlowCard
-        customSize
-        glowColor="blue"
-        onClick={onOpen}
-        className={cx(
-          'w-full text-left bg-white border border-slate-200 p-5 cursor-pointer',
-          'shadow-[0_1px_2px_0_rgb(15_23_42/0.04),0_1px_3px_0_rgb(15_23_42/0.06)]',
-          'transition-shadow duration-200 hover:shadow-[0_4px_8px_-2px_rgb(15_23_42/0.05),0_12px_28px_-6px_rgb(15_23_42/0.10)]',
-          'relative overflow-hidden',
-        )}
-      >
-        <span
+      <span
         className="absolute left-0 inset-y-0 w-1"
         style={{ background: TIER_ACCENT[item.triage_priority] }}
         aria-hidden="true"
       />
 
-      <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-start justify-between gap-4 mb-4 pointer-events-none">
         <div className="min-w-0">
           <p className="text-[15px] font-semibold text-slate-900 truncate">{item.patient_name}</p>
           <p className="text-[12px] text-slate-500 mt-0.5">
@@ -57,7 +53,7 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
         <PriorityChip priority={item.triage_priority} size="sm" />
       </div>
 
-      <div className="flex flex-wrap items-center gap-1.5 mb-4">
+      <div className="flex flex-wrap items-center gap-1.5 mb-4 pointer-events-none">
         {abstained ? (
           <StatusBadge tone="warning" size="sm" icon={<IconAlert size={12} />}>
             Abstained — no grade
@@ -73,7 +69,7 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
         )}
       </div>
 
-      <div className="flex items-end justify-between gap-4">
+      <div className="flex items-end justify-between gap-4 pointer-events-none">
         <div className="min-w-0">
           <p className="text-[11px] text-slate-400 mb-0.5">Model confidence</p>
           <p className={cx(
@@ -87,13 +83,12 @@ function QueueCard({ item, onOpen }: { item: ReviewQueueItem; onOpen: () => void
           <p className="text-[11px] text-slate-400 mb-0.5">Waiting</p>
           <WaitingTime since={item.consultation_date} elapsed={formatElapsed(item.consultation_date)} />
         </div>
-        <span className="text-slate-300 shrink-0 mb-0.5"><IconArrowRight size={16} /></span>
+        <span className="text-slate-300 shrink-0 mb-0.5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"><IconArrowRight size={16} /></span>
       </div>
 
-      <p className="mt-3 pt-3 border-t border-slate-100 text-[11px] text-slate-400 clinical-id truncate">
+      <p className="mt-3 pt-3 border-t border-slate-100 text-[11px] text-slate-400 clinical-id truncate pointer-events-none">
         {item.case_number}
       </p>
-      </GlowCard>
     </motion.div>
   );
 }

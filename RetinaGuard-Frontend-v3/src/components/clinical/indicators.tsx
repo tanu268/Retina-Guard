@@ -7,7 +7,6 @@ import {
 import type {
   AbstainReason, ConsultationStatus, DrGradeCode, QualityGrade, SqlBool, SyncState, TriagePriority,
 } from '../../types';
-import { GlowCard } from '../ui/spotlight-card';
 import { IconAlert, IconCheck, IconClock, IconSync, IconWifiOff } from '../ui/icons';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -383,18 +382,20 @@ export function MetricCard({
     danger: { icon: 'bg-[var(--color-p0)] text-white', value: 'text-[var(--color-ink)]' },
   }[tone];
 
-  const Wrapper = onClick ? 'button' : 'div';
+  const Wrapper = onClick ? motion.button : motion.div;
 
   return (
     <Wrapper
       onClick={onClick}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
       className={cx(
-        'w-full text-left transition-colors duration-[var(--duration-fast)] cursor-pointer',
-        onClick && 'hover:bg-[var(--color-surface-pearl)] group',
+        'w-full text-left transition-colors duration-[var(--duration-fast)] cursor-pointer block',
+        onClick && 'group',
       )}
     >
-      <GlowCard customSize glowColor="blue" className={cx(
-        'rounded-[var(--radius-lg)] bg-[var(--color-canvas)] border border-[var(--color-hairline)] p-5 text-left w-full shadow-none transition-colors',
+      <div className={cx(
+        'rounded-[var(--radius-lg)] bg-[var(--color-canvas)] border border-[var(--color-hairline)] p-5 text-left w-full h-full shadow-sm transition-shadow duration-300 hover:shadow-md',
         onClick && 'group-hover:border-[var(--color-ink-muted-48)]'
       )}>
       <div className="flex items-start justify-between gap-3 mb-3.5">
@@ -415,7 +416,7 @@ export function MetricCard({
         </div>
       )}
       {sublabel && <div className="text-caption text-[var(--color-ink-muted-48)] mt-2">{sublabel}</div>}
-      </GlowCard>
+      </div>
     </Wrapper>
   );
 }

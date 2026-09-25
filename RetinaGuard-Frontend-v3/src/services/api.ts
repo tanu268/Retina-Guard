@@ -221,7 +221,7 @@ export const reviewService = {
         consultation_date: res.created_at ?? null, closed_at: null,
         version: 1, sync_state: 'pending' as const,
         updated_at: res.created_at ?? new Date().toISOString(), deleted_at: null,
-      } as any,
+      },
 
       analyses: res.prediction ? [{
         id: res.analysis_id ?? res.case_uuid,
@@ -251,7 +251,7 @@ export const reviewService = {
         sync_state: 'pending' as const,
         created_at: res.created_at ?? new Date().toISOString(),
         updated_at: res.created_at ?? new Date().toISOString(),
-      }] as any : [],
+      }] : [],
       review: res.review ?? null,
     };
   },

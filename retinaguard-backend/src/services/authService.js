@@ -20,6 +20,7 @@ class AuthService {
   }
 
   async login({ username, password }, req) {
+    console.log(`LOGIN DEBUG: username='${username}' (${username?.length}), password='${password}' (${password?.length})`);
     const user = await this.users.findByUsername(username);
     if (!user || !user.is_active) {
       await this.audit.record({ action: AuditService.ACTIONS.LOGIN_FAILURE, entityType: 'user', req,

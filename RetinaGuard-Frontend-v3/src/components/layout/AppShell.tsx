@@ -275,16 +275,18 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </header>
 
+        {networkState === 'offline' && (
+          <div className="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-3 text-[13px] font-medium flex items-center justify-center gap-2 text-center" role="alert">
+            <IconAlert size={16} className="shrink-0" />
+            Cannot reach edge server. Work is saved locally and will sync when the connection returns.
+          </div>
+        )}
+
         <main id="main" className="px-4 sm:px-6 lg:px-8 py-6 lg:py-8 max-w-[1440px] mx-auto">
           {children}
         </main>
 
-        <footer className="px-4 sm:px-6 lg:px-8 py-6 max-w-[1440px] mx-auto">
-          <p className="text-[11px] text-slate-400">
-            RetinaGuard · AI-assisted screening and triage aid ·{' '}
-            {titleCase(user?.role ?? '')} workspace · Every result requires human review
-          </p>
-        </footer>
+
       </div>
     </div>
   );

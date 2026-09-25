@@ -6,7 +6,6 @@ import {
   ShieldCheck, Stethoscope, UserCog, UserPlus, Users,
 } from 'lucide-react';
 import { Button } from '../../components/ui';
-import { GlowCard } from '../../components/ui/spotlight-card';
 import { LandingNav } from '../../components/landing/LandingNav';
 import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
@@ -217,25 +216,21 @@ export default function Landing() {
               <motion.div
                 key={title}
                 variants={reveal}
-                className="h-full"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="h-full w-full p-8 border border-[var(--color-border)] bg-[var(--color-surface-sunken)] rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md cursor-pointer group"
               >
-                <GlowCard 
-                  customSize 
-                  glowColor="blue" 
-                  className="h-full w-full p-8 border border-[var(--color-border)] bg-[var(--color-surface-sunken)]"
-                >
-                  <div className="group relative z-10 flex h-full flex-col">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface-pearl)] text-[var(--color-ink)] transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] group-hover:scale-110">
-                      <Icon className="h-5 w-5" strokeWidth={1.5} />
-                    </span>
-                    <h3 className="mt-7 text-body-strong font-semibold text-[var(--color-ink)]">
-                      {title}
-                    </h3>
-                    <p className="mt-3 text-body text-[var(--color-ink-muted-48)]">
-                      {desc}
-                    </p>
-                  </div>
-                </GlowCard>
+                <div className="group relative z-10 flex h-full flex-col pointer-events-none">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface-pearl)] text-[var(--color-ink)] transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] group-hover:scale-110">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} />
+                  </span>
+                  <h3 className="mt-7 text-body-strong font-semibold text-[var(--color-ink)]">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-body text-[var(--color-ink-muted-48)]">
+                    {desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -257,11 +252,10 @@ export default function Landing() {
 
           <div className="mt-16 flex flex-col gap-6">
             {WORKFLOW.map(({ role, icon: RoleIcon, summary, steps }, roleIndex) => (
-              <motion.div key={role} variants={reveal}>
-                <GlowCard customSize glowColor="blue" className="flex flex-col lg:flex-row bg-[var(--color-surface-pearl)] overflow-hidden w-full border border-[var(--color-border)]">
+              <motion.div key={role} variants={reveal} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="flex flex-col lg:flex-row bg-[var(--color-surface-pearl)] overflow-hidden w-full border border-[var(--color-border)] rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md cursor-pointer group">
                   
                   {/* Left Column (25%) */}
-                  <div className="flex flex-col justify-center border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] p-8 lg:w-1/4 lg:border-b-0 lg:border-r">
+                  <div className="flex flex-col justify-center border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] p-8 lg:w-1/4 lg:border-b-0 lg:border-r pointer-events-none">
                     <span className="mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--color-ink)] text-white">
                       <RoleIcon className="h-6 w-6" strokeWidth={1.5} />
                     </span>
@@ -277,7 +271,7 @@ export default function Landing() {
                   </div>
 
                   {/* Right Column (75%) */}
-                  <div className="relative grid flex-1 grid-cols-1 gap-8 p-8 sm:grid-cols-3 lg:w-3/4">
+                  <div className="relative grid flex-1 grid-cols-1 gap-8 p-8 sm:grid-cols-3 lg:w-3/4 pointer-events-none">
                     {steps.slice(0, 3).map(({ icon: StepIcon, name, desc }, i) => (
                       <div key={name} className="group/step relative flex min-w-0 flex-col">
                         
@@ -309,7 +303,6 @@ export default function Landing() {
                       </div>
                     ))}
                   </div>
-                </GlowCard>
               </motion.div>
             ))}
           </div>
@@ -328,9 +321,8 @@ export default function Landing() {
 
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {TEAM.map((member) => (
-              <motion.div key={member.id} variants={reveal}>
-                <GlowCard customSize glowColor="blue" className="h-full w-full bg-white border border-[var(--color-border)]">
-                  <div className="flex flex-col items-start p-8">
+              <motion.div key={member.id} variants={reveal} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="h-full w-full bg-white border border-[var(--color-border)] rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md cursor-pointer group">
+                  <div className="flex flex-col items-start p-8 pointer-events-none">
                     {member.avatar ? (
                       <img
                         src={member.avatar}
@@ -359,7 +351,7 @@ export default function Landing() {
                       </p>
                     )}
 
-                    <div className="mt-6 flex items-center gap-2">
+                    <div className="mt-6 flex items-center gap-2" style={{ pointerEvents: 'auto' }}>
                       {member.github && (
                         <a
                           href={member.github}
@@ -384,7 +376,6 @@ export default function Landing() {
                       )}
                     </div>
                   </div>
-                </GlowCard>
               </motion.div>
             ))}
           </div>
@@ -443,12 +434,6 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 border border-[var(--color-border)] px-4 py-2.5">
-              <Activity className="h-4 w-4 text-[var(--color-success)]" strokeWidth={1.75} />
-              <span className="font-ui text-[13px] text-[var(--color-ink-muted)]">
-                AI-assisted screening aid — every result requires human review
-              </span>
-            </div>
           </div>
 
           <p className="mt-12 border-t border-[var(--color-border)] pt-7 font-ui text-[13px] text-[var(--color-ink-subtle)]">
