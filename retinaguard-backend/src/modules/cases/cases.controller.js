@@ -209,7 +209,7 @@ function buildCasesController({
   });
 
   const getModel = asyncHandler(async (req, res) => {
-    const status = await matlabService.healthCheck();
+    const status = await matlabService.health();
     res.status(200).json({
       model_version: config.matlab.modelVersion,
       model_hash: config.matlab.modelHash,
