@@ -12,7 +12,7 @@ import {
   IconFile, IconHistory, IconLogout, IconMenu, IconPatients, IconQueue,
   IconSync, IconUserPlus, IconUsers, IconX,
 } from '../ui/icons';
-import uviLogo from '../../assets/uvi-logo.jpg';
+import uviLogo from '../../assets/uvi-logo.png';
 
 interface NavItem {
   to: string;
@@ -136,7 +136,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           className="flex items-center gap-2.5 group"
           aria-label="UVI home"
         >
-          <img src={uviLogo} alt="UVI Logo" className="w-20 h-auto object-contain shrink-0 rounded-lg shadow-sm border border-slate-200/60" />
+          <img src={uviLogo} alt="UVI Logo" className="w-28 h-auto object-contain shrink-0" />
           <span className="text-left ml-1">
             <span className="block text-[11px] text-slate-500 leading-tight">
               {user.facility_id ?? 'Edge node'}
@@ -244,7 +244,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             </button>
 
             <div className="lg:hidden flex items-center gap-2 min-w-0">
-              <img src={uviLogo} alt="UVI Logo" className="w-14 h-auto object-contain shrink-0 rounded-md shadow-sm border border-slate-200/60" />
+              <img src={uviLogo} alt="UVI Logo" className="w-24 h-auto object-contain shrink-0" />
             </div>
 
             <div className="hidden lg:flex items-center gap-2 min-w-0">

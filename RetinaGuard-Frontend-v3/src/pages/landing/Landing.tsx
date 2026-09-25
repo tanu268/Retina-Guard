@@ -11,7 +11,7 @@ import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
-import uviLogo from '../../assets/uvi-logo.jpg';
+import uviLogo from '../../assets/uvi-logo.png';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Landing page.
@@ -427,7 +427,7 @@ export default function Landing() {
             {/* 1. ABOUT UVI */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex flex-col items-start gap-1">
-                <img src={uviLogo} alt="UVI Logo" className="h-20 w-auto object-contain rounded-xl shadow-md border border-slate-700/50" />
+                <img src={uviLogo} alt="UVI Logo" className="h-28 w-auto object-contain" />
                 <span className="mt-1 font-display text-lg font-semibold tracking-widest text-white uppercase">
                   Unified Vision Intelligence
                 </span>

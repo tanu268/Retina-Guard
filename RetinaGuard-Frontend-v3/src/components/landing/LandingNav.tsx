@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { cx } from '../../lib/format';
 import { Button } from '../ui';
 import { AnchorNavLink } from '../ui/NavLink';
-import uviLogo from '../../assets/uvi-logo.jpg';
+import uviLogo from '../../assets/uvi-logo.png';
 
 const SECTIONS = [
   { id: 'home', label: 'Home' },
