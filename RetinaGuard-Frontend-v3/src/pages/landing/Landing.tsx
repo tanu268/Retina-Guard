@@ -432,6 +432,9 @@ export default function Landing() {
                   Unified Vision Intelligence
                 </span>
               </div>
+              <p className="mt-4 font-body text-base leading-relaxed text-neutral-400 max-w-sm">
+                Diabetic Retinopathy is one of the leading causes of preventable blindness in India. Rural Primary Health Centres struggle to provide timely retinal screening There our solution UVI provides the facility.
+              </p>
             </div>
 
             {/* 2. QUICK LINKS */}
