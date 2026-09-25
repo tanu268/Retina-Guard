@@ -10,6 +10,8 @@ import { LandingNav } from '../../components/landing/LandingNav';
 import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
+import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
+import uviLogo from '../../assets/uvi-logo.jpg';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Landing page.
