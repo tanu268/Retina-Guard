@@ -1,0 +1,167 @@
+{
+  "G0_SECURITY": {
+    "executor_status": "HUMAN ACTION REQUIRED",
+    "auditor_status": "HUMAN ACTION REQUIRED",
+    "reason": "PAT exposure confirmed in git history. Revocation evidence is missing."
+  },
+  "G0A_BASELINE": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Baseline commit matches current commit exactly, proving immutability."
+  },
+  "G1_REPOSITORY": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "No production modifications were made during verification."
+  },
+  "G2_TEST_INTEGRITY": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Regression suite ran without maskings or skipped tests."
+  },
+  "G3_AI_BASELINE": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Model hash matches established frozen artifact."
+  },
+  "G4_DATASET_RECONCILIATION": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "701 rows identified and aggregate concat fingerprint verified."
+  },
+  "G5_DATASET_INTEGRITY": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Files exist, decode correctly, and were processed cleanly by the ONNX inference script."
+  },
+  "G6_MODEL": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "ONNX loads successfully with correct shapes."
+  },
+  "G7_SINGLE_INFERENCE": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Evidence exists for image 82e5bc01f8a4.png with full provenance."
+  },
+  "G8_NODE_701": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Fresh local execution artifacts verify 701 correct predictions via Node."
+  },
+  "G9_PYTHON_701": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Fresh local execution artifacts verify 701 correct predictions via Python."
+  },
+  "G10_PARITY": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Parity metrics independently recomputed showing 99.71% grade agreement between Node and Python outputs."
+  },
+  "G11_METRICS": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Metrics calculated correctly from fresh G8/G9 results."
+  },
+  "G12_API": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Executed against a mocked test-harness (in-memory SQLite, mock adapter) instead of the real runtime server."
+  },
+  "G13_LIFECYCLE": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Verified via test-harness (e2ePipeline.test.js) rather than real application integration runtime."
+  },
+  "G14_TECHNICIAN_E2E": {
+    "executor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "auditor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "reason": "Missing OS dependencies prevent Playwright execution."
+  },
+  "G15_REVIEWER_E2E": {
+    "executor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "auditor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "reason": "Missing OS dependencies prevent Playwright execution."
+  },
+  "G16_OFFLINE_E2E": {
+    "executor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "auditor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "reason": "Missing OS dependencies prevent Playwright execution."
+  },
+  "G17_CLINICAL_UI": {
+    "executor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "auditor_status": "BLOCKED — EXTERNAL DEPENDENCY",
+    "reason": "Missing OS dependencies prevent Playwright execution."
+  },
+  "G18_TRACEABILITY": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Only verified within a mock testing container, not the real integrated system."
+  },
+  "G19_ABSTENTION": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Relying on unit tests and mocked integration rather than full runtime verification."
+  },
+  "G20_IDEMPOTENCY": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Relying on concurrency.test.js instead of a real deployed instance test."
+  },
+  "G21_REPORTING": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Relying on test-harness execution."
+  },
+  "G22_RBAC": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Evaluated against Supertest bindings and mock database rather than real HTTP listener."
+  },
+  "G23_AUDIT": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Verified only inside a test-harness transaction."
+  },
+  "G24_STATE_MACHINE": {
+    "executor_status": "PASS",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Verified only inside a test-harness."
+  },
+  "G25_FRONTEND": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Vitest test suite executed and passed cleanly."
+  },
+  "G26_BACKEND": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Jest test suite executed and passed cleanly on the actual codebase."
+  },
+  "G27_PERFORMANCE": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Real G7 inference latency measured on real model/images."
+  },
+  "G28_CLEAN_ROOM": {
+    "executor_status": "NOT VERIFIED",
+    "auditor_status": "NOT VERIFIED",
+    "reason": "Did not perform independent dependency reconstruction or OS wipe."
+  },
+  "G29_FINAL_HASHES": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Final hashes were obtained after all codebase changes were locked."
+  },
+  "G30_EXECUTOR_AUDIT": {
+    "executor_status": "PASS",
+    "auditor_status": "PASS",
+    "reason": "Executor properly blocked release."
+  },
+  "G31_INDEPENDENT_AUDIT": {
+    "executor_status": "PASS",
+    "auditor_status": "FAIL",
+    "reason": "Previous independent audit was a surface-level artifact existence check, failing to audit any gate logic or runtime status independently."
+  }
+}

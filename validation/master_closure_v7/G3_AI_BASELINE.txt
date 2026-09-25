@@ -1,0 +1,9 @@
+=== RECOMPUTING FROZEN HASHES ===
+c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f  retinaguard_resnet18.onnx
+dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05  retinaguard-backend/src/inference/preprocess.js
+af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c  model/RetinaGuard_ML/processed/val_manifest.csv
+
+=== EXPECTED ===
+c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f  retinaguard_resnet18.onnx
+dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05  preprocess.js
+af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c  val_manifest.csv

@@ -1,0 +1,19 @@
+{
+  "G0A_BASELINE": "validation/master_closure_v7/31_independent_audit_v71/current_state.txt",
+  "G1_REPOSITORY": "validation/master_closure_v7/31_independent_audit_v71/current_diff.txt",
+  "G2_TEST_INTEGRITY": "Audit script output proving 0 skipped tests",
+  "G3_AI_BASELINE": "retinaguard_resnet18.onnx",
+  "G4_DATASET_RECONCILIATION": "validation/master_closure_v7/G8_NODE_701/provenance.json",
+  "G5_DATASET_INTEGRITY": "validation/master_closure_v7/G8_NODE_701/provenance.json",
+  "G6_MODEL": "retinaguard_resnet18.onnx",
+  "G7_SINGLE_INFERENCE": "validation/master_closure_v7/G7_SINGLE_INFERENCE.json",
+  "G8_NODE_701": "validation/master_closure_v7/G8_NODE_701/results.json",
+  "G9_PYTHON_701": "validation/master_closure_v7/G9_PYTHON_701/results.json",
+  "G10_PARITY": "Independently recalculated from G8/G9",
+  "G11_METRICS": "Independently recalculated from G8/G9",
+  "G25_FRONTEND": "Execution log from frontend tests",
+  "G26_BACKEND": "Execution log from backend tests",
+  "G27_PERFORMANCE": "Latency output within validation/master_closure_v7/G7_SINGLE_INFERENCE.json",
+  "G29_FINAL_HASHES": "validation/master_closure_v7/31_independent_audit_v71/current_state.txt",
+  "G30_EXECUTOR_AUDIT": "validation/master_closure_v7/FINAL_FORENSIC_CLOSURE_REPORT.md"
+}

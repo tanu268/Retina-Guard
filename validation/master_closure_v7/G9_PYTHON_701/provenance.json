@@ -1,0 +1,23 @@
+{
+  "run_id": "G9_PYTHON_1790359602",
+  "gate": "G9",
+  "commit": "22c25e838dc52536aaf0ffcce5fd5f1bdbf8540d",
+  "start_time": "2026-09-25T18:06:42.719534Z",
+  "end_time": "2026-09-25T18:09:13.211834Z",
+  "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "preprocessing_sha256": "dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05",
+  "manifest_sha256": "af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c",
+  "runtime": "onnxruntime 1.30.0",
+  "attempted": 701,
+  "succeeded": 701,
+  "failed": 0,
+  "metrics": {
+    "TP": 241,
+    "TN": 386,
+    "FP": 31,
+    "FN": 43,
+    "sensitivity": 0.8485915492957746,
+    "specificity": 0.9256594724220624,
+    "accuracy": 0.8944365192582026
+  }
+}

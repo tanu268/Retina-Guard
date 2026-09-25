@@ -1,0 +1,17 @@
+{
+  "entrypoint": "node src/server.js",
+  "PID": 188531,
+  "listening": "localhost:4000",
+  "database": "SQLite /home/yash/Desktop/Projects/Retina-Guard/data/retinaguard.db",
+  "matlab_adapter": "onnx",
+  "model_sha": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "mock_adapter_status": "disabled",
+  "environment": {
+    "NODE_ENV": "development",
+    "MATLAB_ADAPTER": "onnx",
+    "MODEL_VERSION": "/home/yash/Desktop/Projects/Retina-Guard/retinaguard_resnet18.onnx",
+    "PORT": "4000"
+  },
+  "startup_timestamp": "2026-09-25T18:28:15.926Z",
+  "git_sha": "22c25e838dc52536aaf0ffcce5fd5f1bdbf8540d"
+}

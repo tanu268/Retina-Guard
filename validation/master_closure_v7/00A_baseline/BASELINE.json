@@ -1,0 +1,18 @@
+{
+  "baseline_commit": "22c25e838dc52536aaf0ffcce5fd5f1bdbf8540d",
+  "baseline_branch": "main",
+  "baseline_timestamp": "2026-09-25T23:30 IST",
+  "protocol": "T-800 v7.0",
+  "modified_vs_head": [
+    "ENGINEER1_MASTER_T800_FINAL_REMEDIATION_AND_RELEASE_REPORT.md",
+    "retinaguard-backend/src/modules/cases/cases.controller.js",
+    "retinaguard-backend/tests/integration/parser.test.js",
+    "retinaguard-backend/tests/unit/matlabService.test.js"
+  ],
+  "frozen_hashes": {
+    "retinaguard_resnet18_onnx": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "preprocess_js": "dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05",
+    "val_manifest_csv": "af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c",
+    "frozen_matches": true
+  }
+}

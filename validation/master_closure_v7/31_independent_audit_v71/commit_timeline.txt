@@ -1,0 +1,19 @@
+22c25e8 fix: T-800 v4.0 Final Defect Remediation and Closure
+c2f6a78 chore: V3 Master Remediation Closure
+2b77bde test: unstub concurrency and model-config integration tests
+4b29121 phase18: replace legacy OpenCV preprocessing with ImageNet-compatible pipeline
+ffa1907 Rebrand from RetinaGuard to UVI and update logo sizes
+89b3ac3 Update footer hover animation, add gradient outline, and fix backend registration bugs
+526770e feat: Add HoverRevealCards to Login page and final 701 Node validation reports
+3e43e89 Merge remote-tracking branch 'origin/main'
+f881857 chore: Update frontend API, backend PDF and report services, and add migration plan
+5067d09 chore: freeze ONNX integration and validation checkpoint
+2b18873 style: change workspace background to solid white and fix backend bindings
+ebeb604 UI enhancements: Add GlowCard spotlight effect to cards and fix bugs
+eaa3a93 Add frontend v3, update backend routes and services
+1d26704 chore: sync project dependencies and add diagnostic file uploads
+dc22eb8 Merge pull request #4 from tanu268/docs/prd
+0bf3a54 Add Product Requirements Document for the web layer
+725fdcc Merge report contract v1.0.0 into dev
+2193041 Add report contract: schema, validator, and fixture cases
+9acdced Scaffold repo: README, contributing guide, PR template, gitignore

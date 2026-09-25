@@ -1,0 +1,24 @@
+{
+  "run_id": "20260925_233413_G7",
+  "gate": "G7",
+  "commit": "22c25e838dc52536aaf0ffcce5fd5f1bdbf8540d",
+  "timestamp": "2026-09-25T18:04:14.580Z",
+  "image_id": "82e5bc01f8a4",
+  "image_sha256": "5d2fc00e4d92e03ad5abec465a6800edc45f5afc74fc218635586e6ef2114368",
+  "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "preprocessing_sha256": "dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05",
+  "runtime": "v20.20.2",
+  "status": "success",
+  "predicted_grade": 0,
+  "predicted_label": "No Apparent DR",
+  "confidence": 0.9460679101159518,
+  "referable": false,
+  "probabilities": [
+    0.9460679101159518,
+    0.03140011879236702,
+    0.020065377667134513,
+    0.0006329481168672263,
+    0.001833645307679468
+  ],
+  "latency_ms": 424
+}

@@ -1,0 +1,12 @@
+{
+  "verified_artifacts": [
+    "retinaguard_resnet18.onnx",
+    "validation/master_closure_v7/G8_NODE_701/provenance.json",
+    "validation/master_closure_v7/G9_PYTHON_701/provenance.json",
+    "validation/master_closure_v7/previous_closure_rejection.md"
+  ],
+  "verification_methods": [
+    "SHA-256 hash calculation",
+    "fs.existsSync"
+  ]
+}
