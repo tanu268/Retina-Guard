@@ -3,9 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ScanEye, ShieldCheck, Stethoscope, UserCog } from 'lucide-react';
 import { Alert, Button } from '../../components/ui';
+import HoverRevealCards from '../../components/ui/cards';
 import { useAuth } from '../../contexts/AuthContext';
 import { ROLE_HOME } from '../../services/authService';
 import type { Role } from '../../types';
+import imgTechnician from '../../assets/Technician.jpeg';
+import imgOphthalmologist from '../../assets/Opthmologist.jpeg';
+import imgAdministrator from '../../assets/Administrator.jpeg';
 
 /**
  * Sign-in.
@@ -82,42 +86,28 @@ export default function Login() {
           </div>
         )}
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {ROLES.map(({ id, label, blurb, icon: Icon }, i) => (
-            <motion.a
-              key={id}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.08 * i, ease: [0.25, 1, 0.5, 1] }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex h-full flex-col w-full bg-white border border-[var(--color-border)] rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md cursor-pointer group"
-              onClick={() => chooseRole(id)}
-            >
-              <div className="flex flex-1 flex-col p-7 pointer-events-none">
-                <span className="flex h-11 w-11 items-center justify-center border border-[var(--color-brand-200)] bg-[var(--color-brand-50)] text-[var(--color-primary)]">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <h2 className="mt-6 font-display text-h3 font-semibold text-[var(--color-brand-950)]">
-                  {label}
-                </h2>
-                <p className="mt-3 flex-1 font-body text-sm leading-[var(--leading-body)] text-[var(--color-ink-muted)]">
-                  {blurb}
-                </p>
-                <Button
-                  variant="primary"
-                  fullWidth
-                  className="mt-7"
-                  loading={pending === id}
-                  disabled={pending !== null && pending !== id}
-                  style={{ pointerEvents: 'auto' }}
-                >
-                  Continue as {label}
-                </Button>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+          className="mt-10"
+        >
+          <HoverRevealCards
+            className="!p-0 !max-w-none grid-cols-1 md:grid-cols-3 gap-6"
+            items={ROLES.map((r, i) => ({
+              id: r.id,
+              title: r.label,
+              subtitle: r.blurb,
+              icon: r.icon,
+              imageUrl: i === 0 
+                ? imgTechnician
+                : i === 1 
+                ? imgOphthalmologist
+                : imgAdministrator,
+              onClick: () => chooseRole(r.id),
+            }))}
+          />
+        </motion.div>
       </div>
     </div>
   );
