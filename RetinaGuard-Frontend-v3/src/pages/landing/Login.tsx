@@ -43,7 +43,7 @@ export default function Login() {
     } catch (err) {
       setError(
         err instanceof Error
-          ? `${err.message} Check that the edge server is running on port 4001.`
+          ? err.message
           : 'Could not enter the workspace.',
       );
     } finally {

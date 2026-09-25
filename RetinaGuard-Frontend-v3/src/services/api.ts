@@ -283,7 +283,13 @@ export const reportService = {
    *  ScreeningReport left every field undefined and rendered a blank page. */
   async getJson(consultationId: string): Promise<ScreeningReport> {
     const res = await http.get<ReportJsonResponse>(`/reports/${consultationId}/json`);
-    return res.report;
+    return {
+      ...res.report,
+      reportNumber: res.meta?.reportNumber ?? res.report?.reportNumber,
+      status: (res.meta?.status ?? res.report?.status) as any,
+      generatedAt: res.meta?.generatedAt ?? res.report?.generatedAt,
+      qrToken: (res.report as any)?.verification?.token ?? res.report?.qrToken,
+    };
   },
 
   async getMeta(consultationId: string) {
@@ -291,8 +297,8 @@ export const reportService = {
     return res.meta;
   },
 
-  pdfBlob(consultationId: string): Promise<Blob> {
-    return http.get<Blob>(`/reports/${consultationId}/pdf`, { accept: 'application/pdf' });
+  pdfBlob(consultationId: string, variant: 'clinical' | 'patient' = 'clinical'): Promise<Blob> {
+    return http.get<Blob>(`/reports/${consultationId}/pdf?variant=${variant}&download=1`, { accept: 'application/pdf' });
   },
 
   /** Public, unauthenticated, returns no PHI — this is what a QR scan hits. */

@@ -3,7 +3,8 @@ const asyncHandler = require('../../utils/asyncHandler');
 
 function buildReportsController({ reportService }) {
   const generate = asyncHandler(async (req, res) => {
-    const report = await reportService.generate(req.params.consultationId, req.user, req);
+    const variant = req.query.variant === 'patient' ? 'patient' : 'clinical';
+    const report = await reportService.generate(req.params.consultationId, req.user, req, variant);
     res.status(201).json({ report: { ...report, json_payload: undefined } });
   });
 
@@ -15,11 +16,12 @@ function buildReportsController({ reportService }) {
   });
 
   /**
-   * `?download=1` forces a save dialog; the default stays inline so the reviewer
-   * can preview the report in the browser without leaving the case.
+   * `?download=1` forces a save dialog; default is inline preview.
+   * Supports `?variant=clinical` (default) and `?variant=patient`.
    */
   const getPdf = asyncHandler(async (req, res) => {
-    const { stream, filename } = await reportService.getPdfStream(req.params.consultationId);
+    const variant = req.query.variant === 'patient' ? 'patient' : 'clinical';
+    const { stream, filename } = await reportService.getPdfStream(req.params.consultationId, variant);
     const disposition = req.query.download === undefined ? 'inline' : 'attachment';
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `${disposition}; filename="${filename}"`);
