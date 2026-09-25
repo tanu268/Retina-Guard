@@ -12,7 +12,6 @@ import {
   IconFile, IconHistory, IconLogout, IconMenu, IconPatients, IconQueue,
   IconSync, IconUserPlus, IconUsers, IconX, RetinaMark,
 } from '../ui/icons';
-import { GradientBackground } from '../ui/jade-sky';
 
 interface NavItem {
   to: string;
@@ -194,10 +193,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50/40 relative z-0">
-      <div className="fixed inset-0 z-[-1]">
-        <GradientBackground className="w-full h-full opacity-60" />
-      </div>
+    <div className="min-h-screen bg-white relative z-0">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:rounded-none focus:shadow-lg focus:text-sm focus:font-medium"

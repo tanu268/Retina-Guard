@@ -1,0 +1,22 @@
+{
+  "phase": "8",
+  "task": "FIRST REAL INFERENCE",
+  "result": {
+    "drGradeCode": 0,
+    "drGrade": "No Apparent DR",
+    "confidence": 0.5927576597197205,
+    "gradeProbabilities": [
+      0.5927576597197205,
+      0.08144530285148002,
+      0.24227577807594453,
+      0.040762677091284144,
+      0.04275858226157089
+    ],
+    "referableProbability": 0.3257970374287996,
+    "referable": false,
+    "modelVersion": "retinaguard_resnet18.onnx",
+    "durationMs": 435
+  },
+  "status": "success",
+  "message": "ONNX adapter executed inference successfully. Predictions match format."
+}

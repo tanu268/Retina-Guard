@@ -61,22 +61,30 @@ class ReviewerService {
     const completedAt = new Date();
     const durationSeconds = startedAt ? Math.max(0, Math.round((completedAt - startedAt) / 1000)) : null;
 
-    const review = await this.repo.create({
-      id: uuid(),
-      consultation_id: consultationId,
-      analysis_id: latest?.id ?? null,
-      reviewer_id: actor.id,
-      ai_grade_code: aiGradeCode,
-      reviewer_grade_code: input.reviewerGradeCode,
-      agreement,
-      decision: input.decision,
-      referral_urgency: input.referralUrgency ?? null,
-      override_reason: agreement === false ? (input.overrideReason || null) : null,
-      notes: input.notes ?? null,
-      review_started_at: input.reviewStartedAt ?? null,
-      review_completed_at: completedAt.toISOString(),
-      duration_seconds: durationSeconds,
-    });
+    let review;
+    try {
+      review = await this.repo.create({
+        id: uuid(),
+        consultation_id: consultationId,
+        analysis_id: latest?.id ?? null,
+        reviewer_id: actor.id,
+        ai_grade_code: aiGradeCode,
+        reviewer_grade_code: input.reviewerGradeCode,
+        agreement,
+        decision: input.decision,
+        referral_urgency: input.referralUrgency ?? null,
+        override_reason: agreement === false ? (input.overrideReason || null) : null,
+        notes: input.notes ?? null,
+        review_started_at: input.reviewStartedAt ?? null,
+        review_completed_at: completedAt.toISOString(),
+        duration_seconds: durationSeconds,
+      });
+    } catch (err) {
+      if (err.message && err.message.includes('UNIQUE constraint failed')) {
+        throw new ConflictError('This case has already been reviewed.');
+      }
+      throw err;
+    }
 
     const reviewerGrade = gradeByCode(input.reviewerGradeCode);
     await this.consultations.update(consultationId, {

@@ -22,7 +22,7 @@ async function start() {
 
   container.services.syncManager.start();
 
-  httpServer.listen(config.port, '0.0.0.0', () => {
+  httpServer.listen(config.port, () => {
     logger.info({
       port: config.port, env: config.env, site: config.node.siteId,
       matlabAdapter: config.matlab.adapter, districtSync: config.postgres.enabled,

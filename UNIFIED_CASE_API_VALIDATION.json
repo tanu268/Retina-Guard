@@ -1,0 +1,41 @@
+{
+  "endpoint": "GET /api/v1/case/:case_uuid",
+  "status_code": 200,
+  "case_uuid": "a4ebd30e-fecc-4611-9349-40cd14fdfb6a",
+  "response": {
+    "case_uuid": "a4ebd30e-fecc-4611-9349-40cd14fdfb6a",
+    "status": "awaiting_review",
+    "site_id": "PHC-INDORE-01",
+    "device_id": "FUNDUS-CAM-001",
+    "created_at": "2026-09-23 18:02:55",
+    "images": [
+      {
+        "id": "3a227605-0891-4e81-a0c1-465ad01fa029",
+        "laterality": "right",
+        "status": "quality_pass"
+      },
+      {
+        "id": "4266ad3a-14b2-474b-bc13-215f1bea51d3",
+        "laterality": "left",
+        "status": "quality_pass"
+      }
+    ],
+    "prediction": {
+      "grade": null,
+      "label": null,
+      "confidence": null,
+      "referable": false
+    },
+    "probabilities": null,
+    "anatomy": null,
+    "lesions": null,
+    "stage_timings_ms": null,
+    "explanation": {
+      "available": true,
+      "gradcam_path": "/api/v1/cases/explainability/e79d0c94-ca84-4eca-9693-56c6ad04295f"
+    },
+    "report": null,
+    "review": null
+  },
+  "validation_result": "PASS - The previous HTTP 500 error due to missing service methods has been resolved."
+}

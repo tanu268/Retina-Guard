@@ -1,0 +1,23 @@
+{
+  "model": "retinaguard_resnet18.onnx",
+  "sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+  "ir_version": 8,
+  "opset": 17,
+  "producer": "pytorch",
+  "inputs": [
+    {
+      "name": "input",
+      "shape": ["dynamic", 3, 384, 384],
+      "datatype": "float32",
+      "layout": "NCHW"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "shape": ["dynamic", 5],
+      "datatype": "float32"
+    }
+  ],
+  "metadata": {}
+}

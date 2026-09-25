@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useCallback, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
-import { analysisService, consultationService, imageService } from '../../services/api';
+import { analysisService, consultationService, imageService, casesService } from '../../services/api';
 import { useSync } from '../../contexts/SyncContext';
 
 import {
@@ -60,6 +60,30 @@ export default function AiAnalysis() {
       } catch {
         setLayers(null);
       }
+      
+      // Fetch the unified case response and overwrite result to map to the UI
+      try {
+        const caseData = await casesService.getCase(consultationId);
+        if (caseData.prediction) {
+          setResult({
+            analysis: {
+              id: caseData.case_uuid, // Mock ID for rendering
+              dr_grade_code: caseData.prediction.grade,
+              dr_grade_label: caseData.prediction.label,
+              confidence: caseData.prediction.confidence,
+              referable: caseData.prediction.referable ? 1 : 0,
+              abstained: caseData.prediction.abstained,
+              abstain_reason: caseData.prediction.abstain_reason,
+              anatomy: caseData.anatomy,
+              lesions: caseData.lesions,
+              stage_timings_ms: caseData.stage_timings_ms
+            } as any
+          } as any);
+        }
+      } catch(err) {
+        console.warn('Failed to fetch unified case', err);
+      }
+      
       refetchCase();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Analysis could not complete.');

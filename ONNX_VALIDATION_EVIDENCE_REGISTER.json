@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ONNX-001",
+    "claim": "Baseline",
+    "source": "Manual extraction",
+    "command": "git status",
+    "artifact": "ONNX_VALIDATION_BASELINE.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Captured starting state",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-002",
+    "claim": "Model Forensics",
+    "source": "Python onnx introspection",
+    "command": "python script",
+    "artifact": "ONNX_MODEL_FORENSICS.json",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Input dynamicx3x384x384 float32. Output dynamicx5.",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-003",
+    "claim": "Training Contract",
+    "source": "model/RetinaGuard_ML/src/preprocessing.py",
+    "command": "view_file",
+    "artifact": "MODEL_TRAINING_CONTRACT.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Extracted threshold, crop, and normalize logic",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-004",
+    "claim": "Preprocessing Parity",
+    "source": "verify_preprocessing scripts",
+    "command": "node & python inference scripts",
+    "artifact": "PREPROCESSING_PARITY_REPORT.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Exact algorithmic reproduction via @techstark/opencv-js. RMSE 0.0317.",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "Minor libjpeg decoding drift remains."
+  },
+  {
+    "id": "ONNX-005",
+    "claim": "Node/Python Runtime Parity",
+    "source": "verify_inference_parity",
+    "command": "node & python on exactly same binary tensor",
+    "artifact": "NODE_PYTHON_ONNX_PARITY.json",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Logits match identically down to precision floor",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-006",
+    "claim": "Postprocessing",
+    "source": "src/inference/adapters/onnxAdapter.js",
+    "command": "view_file",
+    "artifact": "POSTPROCESSING_VALIDATION.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Argmax and probabilities are derived correctly with sum 1.0 constraint",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-007",
+    "claim": "Referable Logic",
+    "source": "src/matlab/contracts.js",
+    "command": "view_file",
+    "artifact": "REFERABLE_LOGIC_VALIDATION.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Classes 2-4 map to referable.",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-008",
+    "claim": "Determinism",
+    "source": "verify_determinism.js",
+    "command": "node scripts/verify_determinism.js",
+    "artifact": "ONNX_DETERMINISM_REPORT.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "0 variance across 5 sequential evaluations",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-009",
+    "claim": "Analysis Persistence",
+    "source": "sqlite",
+    "command": "node",
+    "artifact": "E2E_DRIFT_REPORT.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Persistence successfully matches output",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "None"
+  },
+  {
+    "id": "ONNX-012",
+    "claim": "Real ONNX E2E",
+    "source": "scripts/e2e_onnx_regression.js",
+    "command": "node scripts/e2e_onnx_regression.js",
+    "artifact": "E2E_DRIFT_REPORT.md",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Outputs correctly mapped",
+    "status": "PASS",
+    "confidence": "High",
+    "limitations": "E2E script blocked on local batch scaling but unblocked for single run"
+  },
+  {
+    "id": "ONNX-013",
+    "claim": "Validation Dataset",
+    "source": "ls local_dataset",
+    "command": "ls",
+    "artifact": "None",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "No labels.csv found in local_dataset.",
+    "status": "BLOCKED",
+    "confidence": "High",
+    "limitations": "Performance cannot be calculated without validation labels"
+  },
+  {
+    "id": "ONNX-014",
+    "claim": "Model Performance",
+    "source": "None",
+    "command": "None",
+    "artifact": "None",
+    "model_sha256": "C49E78C9B6C7BFA5B0098BD40A3901D02C7B41C9598CAC993891B29263476F3F",
+    "result": "Blocked due to lack of ground truth validation set",
+    "status": "BLOCKED",
+    "confidence": "High",
+    "limitations": "Cannot evaluate real clinical metrics."
+  },
+  {
+    "id": "FINAL-001",
+    "claim": "Validation Dataset Integrity",
+    "status": "PASS",
+    "source": "CLINICAL_EVALUATION_MANIFEST.json",
+    "artifact": "RETINAGUARD_FINAL_VALIDATION_AUDIT.md",
+    "result": "701 valid rows linking filename, path, and diagnosis",
+    "limitations": "None"
+  },
+  {
+    "id": "FINAL-002",
+    "claim": "Label Provenance",
+    "status": "PASS",
+    "source": "val_manifest.csv",
+    "artifact": "RETINAGUARD_FINAL_VALIDATION_AUDIT.md",
+    "result": "Labels verified against ground truth files without any inference leakage",
+    "limitations": "None"
+  },
+  {
+    "id": "FINAL-003",
+    "claim": "701-Image Evaluation",
+    "status": "PASS",
+    "source": "scripts/run_clinical_validation_parallel.js",
+    "artifact": "CLINICAL_EVALUATION_RESULTS.json",
+    "result": "701 successful evaluations, 0 failures",
+    "limitations": "None"
+  },
+  {
+    "id": "FINAL-004",
+    "claim": "Classification Metrics",
+    "status": "PASS",
+    "source": "calc_metrics.py",
+    "artifact": "CONFUSION_MATRIX.csv",
+    "result": "Accuracy 60.49%, Macro F1 30.53%, Weighted F1 52.06%",
+    "limitations": "Model has strong bias toward under-calling."
+  },
+  {
+    "id": "FINAL-005",
+    "claim": "Referable DR Metrics",
+    "status": "PASS",
+    "source": "calc_metrics.py",
+    "artifact": "RETINAGUARD_FINAL_VALIDATION_AUDIT.md",
+    "result": "Sensitivity 37.68%, Specificity 98.80%",
+    "limitations": "High rate of false negatives (177)"
+  },
+  {
+    "id": "FINAL-006",
+    "claim": "Error Analysis",
+    "status": "PASS",
+    "source": "calc_metrics.py",
+    "artifact": "ERROR_ANALYSIS.csv",
+    "result": "Extracted all under/over calls and referable mismatches",
+    "limitations": "None"
+  },
+  {
+    "id": "FINAL-007",
+    "claim": "Independent Cross-Runtime Parity",
+    "status": "PASS",
+    "source": "INDEPENDENT_ONNX_OUTPUT_PARITY.json",
+    "artifact": "RETINAGUARD_FINAL_VALIDATION_AUDIT.md",
+    "result": "10/10 grade matches and 10/10 referable matches despite minor numerical tensor drift",
+    "limitations": "None"
+  },
+  {
+    "id": "FINAL-008",
+    "claim": "Performance",
+    "status": "PARTIALLY_VERIFIED",
+    "source": "task-908.log",
+    "artifact": "RETINAGUARD_FINAL_VALIDATION_AUDIT.md",
+    "result": "1905.8s elapsed wall-clock time across 8 workers",
+    "limitations": "OpenCV.js GaussianBlur (101x101) creates massive performance bottleneck"
+  }
+]
