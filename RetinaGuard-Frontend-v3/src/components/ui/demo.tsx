@@ -1,5 +1,6 @@
 import * as React from "react";
-import { ResourceCardsGrid, ResourceCardItem } from "./resource-cards-grid";
+import { ResourceCardsGrid } from "./resource-cards-grid";
+import type { ResourceCardItem } from "./resource-cards-grid";
 
 // Sample data for the resource cards
 const resourceData: ResourceCardItem[] = [

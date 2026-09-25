@@ -429,9 +429,6 @@ export default function Landing() {
                   RetinaGuard
                 </span>
               </div>
-              <p className="mt-3 font-body text-sm text-[var(--color-ink-muted)]">
-                Explainable AI for Rural Diabetic Retinopathy Screening
-              </p>
             </div>
 
           </div>

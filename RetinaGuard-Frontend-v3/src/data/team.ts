@@ -19,12 +19,12 @@ export interface TeamMember {
 }
 
 export const TEAM: TeamMember[] = [
-  { id: 'm1', name: 'Yash Singh Thakur', role: 'Team Lead • Simulation & AI/ML', blurb: 'Simulink/SimEvents & Model Development', avatar: null, github: 'https://github.com/yashcsv', linkedin: 'https://linkedin.com/in/yavora-yash' },
-  { id: 'm2', name: 'Tanu Namdeo', role: 'Full-Stack Development Lead', blurb: 'AI/ML Development', avatar: null, github: 'https://github.com/tanu268', linkedin: 'https://www.linkedin.com/in/tanu-namdeo-b8286a2a1' },
-  { id: 'm3', name: 'Nitin Chadar', role: 'Full-Stack Developer', blurb: 'Application Integration', avatar: null, github: 'https://github.com/nitinchadar22-cmd', linkedin: 'https://linkedin.com/in/nitin-chadar-ggits' },
-  { id: 'm4', name: 'Nikhil Somkuwar', role: 'Full-Stack Developer', blurb: 'Application Integration', avatar: null, github: 'https://github.com/NikhilSomkuwar-07', linkedin: 'https://linkedin.com/in/nikhil-somkuwar-0b2948327' },
-  { id: 'm5', name: 'Shrusti Shingada', role: 'Data & AI/ML Lead', blurb: 'Data Pipeline, Preprocessing & Model Development', avatar: null, github: 'https://github.com/shrusti0247', linkedin: 'https://linkedin.com/in/shrusti-shingade' },
-  { id: 'm6', name: 'Priyanka Pandey', role: 'UI/UX & Documentation Lead', blurb: 'Frontend Design & Project Documentation', avatar: null, github: 'https://github.com/Priyankapandey281-tech', linkedin: 'https://linkedin.com/in/priyanka-pandey-1327b6408' },
+  { id: 'm1', name: 'Yash Singh Thakur', role: 'Team Lead • Simulation & AI/ML', blurb: 'Simulink/SimEvents & Model Development', avatar: '/team/Yash Singh Thakur.jpeg', github: 'https://github.com/yashcsv', linkedin: 'https://linkedin.com/in/yavora-yash' },
+  { id: 'm2', name: 'Tanu Namdeo', role: 'Full-Stack Development Lead', blurb: 'AI/ML Development', avatar: '/team/Tanu Namdeo.jpeg', github: 'https://github.com/tanu268', linkedin: 'https://www.linkedin.com/in/tanu-namdeo-b8286a2a1' },
+  { id: 'm3', name: 'Nitin Chadar', role: 'Full-Stack Developer', blurb: 'Application Integration', avatar: '/team/Nitin Chadar.jpg', github: 'https://github.com/nitinchadar22-cmd', linkedin: 'https://linkedin.com/in/nitin-chadar-ggits' },
+  { id: 'm4', name: 'Nikhil Somkuwar', role: 'Full-Stack Developer', blurb: 'Application Integration', avatar: '/team/Nikhil Somkuwar.jpeg', github: 'https://github.com/NikhilSomkuwar-07', linkedin: 'https://linkedin.com/in/nikhil-somkuwar-0b2948327' },
+  { id: 'm5', name: 'Shrusti Shingada', role: 'Data & AI/ML Lead', blurb: 'Data Pipeline, Preprocessing & Model Development', avatar: '/team/Shrusti Shingada.jpeg', github: 'https://github.com/shrusti0247', linkedin: 'https://linkedin.com/in/shrusti-shingade' },
+  { id: 'm6', name: 'Priyanka Pandey', role: 'UI/UX & Documentation Lead', blurb: 'Frontend Design & Project Documentation', avatar: '/team/Priyanka Pandey.jpeg', github: 'https://github.com/Priyankapandey281-tech', linkedin: 'https://linkedin.com/in/priyanka-pandey-1327b6408' },
 ];
 
 /** Initials for the monogram fallback. */

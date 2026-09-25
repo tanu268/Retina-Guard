@@ -383,19 +383,21 @@ export function MetricCard({
     danger: { icon: 'bg-[var(--color-p0)] text-white', value: 'text-[var(--color-ink)]' },
   }[tone];
 
-  const Wrapper = onClick ? 'button' : 'div';
+  const Wrapper = onClick ? motion.button : motion.div;
 
   return (
     <Wrapper
       onClick={onClick}
+      whileHover={onClick ? { scale: 1.03 } : {}}
+      whileTap={onClick ? { scale: 0.98 } : {}}
       className={cx(
-        'w-full text-left transition-colors duration-[var(--duration-fast)] cursor-pointer',
-        onClick && 'hover:bg-[var(--color-surface-pearl)] group',
+        'w-full text-left transition-colors duration-[var(--duration-fast)] block outline-none',
+        onClick && 'cursor-pointer group'
       )}
     >
-      <GlowCard customSize glowColor="blue" className={cx(
-        'rounded-[var(--radius-lg)] bg-[var(--color-canvas)] border border-[var(--color-hairline)] p-5 text-left w-full shadow-none transition-colors',
-        onClick && 'group-hover:border-[var(--color-ink-muted-48)]'
+      <div className={cx(
+        'rounded-[var(--radius-lg)] bg-[var(--color-canvas)] border border-[var(--color-hairline)] p-5 text-left w-full shadow-none transition-shadow duration-300 h-full flex flex-col justify-between',
+        onClick && 'hover:shadow-md group-hover:border-[var(--color-ink-muted-48)]'
       )}>
       <div className="flex items-start justify-between gap-3 mb-3.5">
         <span className="text-body font-medium text-[var(--color-ink-muted-48)] leading-tight">{label}</span>
@@ -415,7 +417,7 @@ export function MetricCard({
         </div>
       )}
       {sublabel && <div className="text-caption text-[var(--color-ink-muted-48)] mt-2">{sublabel}</div>}
-      </GlowCard>
+      </div>
     </Wrapper>
   );
 }
