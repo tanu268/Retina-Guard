@@ -77,13 +77,13 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
         scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 text-white' : 'bg-transparent text-white'
       )}
     >
-      <nav className="mx-auto flex h-[44px] w-full max-w-[1440px] items-center justify-between px-5 sm:px-8">
+      <nav className="flex h-[44px] w-full items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="UVI home">
           <span className={cx(
             "font-bold tracking-tight transition-all duration-200",
             scrolled
               ? "text-lg md:text-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-              : "text-xl md:text-2xl text-blue-900 drop-shadow-sm"
+              : "text-xl md:text-2xl text-white drop-shadow-sm"
           )}>
             Unified Vision Intelligence
           </span>
