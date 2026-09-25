@@ -417,27 +417,73 @@ export default function Landing() {
       </main>
 
       {/* ── 6. Footer ─────────────────────────────────────────────────────── */}
-      <footer className="border-t border-[var(--color-border)] bg-white/70 backdrop-blur-sm">
-        <div className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-8">
-          <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-            <div>
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center bg-[var(--color-primary)]">
-                  <span className="font-display text-sm font-bold text-white">R</span>
-                </span>
-                <span className="font-display text-lg font-semibold tracking-tight text-[var(--color-brand-950)]">
-                  RetinaGuard
+      <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+        <FooterBackgroundGradient />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-16 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8 pb-8">
+            
+            {/* 1. ABOUT UVI */}
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex flex-col items-start gap-1">
+                <img src={uviLogo} alt="UVI Logo" className="h-20 w-auto object-contain rounded-xl shadow-md border border-slate-700/50" />
+                <span className="mt-1 font-display text-lg font-semibold tracking-widest text-white uppercase">
+                  Unified Vision Intelligence
                 </span>
               </div>
-              <p className="mt-3 font-body text-sm text-[var(--color-ink-muted)]">
-                Explainable AI for Rural Diabetic Retinopathy Screening
+              <p className="mt-4 font-body text-base leading-relaxed text-neutral-400 max-w-sm">
+                A lightweight, clinician-assisted platform designed to improve early diabetic retinopathy detection across India's healthcare ecosystem. Every prediction is backed by transparent lesion evidence.
               </p>
+              <div className="mt-6 flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-2.5 backdrop-blur-xs w-fit">
+                <Activity className="h-4 w-4 text-[var(--color-success)]" strokeWidth={1.75} />
+                <span className="font-ui text-[13px] text-neutral-400">
+                  AI-assisted screening aid — human review required
+                </span>
+              </div>
             </div>
 
+            {/* 2. QUICK LINKS */}
+            <div className="pt-2">
+              <h4 className="text-sm font-semibold tracking-widest text-white uppercase mb-5">QUICK LINKS</h4>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#features" onClick={(e) => { e.preventDefault(); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-base text-neutral-400 hover:text-white transition-colors">
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <button onClick={startScreening} className="text-base text-neutral-400 hover:text-white transition-colors">
+                    Start Screening
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* 3. OUR TEAM / CONTACT */}
+            <div className="pt-2">
+              <h4 className="text-sm font-semibold tracking-widest text-white uppercase mb-5">Our Team & Contact</h4>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#team" onClick={(e) => { e.preventDefault(); document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-base text-neutral-400 hover:text-white transition-colors">
+                    Meet the Engineers
+                  </a>
+                </li>
+                <li>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unifiedvisionintelligence@gmail.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-base text-neutral-400 hover:text-white transition-colors">
+                    unifiedvisionintelligence@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <p className="mt-12 border-t border-[var(--color-border)] pt-7 font-ui text-[13px] text-[var(--color-ink-subtle)]">
-            © 2026 RetinaGuard. All rights reserved.
+        {/* Interactive Text Hover Effect - Now spans the full width of the screen */}
+        <div className="relative z-10 mt-2 mb-0 flex h-32 w-full items-center justify-center overflow-hidden sm:h-56 md:h-72 px-2 sm:px-4">
+          <TextHoverEffect text="UNIFIED VISION INTELLIGENCE" className="z-20 w-full" />
+        </div>
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-8 sm:px-8">
+          <p className="border-t border-white/10 pt-6 font-ui text-[14px] text-neutral-500">
+            © 2026 UVI. All rights reserved.
           </p>
         </div>
       </footer>

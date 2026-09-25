@@ -77,11 +77,15 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
         scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 text-white' : 'bg-transparent text-white'
       )}
     >
-      <nav className="mx-auto flex h-[44px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
+      <nav className="mx-auto flex h-[44px] w-full max-w-[1440px] items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="UVI home">
-          <img src={uviLogo} alt="UVI Logo" className="h-8 w-auto object-contain rounded-sm shadow-sm border border-slate-200/60" />
-          <span className="font-semibold text-[var(--text-nav-link)] tracking-[var(--tracking-fine-print)] flex items-center gap-2">
-            UVI
+          <span className={cx(
+            "font-bold tracking-tight transition-all duration-200",
+            scrolled
+              ? "text-lg md:text-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+              : "text-xl md:text-2xl text-blue-900 drop-shadow-sm"
+          )}>
+            Unified Vision Intelligence
           </span>
         </Link>
 
