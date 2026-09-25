@@ -667,18 +667,25 @@ class PdfService {
     for (let i = range.start; i < range.start + totalPages; i++) {
       doc.switchToPage(i);
 
+      // Temporarily disable bottom margin so footer text doesn't trigger auto-page-breaks
+      const originalBottom = doc.page.margins.bottom;
+      doc.page.margins.bottom = 0;
+
       // Rule separator
       doc.strokeColor(INK.border).lineWidth(0.5)
         .moveTo(startX, bottomY).lineTo(startX + usableW, bottomY).stroke();
 
       // Disclaimer line
       doc.fillColor(INK.muted).font('Helvetica').fontSize(6.8)
-        .text(DISCLAIMER_TEXT, startX, bottomY + 4, { width: usableW, align: 'center' });
+        .text(DISCLAIMER_TEXT, startX, bottomY + 4, { width: usableW, align: 'center', lineBreak: false });
 
       // Bottom bar
       doc.fillColor(INK.muted).font('Helvetica').fontSize(7)
-        .text('Confidential: Medical Record', startX, bottomY + 15)
-        .text(`Page ${i + 1} of ${totalPages}`, startX, bottomY + 15, { width: usableW, align: 'right' });
+        .text('Confidential: Medical Record', startX, bottomY + 15, { lineBreak: false })
+        .text(`Page ${i + 1} of ${totalPages}`, startX, bottomY + 15, { width: usableW, align: 'right', lineBreak: false });
+
+      // Restore margin
+      doc.page.margins.bottom = originalBottom;
     }
   }
 
