@@ -209,22 +209,8 @@ export default function PatientRegistration() {
         setDuplicates(res.possibleDuplicates ?? []);
         setStepIndex(3);
       } catch (err) {
-        if (err instanceof HttpError && err.details) {
-          const details = err.details as { fieldErrors?: Record<string, string[]>; formErrors?: string[] };
-          if (details.fieldErrors && Object.keys(details.fieldErrors).length > 0) {
-            const mappedErrors: Partial<Record<keyof FormState, string>> = {};
-            const messages: string[] = [];
-            for (const [field, msgs] of Object.entries(details.fieldErrors)) {
-              if (msgs && msgs.length > 0) {
-                mappedErrors[field as keyof FormState] = msgs[0];
-                messages.push(`${field}: ${msgs.join(', ')}`);
-              }
-            }
-            setErrors((prev) => ({ ...prev, ...mappedErrors }));
-            setSubmitError(messages.join('. ') || err.message);
-          } else {
-            setSubmitError(err.message || 'Could not register the patient.');
-          }
+        if (err instanceof HttpError && err.code === 'VALIDATION_ERROR' && typeof err.details === 'object' && err.details) {
+          setErrors(err.details as Partial<Record<keyof FormState, string>>);
         } else {
           setSubmitError(err instanceof Error ? err.message : 'Could not register the patient.');
         }
@@ -585,13 +571,7 @@ export default function PatientRegistration() {
         </div>
       </Card>
 
-      {stepIndex < 3 && (
-        <p className="text-[12px] text-slate-400 flex items-center gap-2">
-          <IconUserPlus size={13} />
-          The patient record is created at the end of step 3, so duplicates can be
-          checked before a screening session begins.
-        </p>
-      )}
+
     </div>
   );
 }
