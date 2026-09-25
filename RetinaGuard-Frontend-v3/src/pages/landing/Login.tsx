@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ScanEye, ShieldCheck, Stethoscope, UserCog } from 'lucide-react';
-import { Alert, Button, Card } from '../../components/ui';
+import { Alert, Button } from '../../components/ui';
 import { GlowCard } from '../../components/ui/spotlight-card';
 import { useAuth } from '../../contexts/AuthContext';
 import { ROLE_HOME } from '../../services/authService';
@@ -43,7 +43,7 @@ export default function Login() {
     } catch (err) {
       setError(
         err instanceof Error
-          ? `${err.message} Check that the edge server is running on port 4001.`
+          ? err.message
           : 'Could not enter the workspace.',
       );
     } finally {

@@ -5,7 +5,7 @@ import {
   Eye, FileText, Layers, ListChecks, MapPin, ScanEye,
   ShieldCheck, Stethoscope, UserCog, UserPlus, Users,
 } from 'lucide-react';
-import { Button, Card } from '../../components/ui';
+import { Button } from '../../components/ui';
 import { GlowCard } from '../../components/ui/spotlight-card';
 import { LandingNav } from '../../components/landing/LandingNav';
 import heroImage from '../../assets/hero.png';

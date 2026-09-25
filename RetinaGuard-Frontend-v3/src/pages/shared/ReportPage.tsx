@@ -22,6 +22,7 @@ import { IconAlert, IconArrowLeft, IconDownload, IconFile, IconPrint } from '../
 /** Renders the QR as a link to the public verification endpoint. The token
  *  itself carries no PHI — that is the point of the endpoint's design. */
 function VerificationBlock({ token }: { token: string }) {
+  if (!token) return null;
   const url = `${API_BASE}/reports/verify/${token}`;
   return (
     <div className="flex items-start gap-4">
@@ -63,7 +64,6 @@ export default function ReportPage() {
   const navigate = useNavigate();
   const [generating, setGenerating] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
-  const [downloading, setDownloading] = useState(false);
 
   const { data: report, isLoading, error, refetch } = useQuery({
     queryFn: () => reportService.getJson(consultationId!),
@@ -89,23 +89,25 @@ export default function ReportPage() {
     }
   };
 
-  const downloadPdf = async () => {
+  const [downloadingVariant, setDownloadingVariant] = useState<'clinical' | 'patient' | null>(null);
+
+  const downloadPdf = async (variant: 'clinical' | 'patient' = 'clinical') => {
     if (!consultationId) return;
-    setDownloading(true);
+    setDownloadingVariant(variant);
     try {
-      const blob = await reportService.pdfBlob(consultationId);
+      const blob = await reportService.pdfBlob(consultationId, variant);
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${report?.reportNumber ?? 'screening-report'}.pdf`;
+      a.download = `RetinaGuard_Report_${report?.reportNumber ?? 'screening-report'}_${variant}.pdf`;
       document.body.appendChild(a);
       a.click();
       a.remove();
-      URL.revokeObjectURL(url);
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
     } catch {
       setGenError('The PDF could not be downloaded from this node.');
     } finally {
-      setDownloading(false);
+      setDownloadingVariant(null);
     }
   };
 
@@ -160,14 +162,28 @@ export default function ReportPage() {
           title={report.reportNumber}
           description={`Generated ${formatDateTime(report.generatedAt)} · schema ${report.schemaVersion}`}
           actions={
-            <>
+            <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" onClick={() => window.print()} icon={<IconPrint size={15} />}>
                 Print
               </Button>
-              <Button size="sm" onClick={downloadPdf} loading={downloading} icon={!downloading ? <IconDownload size={15} /> : undefined}>
-                Download PDF
+              <Button
+                size="sm"
+                onClick={() => downloadPdf('clinical')}
+                loading={downloadingVariant === 'clinical'}
+                icon={downloadingVariant !== 'clinical' ? <IconDownload size={15} /> : undefined}
+              >
+                Download Clinical PDF
               </Button>
-            </>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => downloadPdf('patient')}
+                loading={downloadingVariant === 'patient'}
+                icon={downloadingVariant !== 'patient' ? <IconDownload size={15} /> : undefined}
+              >
+                Download Patient Copy
+              </Button>
+            </div>
           }
         />
       </div>
