@@ -467,7 +467,7 @@ class ReportService {
     return {
       stream: this.storage.stream(variantRel),
       report,
-      filename: `RetinaGuard_Report_${report.report_number}_${variant}.pdf`,
+      filename: `UVI_Report_${report.report_number}_${variant}.pdf`,
       pdfSha256,
     };
   }

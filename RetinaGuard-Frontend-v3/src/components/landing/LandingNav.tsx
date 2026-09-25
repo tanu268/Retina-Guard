@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { cx } from '../../lib/format';
 import { Button } from '../ui';
 import { AnchorNavLink } from '../ui/NavLink';
+import uviLogo from '../../assets/uvi-logo.jpg';
 
 const SECTIONS = [
   { id: 'home', label: 'Home' },
@@ -77,9 +78,10 @@ export function LandingNav({ onStartScreening }: LandingNavProps) {
       )}
     >
       <nav className="mx-auto flex h-[44px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="RetinaGuard home">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="UVI home">
+          <img src={uviLogo} alt="UVI Logo" className="h-8 w-auto object-contain rounded-sm shadow-sm border border-slate-200/60" />
           <span className="font-semibold text-[var(--text-nav-link)] tracking-[var(--tracking-fine-print)] flex items-center gap-2">
-            RetinaGuard
+            UVI
           </span>
         </Link>
 

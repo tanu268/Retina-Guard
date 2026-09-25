@@ -10,6 +10,7 @@ import { GlowCard } from '../../components/ui/spotlight-card';
 import { LandingNav } from '../../components/landing/LandingNav';
 import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
 import heroImage from '../../assets/hero.png';
+import uviLogo from '../../assets/uvi-logo.jpg';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 
@@ -148,7 +149,7 @@ export default function Landing() {
           <div className="absolute inset-0 z-0">
             <img
               src={heroImage}
-              alt="RetinaGuard Platform"
+              alt="UVI Platform"
               className="h-full w-full object-cover object-center"
             />
             {/* Subtle overlay only to guarantee white text readability */}
@@ -208,7 +209,7 @@ export default function Landing() {
           className="mx-auto w-full max-w-7xl px-5 py-[var(--space-section)] sm:px-8"
         >
           <SectionHeader
-            label="Why RetinaGuard"
+            label="Why UVI"
             title="Built for Real-World Rural Screening"
             lead="A lightweight, explainable, and clinician-assisted platform designed to improve early diabetic retinopathy detection across India's healthcare ecosystem."
           />
@@ -418,7 +419,7 @@ export default function Landing() {
                   onClick={startScreening}
                   className="border-white bg-white !text-[var(--color-brand-900)] hover:border-[var(--color-brand-100)] hover:bg-[var(--color-brand-100)] active:bg-[var(--color-brand-200)]"
                 >
-                  Explore RetinaGuard
+                  Explore UVI
                 </Button>
               </div>
             </div>
@@ -432,12 +433,10 @@ export default function Landing() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-14 sm:px-8">
           <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
             <div>
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center bg-[var(--color-primary)]">
-                  <span className="font-display text-sm font-bold text-white">R</span>
-                </span>
-                <span className="font-display text-lg font-semibold tracking-tight text-white">
-                  RetinaGuard
+              <div className="flex flex-col items-start gap-1">
+                <img src={uviLogo} alt="UVI Logo" className="h-20 w-auto object-contain rounded-xl shadow-md border border-slate-700/50" />
+                <span className="mt-1 font-display text-sm font-semibold tracking-widest text-white uppercase">
+                  Unified Vision Intelligence
                 </span>
               </div>
               <p className="mt-3 font-body text-sm text-neutral-400">
@@ -461,7 +460,7 @@ export default function Landing() {
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 sm:px-8">
           <p className="border-t border-white/10 pt-7 font-ui text-[13px] text-neutral-500">
-            © 2026 RetinaGuard. All rights reserved.
+            © 2026 UVI. All rights reserved.
           </p>
         </div>
       </footer>

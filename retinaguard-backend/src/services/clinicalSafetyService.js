@@ -59,7 +59,7 @@ class ClinicalSafetyService {
     const violations = this.lint(text);
     if (violations.length) {
       throw new ClinicalSafetyError(
-        `Prohibited clinical language in ${field}. RetinaGuard reports screening results, not diagnoses.`,
+        `Prohibited clinical language in ${field}. UVI reports screening results, not diagnoses.`,
         { field, violations },
       );
     }

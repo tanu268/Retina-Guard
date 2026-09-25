@@ -10,8 +10,9 @@ import { SyncIndicator } from '../clinical/indicators';
 import {
   IconAlert, IconBrain, IconCamera, IconChart, IconDashboard, IconDatabase,
   IconFile, IconHistory, IconLogout, IconMenu, IconPatients, IconQueue,
-  IconSync, IconUserPlus, IconUsers, IconX, RetinaMark,
+  IconSync, IconUserPlus, IconUsers, IconX,
 } from '../ui/icons';
+import uviLogo from '../../assets/uvi-logo.jpg';
 
 interface NavItem {
   to: string;
@@ -133,15 +134,10 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2.5 group"
-          aria-label="RetinaGuard home"
+          aria-label="UVI home"
         >
-          <span className="w-9 h-9 rounded-none bg-[#4338CA] text-white flex items-center justify-center shrink-0">
-            <RetinaMark size={20} />
-          </span>
-          <span className="text-left">
-            <span className="block text-[15px] font-semibold tracking-[-0.02em] text-slate-900 leading-tight">
-              RetinaGuard
-            </span>
+          <img src={uviLogo} alt="UVI Logo" className="w-20 h-auto object-contain shrink-0 rounded-lg shadow-sm border border-slate-200/60" />
+          <span className="text-left ml-1">
             <span className="block text-[11px] text-slate-500 leading-tight">
               {user.facility_id ?? 'Edge node'}
             </span>
@@ -248,10 +244,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             </button>
 
             <div className="lg:hidden flex items-center gap-2 min-w-0">
-              <span className="w-7 h-7 rounded-none bg-[#4338CA] text-white flex items-center justify-center shrink-0">
-                <RetinaMark size={16} />
-              </span>
-              <span className="text-[14px] font-semibold text-slate-900 truncate">RetinaGuard</span>
+              <img src={uviLogo} alt="UVI Logo" className="w-14 h-auto object-contain shrink-0 rounded-md shadow-sm border border-slate-200/60" />
             </div>
 
             <div className="hidden lg:flex items-center gap-2 min-w-0">
@@ -281,7 +274,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         <footer className="px-4 sm:px-6 lg:px-8 py-6 max-w-[1440px] mx-auto">
           <p className="text-[11px] text-slate-400">
-            RetinaGuard · AI-assisted screening and triage aid ·{' '}
+            UVI · AI-assisted screening and triage aid ·{' '}
             {titleCase(user?.role ?? '')} workspace · Every result requires human review
           </p>
         </footer>

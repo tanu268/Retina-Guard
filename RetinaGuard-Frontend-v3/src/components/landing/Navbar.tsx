@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
 import { RetinaMark } from '../ui/icons';
 import { cx } from '../../lib/format';
+import uviLogo from '../../assets/uvi-logo.jpg';
 
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
@@ -38,11 +39,9 @@ export function Navbar({ onEnterWorkspace }: { onEnterWorkspace: () => void }) {
     >
       <div className="h-full max-w-[1240px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         <a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('#home'); }} className="flex items-center gap-2.5">
-          <span className="w-8 h-8 rounded-[4px] bg-[#2563EB] text-white flex items-center justify-center">
-            <RetinaMark size={18} />
-          </span>
+          <img src={uviLogo} alt="UVI Logo" className="h-10 w-auto object-contain rounded-md shadow-sm border border-slate-200/60" />
           <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#111111]">
-            RetinaGuard
+            UVI
           </span>
         </a>
 

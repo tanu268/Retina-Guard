@@ -125,7 +125,7 @@ export default function ReviewWorkspace() {
         const details = err.details as { violations?: Array<{ term: string; suggestion: string }> } | undefined;
         const terms = details?.violations?.map((v) => `"${v.term}" → "${v.suggestion}"`).join(', ');
         setSubmitError(
-          `Prohibited clinical language. RetinaGuard reports screening results, not diagnoses.${terms ? ` Replace ${terms}.` : ''}`,
+          `Prohibited clinical language. UVI reports screening results, not diagnoses.${terms ? ` Replace ${terms}.` : ''}`,
         );
       } else if (err instanceof HttpError && err.status === 409) {
         setSubmitError('This case has already been adjudicated. Only one decision per case is permitted.');

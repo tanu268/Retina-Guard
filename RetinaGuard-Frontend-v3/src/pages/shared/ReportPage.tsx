@@ -99,7 +99,7 @@ export default function ReportPage() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `RetinaGuard_Report_${report?.reportNumber ?? 'screening-report'}_${variant}.pdf`;
+      a.download = `UVI_Report_${report?.reportNumber ?? 'screening-report'}_${variant}.pdf`;
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -203,7 +203,7 @@ export default function ReportPage() {
               Diabetic Retinopathy Screening Report
             </h1>
             <p className="text-[12px] text-slate-600 mt-1">
-              RetinaGuard · AI-assisted screening and triage aid
+              UVI · AI-assisted screening and triage aid
             </p>
           </div>
           <div className="text-right shrink-0">
@@ -433,7 +433,7 @@ export default function ReportPage() {
             <p>Site <span className="clinical-id">{report.siteId}</span></p>
             <p>Model <span className="clinical-id">{result?.modelVersion ?? '—'}</span></p>
             <p>Hash <span className="clinical-id">{result?.modelHash ?? '—'}</span></p>
-            <p className="mt-2">RetinaGuard · SIH 2026 · Team Glitch to Sight</p>
+            <p className="mt-2">UVI · SIH 2026 · Team Glitch to Sight</p>
           </div>
         </footer>
       </Card>

@@ -133,8 +133,8 @@ class PdfService {
       margins: { top: 40, bottom: 80, left: 40, right: 40 },
       bufferPages: true,
       info: {
-        Title: `RetinaGuard Screening Report ${report.report_number}`,
-        Author: config.appName || 'RetinaGuard',
+        Title: `UVI Screening Report ${report.report_number}`,
+        Author: config.appName || 'UVI',
         Subject: `${isPatient ? 'Patient Summary' : 'Clinical Audit'} Retinal Screening Report`,
         CreationDate: new Date(),
       },
@@ -189,7 +189,7 @@ class PdfService {
     const pageWidth = doc.page.width - doc.page.margins.left - doc.page.margins.right;
     const y = doc.page.margins.top;
 
-    doc.fillColor(INK.navy).font('Helvetica-Bold').fontSize(12).text('RetinaGuard', startX, y, { continued: true });
+    doc.fillColor(INK.navy).font('Helvetica-Bold').fontSize(12).text('UVI', startX, y, { continued: true });
     doc.fillColor(INK.muted).font('Helvetica').fontSize(8.5).text('   ·   Clinical Audit Report (Page 2 / Referral & Audit)');
 
     const p = body.patient || {};
@@ -210,7 +210,7 @@ class PdfService {
     const y = doc.y;
 
     // Brand Title
-    doc.fillColor(INK.navy).font('Helvetica-Bold').fontSize(20).text('RetinaGuard', startX, y);
+    doc.fillColor(INK.navy).font('Helvetica-Bold').fontSize(20).text('UVI', startX, y);
     doc.fillColor(INK.muted).font('Helvetica').fontSize(9).text('AI-Assisted Retinal Screening System', startX, y + 23);
 
     // Variant Badge on right

@@ -1,5 +1,5 @@
 import { Code2, Mail } from 'lucide-react';
-import { RetinaMark } from '../ui/icons';
+import uviLogo from '../../assets/uvi-logo.jpg';
 
 const LINKS = [
   { href: '#home', label: 'Home' },
@@ -19,10 +19,8 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10">
           <div className="max-w-[340px]">
             <div className="flex items-center gap-2.5 mb-3">
-              <span className="w-8 h-8 rounded-[4px] bg-[#2563EB] text-white flex items-center justify-center">
-                <RetinaMark size={18} />
-              </span>
-              <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#111111]">RetinaGuard</span>
+              <img src={uviLogo} alt="UVI Logo" className="h-10 w-auto object-contain rounded-md shadow-sm border border-slate-200/60" />
+              <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#111111]">UVI</span>
             </div>
             <p className="text-[13px] text-[#6B7280] leading-relaxed">
               AI-powered retinal screening platform for rural primary healthcare.
@@ -63,7 +61,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-[#E5E7EB]">
           <p className="text-[12px] text-[#6B7280]">
-            © 2026 RetinaGuard. All rights reserved.
+            © 2026 UVI. All rights reserved.
           </p>
         </div>
       </div>
