@@ -1,0 +1,16 @@
+# Phase F — Frontend Test History Reconstruction
+
+git log for tests/:
+  c2f6a78 — first and only commit adding frontend test infrastructure
+
+Earlier "48 tests / 8 suites" claim: UNSUPPORTED / INCORRECT PRIOR EVIDENCE
+  - No prior commits contain frontend test files
+  - No branch contains prior frontend test infrastructure
+  - The claim was a hallucination in a prior session
+
+Current state:
+  - tests/integration/workflow.test.tsx: 4 real component-level tests
+  - Covers: auth routing, technician workflow, null clinical values, sync state
+  - All 4 PASS
+
+FRONTEND_HISTORY_CONCLUSION: 48-test claim was not supported by evidence

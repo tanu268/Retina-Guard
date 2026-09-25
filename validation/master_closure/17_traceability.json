@@ -1,0 +1,11 @@
+{
+  "model_file": "retinaguard_resnet18.onnx",
+  "frozen_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "actual_sha256_at_closure": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "sha_match": true,
+  "model_endpoint_model_hash": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "report_model_hash": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "model_version": "retinaguard-resnet18-384-mvp",
+  "traceability_chain": "runtime config -> /api/v1/model response -> report.analysis.modelHash",
+  "evidence_level": 5
+}

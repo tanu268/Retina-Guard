@@ -1,0 +1,20 @@
+# Phase D — Test Integrity Forensics
+
+concurrency.test.js (HEAD):
+  Describes: 'Concurrency and Idempotency'
+  Test: 'GAP-004: Race-safe review idempotency via DB unique constraint'
+  Covers: Full lifecycle — patient, consultation, image upload, analysis, 2x review
+  Assertion strength: REAL (expects 201, then 409 on duplicate)
+  Status: PASS (144ms)
+
+model-config.test.js (HEAD):
+  Describes: 'Model Configuration Traceability'
+  Test: 'HARDEN-005: Model endpoint accurately reflects runtime configuration'
+  Covers: Authenticated GET /api/v1/model, model_hash matches config
+  Assertion strength: REAL (asserts model_hash = config hash)
+  Status: PASS (52ms)
+
+Both tests are EQUIVALENT OR STRONGER than required.
+No skip(), only(), todo(), or weakened assertions at HEAD.
+
+TEST_INTEGRITY: VALID

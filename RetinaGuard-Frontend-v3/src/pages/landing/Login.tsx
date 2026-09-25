@@ -2,14 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ScanEye, ShieldCheck, Stethoscope, UserCog } from 'lucide-react';
-import { Alert, Button } from '../../components/ui';
-import HoverRevealCards from '../../components/ui/cards';
+import { Alert } from '../../components/ui';
 import { useAuth } from '../../contexts/AuthContext';
 import { ROLE_HOME } from '../../services/authService';
 import type { Role } from '../../types';
-import imgTechnician from '../../assets/Technician.jpeg';
-import imgOphthalmologist from '../../assets/Opthmologist.jpeg';
-import imgAdministrator from '../../assets/Administrator.jpeg';
 
 /**
  * Sign-in.
@@ -21,16 +17,18 @@ import imgAdministrator from '../../assets/Administrator.jpeg';
  * logic changed: this calls the same `loginAsRole` as before.
  */
 
-const ROLES: { id: Exclude<Role, 'district'>; label: string; blurb: string; icon: typeof ScanEye }[] = [
-  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye },
-  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope },
-  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog },
+import HoverRevealCards from '../../components/ui/cards';
+
+const ROLES: { id: Exclude<Role, 'district'>; label: string; blurb: string; icon: typeof ScanEye; image: string }[] = [
+  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye, image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop' },
+  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope, image: 'https://images.unsplash.com/photo-1584982751601-97d883f510f4?q=80&w=800&auto=format&fit=crop' },
+  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog, image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop' },
 ];
 
 export default function Login() {
   const navigate = useNavigate();
   const { loginAsRole, user } = useAuth();
-  const [pending, setPending] = useState<string | null>(null);
+  const [_pending, setPending] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const chooseRole = async (role: Exclude<Role, 'district'>) => {
@@ -46,7 +44,7 @@ export default function Login() {
     } catch (err) {
       setError(
         err instanceof Error
-          ? `${err.message} Check that the edge server is running on port 4000.`
+          ? err.message
           : 'Could not enter the workspace.',
       );
     } finally {
@@ -86,28 +84,27 @@ export default function Login() {
           </div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
-          className="mt-10"
-        >
-          <HoverRevealCards
-            className="!p-0 !max-w-none grid-cols-1 md:grid-cols-3 gap-6"
-            items={ROLES.map((r, i) => ({
-              id: r.id,
-              title: r.label,
-              subtitle: r.blurb,
-              icon: r.icon,
-              imageUrl: i === 0 
-                ? imgTechnician
-                : i === 1 
-                ? imgOphthalmologist
-                : imgAdministrator,
-              onClick: () => chooseRole(r.id),
+        <div className="mt-10">
+          <HoverRevealCards 
+            items={ROLES.map(({ id, label, blurb, icon: Icon, image }) => ({
+              id,
+              title: label,
+              subtitle: blurb,
+              imageUrl: image,
+              icon: (
+                <span className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 rounded-lg text-white backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </span>
+              )
             }))}
+            onItemClick={(id) => chooseRole(id as Exclude<Role, 'district'>)}
           />
-        </motion.div>
+        </div>
+
+        <p className="mt-10 flex items-center gap-2 font-ui text-[13px] text-[var(--color-ink-subtle)]">
+          <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
+          AI-assisted screening aid — every result requires human review.
+        </p>
       </div>
     </div>
   );

@@ -1,0 +1,33 @@
+# Phase X — Backend Regression
+
+Command: npm test (jest --runInBand)
+Exit code: 0
+
+Results:
+  Test Suites: 20 passed, 20 total
+  Tests:       2 skipped, 91 passed, 93 total
+  Duration:    5.318s
+
+Suites passing:
+  ✓ concurrency.test.js      (GAP-004 real idempotency test - 144ms)
+  ✓ model-config.test.js     (HARDEN-005 real model traceability - 52ms)
+  ✓ auth.test.js
+  ✓ rbac.test.js
+  ✓ offlineSync.test.js
+  ✓ failure-logging.test.js
+  ✓ parser.test.js
+  ✓ reviewerService.test.js
+  ✓ analysisService.test.js
+  ✓ imageService.recapture.test.js
+  ✓ syncQueueRepository.test.js
+  ✓ auditRepository.test.js
+  ✓ onnxSafety.test.js
+  ✓ clinicalSafetyService.test.js
+  ✓ passwordService.test.js
+  ✓ tokenService.test.js
+  ✓ matlabService.test.js
+  ✓ matlabContracts.test.js
+  ✓ hashUtils.test.js
+  ✓ e2ePipeline.test.js (2 skipped - known environment-dependent skips)
+
+BACKEND_REGRESSION: PASS

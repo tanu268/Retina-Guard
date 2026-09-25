@@ -1,0 +1,24 @@
+# Phase A — Security Containment
+
+remote_url: https://github.com/tanu268/Retina-Guard.git
+embedded_credential_in_remote: NO
+credential_in_remote_url: CLEAN
+
+working_tree_secret_scan:
+  ghp_ pattern: NOT FOUND in .js/.ts/.json/.env/.yml files
+  github_pat_ pattern: NOT FOUND
+  token= pattern: NOT FOUND (only docs reference "Bearer <accessToken>" placeholder)
+  https://user:token@github.com pattern: NOT FOUND
+
+git_history_scan:
+  ghp_ pattern matches in history: 1 (in prior commit, token value REDACTED, never printed)
+  location: REDACTED
+  value: REDACTED
+
+SECRET_DETECTED: YES (historical - in prior commit payload)
+LOCATION: REDACTED
+VALUE: REDACTED
+
+CREDENTIAL_REVOCATION: HUMAN ACTION REQUIRED
+  The exposed PAT must be rotated/revoked by the account owner (tanu268).
+  Do NOT re-use. Do NOT print.

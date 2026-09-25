@@ -1,0 +1,25 @@
+{
+  "abstention_trigger": "mock adapter (MODEL_NOT_INTEGRATED)",
+  "analysis_status": "abstained",
+  "abstain_reason": "MODEL_NOT_INTEGRATED",
+  "grading": null,
+  "grade_label": null,
+  "confidence": null,
+  "referable": false,
+  "gradcam": null,
+  "null_grade_coerced_to_grade0": false,
+  "null_confidence_coerced_to_0pct": false,
+  "fail_closed_behavior": true,
+  "clinical_safety_invariants": {
+    "null_grade_never_becomes_grade_0": "VERIFIED",
+    "null_confidence_never_becomes_0pct": "VERIFIED",
+    "abstention_distinct_from_success": "VERIFIED (status=abstained vs status=completed)",
+    "model_failure_not_shown_as_success": "VERIFIED"
+  },
+  "report_abstention_preserved": {
+    "analysis.abstained": true,
+    "analysis.drGrade": null,
+    "analysis.confidence": null,
+    "analysis.modelHash": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f"
+  }
+}

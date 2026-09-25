@@ -1,0 +1,18 @@
+# Phase H — Frontend Regression
+
+Runner: vitest v4.1.11
+Command: npm test -- --run
+Exit code: 0
+
+Results:
+  Test Files: 1 passed (1)
+  Tests:      4 passed (4)
+  Duration:   1.61s
+
+Tests:
+  ✓ TECH-001: Authentication routes correctly (483ms)
+  ✓ TECH-002: Technician case creation and upload/preview (76ms)
+  ✓ SAFETY-001: Null clinical-value safety and abstention state (22ms)
+  ✓ SYNC-001: Offline/sync state rendering (51ms)
+
+FRONTEND_TESTS: PASS

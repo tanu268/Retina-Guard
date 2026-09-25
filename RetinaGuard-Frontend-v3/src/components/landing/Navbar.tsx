@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
-import { RetinaMark } from '../ui/icons';
 import { cx } from '../../lib/format';
 import uviLogo from '../../assets/uvi-logo.png';
 

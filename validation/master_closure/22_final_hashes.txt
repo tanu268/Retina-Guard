@@ -1,0 +1,19 @@
+# Phase Y — Final Frozen Hash Verification (POST-CLOSURE)
+# Timestamp: 2026-09-25T22:34 IST
+
+preprocess.js:
+  expected: dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05
+  actual:   dfb00cb5b941e7a266b4f64ea75769080930971cc549b6d6ee9c4e72420e5f05
+  result:   MATCH ✓
+
+retinaguard_resnet18.onnx:
+  expected: c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f
+  actual:   c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f
+  result:   MATCH ✓
+
+val_manifest.csv:
+  expected: af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c
+  actual:   af476d872977a53e44438fca6fd397d4c8f98b08a3c96259e950dd5794ec428c
+  result:   MATCH ✓
+
+AI_BASELINE: UNCHANGED — ALL 3 FROZEN ARTIFACTS VERIFIED

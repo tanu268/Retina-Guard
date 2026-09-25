@@ -204,7 +204,7 @@ function buildCasesController({
 
   const getReport = asyncHandler(async (req, res) => {
     const { case_uuid } = req.params;
-    const report = await reportService.generateReport(case_uuid, req.user, req);
+    const report = await reportService.getJson(case_uuid);
     res.status(200).json(report);
   });
 

@@ -1,0 +1,8 @@
+{
+  "unauthenticated_to_protected": { "status": 401, "pass": true },
+  "technician_to_reviewer_queue": { "status": 403, "pass": true },
+  "reviewer_to_reviewer_queue": { "status": 200, "pass": true },
+  "technician_to_model_endpoint": { "status": 200, "pass": true },
+  "rbac_suite": "tests/integration/rbac.test.js - PASS",
+  "evidence_level": 4
+}

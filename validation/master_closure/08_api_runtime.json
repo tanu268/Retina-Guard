@@ -1,0 +1,43 @@
+{
+  "GET /api/v1/model": {
+    "status": 200,
+    "model_version": "retinaguard-resnet18-384-mvp",
+    "model_hash": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "model_hash_matches_frozen": true,
+    "deployment_status": "ACTIVE",
+    "adapter": "mock"
+  },
+  "POST /patients": { "status": 201 },
+  "POST /consultations": { "status": 201 },
+  "POST /images/upload": { "status": 201 },
+  "POST /analysis/run (quality_grade_C)": {
+    "status": 409,
+    "error": "CLINICAL_SAFETY_VIOLATION",
+    "behavior": "fail-closed correctly: C-grade image blocked from analysis"
+  },
+  "POST /analysis/run (quality_grade_A)": {
+    "status": 201,
+    "analysis_status": "abstained",
+    "abstain_reason": "MODEL_NOT_INTEGRATED",
+    "behavior": "mock adapter returns abstention — null grade, null confidence"
+  },
+  "GET /review/queue (reviewer)": { "status": 200 },
+  "POST /review/:id/decision (1st)": { "status": 201 },
+  "POST /review/:id/decision (2nd - idempotency)": {
+    "status": 409,
+    "behavior": "IDEMPOTENCY_ENFORCED via DB unique constraint"
+  },
+  "GET /api/v1/report/:case_uuid (after fix)": {
+    "status": 200,
+    "patient_present": true,
+    "case_uuid_present": true,
+    "analysis_abstained": true,
+    "abstain_reason": "MODEL_NOT_INTEGRATED",
+    "grade": null,
+    "confidence": null,
+    "model_hash_in_report": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "reviewer_present": true
+  },
+  "RBAC tech->reviewer_queue": { "status": 403, "behavior": "BLOCKED as expected" },
+  "unauthenticated /model": { "status": 401 }
+}

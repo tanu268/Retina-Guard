@@ -1,0 +1,11 @@
+{
+  "test": "GAP-004: Race-safe review idempotency via DB unique constraint",
+  "mechanism": "DB unique constraint + state machine transition guard",
+  "first_submission": { "status": 201, "behavior": "ACCEPTED" },
+  "second_submission": { "status": 409, "behavior": "REJECTED (CONFLICT)" },
+  "duplicate_clinical_decision": false,
+  "duplicate_completion": false,
+  "audit_coherent": true,
+  "evidence_level": 4,
+  "evidence": "tests/integration/concurrency.test.js - real integration test - PASS 144ms"
+}
