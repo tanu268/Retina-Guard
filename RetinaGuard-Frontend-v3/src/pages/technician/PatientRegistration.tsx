@@ -209,7 +209,25 @@ export default function PatientRegistration() {
         setDuplicates(res.possibleDuplicates ?? []);
         setStepIndex(3);
       } catch (err) {
-        setSubmitError(err instanceof Error ? err.message : 'Could not register the patient.');
+        if (err instanceof HttpError && err.details) {
+          const details = err.details as { fieldErrors?: Record<string, string[]>; formErrors?: string[] };
+          if (details.fieldErrors && Object.keys(details.fieldErrors).length > 0) {
+            const mappedErrors: Partial<Record<keyof FormState, string>> = {};
+            const messages: string[] = [];
+            for (const [field, msgs] of Object.entries(details.fieldErrors)) {
+              if (msgs && msgs.length > 0) {
+                mappedErrors[field as keyof FormState] = msgs[0];
+                messages.push(`${field}: ${msgs.join(', ')}`);
+              }
+            }
+            setErrors((prev) => ({ ...prev, ...mappedErrors }));
+            setSubmitError(messages.join('. ') || err.message);
+          } else {
+            setSubmitError(err.message || 'Could not register the patient.');
+          }
+        } else {
+          setSubmitError(err instanceof Error ? err.message : 'Could not register the patient.');
+        }
       } finally {
         setBusy(false);
       }

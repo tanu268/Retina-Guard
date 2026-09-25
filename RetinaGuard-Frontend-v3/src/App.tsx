@@ -112,10 +112,10 @@ export default function App() {
 
                 {/* Reviewer */}
                 <Route path="/app/review/queue" element={
-                  <Shell><RequireRole roles={['reviewer']}><ReviewQueue /></RequireRole></Shell>
+                  <Shell><RequireRole roles={['reviewer', 'admin']}><ReviewQueue /></RequireRole></Shell>
                 } />
                 <Route path="/app/review/:consultationId" element={
-                  <Shell><RequireRole roles={['reviewer']}><ReviewWorkspace /></RequireRole></Shell>
+                  <Shell><RequireRole roles={['reviewer', 'admin']}><ReviewWorkspace /></RequireRole></Shell>
                 } />
                 <Route path="/app/review/:consultationId/report" element={
                   <Shell><ReportPage /></Shell>
@@ -139,11 +139,11 @@ export default function App() {
                 } />
 
                 {/* Shared records */}
-                <Route path="/app/patients" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district']}><PatientsList /></RequireRole></Shell>} />
-                <Route path="/app/patients/:patientId" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district']}><PatientDetail /></RequireRole></Shell>} />
-                <Route path="/app/cases" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district']}><CasesList /></RequireRole></Shell>} />
-                <Route path="/app/cases/:consultationId" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district']}><CaseDetail /></RequireRole></Shell>} />
-                <Route path="/app/sync" element={<Shell><RequireRole roles={['technician', 'district']}><SyncMonitor /></RequireRole></Shell>} />
+                <Route path="/app/patients" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district', 'admin']}><PatientsList /></RequireRole></Shell>} />
+                <Route path="/app/patients/:patientId" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district', 'admin']}><PatientDetail /></RequireRole></Shell>} />
+                <Route path="/app/cases" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district', 'admin']}><CasesList /></RequireRole></Shell>} />
+                <Route path="/app/cases/:consultationId" element={<Shell><RequireRole roles={['technician', 'reviewer', 'district', 'admin']}><CaseDetail /></RequireRole></Shell>} />
+                <Route path="/app/sync" element={<Shell><RequireRole roles={['technician', 'district', 'admin']}><SyncMonitor /></RequireRole></Shell>} />
 
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>

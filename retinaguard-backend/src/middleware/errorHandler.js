@@ -7,7 +7,7 @@ const { config } = require('../config');
 function errorHandler(err, req, res, _next) {
   if (err instanceof AppError) {
     if (err.statusCode >= 500) logger.error({ err, path: req.path }, err.message);
-    else logger.warn({ code: err.code, path: req.path }, err.message);
+    else logger.warn({ code: err.code, path: req.path, details: err.details }, err.message);
 
     return res.status(err.statusCode).json({
       error: { code: err.code, message: err.message, details: err.details ?? undefined },

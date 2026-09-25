@@ -27,7 +27,7 @@ function buildReviewerRouter(deps) {
    *     responses:
    *       200: { description: Paginated queue }
    */
-  router.get('/queue', auth, authorize('reviewer'), validate(queueQuerySchema, 'query'), controller.queue);
+  router.get('/queue', auth, authorize('reviewer', 'admin'), validate(queueQuerySchema, 'query'), controller.queue);
 
   /**
    * @openapi
@@ -40,7 +40,7 @@ function buildReviewerRouter(deps) {
    *     responses:
    *       200: { description: Case package }
    */
-  router.get('/:id', auth, authorize('reviewer'), controller.getCase);
+  router.get('/:id', auth, authorize('reviewer', 'admin'), controller.getCase);
 
   /**
    * @openapi

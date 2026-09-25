@@ -6,8 +6,10 @@ const logger = require('../../utils/logger');
 const { config } = require('../../config');
 
 const parseJSONSafe = (str, context = 'unknown') => {
+  if (!str) return null;
+  if (typeof str === 'object') return str;
   try {
-    return str ? JSON.parse(str) : null;
+    return JSON.parse(str);
   } catch (e) {
     logger.warn({ err: e, context }, 'malformed.json.payload');
     return null;
@@ -85,23 +87,42 @@ function buildCasesController({
     if (!consultation) throw new NotFoundError('Case not found');
 
     const images = await imageService.listByConsultation(case_uuid);
-    const { analyses, review } = await reviewerService.getCase(case_uuid);
+    let analyses = [];
+    let review = null;
+    try {
+      const reviewCase = await reviewerService.getCase(case_uuid);
+      analyses = reviewCase.analyses || [];
+      review = reviewCase.review || null;
+    } catch (err) {
+      if (err.name !== 'NotFoundError') throw err;
+    }
+
     const reviews = review ? [review] : [];
     let reports = [];
     try {
       const report = await reportService.getJson(case_uuid);
       if (report) reports.push(report);
     } catch (err) {
-      if (err.name !== 'NotFoundError') throw err;
+      if (err.name !== 'NotFoundError' && err.name !== 'ClinicalSafetyError') throw err;
     }
 
-    // Aggregate into the exact contract expected by the prompt
+    // Aggregate into the exact contract expected by the prompt & frontend
     res.status(200).json({
       case_uuid: consultation.id,
       status: consultation.status,
       site_id: consultation.site_id,
       device_id: consultation.device_id,
       created_at: consultation.created_at,
+      case_number: consultation.case_number,
+      patient_id: consultation.patient_id,
+      patient_name: consultation.patient_name || 'Patient',
+      patient_code: consultation.patient_code,
+      age: consultation.age,
+      gender: consultation.gender,
+      village: consultation.village,
+      district: consultation.district,
+      state: consultation.state,
+      triage_priority: consultation.triage_priority,
       images,
       prediction: analyses[0] ? {
         grade: analyses[0].dr_grade_code,
@@ -117,7 +138,7 @@ function buildCasesController({
       stage_timings_ms: parseJSONSafe(analyses[0]?.stage_timings_ms, 'stage_timings_ms'),
       explanation: {
         available: !!analyses[0],
-        gradcam_path: `/api/v1/cases/explainability/${analyses[0]?.id}` // Mocked path or real depending on what we have
+        gradcam_path: `/api/v1/cases/explainability/${analyses[0]?.id}`
       },
       report: reports[0] || null,
       review: reviews[0] || null

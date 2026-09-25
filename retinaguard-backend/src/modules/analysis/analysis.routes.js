@@ -46,7 +46,7 @@ function buildAnalysisRouter(deps) {
    *     responses:
    *       200: { description: Analysis result }
    */
-  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.get);
 
   /**
    * @openapi
@@ -59,7 +59,7 @@ function buildAnalysisRouter(deps) {
    *     responses:
    *       200: { description: Three-layer explanation }
    */
-  router.get('/:id/explainability', auth, authorize('technician', 'reviewer', 'district'), controller.explainability);
+  router.get('/:id/explainability', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.explainability);
 
   return router;
 }

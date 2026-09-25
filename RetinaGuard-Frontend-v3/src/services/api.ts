@@ -196,8 +196,16 @@ export const reviewService = {
         site_id: res.site_id,
         device_id: res.device_id,
         created_at: res.created_at,
-        patient_name: 'Patient', // Mocked as unified API might not return it yet
-        patient_id: 'UNKNOWN'
+        case_number: res.case_number,
+        patient_name: res.patient_name || 'Patient',
+        patient_id: res.patient_id || 'UNKNOWN',
+        patient_code: res.patient_code,
+        age: res.age,
+        gender: res.gender,
+        village: res.village,
+        district: res.district,
+        state: res.state,
+        triage_priority: res.triage_priority,
       } as any,
       analyses: res.prediction ? [{
         id: res.case_uuid,

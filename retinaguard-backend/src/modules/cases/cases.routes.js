@@ -40,7 +40,7 @@ function buildCasesRouter(deps) {
    *     tags: [Cases]
    *     summary: Get aggregated case data
    */
-  router.get('/case/:case_uuid', auth, authorize('technician', 'reviewer', 'district'), controller.getCase);
+  router.get('/case/:case_uuid', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.getCase);
 
   /**
    * @openapi
@@ -58,7 +58,7 @@ function buildCasesRouter(deps) {
    *     tags: [Cases]
    *     summary: Get review queue
    */
-  router.get('/queue', auth, authorize('reviewer'), controller.getQueue);
+  router.get('/queue', auth, authorize('reviewer', 'admin'), controller.getQueue);
 
   /**
    * @openapi
@@ -67,7 +67,7 @@ function buildCasesRouter(deps) {
    *     tags: [Cases]
    *     summary: Get screening report
    */
-  router.get('/report/:case_uuid', auth, authorize('technician', 'reviewer', 'district'), controller.getReport);
+  router.get('/report/:case_uuid', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.getReport);
 
   /**
    * @openapi

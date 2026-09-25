@@ -62,7 +62,7 @@ function buildImagesRouter(deps) {
    *       200: { description: Deleted }
    *       409: { description: Image already analysed — part of the case record }
    */
-  router.get('/:id', auth, authorize('technician', 'reviewer', 'district'), controller.get);
+  router.get('/:id', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.get);
   router.delete('/:id', auth, authorize('technician'), controller.remove);
 
   /**
@@ -76,7 +76,7 @@ function buildImagesRouter(deps) {
    *     responses:
    *       200: { description: Images for the consultation }
    */
-  router.get('/by-consultation/:consultationId', auth, authorize('technician', 'reviewer', 'district'), controller.listByConsultation);
+  router.get('/by-consultation/:consultationId', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.listByConsultation);
 
   return router;
 }

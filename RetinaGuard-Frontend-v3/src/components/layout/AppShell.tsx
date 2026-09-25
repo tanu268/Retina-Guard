@@ -43,15 +43,15 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Review',
     items: [
-      { to: '/app/review/queue', label: 'Review queue', icon: <IconQueue size={17} />, roles: ['reviewer'] },
+      { to: '/app/review/queue', label: 'Review queue', icon: <IconQueue size={17} />, roles: ['reviewer', 'admin'] },
     ],
   },
   {
     label: 'Records',
     items: [
-      { to: '/app/patients', label: 'Patients', icon: <IconPatients size={17} />, roles: ['technician', 'reviewer', 'district'] },
-      { to: '/app/cases', label: 'Cases', icon: <IconFile size={17} />, roles: ['technician', 'reviewer', 'district'] },
-      { to: '/app/sync', label: 'Offline sync', icon: <IconSync size={17} />, roles: ['technician', 'district'] },
+      { to: '/app/patients', label: 'Patients', icon: <IconPatients size={17} />, roles: ['technician', 'reviewer', 'district', 'admin'] },
+      { to: '/app/cases', label: 'Cases', icon: <IconFile size={17} />, roles: ['technician', 'reviewer', 'district', 'admin'] },
+      { to: '/app/sync', label: 'Offline sync', icon: <IconSync size={17} />, roles: ['technician', 'district', 'admin'] },
     ],
   },
   {

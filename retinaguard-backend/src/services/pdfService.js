@@ -130,7 +130,7 @@ class PdfService {
 
     const doc = new PDFDocument({
       size: 'A4',
-      margin: 40,
+      margins: { top: 40, bottom: 80, left: 40, right: 40 },
       bufferPages: true,
       info: {
         Title: `RetinaGuard Screening Report ${report.report_number}`,
@@ -661,7 +661,8 @@ class PdfService {
     const totalPages = range.count;
     const startX = doc.page.margins.left;
     const usableW = doc.page.width - doc.page.margins.left - doc.page.margins.right;
-    const bottomY = doc.page.height - doc.page.margins.bottom - 24;
+    // Hardcode footer offset to 64 (the original 40 bottom margin + 24) so it stays fixed
+    const bottomY = doc.page.height - 64;
 
     for (let i = range.start; i < range.start + totalPages; i++) {
       doc.switchToPage(i);

@@ -8,6 +8,7 @@ import {
 import { Button } from '../../components/ui';
 import { GlowCard } from '../../components/ui/spotlight-card';
 import { LandingNav } from '../../components/landing/LandingNav';
+import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
 import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
@@ -426,32 +427,40 @@ export default function Landing() {
       </main>
 
       {/* ── 6. Footer ─────────────────────────────────────────────────────── */}
-      <footer className="border-t border-[var(--color-border)] bg-white/70 backdrop-blur-sm">
-        <div className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-8">
+      <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+        <FooterBackgroundGradient />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-14 sm:px-8">
           <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
             <div>
               <div className="flex items-center gap-2.5">
                 <span className="flex h-8 w-8 items-center justify-center bg-[var(--color-primary)]">
                   <span className="font-display text-sm font-bold text-white">R</span>
                 </span>
-                <span className="font-display text-lg font-semibold tracking-tight text-[var(--color-brand-950)]">
+                <span className="font-display text-lg font-semibold tracking-tight text-white">
                   RetinaGuard
                 </span>
               </div>
-              <p className="mt-3 font-body text-sm text-[var(--color-ink-muted)]">
+              <p className="mt-3 font-body text-sm text-neutral-400">
                 Explainable AI for Rural Diabetic Retinopathy Screening
               </p>
             </div>
 
-            <div className="flex items-center gap-2 border border-[var(--color-border)] px-4 py-2.5">
+            <div className="flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-2.5 backdrop-blur-xs">
               <Activity className="h-4 w-4 text-[var(--color-success)]" strokeWidth={1.75} />
-              <span className="font-ui text-[13px] text-[var(--color-ink-muted)]">
+              <span className="font-ui text-[13px] text-neutral-400">
                 AI-assisted screening aid — every result requires human review
               </span>
             </div>
           </div>
+        </div>
 
-          <p className="mt-12 border-t border-[var(--color-border)] pt-7 font-ui text-[13px] text-[var(--color-ink-subtle)]">
+        {/* Interactive Text Hover Effect - Now spans the full width of the screen */}
+        <div className="relative z-10 mt-12 mb-8 flex h-48 w-full items-center justify-center overflow-hidden sm:h-72 md:h-96 px-2 sm:px-4">
+          <TextHoverEffect text="UNIFIED VISION INTELLIGENCE" className="z-20 w-full" />
+        </div>
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 sm:px-8">
+          <p className="border-t border-white/10 pt-7 font-ui text-[13px] text-neutral-500">
             © 2026 RetinaGuard. All rights reserved.
           </p>
         </div>
