@@ -14,21 +14,34 @@ class OnnxAdapter {
   constructor({ config }) {
     this.config = config;
     this.name = 'onnx';
-    this.modelIntegrated = true; // Indicates real model is present
-    const modelName = this.config.matlab.modelVersion || 'retinaguard_resnet18.onnx';
-    if (path.isAbsolute(modelName)) {
-        this.modelPath = path.resolve(modelName);
-    } else if (fs.existsSync(path.resolve(modelName))) {
-        this.modelPath = path.resolve(modelName);
-    } else {
-        // Fallback to model directory
-        this.modelPath = path.resolve(__dirname, '../../../../model', modelName);
-    }
     this.session = null;
     this.initializationPromise = null;
-    this.healthState = 'INITIALIZING';
     this.modelHash = null;
     this.metadata = null;
+    this.initError = null;
+
+    const modelName = this.config.matlab.modelVersion || 'retinaguard_resnet18.onnx';
+    if (path.isAbsolute(modelName)) {
+      this.modelPath = path.resolve(modelName);
+    } else if (fs.existsSync(path.resolve(modelName))) {
+      this.modelPath = path.resolve(modelName);
+    } else {
+      // Fallback to model directory
+      this.modelPath = path.resolve(__dirname, '../../../../model', modelName);
+    }
+
+    // Fail-closed pre-flight: if the artifact is not on disk, mark the adapter
+    // as NOT integrated immediately so matlabService.runPipeline() abstains
+    // before any diagnostic stage (including preprocessing) is attempted.
+    if (!fs.existsSync(this.modelPath)) {
+      this.modelIntegrated = false;
+      this.healthState = 'FAILED';
+      this.initError = `Model artifact not found at: ${this.modelPath}`;
+      logger.warn({ adapter: this.name, modelPath: this.modelPath }, this.initError);
+    } else {
+      this.modelIntegrated = true;
+      this.healthState = 'INITIALIZING';
+    }
   }
 
   async initialize() {
@@ -44,28 +57,40 @@ class OnnxAdapter {
     try {
       if (!fs.existsSync(this.modelPath)) {
         this.healthState = 'FAILED';
+        this.modelIntegrated = false;
         throw new Error(`Model artifact not found at: ${this.modelPath}`);
       }
 
-      // Compute hash
+      // Compute and verify SHA-256
       const fileBuffer = await fs.promises.readFile(this.modelPath);
-      this.modelHash = crypto.createHash('sha256').update(fileBuffer).digest('hex').toUpperCase();
+      this.modelHash = crypto.createHash('sha256').update(fileBuffer).digest('hex').toLowerCase();
+
+      if (this.config.matlab.modelHash && this.config.matlab.modelHash !== 'TO_BE_VERIFIED') {
+        if (this.modelHash !== this.config.matlab.modelHash.toLowerCase()) {
+          this.healthState = 'FAILED';
+          this.modelIntegrated = false;
+          throw new Error(`Model hash mismatch. Expected ${this.config.matlab.modelHash}, got ${this.modelHash}`);
+        }
+      }
 
       this.session = await ort.InferenceSession.create(this.modelPath);
-      
+
       this.metadata = {
         adapter: this.name,
         model_version: this.config.matlab.modelVersion,
         model_hash: this.modelHash,
         session_state: 'READY',
-        runtime_version: '1.30.0' // from package.json
+        runtime_version: '1.30.0', // from package.json
       };
 
       this.healthState = 'READY';
+      // modelIntegrated remains true — set in constructor
       logger.info({ adapter: this.name, model_hash: this.modelHash }, 'ONNX session initialized successfully');
     } catch (err) {
       this.healthState = 'FAILED';
-      logger.error({ adapter: this.name, err: err.message }, 'Failed to initialize ONNX session');
+      this.modelIntegrated = false; // Fail-closed: any init failure disables clinical inference
+      this.initError = err.message;
+      logger.error({ adapter: this.name, err: err.message }, 'Failed to initialize ONNX session — adapter closed');
       throw err;
     }
   }

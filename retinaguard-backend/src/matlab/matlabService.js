@@ -103,6 +103,32 @@ class MatlabService {
         });
       }
 
+      // For ONNX adapter: eagerly initialize the session now (before preprocessing)
+      // so that hash-mismatch and corrupted-model failures are caught here and
+      // routed to abstention — never silently swallowed inside a later stage.
+      if (typeof this.adapter.initialize === 'function') {
+        try {
+          await this.adapter.initialize();
+        } catch (err) {
+          // modelIntegrated was set to false inside _initialize() on failure
+          return this.#abstention({
+            reason: 'MODEL_NOT_INTEGRATED',
+            quality,
+            timings,
+            totalMs: total(),
+            warnings,
+            error: err.message,
+          });
+        }
+        // Re-check after initialization in case it set modelIntegrated=false
+        if (this.adapter.modelIntegrated === false) {
+          return this.#abstention({
+            reason: 'MODEL_NOT_INTEGRATED', quality, timings, totalMs: total(), warnings,
+            error: this.adapter.initError || 'Model initialization failed',
+          });
+        }
+      }
+
       const preprocess = await stage('preprocess', () => this.preprocessImage({ imagePath, sha256 }));
       const anatomy = await stage('anatomy_detection', () => this.detectAnatomy({ imagePath, sha256 }));
       const grading = await stage('dr_grading', () => this.gradeDR({

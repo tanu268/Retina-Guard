@@ -71,7 +71,7 @@ const config = {
     scriptDir: path.resolve(root, process.env.MATLAB_SCRIPT_DIR || './src/matlab/scripts'),
     timeoutMs: num(process.env.MATLAB_TIMEOUT_MS, 120000),
     modelVersion: process.env.MODEL_VERSION || 'retinaguard-resnet18-384-mvp',
-    modelHash: process.env.MODEL_HASH || 'TO_BE_VERIFIED',
+    modelHash: process.env.MODEL_HASH || 'c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f',
     preprocessingHash: process.env.PREPROCESSING_HASH || 'TO_BE_VERIFIED',
   },
 
