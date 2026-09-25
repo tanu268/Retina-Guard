@@ -475,6 +475,7 @@ export default function Landing() {
               </ul>
             </div>
           </div>
+        </div>
 
         {/* Interactive Text Hover Effect - Now spans the full width of the screen */}
         <div className="relative z-10 mt-2 mb-0 flex h-32 w-full items-center justify-center overflow-hidden sm:h-56 md:h-72 px-2 sm:px-4">
