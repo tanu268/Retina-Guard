@@ -11,7 +11,8 @@ import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
-import uviLogo from '../../assets/uvi-logo.jpg';
+import uviLogo from '../../assets/uvi-logo.png';
+import uviLogoFooter from '../../assets/uvi-logo-footer.jpg';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Landing page.
@@ -427,11 +428,14 @@ export default function Landing() {
             {/* 1. ABOUT UVI */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex flex-col items-start gap-1">
-                <img src={uviLogo} alt="UVI Logo" className="h-20 w-auto object-contain rounded-xl shadow-md border border-slate-700/50" />
+                <img src={uviLogoFooter} alt="UVI Logo" className="h-28 w-auto object-contain" />
                 <span className="mt-1 font-display text-lg font-semibold tracking-widest text-white uppercase">
                   Unified Vision Intelligence
                 </span>
               </div>
+              <p className="mt-4 font-body text-base leading-relaxed text-neutral-400 max-w-sm">
+                Diabetic Retinopathy is one of the leading causes of preventable blindness in India. Rural Primary Health Centres struggle to provide timely retinal screening There our solution UVI provides the facility.
+              </p>
             </div>
 
             {/* 2. QUICK LINKS */}

@@ -1,5 +1,5 @@
 import { Code2, Mail } from 'lucide-react';
-import uviLogo from '../../assets/uvi-logo.jpg';
+import uviLogo from '../../assets/uvi-logo.png';
 
 const LINKS = [
   { href: '#home', label: 'Home' },
@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10">
           <div className="max-w-[340px]">
             <div className="flex items-center gap-2.5 mb-3">
-              <img src={uviLogo} alt="UVI Logo" className="h-10 w-auto object-contain rounded-md shadow-sm border border-slate-200/60" />
+              <img src={uviLogo} alt="UVI Logo" className="h-16 w-auto object-contain" />
               <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#111111]">UVI</span>
             </div>
             <p className="text-[13px] text-[#6B7280] leading-relaxed">

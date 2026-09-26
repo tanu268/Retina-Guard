@@ -329,6 +329,8 @@ export default function AdminUsers() {
 
           <Field label="Full name" required>
             <Input
+              id="fullName"
+              name="fullName"
               value={form.fullName}
               onChange={(e) => setForm({ ...form, fullName: e.target.value })}
               placeholder="Asha Patil"
@@ -339,6 +341,8 @@ export default function AdminUsers() {
             <>
               <Field label="Username" required hint="At least 3 characters. Used to sign in.">
                 <Input
+                  id="username"
+                  name="username"
                   value={form.username}
                   onChange={(e) => setForm({ ...form, username: e.target.value })}
                   autoComplete="off"
@@ -346,6 +350,8 @@ export default function AdminUsers() {
               </Field>
               <Field label="Password" required hint="At least 8 characters.">
                 <Input
+                  id="password"
+                  name="password"
                   type="password"
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
@@ -368,6 +374,8 @@ export default function AdminUsers() {
 
           <Field label="Facility ID" hint="Optional. Which PHC or centre this account belongs to.">
             <Input
+              id="facilityId"
+              name="facilityId"
               value={form.facilityId}
               onChange={(e) => setForm({ ...form, facilityId: e.target.value })}
             />
@@ -376,6 +384,8 @@ export default function AdminUsers() {
           {form.role === 'reviewer' && (
             <Field label="Medical registration number" hint="Appears on every report this reviewer signs off.">
               <Input
+                id="registrationNo"
+                name="registrationNo"
                 value={form.registrationNo}
                 onChange={(e) => setForm({ ...form, registrationNo: e.target.value })}
               />
