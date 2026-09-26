@@ -44,15 +44,15 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Review',
     items: [
-      { to: '/app/review/queue', label: 'Review queue', icon: <IconQueue size={17} />, roles: ['reviewer', 'admin'] },
+      { to: '/app/review/queue', label: 'Review queue', icon: <IconQueue size={17} />, roles: ['reviewer'] },
     ],
   },
   {
     label: 'Records',
     items: [
-      { to: '/app/patients', label: 'Patients', icon: <IconPatients size={17} />, roles: ['technician', 'reviewer', 'district', 'admin'] },
-      { to: '/app/cases', label: 'Cases', icon: <IconFile size={17} />, roles: ['technician', 'reviewer', 'district', 'admin'] },
-      { to: '/app/sync', label: 'Offline sync', icon: <IconSync size={17} />, roles: ['technician', 'district', 'admin'] },
+      { to: '/app/patients', label: 'Patients', icon: <IconPatients size={17} />, roles: ['technician', 'reviewer', 'district'] },
+      { to: '/app/cases', label: 'Cases', icon: <IconFile size={17} />, roles: ['technician', 'reviewer', 'district'] },
+      { to: '/app/sync', label: 'Offline sync', icon: <IconSync size={17} />, roles: ['technician', 'district'] },
     ],
   },
   {
@@ -83,10 +83,10 @@ function NavLinks({ role, onNavigate }: { role: Role; onNavigate?: () => void })
     <nav className="flex-1 overflow-y-auto px-3 py-2 space-y-6 scrollbar-none">
       {groups.map((group) => (
         <div key={group.label}>
-          <p className="px-3 mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
+          <p className="px-3 mb-2 mt-4 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
             {group.label}
           </p>
-          <div className="space-y-0.5">
+          <div className="space-y-1">
             {group.items.map((item) => (
               <NavLink
                 key={item.to}
@@ -94,16 +94,15 @@ function NavLinks({ role, onNavigate }: { role: Role; onNavigate?: () => void })
                 end={item.end}
                 onClick={onNavigate}
                 className={({ isActive }) => cx(
-                  'group relative flex items-center gap-3 h-9 px-3 rounded-none text-[13px] font-medium',
-                  'transition-colors duration-150',
+                  'group relative flex items-center gap-3 px-4 py-3 rounded-lg text-[13px] font-medium transition-all duration-200',
                   isActive
-                    ? 'bg-white text-[#4338CA] shadow-[0_1px_2px_0_rgb(15_23_42/0.06)]'
-                    : 'text-slate-600 hover:bg-white/60 hover:text-slate-900',
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'text-slate-300 hover:bg-slate-700 hover:text-white',
                 )}
               >
                 {({ isActive }) => (
                   <>
-                    <span className={cx('shrink-0', isActive ? 'text-[#4338CA]' : 'text-slate-400 group-hover:text-slate-600')}>
+                    <span className={cx('shrink-0 transition-colors duration-200', isActive ? 'text-white' : 'text-slate-400 group-hover:text-white')}>
                       {item.icon}
                     </span>
                     <span className="truncate">{item.label}</span>
@@ -130,15 +129,20 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="px-5 py-5 shrink-0">
+      <div className="px-6 py-6 shrink-0 border-b border-slate-700">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-3 group w-full"
           aria-label="UVI home"
         >
-          <img src={uviLogo} alt="UVI Logo" className="w-20 h-auto object-contain shrink-0 rounded-lg shadow-sm border border-slate-200/60" />
-          <span className="text-left ml-1">
-            <span className="block text-[11px] text-slate-500 leading-tight">
+          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-white font-bold text-xl">U</span>
+          </div>
+          <span className="text-left flex-1 min-w-0">
+            <span className="block text-xl font-bold text-white tracking-wide truncate">
+              UVI
+            </span>
+            <span className="block text-[11px] text-slate-400 leading-tight truncate">
               {user.facility_id ?? 'Edge node'}
             </span>
           </span>
@@ -147,21 +151,23 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
 
       <NavLinks role={user.role} onNavigate={onNavigate} />
 
-      <div className="p-3 shrink-0 border-t border-slate-200/70">
-        <div className="flex items-center gap-3 px-2 py-2">
-          <span className="w-9 h-9 rounded-none bg-slate-200 text-slate-600 text-[12px] font-semibold flex items-center justify-center shrink-0">
-            {initials(user.full_name)}
-          </span>
-          <div className="min-w-0 flex-1">
-            <p className="text-[13px] font-medium text-slate-900 truncate">{user.full_name}</p>
-            <p className="text-[11px] text-slate-500 truncate">
+      <div className="p-4 shrink-0 border-t border-slate-700">
+        <div className="flex items-center space-x-3 px-2 py-2">
+          <div className="w-9 h-9 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center shrink-0 shadow-md">
+            <span className="text-white font-semibold text-[13px]">{initials(user.full_name)}</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-white truncate">
+              {user.full_name}
+            </p>
+            <p className="text-xs text-slate-400 truncate">
               {ROLE_TITLES[user.role]}
-              {user.registration_no && <span className="clinical-id"> · {user.registration_no}</span>}
+              {user.registration_no && <span className="opacity-75"> · {user.registration_no}</span>}
             </p>
           </div>
           <button
             onClick={handleLogout}
-            className="w-8 h-8 rounded-none text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center shrink-0"
+            className="w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700 transition-colors flex items-center justify-center shrink-0"
             aria-label="Sign out"
             title="Sign out"
           >
@@ -198,7 +204,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </a>
 
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex fixed inset-y-0 left-0 w-[248px] bg-slate-100/70 border-r border-slate-200/80 flex-col z-30">
+      <aside className="hidden lg:flex fixed inset-y-0 left-0 w-[248px] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-slate-700 flex-col z-30 shadow-2xl">
         <SidebarContent />
       </aside>
 
@@ -213,14 +219,14 @@ export function AppShell({ children }: { children: ReactNode }) {
               onClick={() => setDrawerOpen(false)}
             />
             <motion.aside
-              className="lg:hidden fixed inset-y-0 left-0 w-[272px] bg-slate-100 z-50 flex flex-col shadow-2xl"
+              className="lg:hidden fixed inset-y-0 left-0 w-[272px] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-slate-700 z-50 flex flex-col shadow-2xl"
               initial={{ x: -280 }} animate={{ x: 0 }} exit={{ x: -280 }}
               transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
               role="dialog" aria-modal="true" aria-label="Navigation"
             >
               <button
                 onClick={() => setDrawerOpen(false)}
-                className="absolute top-4 right-3 w-8 h-8 rounded-none text-slate-500 hover:bg-slate-200 flex items-center justify-center"
+                className="absolute top-4 right-3 w-8 h-8 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Close navigation"
               >
                 <IconX size={17} />

@@ -44,7 +44,7 @@ export default function TechnicianDashboard() {
   const firstName = user?.full_name?.split(' ')[0] ?? 'there';
 
   return (
-    <div className="space-y-7">
+    <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-slate-200 space-y-7">
       <SectionHeader
         eyebrow="Technician workspace"
         title={`Good day, ${firstName}`}

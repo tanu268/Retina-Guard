@@ -50,4 +50,12 @@ export const ResourceGridDemo = () => {
   );
 };
 
+import Sidebar from "@/components/ui/sidebar";
+
+const DemoOne = () => {
+  return <Sidebar />;
+};
+
+export { DemoOne };
+
 export default ResourceGridDemo;
