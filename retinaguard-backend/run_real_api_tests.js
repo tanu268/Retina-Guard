@@ -32,7 +32,7 @@ async function main() {
     tech: { url: '/api/v1/queue', status: (await fetch(`${BASE}/api/v1/queue`, { headers: { Authorization: `Bearer ${techToken}` } })).status },
     rev: { url: '/api/v1/queue', status: (await fetch(`${BASE}/api/v1/queue`, { headers: { Authorization: `Bearer ${revToken}` } })).status }
   };
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g22_rbac_evidence.json', JSON.stringify(rbacEvidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g22_rbac_evidence.json', JSON.stringify(rbacEvidence, null, 2));
 
   const g12Evidence = { auth: { status: techRes.status, response: techBody } };
 
@@ -58,7 +58,7 @@ async function main() {
   const consultId = consultBody.consultation.id;
 
   // Image Upload
-  const imagePath = '/home/yash/Downloads/aptos2019-20260925T101102Z-1-005/aptos2019/train_images/82e5bc01f8a4.png';
+  const imagePath = 'd:/RetinaG/Retina-Guard/IMG/Left Retina.jpg';
   const fileBuffer = fs.readFileSync(imagePath);
   const blob = new Blob([fileBuffer], { type: 'image/png' });
 
@@ -114,7 +114,7 @@ async function main() {
   const caseRes = await fetch(`${BASE}/api/v1/cases/${caseUuid}`, { headers: { Authorization: `Bearer ${revToken}` } });
   g12Evidence.case = { status: caseRes.status, response: await caseRes.json() };
 
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g12_real_http_evidence.json', JSON.stringify(g12Evidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g12_real_http_evidence.json', JSON.stringify(g12Evidence, null, 2));
 
   // G13 Lifecycle & G24 State Machine
   const lifecycleEvidence = {
@@ -140,13 +140,13 @@ async function main() {
     first_request: { status: rev1Res.status, response: rev1Body },
     second_request: { status: rev2Res.status, response: await rev2Res.json() }
   };
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g20_idempotency_evidence.json', JSON.stringify(g20Evidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g20_idempotency_evidence.json', JSON.stringify(g20Evidence, null, 2));
 
   const completedCaseRes = await fetch(`${BASE}/api/v1/cases/${caseUuid}`, { headers: { Authorization: `Bearer ${revToken}` } });
   const completedCase = await completedCaseRes.json();
   lifecycleEvidence.states.push({ stage: "after_review", case_uuid: caseUuid, status: completedCase.data?.status || 'unknown' });
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g13_lifecycle_evidence.json', JSON.stringify(lifecycleEvidence, null, 2));
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g24_state_machine_evidence.json', JSON.stringify(lifecycleEvidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g13_lifecycle_evidence.json', JSON.stringify(lifecycleEvidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g24_state_machine_evidence.json', JSON.stringify(lifecycleEvidence, null, 2));
 
   // Phase 6 / G21 Report
   const reportRes = await fetch(`${BASE}/api/v1/report/${caseUuid}`, { headers: { Authorization: `Bearer ${revToken}` } });
@@ -154,7 +154,7 @@ async function main() {
     status: reportRes.status,
     response: await reportRes.json()
   };
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g21_reporting_evidence.json', JSON.stringify(g21Evidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g21_reporting_evidence.json', JSON.stringify(g21Evidence, null, 2));
 
   // G23 Audit Trail
   const auditRes = await fetch(`${BASE}/api/v1/audit/${caseUuid}`, { headers: { Authorization: `Bearer ${adminBody.accessToken}` } });
@@ -163,13 +163,13 @@ async function main() {
       status: auditRes.status,
       response: auditBody
   };
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g23_audit_evidence.json', JSON.stringify(g23Evidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g23_audit_evidence.json', JSON.stringify(g23Evidence, null, 2));
 
   // Traceability & Audit - we will fetch from DB directly since it's the ultimate truth.
   const g18TraceabilityEvidence = {
       patientId, consultId, imageId, caseUuid, modelVersion: 'retinaguard-resnet18-384-mvp'
   };
-  fs.writeFileSync('/home/yash/Desktop/Projects/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g18_traceability_evidence.json', JSON.stringify(g18TraceabilityEvidence, null, 2));
+  fs.writeFileSync('d:/RetinaG/Retina-Guard/validation/master_closure_v7/32_runtime_closure_v72/g18_traceability_evidence.json', JSON.stringify(g18TraceabilityEvidence, null, 2));
 
   console.log("Phase 2-8 Done, case UUID:", caseUuid);
 }

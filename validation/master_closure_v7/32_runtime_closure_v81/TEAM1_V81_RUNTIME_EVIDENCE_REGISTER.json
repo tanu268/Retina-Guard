@@ -1,0 +1,34 @@
+[
+  {
+    "id": "T1-V81-001",
+    "gate": "G12",
+    "claim": "REAL API / RUNTIME",
+    "baseline": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v24.14.0",
+    "execution_type": "NOT_EXECUTED",
+    "command": "",
+    "artifact": "",
+    "request": "",
+    "response": "",
+    "database_evidence": "",
+    "status": "BLOCKED",
+    "blocker": "B-A: Real ML Runtime missing (retinaguard_resnet18.onnx unavailable)",
+    "notes": "Cannot be promoted to PASS without the real ML adapter resolving."
+  },
+  {
+    "id": "T1-V81-002",
+    "gate": "G14",
+    "claim": "TEAM 2 FRONTEND HANDOFF",
+    "baseline": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Browser Subagent",
+    "execution_type": "DIRECTLY_EXECUTED",
+    "command": "browser_subagent",
+    "artifact": "login_page_workspace_1790414339247.png, technician_dashboard_1790414394878.png",
+    "request": "Navigate to /login, click Technician",
+    "response": "Successfully reached Technician Dashboard without ErrorBoundary crash.",
+    "database_evidence": "",
+    "status": "PASS",
+    "blocker": "",
+    "notes": "Verified that Login.tsx fix prevents HoverRevealCards from crashing the UI."
+  }
+]

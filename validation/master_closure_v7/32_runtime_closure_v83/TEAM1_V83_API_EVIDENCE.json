@@ -1,0 +1,257 @@
+{
+  "auth": {
+    "status": 200,
+    "response": {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMmQ0ZjY0MC05MGI4LTQ4NzMtOWQyYy05MDdhN2Y2ZmE5YmQiLCJyb2xlIjoidGVjaG5pY2lhbiIsIm5hbWUiOiJUYW51IFNoYXJtYSIsImZhY2lsaXR5IjoiUEhDLUlORE9SRS0wMSIsInR5cCI6ImFjY2VzcyIsImlhdCI6MTc5MDQxNzEwMSwiZXhwIjoxNzkwNDE4MDAxLCJpc3MiOiJyZXRpbmFndWFyZC1lZGdlIn0.dVT0m6yZlwbZ3lMqmd_iichuIq6DcyVVe3_J_8PGE-0",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMmQ0ZjY0MC05MGI4LTQ4NzMtOWQyYy05MDdhN2Y2ZmE5YmQiLCJqdGkiOiItXzhKMGVqYjdkQzVUTnVteUktaDBGeXViUGgzTllaRVRwYVpzN1BNZ2ZHZDR5aDIyZlBHTHZVM3VnQ19vVDhUIiwidHlwIjoicmVmcmVzaCIsImlhdCI6MTc5MDQxNzEwMSwiZXhwIjoxNzkxMDIxOTAxLCJpc3MiOiJyZXRpbmFndWFyZC1lZGdlIn0.6EUFkB2WeLG6pr2sc-Pc0rVo3WYrayUcyeHGTZ_xosI",
+      "user": {
+        "id": "02d4f640-90b8-4873-9d2c-907a7f6fa9bd",
+        "username": "tanu.tech",
+        "full_name": "Tanu Sharma",
+        "role": "technician",
+        "facility_id": "PHC-INDORE-01",
+        "registration_no": null,
+        "is_active": true,
+        "last_login_at": "2026-09-26T10:04:44.995Z",
+        "created_at": "2026-09-24 17:07:50",
+        "updated_at": "2026-09-26 10:04:44",
+        "deleted_at": null
+      }
+    }
+  },
+  "patient": {
+    "status": 201,
+    "response": {
+      "patient": {
+        "id": "ce5089b5-7403-4097-8d43-b95463ebf4dd",
+        "patient_code": "PHCINDOR-000007",
+        "full_name": "Real Test Patient",
+        "age": 40,
+        "gender": "female",
+        "phone": null,
+        "village": "Mhow",
+        "district": "Indore",
+        "state": "Madhya Pradesh",
+        "diabetes_type": "type2",
+        "diabetes_duration_years": null,
+        "hba1c": null,
+        "facility_id": "PHC-INDORE-01",
+        "created_by": "02d4f640-90b8-4873-9d2c-907a7f6fa9bd",
+        "version": 1,
+        "sync_state": "pending",
+        "created_at": "2026-09-26 10:05:01",
+        "updated_at": "2026-09-26 10:05:01",
+        "deleted_at": null,
+        "diabetes_history": null
+      },
+      "possibleDuplicates": [
+        {
+          "id": "89e7d8e3-7ea2-4928-abea-58a6f62b2f9d",
+          "patient_code": "PHCINDOR-000005",
+          "full_name": "Real Test Patient",
+          "age": 40,
+          "gender": "female",
+          "phone": null,
+          "village": "Mhow",
+          "district": "Indore",
+          "state": "Madhya Pradesh",
+          "diabetes_type": "type2",
+          "diabetes_duration_years": null,
+          "hba1c": null,
+          "facility_id": "PHC-INDORE-01",
+          "created_by": "02d4f640-90b8-4873-9d2c-907a7f6fa9bd",
+          "version": 1,
+          "sync_state": "pending",
+          "created_at": "2026-09-26 08:32:11",
+          "updated_at": "2026-09-26 08:32:11",
+          "deleted_at": null,
+          "diabetes_history": null
+        }
+      ]
+    }
+  },
+  "consultation": {
+    "status": 201,
+    "response": {
+      "consultation": {
+        "id": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+        "case_number": "RG-PHCINDORE01-20260926-20D6",
+        "patient_id": "ce5089b5-7403-4097-8d43-b95463ebf4dd",
+        "technician_id": "02d4f640-90b8-4873-9d2c-907a7f6fa9bd",
+        "reviewer_id": null,
+        "status": "registered",
+        "triage_priority": null,
+        "notes": null,
+        "site_id": "PHC-INDORE-01",
+        "device_id": "FUNDUS-CAM-001",
+        "identity_confirmed": true,
+        "recapture_attempts": 0,
+        "final_grade_code": null,
+        "final_referable": null,
+        "consultation_date": "2026-09-26 10:05:01",
+        "closed_at": null,
+        "version": 1,
+        "sync_state": "pending",
+        "created_at": "2026-09-26 10:05:01",
+        "updated_at": "2026-09-26 10:05:01",
+        "deleted_at": null
+      }
+    }
+  },
+  "upload": {
+    "status": 201,
+    "response": {
+      "image": {
+        "id": "b444e8dc-0b5f-40d8-b4d6-7de5f6e4d7f0",
+        "consultation_id": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+        "patient_id": "ce5089b5-7403-4097-8d43-b95463ebf4dd",
+        "laterality": "left",
+        "file_path": "fundus\\2026-09-26\\98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a-left-1.png",
+        "original_name": "82e5bc01f8a4.png",
+        "mime_type": "image/png",
+        "size_bytes": 145275,
+        "width": null,
+        "height": null,
+        "sha256": "f2944d7ae982cda81d5742e488f6ebd3827cf040802d9c47b100001872c6d600",
+        "capture_attempt": 1,
+        "quality_grade": "A",
+        "quality_score": 1,
+        "quality_reasons": [],
+        "quality_checked_at": "2026-09-26T10:05:02.000Z",
+        "status": "quality_pass",
+        "device_id": "FUNDUS-CAM-001",
+        "captured_at": "2026-09-26T10:05:01.993Z",
+        "sync_state": "pending",
+        "created_at": "2026-09-26 10:05:01",
+        "updated_at": "2026-09-26 10:05:01",
+        "deleted_at": null
+      },
+      "quality": {
+        "qualityGrade": "A",
+        "qualityScore": 1,
+        "gradeable": true,
+        "reasons": []
+      },
+      "recaptureAllowed": true,
+      "remainingAttempts": 2
+    }
+  },
+  "analysis": {
+    "status": 201,
+    "response": {
+      "analysis": {
+        "id": "32d1796c-16d6-446d-9bd3-49f6b52d7dea",
+        "image_id": "b444e8dc-0b5f-40d8-b4d6-7de5f6e4d7f0",
+        "consultation_id": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+        "status": "completed",
+        "model_version": "retinaguard_resnet18.onnx",
+        "model_hash": "TO_BE_VERIFIED",
+        "preprocessing_hash": "TO_BE_VERIFIED",
+        "dr_grade_code": 0,
+        "dr_grade_label": "No Apparent DR",
+        "grade_probabilities": [
+          0.894263013412286,
+          0.04010481205818446,
+          0.04744709836083169,
+          0.009706965924088993,
+          0.008478110244608887
+        ],
+        "confidence": 0.894263013412286,
+        "referable_probability": 0.06563217452952957,
+        "referable": false,
+        "abstained": false,
+        "abstain_reason": null,
+        "triage_priority": "P3",
+        "anatomy": {
+          "opticDisc": {
+            "detected": true,
+            "confidence": 0.9
+          },
+          "macula": {
+            "detected": true,
+            "confidence": 0.9
+          },
+          "fovea": {
+            "detected": true,
+            "confidence": 0.9
+          }
+        },
+        "lesions": [],
+        "stage_timings_ms": {
+          "preprocess": 31,
+          "anatomy_detection": 0.19,
+          "dr_grading": 51,
+          "lesion_detection": 0.07,
+          "gradcam": 0.06,
+          "total": 289.76
+        },
+        "warnings": [],
+        "error_message": null,
+        "audit_sampled": false,
+        "started_at": "2026-09-26T10:05:02.007Z",
+        "completed_at": "2026-09-26T10:05:02.301Z",
+        "sync_state": "pending",
+        "created_at": "2026-09-26 10:05:02",
+        "updated_at": "2026-09-26 10:05:02"
+      },
+      "disclaimer": "AI-assisted screening result. Not a diagnosis. Every result is reviewed by a qualified human reviewer before any referral decision is issued. This screening does not replace a dilated clinical eye examination.",
+      "isDiagnosis": false,
+      "humanReviewRequired": true,
+      "note": null
+    }
+  },
+  "model": {
+    "status": 200,
+    "response": {
+      "model_version": "retinaguard_resnet18.onnx",
+      "model_hash": "TO_BE_VERIFIED",
+      "preprocessing_version": "TO_BE_VERIFIED",
+      "deployment_status": "DEGRADED",
+      "adapter": "onnx"
+    }
+  },
+  "queue": {
+    "status": 200,
+    "response": {
+      "items": [
+        {
+          "consultation_id": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+          "case_number": "RG-PHCINDORE01-20260926-20D6",
+          "status": "awaiting_review",
+          "triage_priority": "P3",
+          "consultation_date": "2026-09-26 10:05:01",
+          "recapture_attempts": 1,
+          "patient_id": "ce5089b5-7403-4097-8d43-b95463ebf4dd",
+          "patient_code": "PHCINDOR-000007",
+          "patient_name": "Real Test Patient",
+          "age": 40,
+          "gender": "female",
+          "analysis_id": "32d1796c-16d6-446d-9bd3-49f6b52d7dea",
+          "dr_grade_code": 0,
+          "dr_grade_label": "No Apparent DR",
+          "confidence": 0.894263013412286,
+          "referable": 0,
+          "abstained": 0,
+          "abstain_reason": null,
+          "audit_sampled": 0,
+          "analysed_at": "2026-09-26T10:05:02.301Z",
+          "image_id": "b444e8dc-0b5f-40d8-b4d6-7de5f6e4d7f0",
+          "laterality": "left",
+          "quality_grade": "A"
+        }
+      ],
+      "total": 1,
+      "page": 1,
+      "limit": 20
+    }
+  },
+  "case": {
+    "status": 404,
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "No route for GET /api/v1/cases/98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a"
+      }
+    }
+  }
+}

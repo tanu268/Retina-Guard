@@ -1,0 +1,58 @@
+[
+  {
+    "evidence_id": "T1-V83-001",
+    "claim": "Model artifact hash matched expected provenance.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T15:28:10+05:30",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v22.14.0",
+    "runtime": "onnxruntime-node@1.30.0",
+    "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "artifact_path": "model/retinaguard_resnet18.onnx",
+    "result": "PASS",
+    "provenance": "Verified in V8.2 and re-verified in V8.3.",
+    "reproducible": true
+  },
+  {
+    "evidence_id": "T1-V83-002",
+    "claim": "Model load and internal runtime integration.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T15:33:50+05:30",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v22.14.0",
+    "runtime": "onnxruntime-node@1.30.0",
+    "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "artifact_path": "model/retinaguard_resnet18.onnx",
+    "result": "PASS",
+    "provenance": "Executed directly via src/server.js using Node 22.",
+    "reproducible": true
+  },
+  {
+    "evidence_id": "T1-V83-003",
+    "claim": "Clean-room execution of full dependency chain.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T15:33:04+05:30",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v22.14.0",
+    "runtime": "Node v22.14.0",
+    "model_sha256": "",
+    "artifact_path": "",
+    "result": "PASS",
+    "provenance": "npm ci successfully built dependencies using Node 22 prebuilt better-sqlite3 binary.",
+    "reproducible": true
+  },
+  {
+    "evidence_id": "T1-V83-004",
+    "claim": "API Model inference executes.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T15:35:02+05:30",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v22.14.0",
+    "runtime": "Node v22.14.0",
+    "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "artifact_path": "model/retinaguard_resnet18.onnx",
+    "result": "PASS",
+    "provenance": "Executed real inference logic via run_v83_api_tests.js against local server using actual Left Retina.jpg.",
+    "reproducible": true
+  }
+]

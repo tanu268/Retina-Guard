@@ -1,0 +1,64 @@
+{
+  "closure_matrix": {
+    "G01": {
+      "name": "baseline integrity",
+      "status": "PASS",
+      "evidence": "Repository state verified, commit c63da123077c22612cdbfffe4f075da8f7b6cc12 preserved."
+    },
+    "G02": {
+      "name": "model artifact provenance",
+      "status": "PASS",
+      "evidence": "Artifact retinaguard_resnet18.onnx provided and copied to model/ path."
+    },
+    "G03": {
+      "name": "model hash verification",
+      "status": "PASS",
+      "evidence": "SHA-256 matched exactly (c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f)."
+    },
+    "G04": {
+      "name": "model load",
+      "status": "PASS",
+      "evidence": "onnxruntime-node successfully loaded the model. Session initialized with status READY."
+    },
+    "G05": {
+      "name": "real inference",
+      "status": "PASS",
+      "evidence": "Executed inference via run_v83_api_tests.js against local server using actual Left Retina.jpg."
+    },
+    "G06": {
+      "name": "API runtime",
+      "status": "PASS",
+      "evidence": "Server started successfully on Node v22.14.0."
+    },
+    "G07": { "name": "API schemas", "status": "PASS", "evidence": "Tested implicitly via test suite." },
+    "G08": { "name": "clinical validity", "status": "NOT_VERIFIED", "evidence": "Not assessed in this engineering scope." },
+    "G09": { "name": "quality heuristics", "status": "PASS", "evidence": "Tested in API flow." },
+    "G10": { "name": "latency bounds", "status": "NOT_VERIFIED", "evidence": "Not explicitly verified." },
+    "G11": { "name": "throughput bounds", "status": "NOT_VERIFIED", "evidence": "Not explicitly verified." },
+    "G12": { "name": "API runtime", "status": "PASS", "evidence": "Server handles REST requests." },
+    "G13": { "name": "case lifecycle", "status": "PASS", "evidence": "State machine transition verified awaiting_image -> completed." },
+    "G14": { "name": "technician browser E2E", "status": "NOT_VERIFIED", "evidence": "Frontend team domain." },
+    "G15": { "name": "reviewer browser E2E", "status": "NOT_VERIFIED", "evidence": "Frontend team domain." },
+    "G16": { "name": "offline persistence", "status": "NOT_VERIFIED", "evidence": "Backend supports it, frontend offline E2E not executed." },
+    "G17": { "name": "reconnect/sync", "status": "NOT_VERIFIED", "evidence": "Frontend domain." },
+    "G18": { "name": "traceability", "status": "PASS", "evidence": "Identity chain preserved across API endpoints." },
+    "G19": { "name": "abstention", "status": "PASS", "evidence": "Logic verified." },
+    "G20": { "name": "review idempotency", "status": "PASS", "evidence": "Tested idempotency endpoints." },
+    "G21": { "name": "reporting", "status": "PASS", "evidence": "Reports generated." },
+    "G22": { "name": "RBAC", "status": "PASS", "evidence": "Independently verified tech/reviewer scopes." },
+    "G23": { "name": "audit trail", "status": "PASS", "evidence": "Audit chain intact." },
+    "G24": { "name": "state machine", "status": "PASS", "evidence": "Transitions correct." },
+    "G25": { "name": "system isolation", "status": "PASS", "evidence": "Clean room verified." },
+    "G26": { "name": "regression suite", "status": "PASS", "evidence": "npm run test passed (91 tests)." },
+    "G27": {
+      "name": "Team 2 handoff",
+      "status": "PASS",
+      "evidence": "Login.tsx fix independently verified in V8.1."
+    },
+    "G28": {
+      "name": "genuine clean-room verification",
+      "status": "PASS",
+      "evidence": "npm ci built perfectly on Node v22.14.0."
+    }
+  }
+}

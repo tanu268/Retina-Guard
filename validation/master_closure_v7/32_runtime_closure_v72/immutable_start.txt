@@ -1,69 +1,20 @@
- M ENGINEER1_MASTER_T800_FINAL_REMEDIATION_AND_RELEASE_REPORT.md
- M retinaguard-backend/src/modules/cases/cases.controller.js
- M retinaguard-backend/tests/integration/parser.test.js
- M retinaguard-backend/tests/unit/matlabService.test.js
-?? 4b6895d0cf8d_node.json
-?? 82e5bc01f8a4_node.json
-?? ENGINEER1_701_DATASET_MANIFEST_LOCK.json
-?? ENGINEER1_701_DATASET_RECOVERY_BLOCKER.md
-?? ENGINEER1_701_FRESH_REPLAY_AND_PARITY_REPORT.md
-?? ENGINEER1_AI_FORENSIC_AND_VALIDATION_REPORT.md
-?? ENGINEER1_APTOS_701_DATASET_INTEGRITY_REPORT.md
-?? ENGINEER1_APTOS_701_IMAGE_HASHES.json
-?? ENGINEER1_APTOS_DATASET_BLOCKER.md
-?? ENGINEER1_APTOS_DATASET_FINGERPRINT.json
-?? ENGINEER1_APTOS_FRESH_701_INFERENCE_REPORT.md
-?? ENGINEER1_DATASET_ACQUISITION_BLOCKER.md
-?? ENGINEER1_DATASET_ACQUISITION_FINAL_BLOCKER.md
-?? ENGINEER1_DATASET_RECOVERY_BLOCKER.md
-?? ENGINEER1_DATASET_RECOVERY_LOG.md
-?? ENGINEER1_MASTER_T800_FINAL_RELEASE_GATE_REPORT.md
-?? ENGINEER1_MODEL_RECOVERY_AND_PROVENANCE.md
-?? ENGINEER1_MODEL_RECOVERY_EXECUTION_REPORT.md
-?? ENGINEER1_REAL_MODEL_INFERENCE_AND_REPRODUCTION_REPORT.md
-?? ENGINEER1_REAL_MODEL_INTEGRATION_GATE_REPORT.md
-?? ENGINEER1_REAL_MODEL_VALIDATION_REPORT.md
-?? FORENSIC_SYSTEM_RECONSTRUCTION_REPORT.md
-?? RETINAGUARD_FEASIBILITY_VIABILITY_CODEBASE_FORENSIC_REPORT.md
-?? clean-room/
-?? data/
-?? dump_node_tensors.js
-?? eba3acc42197_node.json
-?? g8_node_701_replay.js
-?? g9_python_701_replay.py
-?? gateA.js
-?? gateB.py
-?? gateC_D.py
-?? generate_node_metrics.js
-?? generate_node_tensor.js
-?? "matlab simulation/"
-?? model/retinaguard_resnet18.onnx
-?? node_tensor.json
-?? perf_test.js
-?? retinaguard-backend/api_verification.js
-?? retinaguard-backend/scripts/phase4_inference.js
-?? retinaguard-backend/validation/
-?? retinaguard-backend/verify_single_inference.js
-?? retinaguard_resnet18.onnx
-?? run_fresh_inference.py
-?? run_node_inference_701.js
-?? test_25.js
-?? test_hypotheses.py
-?? validation/fresh_701/
-?? validation/master_closure_v6/
-?? validation/master_closure_v7/
-?? validation/master_release_closure/
-?? validation/phase19/
-?? verify_new_node_pipeline.js
-22c25e838dc52536aaf0ffcce5fd5f1bdbf8540d
+git status --short:
+(clean)
+
+git rev-parse HEAD:
+c63da123077c22612cdbfffe4f075da8f7b6cc12
+
+git branch --show-current:
 main
-22c25e8 fix: T-800 v4.0 Final Defect Remediation and Closure
-c2f6a78 chore: V3 Master Remediation Closure
-2b77bde test: unstub concurrency and model-config integration tests
-4b29121 phase18: replace legacy OpenCV preprocessing with ImageNet-compatible pipeline
-ffa1907 Rebrand from RetinaGuard to UVI and update logo sizes
-89b3ac3 Update footer hover animation, add gradient outline, and fix backend registration bugs
-526770e feat: Add HoverRevealCards to Login page and final 701 Node validation reports
-3e43e89 Merge remote-tracking branch 'origin/main'
-f881857 chore: Update frontend API, backend PDF and report services, and add migration plan
-5067d09 chore: freeze ONNX integration and validation checkpoint
+
+git log -10 --oneline:
+c63da12 security: scrub exposed PAT from validation docs
+2c64f55 audit: add T-800 v7.1 independent forensic reconciliation
+5cba10a audit: add T-800 v7.2 runtime verification evidence for API
+848ebf9 fix: T-800 v4.0 Final Defect Remediation and Closure
+eb5d9e8 chore: V3 Master Remediation Closure
+e0571fa chore: merge main, resolve conflicts, and include recent fixes
+c3edfa9 feat: integrate new sidebar design, update Technician Dashboard layout, update admin nav visibility
+642ff98 Use black background logo specifically for footer
+53c6b8d Remove old jpg logo
+3376fc4 Fix transparent logo to include missing I letter

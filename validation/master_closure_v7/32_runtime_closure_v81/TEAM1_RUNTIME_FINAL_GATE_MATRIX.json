@@ -1,0 +1,128 @@
+[
+  {
+    "gate": "G12",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A (Model artifact missing)",
+    "remediation": "Provide retinaguard_resnet18.onnx artifact."
+  },
+  {
+    "gate": "G13",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G14",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G15",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G16",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G17",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G18",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G19",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G20",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G21",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G22",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G23",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G24",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "NOT_VERIFIED",
+    "blocker": "B-A",
+    "remediation": "Resolve B-A."
+  },
+  {
+    "gate": "G28",
+    "expected": "PASS",
+    "execution": "NOT_EXECUTED",
+    "evidence": [],
+    "status": "BLOCKED",
+    "blocker": "B-C (Node 24.14.0 incompatiblity with better-sqlite3 native build)",
+    "remediation": "Downgrade host to Node v22 or install VS Build Tools."
+  }
+]

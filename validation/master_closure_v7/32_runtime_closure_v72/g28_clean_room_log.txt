@@ -1,0 +1,65 @@
+Cloning into 'd:\RetinaG\Retina-Guard-CleanRoom'...
+done.
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+npm warn deprecated jpeg-exif@1.1.4: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated crypto-js@4.2.0: Active development of CryptoJS has been discontinued. This library is no longer maintained.
+npm warn deprecated glob@11.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\D:\\RetinaG\\Retina-Guard-CleanRoom\\retinaguard-backend\\node_modules\\@apidevtools',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'D:\RetinaG\Retina-Guard-CleanRoom\retinaguard-backend\node_modules\@apidevtools\swagger-parser\node_modules\ajv\lib'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'D:\\RetinaG\\Retina-Guard-CleanRoom\\retinaguard-backend\\node_modules\\@apidevtools\\swagger-parser\\node_modules\\ajv\\lib'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\D:\\RetinaG\\Retina-Guard-CleanRoom\\retinaguard-backend\\node_modules',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'D:\RetinaG\Retina-Guard-CleanRoom\retinaguard-backend\node_modules\bl\node_modules\readable-stream\lib'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'D:\\RetinaG\\Retina-Guard-CleanRoom\\retinaguard-backend\\node_modules\\bl\\node_modules\\readable-stream\\lib'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code 1
+npm error path D:\RetinaG\Retina-Guard-CleanRoom\retinaguard-backend\node_modules\better-sqlite3
+npm error command failed
+npm error command C:\Windows\system32\cmd.exe /d /s /c prebuild-install || node-gyp rebuild --release
+npm error (node:36800) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+npm error (Use `node --trace-deprecation ...` to show where the warning was created)
+npm error prebuild-install warn install No prebuilt binaries found (target=24.14.0 runtime=node arch=x64 libc= platform=win32)
+npm error gyp info it worked if it ends with ok
+npm error gyp info using node-gyp@12.2.0
+npm error gyp info using node@24.14.0 | win32 | x64
+npm error (node:38204) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+npm error (Use `node --trace-deprecation ...` to show where the warning was created)
+npm error gyp info find Python using Python version 3.14.5 found at "C:\Users\NITIN\AppData\Local\Python\pythoncore-3.14-64\python.exe"
+npm error gyp ERR! configure error 
+npm error gyp ERR! stack Error: spawn EPERM
+npm error gyp ERR! stack at ChildProcess.spawn (node:internal/child_process:421:11)
+npm error gyp ERR! stack at spawn (node:child_process:796:9)
+npm error gyp ERR! stack at Object.execFile (node:child_process:349:17)
+npm error gyp ERR! stack at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\util.js:9:20
+npm error gyp ERR! stack at new Promise (<anonymous>)
+npm error gyp ERR! stack at execFile (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\util.js:8:37)
+npm error gyp ERR! stack at VisualStudioFinder.execFile (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:602:18)
+npm error gyp ERR! stack at VisualStudioFinder.findNewVSUsingSetupModule (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:188:31)
+npm error gyp ERR! stack at VisualStudioFinder.findVisualStudio2019OrNewerUsingSetupModule (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:165:17)
+npm error gyp ERR! stack at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:58:18
+npm error gyp ERR! System Windows_NT 10.0.26200
+npm error gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild" "--release"
+npm error gyp ERR! cwd D:\RetinaG\Retina-Guard-CleanRoom\retinaguard-backend\node_modules\better-sqlite3
+npm error gyp ERR! node -v v24.14.0
+npm error gyp ERR! node-gyp -v v12.2.0
+npm error gyp ERR! $npm_package_name better-sqlite3
+npm error gyp ERR! $npm_package_version 11.10.0
+npm error gyp ERR! not ok
+npm error A complete log of this run can be found in: C:\Users\NITIN\AppData\Local\npm-cache\_logs\2026-09-26T08_59_11_795Z-debug-0.log
+npm warn deprecated recharts@2.15.4: 1.x and 2.x branches are no longer active. Bump to Recharts v3 to receive latest features and bugfixes. See https://github.com/recharts/recharts/wiki/3.0-migration-guide

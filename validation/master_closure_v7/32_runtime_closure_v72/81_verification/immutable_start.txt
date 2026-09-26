@@ -1,0 +1,33 @@
+﻿ M RetinaGuard-Frontend-v3/src/pages/landing/Login.tsx
+ M retinaguard-backend/extract_g19.js
+ M retinaguard-backend/run_real_api_tests.js
+ M validation/master_closure_v7/32_runtime_closure_v72/g12_real_http_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g13_lifecycle_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g18_traceability_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g19_abstention_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g20_idempotency_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g21_reporting_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g22_rbac_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g23_audit_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/g24_state_machine_evidence.json
+ M validation/master_closure_v7/32_runtime_closure_v72/immutable_start.txt
+ M validation/master_closure_v7/32_runtime_closure_v72/runtime_identity.json
+?? validation/master_closure_v7/32_runtime_closure_v72/81_verification/
+?? validation/master_closure_v7/32_runtime_closure_v72/FINAL_GATE_MATRIX_V72.json
+?? validation/master_closure_v7/32_runtime_closure_v72/V72_RUNTIME_CLOSURE_REPORT.md
+?? validation/master_closure_v7/32_runtime_closure_v72/g14_browser_evidence/
+?? validation/master_closure_v7/32_runtime_closure_v72/g15_browser_evidence/
+?? validation/master_closure_v7/32_runtime_closure_v72/g28_clean_room_log.txt
+?? validation/master_closure_v7/32_runtime_closure_v72/g28_clean_room_manifest.json
+c63da123077c22612cdbfffe4f075da8f7b6cc12
+main
+c63da12 (HEAD -> main, origin/main, origin/HEAD) security: scrub exposed PAT from validation docs
+2c64f55 audit: add T-800 v7.1 independent forensic reconciliation
+5cba10a audit: add T-800 v7.2 runtime verification evidence for API
+848ebf9 fix: T-800 v4.0 Final Defect Remediation and Closure
+eb5d9e8 chore: V3 Master Remediation Closure
+e0571fa chore: merge main, resolve conflicts, and include recent fixes
+c3edfa9 feat: integrate new sidebar design, update Technician Dashboard layout, update admin nav visibility
+642ff98 Use black background logo specifically for footer
+53c6b8d Remove old jpg logo
+3376fc4 Fix transparent logo to include missing I letter

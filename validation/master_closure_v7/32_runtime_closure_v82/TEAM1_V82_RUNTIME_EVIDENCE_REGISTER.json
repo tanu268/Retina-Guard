@@ -1,0 +1,44 @@
+[
+  {
+    "evidence_id": "T1-V82-001",
+    "claim": "Model artifact hash matched expected provenance.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T09:42:57Z",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v24.14.0",
+    "runtime": "onnxruntime-node@1.30.0",
+    "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "artifact_path": "d:\\RetinaG\\Retina-Guard\\retinaguard_resnet18.onnx",
+    "result": "PASS",
+    "provenance": "Supplied externally, hash verified successfully.",
+    "reproducible": true
+  },
+  {
+    "evidence_id": "T1-V82-002",
+    "claim": "Model load and internal runtime integration.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T09:46:34Z",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v24.14.0",
+    "runtime": "onnxruntime-node@1.30.0",
+    "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+    "artifact_path": "model/retinaguard_resnet18.onnx",
+    "result": "PASS",
+    "provenance": "Executed directly via test_onnx.js using the application's native OnnxAdapter logic.",
+    "reproducible": true
+  },
+  {
+    "evidence_id": "T1-V82-003",
+    "claim": "Clean-room execution of full dependency chain.",
+    "source_type": "DIRECT-EXECUTION",
+    "execution_timestamp": "2026-09-26T09:43:25Z",
+    "commit": "c63da123077c22612cdbfffe4f075da8f7b6cc12",
+    "environment": "Windows / Node v24.14.0",
+    "runtime": "Node v24.14.0",
+    "model_sha256": "",
+    "artifact_path": "",
+    "result": "FAIL",
+    "provenance": "npm ci failed at better-sqlite3 native compilation step.",
+    "reproducible": true
+  }
+]

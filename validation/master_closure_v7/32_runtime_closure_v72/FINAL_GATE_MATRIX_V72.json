@@ -1,0 +1,114 @@
+[
+  {
+    "gate": "G12 API runtime",
+    "status": "PASS",
+    "evidence": ["g12_real_http_evidence.json"],
+    "method": "Executed integration test suite directly against real local Express instance listening on port 4000.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Verified all endpoints including models, queues, and case retrieval."
+  },
+  {
+    "gate": "G13 case lifecycle",
+    "status": "PASS",
+    "evidence": ["g13_lifecycle_evidence.json"],
+    "method": "Ran a full patient -> consult -> image -> analysis -> review lifecycle and tracked state transitions in DB.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Verified transitions from awaiting_image to after_review."
+  },
+  {
+    "gate": "G14 technician browser E2E",
+    "status": "PASS",
+    "evidence": ["g14_browser_evidence/g14_technician_flow_fix_1790412053384.webp"],
+    "method": "Automated headless browser session logging in as tanu.tech and executing a full patient registration and screening.",
+    "runtime_type": "REAL_BROWSER",
+    "notes": "Captured video evidence of the real Vite dev server and React SPA."
+  },
+  {
+    "gate": "G15 reviewer browser E2E",
+    "status": "PASS",
+    "evidence": ["g15_browser_evidence/g15_reviewer_flow_1790412869617.webp"],
+    "method": "Automated headless browser session logging in as reviewer.doc, accessing queue, and recording decision.",
+    "runtime_type": "REAL_BROWSER",
+    "notes": "Verified case disappears from queue post-adjudication."
+  },
+  {
+    "gate": "G16 offline persistence",
+    "status": "BLOCKED",
+    "evidence": [],
+    "method": "Attempted to use browser automation to sever network.",
+    "runtime_type": "REAL_BROWSER",
+    "notes": "Cannot reliably sever API connection while maintaining Vite dev server and CDP control connection in this environment."
+  },
+  {
+    "gate": "G17 reconnect/sync",
+    "status": "BLOCKED",
+    "evidence": [],
+    "method": "Attempted to use browser automation to sever network.",
+    "runtime_type": "REAL_BROWSER",
+    "notes": "Cannot reliably sever API connection while maintaining Vite dev server and CDP control connection in this environment."
+  },
+  {
+    "gate": "G18 traceability",
+    "status": "PASS",
+    "evidence": ["g18_traceability_evidence.json"],
+    "method": "Extracted database records tracing patient ID through consultation, image, case, and model version.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Full chain from patient to model_version established."
+  },
+  {
+    "gate": "G19 abstention",
+    "status": "PASS",
+    "evidence": ["g19_abstention_evidence.json"],
+    "method": "Processed a Golden abstaining case against the API and verified null grade / original confidence.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Safety constraints verified."
+  },
+  {
+    "gate": "G20 review idempotency",
+    "status": "PASS",
+    "evidence": ["g20_idempotency_evidence.json"],
+    "method": "Sent duplicate decision payloads to the review API.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "First succeeded, second yielded idempotent behavior/409."
+  },
+  {
+    "gate": "G21 reporting",
+    "status": "PASS",
+    "evidence": ["g21_reporting_evidence.json"],
+    "method": "Fetched /api/v1/report/:case_uuid after adjudication.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Report generation succeeded with correct metadata."
+  },
+  {
+    "gate": "G22 RBAC",
+    "status": "PASS",
+    "evidence": ["g22_rbac_evidence.json"],
+    "method": "Sent authenticated and unauthenticated requests to protected endpoints.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Verified 401 unauth and strict role segmentation."
+  },
+  {
+    "gate": "G23 audit trail",
+    "status": "PASS",
+    "evidence": ["g23_audit_evidence.json"],
+    "method": "Queried /api/v1/audit/:case_uuid using Admin role.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "Audit records accurately reflect lifecycle events."
+  },
+  {
+    "gate": "G24 state machine",
+    "status": "PASS",
+    "evidence": ["g24_state_machine_evidence.json"],
+    "method": "Validated against real API endpoints during case progression.",
+    "runtime_type": "REAL_HTTP",
+    "notes": "All transitions verified."
+  },
+  {
+    "gate": "G28 genuine clean-room verification",
+    "status": "PASS",
+    "evidence": ["g28_clean_room_manifest.json", "g28_clean_room_log.txt"],
+    "method": "Cloned to d:/RetinaG/Retina-Guard-CleanRoom, installed fresh dependencies.",
+    "runtime_type": "CLEAN_ROOM",
+    "notes": "Fresh checkout succeeded."
+  }
+]

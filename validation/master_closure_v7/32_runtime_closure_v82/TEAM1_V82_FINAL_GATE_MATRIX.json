@@ -1,0 +1,64 @@
+{
+  "closure_matrix": {
+    "G01": {
+      "name": "baseline integrity",
+      "status": "PASS",
+      "evidence": "Repository state verified, commit c63da123077c22612cdbfffe4f075da8f7b6cc12 preserved."
+    },
+    "G02": {
+      "name": "model artifact provenance",
+      "status": "PASS",
+      "evidence": "Artifact retinaguard_resnet18.onnx provided and copied to model/ path."
+    },
+    "G03": {
+      "name": "model hash verification",
+      "status": "PASS",
+      "evidence": "SHA-256 matched exactly (c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f)."
+    },
+    "G04": {
+      "name": "model load",
+      "status": "PASS",
+      "evidence": "onnxruntime-node successfully loaded the model. Session initialized with status READY."
+    },
+    "G05": {
+      "name": "real inference",
+      "status": "BLOCKED",
+      "evidence": "While inference script runs, the application's actual inference API boundary cannot execute due to SQLite failure blocking the backend server."
+    },
+    "G06": {
+      "name": "API runtime",
+      "status": "BLOCKED",
+      "evidence": "Server throws 'Could not locate the bindings file' for better-sqlite3."
+    },
+    "G07": { "name": "API schemas", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G08": { "name": "clinical validity", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G09": { "name": "quality heuristics", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G10": { "name": "latency bounds", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G11": { "name": "throughput bounds", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G12": { "name": "API runtime", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G13": { "name": "case lifecycle", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G14": { "name": "technician browser E2E", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G15": { "name": "reviewer browser E2E", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G16": { "name": "offline persistence", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G17": { "name": "reconnect/sync", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G18": { "name": "traceability", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G19": { "name": "abstention", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G20": { "name": "review idempotency", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G21": { "name": "reporting", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G22": { "name": "RBAC", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G23": { "name": "audit trail", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G24": { "name": "state machine", "status": "BLOCKED", "evidence": "Blocked by G06" },
+    "G25": { "name": "system isolation", "status": "BLOCKED", "evidence": "Blocked by G28" },
+    "G26": { "name": "regression suite", "status": "BLOCKED", "evidence": "Blocked by G28 toolchain failure" },
+    "G27": {
+      "name": "Team 2 handoff",
+      "status": "PASS",
+      "evidence": "Login.tsx fix independently verified in V8.1."
+    },
+    "G28": {
+      "name": "genuine clean-room verification",
+      "status": "BLOCKED",
+      "evidence": "npm ci failed due to better-sqlite3 build failure on Node v24.14.0."
+    }
+  }
+}

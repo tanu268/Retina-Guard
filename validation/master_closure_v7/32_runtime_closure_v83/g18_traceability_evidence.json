@@ -1,0 +1,7 @@
+{
+  "patientId": "ce5089b5-7403-4097-8d43-b95463ebf4dd",
+  "consultId": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+  "imageId": "b444e8dc-0b5f-40d8-b4d6-7de5f6e4d7f0",
+  "caseUuid": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+  "modelVersion": "retinaguard-resnet18-384-mvp"
+}

@@ -20,9 +20,9 @@ import type { Role } from '../../types';
 import HoverRevealCards from '../../components/ui/cards';
 
 const ROLES: { id: Exclude<Role, 'district'>; label: string; blurb: string; icon: typeof ScanEye; image: string }[] = [
-  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye, image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop' },
-  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope, image: 'https://images.unsplash.com/photo-1584982751601-97d883f510f4?q=80&w=800&auto=format&fit=crop' },
-  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog, image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop' },
+  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye, image: '/img/technician.jpg' },
+  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope, image: '/img/ophthalmologist.jpg' },
+  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog, image: '/img/administrator.jpg' },
 ];
 
 export default function Login() {
@@ -86,25 +86,17 @@ export default function Login() {
 
         <div className="mt-10">
           <HoverRevealCards 
-            items={ROLES.map(({ id, label, blurb, icon: Icon, image }) => ({
+            items={ROLES.map(({ id, label, blurb, icon, image }) => ({
               id,
               title: label,
               subtitle: blurb,
               imageUrl: image,
-              icon: (
-                <span className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 rounded-lg text-white backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-              )
+              icon: icon,
+              onClick: () => chooseRole(id as Exclude<Role, 'district'>)
             }))}
-            onItemClick={(id) => chooseRole(id as Exclude<Role, 'district'>)}
           />
         </div>
 
-        <p className="mt-10 flex items-center gap-2 font-ui text-[13px] text-[var(--color-ink-subtle)]">
-          <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
-          AI-assisted screening aid — every result requires human review.
-        </p>
       </div>
     </div>
   );

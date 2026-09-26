@@ -1,0 +1,128 @@
+[
+  {
+    "gate": "G12",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to MATLAB_MOCK=true in the runtime identity. The environment did not execute the real runtime dependency graph."
+  },
+  {
+    "gate": "G13",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G14",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_BROWSER",
+    "evidence": ["runtime_identity.json", "g14_browser_evidence/g14_technician_flow_fix_1790412053384.webp"],
+    "verification_method": "Browser recording reviewed alongside runtime identity.",
+    "independent_recheck": true,
+    "notes": "Downgraded because the browser interacted with a backend running MATLAB_MOCK=true."
+  },
+  {
+    "gate": "G15",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_BROWSER",
+    "evidence": ["runtime_identity.json", "g15_browser_evidence/g15_reviewer_flow_1790412869617.webp"],
+    "verification_method": "Browser recording reviewed alongside runtime identity.",
+    "independent_recheck": true,
+    "notes": "Downgraded because the browser interacted with a backend running MATLAB_MOCK=true."
+  },
+  {
+    "gate": "G16",
+    "status": "BLOCKED",
+    "runtime_type": "REAL_BROWSER",
+    "evidence": [],
+    "verification_method": "Environment constraint analysis.",
+    "independent_recheck": true,
+    "notes": "Cannot reliably sever API connection while maintaining Vite dev server and CDP control connection in this environment."
+  },
+  {
+    "gate": "G17",
+    "status": "BLOCKED",
+    "runtime_type": "REAL_BROWSER",
+    "evidence": [],
+    "verification_method": "Environment constraint analysis.",
+    "independent_recheck": true,
+    "notes": "Cannot reliably sever API connection while maintaining Vite dev server and CDP control connection in this environment."
+  },
+  {
+    "gate": "G18",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G19",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G20",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G21",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G22",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G23",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G24",
+    "status": "NOT_VERIFIED",
+    "runtime_type": "REAL_HTTP",
+    "evidence": ["runtime_identity.json"],
+    "verification_method": "Inspected runtime_identity.json.",
+    "independent_recheck": true,
+    "notes": "Downgraded due to mocked ML adapter."
+  },
+  {
+    "gate": "G28",
+    "status": "BLOCKED",
+    "runtime_type": "CLEAN_ROOM",
+    "evidence": ["g28_clean_room_manifest.json", "g28_clean_room_log.txt"],
+    "verification_method": "Reviewed clean-room installation logs.",
+    "independent_recheck": true,
+    "notes": "Backend npm install failed due to better-sqlite3 native build failing on Windows Node v24 (prebuilt binary unavailable and VS fallback failed)."
+  }
+]

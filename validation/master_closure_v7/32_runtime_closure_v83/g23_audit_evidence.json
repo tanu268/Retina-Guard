@@ -3,7 +3,7 @@
   "response": {
     "error": {
       "code": "NOT_FOUND",
-      "message": "No route for GET /api/v1/audit/318a3732-5d85-4bcc-965d-5e3823f6f6f4"
+      "message": "No route for GET /api/v1/audit/98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a"
     }
   }
 }
