@@ -20,7 +20,7 @@ GATES FAILING:
 G31_INDEPENDENT_AUDIT
 
 HUMAN ACTIONS REQUIRED:
-- GitHub PAT `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` MUST be manually verified for revocation in GitHub Developer Settings.
+- GitHub PAT `ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY` MUST be manually verified for revocation in GitHub Developer Settings.
 
 CRITICAL CONTRADICTIONS:
 - The executor marked the API integration gates (G12, G22) as "PASS", implying full real-world HTTP listener routing. However, the execution logs prove they were validated inside a `Supertest` harness connecting to an in-memory test database, which fails the strict standard for real integration testing.

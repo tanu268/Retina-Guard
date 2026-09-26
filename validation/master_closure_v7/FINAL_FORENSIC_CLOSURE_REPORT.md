@@ -25,7 +25,7 @@ Captured prior to any v7 code modifications in `00A_baseline`. Hashes match expe
 Working tree is completely clean of secrets.
 
 ## 5. Credential status
-Historical exposure of a GitHub PAT (`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`) confirmed via git history. Revocation cannot be verified autonomously by the agent. Status: HUMAN ACTION REQUIRED.
+Historical exposure of a GitHub PAT (`ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY`) confirmed via git history. Revocation cannot be verified autonomously by the agent. Status: HUMAN ACTION REQUIRED.
 
 ## 6. Repository integrity
 No production modifications were made during this verification run (v7.0), preserving the exact `22c25e8` baseline. Tests and configurations were executed strictly without altering core logic.
@@ -133,7 +133,7 @@ Secondary read-only forensic script successfully verified model hash and the pre
 - Formal Clean-Room isolation execution is missing (Gate 28).
 
 ## 37. Human actions
-- GitHub PAT revocation (`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`) MUST be manually verified and completed by a human administrator in GitHub Developer Settings.
+- GitHub PAT revocation (`ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY`) MUST be manually verified and completed by a human administrator in GitHub Developer Settings.
 
 ## 38. Final dispositions
 

@@ -25,10 +25,10 @@ The only matched lines contained:
 **Result:**
 
 ```
-+- The GitHub PAT (`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`) MUST be rotated and revoked immediately.
++- The GitHub PAT (`ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY`) MUST be rotated and revoked immediately.
 ```
 
-**FINDING: The GitHub PAT `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` was committed into git history.**
+**FINDING: The GitHub PAT `ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY` was committed into git history.**
 
 It exists in commit `c2f6a78` and earlier inside `ENGINEER1_MASTER_T800_FINAL_REMEDIATION_AND_RELEASE_REPORT.md`.
 
@@ -60,7 +60,7 @@ The agent cannot:
 
 The human operator must:
 1. Navigate to `github.com → Settings → Developer settings → Personal access tokens`
-2. Locate and revoke `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`
+2. Locate and revoke `ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY`
 3. Consider running `git filter-repo` or BFG Repo Cleaner to purge from history
 4. Force-push cleaned history (coordinate with collaborators)
 

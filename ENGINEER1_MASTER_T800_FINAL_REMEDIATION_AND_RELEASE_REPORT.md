@@ -36,7 +36,7 @@
 The repository is clinically identical to the FDA-cleared baseline. Testing infrastructure has been fully restored and real regressions have been repaired. E2E browser tests are constructed.
 
 ### REQUIRED MANUAL ACTION:
-- The GitHub PAT (`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`) MUST be rotated and revoked immediately.
+- The GitHub PAT (`ghp_REDACTED_TOKEN_SEE_GITHUB_SECURITY`) MUST be rotated and revoked immediately.
 
 # =====================================================================
 # END OF LINE.
