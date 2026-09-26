@@ -1,7 +1,9 @@
 # T-800 V8.5 Final Backend Reconciliation V2
 
 ## 1. Current HEAD
-Exact SHA: `569881518be75eb37c04dbf5cd69865cc8f310f8`
+Exact SHA at time of authoring: `569881518be75eb37c04dbf5cd69865cc8f310f8`
+
+> **Addendum (consistency pass):** This document was authored when HEAD was `5698815` but was committed as `51fe30d2e48879461cdc4c5968b477c6176c6d48`. The definitive reconciliation HEAD is `51fe30d`. This is a documentation-only lineage drift; no backend runtime source changed between these commits.
 
 ## 2. Original Runtime Evidence Commit
 Exact SHA: `36bf484a6ec7d468ab40f840ef7b67e7d88a278a` (recorded in `01_BASELINE.txt`)
