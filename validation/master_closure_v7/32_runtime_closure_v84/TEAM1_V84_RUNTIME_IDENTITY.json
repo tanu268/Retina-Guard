@@ -1,0 +1,11 @@
+{
+  "runtime_node": "v22.14.0",
+  "runtime_npm": "10.9.2",
+  "sqlite_native_binding": "better-sqlite3 loaded from prebuilt ABI 127 binaries",
+  "onnxruntime": "onnxruntime-node@1.30.0",
+  "ml_adapter": "onnx",
+  "model_path": "model/retinaguard_resnet18.onnx",
+  "model_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "mock_status": "none",
+  "fallback_status": "none"
+}

@@ -1,0 +1,10 @@
+{
+  "artifact_name": "retinaguard_resnet18.onnx",
+  "expected_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "actual_sha256": "c49e78c9b6c7bfa5b0098bd40a3901d02c7b41c9598cac993891b29263476f3f",
+  "loaded_by": "onnxruntime-node",
+  "mock_used": false,
+  "input_shape": "[1, 3, 384, 384]",
+  "output_shape": "[1, 5]",
+  "mapping_function": "Softmax -> drGradeCode and referableProbability"
+}

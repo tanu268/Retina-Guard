@@ -1,0 +1,6 @@
+{
+  "offline_sync": {
+    "status": "NOT_VERIFIED",
+    "reason": "Backend provides offline capabilities via SQLite and district sync endpoints. However, an authentic E2E browser offline transition simulation (service worker/IndexedDB) is a Team 2 frontend domain. As this run restricts evidence to actual executed backend facts, offline cannot be proven from this perspective alone."
+  }
+}
