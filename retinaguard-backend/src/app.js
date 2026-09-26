@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -27,6 +27,7 @@ const buildAuditRouter = require('./modules/audit/audit.routes');
 const buildAdminRouter = require('./modules/admin/admin.routes');
 const buildHealthRouter = require('./modules/health/health.routes');
 const buildCasesRouter = require('./modules/cases/cases.routes');
+const buildSimulationRouter = require('./modules/simulation/simulation.routes');
 
 /**
  * Builds the Express application. Pure function of `container` so the same
@@ -62,7 +63,7 @@ function buildApp(container) {
     config, edge, district, eventBus,
   };
 
-  // ── Swagger / OpenAPI ──────────────────────────────────────────────────
+  // â”€â”€ Swagger / OpenAPI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const openapiSpec = swaggerJsdoc({
     definition: swaggerDefinition,
     apis: [path.join(__dirname, 'modules', '**', '*.routes.js')],
@@ -72,7 +73,7 @@ function buildApp(container) {
     customSiteTitle: 'RetinaGuard API Docs',
   }));
 
-  // ── Routes ───────────────────────────────────────────────────────────────
+  // â”€â”€ Routes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   app.use('/health', buildHealthRouter(deps));
   app.use('/auth', buildAuthRouter(deps));
   app.use('/patients', buildPatientsRouter(deps));
@@ -86,6 +87,7 @@ function buildApp(container) {
   app.use('/audit', buildAuditRouter(deps));
   app.use('/admin', buildAdminRouter(deps));
   app.use('/api/v1', buildCasesRouter(deps));
+  app.use('/simulation', buildSimulationRouter(deps));
 
   app.get('/', (req, res) => {
     res.json({
@@ -101,3 +103,4 @@ function buildApp(container) {
 }
 
 module.exports = buildApp;
+

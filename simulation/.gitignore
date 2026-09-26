@@ -1,0 +1,12 @@
+﻿# MATLAB/Simulink build artifacts – never commit these
+simulink/scripts/slprj/
+simulink/scripts/slprj/**
+*.autosave
+*.slxc
+
+# Generated results (optional – remove this line to track results in git)
+simulink/experiments/latest_results.json
+
+# MATLAB crash/log files
+*.log
+crash_dump.log

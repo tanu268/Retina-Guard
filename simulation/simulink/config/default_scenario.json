@@ -1,0 +1,42 @@
+﻿{
+  "_comment": "RetinaGuard SimEvents default scenario configuration. All parameters match the verified Day 2 model.",
+  "scenario_name": "Default",
+  "simulation_stop_time_min": 480,
+  "n_replications": 10,
+  "seed_base": 1000,
+
+  "arrival": {
+    "interarrival_mean_min": 0.5,
+    "source": "MATLAB action (Exponential RNG)",
+    "assumption": "ASM-02"
+  },
+
+  "image_capture": {
+    "capacity_servers": 10,
+    "service_time_min": 5,
+    "assumption": "ASM-05"
+  },
+
+  "image_quality": {
+    "p_poor": 0.15,
+    "p_good": 0.85,
+    "rework_model": "absorbed into effective service time: t_eff = t / (1 - p_poor)",
+    "assumption": "ASM-01"
+  },
+
+  "ai_inference": {
+    "capacity_servers": "Inf",
+    "service_time_min": 3,
+    "p_normal": 0.70,
+    "p_referable": 0.20,
+    "p_uncertain": 0.10,
+    "assumption": "ASM-03"
+  },
+
+  "specialist_review": {
+    "capacity_reviewers": 2,
+    "service_time_min": 3,
+    "queue_capacity": "Inf",
+    "assumption": "ASM-05"
+  }
+}

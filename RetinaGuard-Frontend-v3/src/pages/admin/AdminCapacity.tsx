@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+﻿import { useMemo, useState } from 'react';
 import {
   Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
@@ -7,16 +7,17 @@ import { adminService, consultationService } from '../../services/api';
 import { formatNumber } from '../../lib/format';
 import { Alert, Card, Field, Input, SectionHeader } from '../../components/ui';
 import { MetricCard } from '../../components/clinical/indicators';
+import { SimulationCapacityPanel } from '../../components/clinical/SimulationCapacityPanel';
 import { IconAlert, IconBrain, IconClock, IconQueue, IconUsers } from '../../components/ui/icons';
 
-/* ═══════════════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Capacity planning.
 
    Every figure on this page is either MEASURED (from the API) or derived from
    an explicit ASSUMPTION the administrator sets below. Nothing is presented as
    a validated benchmark, because none of it has been validated at a real site.
    The provenance labels are part of the interface, not decoration.
-   ═══════════════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function ProvenanceTag({ kind }: { kind: 'MEASURED' | 'ASSUMPTION' | 'DERIVED' }) {
   const styles = {
@@ -183,6 +184,9 @@ export default function AdminCapacity() {
           </p>
         </Card>
       </div>
+
+      <SimulationCapacityPanel />
     </div>
   );
 }
+
