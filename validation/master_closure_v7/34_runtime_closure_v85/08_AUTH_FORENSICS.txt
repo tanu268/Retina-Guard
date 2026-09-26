@@ -1,0 +1,9 @@
+# TEAM 1 V8.5 AUTH FORENSICS
+
+## Evidence
+- Used `run_v85_api_tests.js` to systematically inject Authorization headers.
+- Test paths proven via live HTTP execution against Node backend.
+- Invalid tokens block access to `/api/v1/cases` and `/review/*`.
+- Authentication logic leverages actual JWT tokens validated securely on the backend.
+
+**STATUS**: PASS

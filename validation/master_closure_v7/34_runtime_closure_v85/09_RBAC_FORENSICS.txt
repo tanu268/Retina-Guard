@@ -1,0 +1,14 @@
+{
+  "unauth": {
+    "url": "/api/v1/queue",
+    "status": 401
+  },
+  "tech": {
+    "url": "/api/v1/queue",
+    "status": 403
+  },
+  "rev": {
+    "url": "/api/v1/queue",
+    "status": 200
+  }
+}

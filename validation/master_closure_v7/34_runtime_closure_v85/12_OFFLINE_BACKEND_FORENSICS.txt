@@ -1,0 +1,9 @@
+# TEAM 1 V8.5 OFFLINE BACKEND FORENSIC
+
+## Evidence
+- The backend offers Sync/Queueing APIs for offline capabilities.
+- Backend handles duplicates idempotently when they re-sync.
+- Actual browser offline guarantees (Service Worker/IndexedDB) remain the responsibility of Team 2.
+- The Backend safely persists queued state upon receipt without corruption.
+
+**STATUS**: NOT_VERIFIED (Delegated to Frontend Team 2)

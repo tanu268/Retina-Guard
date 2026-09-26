@@ -1,0 +1,9 @@
+{
+  "status": 409,
+  "response": {
+    "error": {
+      "code": "CLINICAL_SAFETY_VIOLATION",
+      "message": "Report generation is restricted to reviewed cases. Current status is 'awaiting_review'."
+    }
+  }
+}

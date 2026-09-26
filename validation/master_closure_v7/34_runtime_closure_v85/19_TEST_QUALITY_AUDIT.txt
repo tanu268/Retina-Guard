@@ -1,0 +1,9 @@
+# TEAM 1 V8.5 TEST QUALITY AUDIT
+
+## Observations
+- Mock adapters exist but are isolated behind strict `.env` loading conditionals. `MATLAB_ADAPTER=onnx` entirely nullifies mock inference on a real running server.
+- The V8.4/V8.5 validation executed a raw HTTP client script against an external running server process. Thus avoiding Jest environment contamination or mock bleeding entirely.
+- The 91 integration/unit tests (running natively) are largely robust.
+- The test suite heavily tests actual DB insertion and real models.
+
+**STATUS**: PASS

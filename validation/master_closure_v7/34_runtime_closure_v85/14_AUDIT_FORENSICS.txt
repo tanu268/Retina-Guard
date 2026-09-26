@@ -1,0 +1,9 @@
+{
+  "status": 404,
+  "response": {
+    "error": {
+      "code": "NOT_FOUND",
+      "message": "No route for GET /api/v1/audit/98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a"
+    }
+  }
+}

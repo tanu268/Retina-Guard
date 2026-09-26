@@ -1,0 +1,11 @@
+# TEAM 1 V8.5 FAILURE INJECTION
+
+## Injections Tested
+- Used `run_v85_api_tests.js` to execute failure paths:
+    - Attempted API requests with missing Auth (yielded 401).
+    - Attempted Report generation on incomplete Case state (yielded 409).
+    - Passed invalid UUID formatting (yielded 404/422).
+    - Terminated Node.js Process while testing state-saving constraints (DB did not corrupt).
+- The REST API correctly sanitizes outputs and doesn't leak SQL stack-traces or internal filesystem mapping logic.
+
+**STATUS**: PASS

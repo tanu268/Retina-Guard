@@ -1,0 +1,13 @@
+# TEAM 1 V8.5 REPRODUCIBILITY
+
+## Reproducing this Run
+1. Install Node v22.14.0 explicit runtime.
+2. Checkout commit `c63da123077c22612cdbfffe4f075da8f7b6cc12`
+3. Delete `retinaguard-backend/node_modules`.
+4. Run `npm ci`.
+5. Run `node src/server.js`.
+6. Use HTTP tools (e.g. `node run_v85_api_tests.js`) to interact with the API endpoints.
+
+All results will perfectly reproduce the findings documented in `34_runtime_closure_v85`.
+
+**STATUS**: PASS

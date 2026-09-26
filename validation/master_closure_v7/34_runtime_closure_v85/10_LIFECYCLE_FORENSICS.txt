@@ -1,0 +1,14 @@
+{
+  "states": [
+    {
+      "stage": "after_analysis",
+      "case_uuid": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+      "status": "awaiting_review"
+    },
+    {
+      "stage": "after_review",
+      "case_uuid": "98ca78ba-bcb4-47fa-8b17-4ae3924c5b1a",
+      "status": "unknown"
+    }
+  ]
+}

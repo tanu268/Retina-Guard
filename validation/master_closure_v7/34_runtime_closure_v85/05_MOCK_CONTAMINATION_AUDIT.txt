@@ -1,0 +1,16 @@
+# TEAM 1 V8.5 MOCK CONTAMINATION AUDIT
+
+## Findings:
+The source tree contains `mockAdapter.js`, `MockMatlabAdapter.js`, etc.
+However, `.env` and `src/config/index.js` require `MATLAB_ADAPTER` to select the mock.
+In this environment, `MATLAB_ADAPTER=onnx`, which is verified to invoke the real `onnxAdapter.js`.
+The `onnxAdapter.js` connects directly to `onnxruntime-node`.
+
+## Classification:
+- `src/matlab/adapters/mockAdapter.js` -> SAFE (Not Loaded)
+- `src/matlab/adapters/MockMatlabAdapter.js` -> SAFE (Not Loaded)
+- `tests/*` -> TEST-ONLY (Only used for unit testing isolated units, not E2E HTTP validation)
+
+## Conclusion:
+No mock contamination in the real HTTP runtime path under current configuration.
+STATUS: SAFE.

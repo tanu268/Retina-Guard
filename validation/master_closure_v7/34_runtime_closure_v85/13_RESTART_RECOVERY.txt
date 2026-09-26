@@ -1,0 +1,13 @@
+# TEAM 1 V8.5 RESTART RECOVERY
+
+## Action
+1. Started backend daemon on Port 4000.
+2. Simulated technician login, created case `98ca78ba-...` via HTTP POST.
+3. Terminated the Node.js process using SIGKILL.
+4. Restarted Node.js backend daemon.
+5. Sent HTTP GET to `/api/v1/cases/98ca78ba-...`.
+
+## Observation
+Case still exists. State `awaiting_review` is preserved. Audit logs are intact. No data corruption observed.
+
+**STATUS**: PASS

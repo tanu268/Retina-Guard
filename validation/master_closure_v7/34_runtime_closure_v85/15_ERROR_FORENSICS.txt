@@ -1,0 +1,13 @@
+# TEAM 1 V8.5 ERROR FORENSICS
+
+## Tested Error Paths (HTTP API)
+- `401 Unauthorized`: Sent requests without tokens.
+- `403 Forbidden`: Sent reviewer requests with a technician token.
+- `422 Unprocessable Entity`: Sent incomplete payloads for review decisions.
+- `409 Conflict`: Attempted state transitions that are invalid (e.g. reporting on `awaiting_review`).
+- `404 Not Found`: Searched for non-existent case UUIDs.
+
+## Observation
+The API handles these gracefully without leaking stack traces or `.env` configuration details. JSON error formats are stable.
+
+**STATUS**: PASS

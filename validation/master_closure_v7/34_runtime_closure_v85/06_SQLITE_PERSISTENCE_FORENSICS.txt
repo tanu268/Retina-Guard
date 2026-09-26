@@ -1,0 +1,13 @@
+# TEAM 1 V8.5 SQLITE PERSISTENCE FORENSICS
+
+## Evidence
+- Database file located at `retinaguard-backend/data/retinaguard.db`.
+- Using `better-sqlite3` natively compiled for Node v22.14.0 (ABI 127).
+- Persistent writes verified (not `:memory:`).
+
+## Lifecycle test execution proof:
+- Created cases are written to the `.db` file and size increased.
+- Server restart correctly maintains case states and audit trails.
+- Foreign keys and schema migrations executed correctly on initial startup.
+
+**STATUS**: PASS
