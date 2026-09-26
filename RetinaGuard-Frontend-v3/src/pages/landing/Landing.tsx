@@ -71,23 +71,23 @@ function SectionHeader({
 const FEATURES = [
   {
     icon: Cpu,
-    title: 'AI-Powered Detection',
-    desc: 'Detect retinal abnormalities using an explainable deep learning pipeline.',
+    title: 'Three-Level Healthcare Workflow',
+    desc: 'Technicians capture, ophthalmologists validate, and administrators monitor the entire screening network.',
   },
   {
     icon: Layers,
-    title: 'Explainable Results',
-    desc: 'Heatmaps and lesion evidence help clinicians understand every prediction.',
+    title: 'Intelligent Capture Guidance',
+    desc: 'Real-time voice and visual guidance helps technicians correct blur, glare, framing, and eyelid obstruction before capture.',
   },
   {
     icon: MapPin,
-    title: 'Rural Ready',
-    desc: 'Designed for PHCs, CHCs, district hospitals, and mobile screening camps.',
+    title: 'Priority-Based Review',
+    desc: 'Automatically prioritizes urgent and referable cases so ophthalmologists review the highest-risk patients first.',
   },
   {
     icon: Users,
-    title: 'Three-Level Healthcare Workflow',
-    desc: 'Technicians capture, ophthalmologists validate, and administrators monitor the entire screening network.',
+    title: 'Clinical Context Reports',
+    desc: 'Detailed, structured reports combine AI findings with patient history, helping ophthalmologists make faster, better-informed decisions.',
   },
 ];
 
@@ -209,7 +209,7 @@ export default function Landing() {
           className="mx-auto w-full max-w-7xl px-5 py-[var(--space-section)] sm:px-8"
         >
           <SectionHeader
-            label="Why RetinaGuard"
+            label="Why Unified Vision Intelligence"
             title="Built for Real-World Rural Screening"
             lead="A lightweight, explainable, and clinician-assisted platform designed to improve early diabetic retinopathy detection across India's healthcare ecosystem."
           />
