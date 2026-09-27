@@ -27,7 +27,7 @@ class OnnxAdapter {
       this.modelPath = path.resolve(modelName);
     } else {
       // Fallback to model directory
-      this.modelPath = path.resolve(__dirname, '../../../../model', modelName);
+      this.modelPath = path.resolve(__dirname, '../../../model', modelName);
     }
 
     // Fail-closed pre-flight: if the artifact is not on disk, mark the adapter

@@ -13,16 +13,16 @@ const env = import.meta.env;
 
 const DEMO_CREDENTIALS: Record<string, { username: string; password: string }> = {
   technician: {
-    username: env.VITE_DEMO_TECH_USER || 'tanu.tech',
-    password: env.VITE_DEMO_TECH_PASS || 'Tech#Rural2026',
+    username: env.VITE_DEMO_TECH_USER || '',
+    password: env.VITE_DEMO_TECH_PASS || '',
   },
   reviewer: {
-    username: env.VITE_DEMO_REVIEWER_USER || 'reviewer.doc',
-    password: env.VITE_DEMO_REVIEWER_PASS || 'Review#Doc2026',
+    username: env.VITE_DEMO_REVIEWER_USER || '',
+    password: env.VITE_DEMO_REVIEWER_PASS || '',
   },
   admin: {
-    username: env.VITE_DEMO_ADMIN_USER || 'admin',
-    password: env.VITE_DEMO_ADMIN_PASS || 'AdminRG#2026Secure',
+    username: env.VITE_DEMO_ADMIN_USER || '',
+    password: env.VITE_DEMO_ADMIN_PASS || '',
   },
 };
 
