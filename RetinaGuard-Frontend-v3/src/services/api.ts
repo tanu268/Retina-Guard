@@ -138,6 +138,10 @@ export const imageService = {
   remove(id: string) {
     return http.delete<{ deleted: boolean }>(`/images/${id}`);
   },
+
+  download(id: string): Promise<Blob> {
+    return http.get<Blob>(`/images/${id}/download`, { accept: 'application/octet-stream' });
+  },
 };
 
 // ── Analysis ──────────────────────────────────────────────────────────────

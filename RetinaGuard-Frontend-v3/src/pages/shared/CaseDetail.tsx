@@ -91,6 +91,32 @@ export default function CaseDetail() {
 
   const primaryImage = (images ?? []).find((i) => i.status !== 'superseded') ?? null;
 
+  const [blobUrl, setBlobUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!primaryImage) {
+      setBlobUrl(null);
+      return;
+    }
+    let cancelled = false;
+    let url: string | null = null;
+
+    imageService.download(primaryImage.id)
+      .then((blob) => {
+        if (cancelled) return;
+        url = URL.createObjectURL(blob);
+        setBlobUrl(url);
+      })
+      .catch(() => {
+        if (!cancelled) setBlobUrl(null);
+      });
+
+    return () => {
+      cancelled = true;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [primaryImage?.id]);
+
   return (
     <div className="space-y-6">
       <Button variant="ghost" size="sm" onClick={() => navigate('/app/cases')} icon={<IconArrowLeft size={15} />}>
@@ -122,6 +148,7 @@ export default function CaseDetail() {
                 anatomy={analysis.anatomy}
                 lesions={analysis.lesions}
                 gradcamRegions={layers?.gradcam?.payload?.regions ?? null}
+                imageUrl={blobUrl}
                 seed={analysis.id.charCodeAt(0) * 31 + analysis.id.charCodeAt(1)}
               />
               <Divider className="!my-5" />

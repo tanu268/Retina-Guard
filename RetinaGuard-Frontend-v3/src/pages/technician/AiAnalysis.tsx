@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
 import { analysisService, consultationService, imageService, casesService } from '../../services/api';
@@ -45,6 +45,32 @@ export default function AiAnalysis() {
     (i) => i.status !== 'superseded' && i.quality_grade !== 'C',
   );
   const primary: ImageRecord | null = gradeable[0] ?? null;
+
+  const [blobUrl, setBlobUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!primary) {
+      setBlobUrl(null);
+      return;
+    }
+    let cancelled = false;
+    let url: string | null = null;
+
+    imageService.download(primary.id)
+      .then((blob) => {
+        if (cancelled) return;
+        url = URL.createObjectURL(blob);
+        setBlobUrl(url);
+      })
+      .catch(() => {
+        if (!cancelled) setBlobUrl(null);
+      });
+
+    return () => {
+      cancelled = true;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [primary?.id]);
 
   const runAnalysis = useCallback(async () => {
     if (!primary || !consultationId) return;
@@ -233,6 +259,7 @@ export default function AiAnalysis() {
                 anatomy={analysis.anatomy}
                 lesions={analysis.lesions}
                 gradcamRegions={layers?.gradcam?.payload?.regions ?? null}
+                imageUrl={blobUrl}
                 seed={analysis.id.charCodeAt(0) * 31 + analysis.id.charCodeAt(1)}
                 initialLayers={['gradcam']}
               />

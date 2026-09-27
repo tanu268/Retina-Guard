@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
 import { analysisService, imageService, reviewService } from '../../services/api';
-import { HttpError } from '../../lib/http';
+import { HttpError, API_BASE } from '../../lib/http';
 import { cx, formatPercent, isTrue } from '../../lib/format';
 import {
   DR_GRADES, REFERRAL_URGENCIES, REVIEW_DECISIONS, gradeByCode, lintClinicalText,
@@ -91,6 +91,32 @@ export default function ReviewWorkspace() {
   }, [analysis, reviewerGrade]);
 
   const primaryImage = (images ?? []).find((i) => i.status !== 'superseded') ?? null;
+
+  const [blobUrl, setBlobUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!primaryImage) {
+      setBlobUrl(null);
+      return;
+    }
+    let cancelled = false;
+    let url: string | null = null;
+
+    imageService.download(primaryImage.id)
+      .then((blob) => {
+        if (cancelled) return;
+        url = URL.createObjectURL(blob);
+        setBlobUrl(url);
+      })
+      .catch(() => {
+        if (!cancelled) setBlobUrl(null);
+      });
+
+    return () => {
+      cancelled = true;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [primaryImage?.id]);
 
   const aiGrade = analysis?.dr_grade_code ?? null;
   const isOverride = reviewerGrade !== null && aiGrade !== null && reviewerGrade !== aiGrade;
@@ -206,6 +232,7 @@ export default function ReviewWorkspace() {
               anatomy={analysis?.anatomy ?? null}
               lesions={analysis?.lesions ?? null}
               gradcamRegions={layers?.gradcam?.payload?.regions ?? null}
+              imageUrl={blobUrl}
               seed={analysis ? analysis.id.charCodeAt(0) * 31 + analysis.id.charCodeAt(1) : 42}
               initialLayers={['gradcam', 'anatomy']}
             />
@@ -407,12 +434,14 @@ export default function ReviewWorkspace() {
 
               {isOverride && (
                 <Field
+                  htmlFor="rev-overrideReason"
                   label="Override reason"
                   error={overrideViolations.length > 0
                     ? `Prohibited term: ${overrideViolations.map((v) => v.term).join(', ')}`
                     : null}
                 >
                   <Textarea
+                    id="rev-overrideReason"
                     value={overrideReason}
                     onChange={(e) => setOverrideReason(e.target.value)}
                     placeholder="What did you see that the model did not?"
@@ -424,6 +453,7 @@ export default function ReviewWorkspace() {
               )}
 
               <Field
+                htmlFor="rev-clinicalNotes"
                 label="Clinical notes"
                 hint="Screening language only — this text is linted before it is stored"
                 error={noteViolations.length > 0
@@ -431,6 +461,7 @@ export default function ReviewWorkspace() {
                   : null}
               >
                 <Textarea
+                  id="rev-clinicalNotes"
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Observations relevant to the decision"

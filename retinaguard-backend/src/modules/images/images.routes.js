@@ -63,6 +63,7 @@ function buildImagesRouter(deps) {
    *       409: { description: Image already analysed — part of the case record }
    */
   router.get('/:id', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.get);
+  router.get('/:id/download', auth, authorize('technician', 'reviewer', 'district', 'admin'), controller.download);
   router.delete('/:id', auth, authorize('technician'), controller.remove);
 
   /**

@@ -32,7 +32,30 @@ function buildImagesController({ imageService }) {
     res.status(200).json(result);
   });
 
-  return { upload, get, listByConsultation, remove };
+  const download = asyncHandler(async (req, res) => {
+    const image = await imageService.get(req.params.id);
+    if (!image) throw new NotFoundError('Image not found');
+
+    const { config } = require('../../config');
+    const path = require('path');
+    const fs = require('fs');
+
+    const absPath = path.resolve(config.uploads.dir, image.file_path);
+    // Path traversal prevention: ensure the resolved path stays within uploadDir
+    if (!absPath.startsWith(path.resolve(config.uploads.dir))) {
+      throw new ValidationError('Invalid path');
+    }
+
+    if (!fs.existsSync(absPath)) {
+      throw new NotFoundError('Image file missing from disk');
+    }
+
+    res.setHeader('Content-Type', 'application/octet-stream');
+    const stream = fs.createReadStream(absPath);
+    stream.pipe(res);
+  });
+
+  return { upload, get, listByConsultation, remove, download };
 }
 
 module.exports = buildImagesController;
