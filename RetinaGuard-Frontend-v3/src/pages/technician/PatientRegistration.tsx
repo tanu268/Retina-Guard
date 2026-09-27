@@ -7,7 +7,7 @@ import { cx } from '../../lib/format';
 import {
   Alert, Button, Card, Divider, Field, Input, SectionHeader, Select,
 } from '../../components/ui';
-import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck, IconUserPlus } from '../../components/ui/icons';
+import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck } from '../../components/ui/icons';
 import type { CreatePatientRequest, Patient } from '../../types';
 
 /* ═══════════════════════════════════════════════════════════════════════════

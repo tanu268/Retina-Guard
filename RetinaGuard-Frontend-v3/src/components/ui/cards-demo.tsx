@@ -1,5 +1,4 @@
-import React from 'react';
-import HoverRevealCards, { CardItem } from './cards';
+import HoverRevealCards, { type CardItem } from './cards';
 
 const demoItems: CardItem[] = [
   {

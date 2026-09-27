@@ -1,4 +1,3 @@
-import * as React from "react";
 import { ResourceCardsGrid } from "./resource-cards-grid";
 import type { ResourceCardItem } from "./resource-cards-grid";
 

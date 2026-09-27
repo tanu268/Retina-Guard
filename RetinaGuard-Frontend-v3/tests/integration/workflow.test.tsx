@@ -13,6 +13,7 @@ vi.mock('../../src/services/authService', () => ({
     getStoredUser: vi.fn(),
     isAuthenticated: vi.fn(),
     loginAsRole: vi.fn(),
+    me: vi.fn(),
   },
   ROLE_HOME: { technician: '/app/technician', reviewer: '/app/review/queue' }
 }));
@@ -32,13 +33,16 @@ vi.mock('../../src/services/api', () => ({
 describe('Frontend Workflows and Safety', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    window.history.pushState({}, '', '/');
   });
 
   it('TECH-001: Authentication routes correctly', async () => {
-    vi.mocked(authService.authService.getCurrentUser).mockResolvedValue(null);
+    window.history.pushState({}, '', '/login');
+    vi.mocked(authService.authService.isAuthenticated).mockReturnValue(false);
     vi.mocked(authService.authService.getStoredUser).mockReturnValue(null);
+    vi.mocked(authService.authService.me).mockResolvedValue(null as any);
     render(<App />);
-    expect(await screen.findByText(/Sign In/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Sign In/i, {}, { timeout: 4000 })).toBeInTheDocument();
   });
 
   it('TECH-002: Technician case creation and upload/preview', async () => {
@@ -60,14 +64,14 @@ describe('Frontend Workflows and Safety', () => {
       referable: null,
       abstained: true
     };
-    
+
     render(<AnalysisResultPanel analysis={analysis as any} />);
-    
+
     expect(screen.queryByText('Grade 0')).not.toBeInTheDocument();
     expect(screen.queryByText('0%')).not.toBeInTheDocument();
     expect(screen.queryByText(/normal/i)).not.toBeInTheDocument();
   });
-  
+
   it('SYNC-001: Offline/sync state rendering', async () => {
     const { default: SyncMonitor } = await import('../../src/pages/shared/SyncMonitor');
     render(

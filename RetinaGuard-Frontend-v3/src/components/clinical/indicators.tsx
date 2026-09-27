@@ -7,7 +7,6 @@ import {
 import type {
   AbstainReason, ConsultationStatus, DrGradeCode, QualityGrade, SqlBool, SyncState, TriagePriority,
 } from '../../types';
-import { GlowCard } from '../ui/spotlight-card';
 import { IconAlert, IconCheck, IconClock, IconSync, IconWifiOff } from '../ui/icons';
 
 /* ═══════════════════════════════════════════════════════════════════════════

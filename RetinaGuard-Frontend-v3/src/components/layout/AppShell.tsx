@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useSync } from '../../contexts/SyncContext';
-import { cx, initials, titleCase } from '../../lib/format';
+import { cx, initials } from '../../lib/format';
 import type { Role } from '../../types';
 import { Button } from '../ui';
 import { SyncIndicator } from '../clinical/indicators';

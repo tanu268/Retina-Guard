@@ -91,13 +91,9 @@ export default function Login() {
               title: label,
               subtitle: blurb,
               imageUrl: image,
-              icon: (
-                <span className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 rounded-lg text-white backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-              )
+              icon: Icon,
+              onClick: () => chooseRole(id as Exclude<Role, 'district'>)
             }))}
-            onItemClick={(id) => chooseRole(id as Exclude<Role, 'district'>)}
           />
         </div>
 
