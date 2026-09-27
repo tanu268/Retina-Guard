@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
 import { cx } from '../../lib/format';
-import uviLogo from '../../assets/uvi-logo.png';
 
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },

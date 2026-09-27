@@ -7,7 +7,7 @@ import { cx } from '../../lib/format';
 import {
   Alert, Button, Card, Divider, Field, Input, SectionHeader, Select,
 } from '../../components/ui';
-import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck, IconUserPlus } from '../../components/ui/icons';
+import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck } from '../../components/ui/icons';
 import type { CreatePatientRequest, Patient } from '../../types';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -304,8 +304,9 @@ export default function PatientRegistration() {
           >
             {step.id === 'personal' && (
               <div className="space-y-5">
-                <Field label="Full name" required error={errors.fullName}>
+                <Field htmlFor="reg-fullName" label="Full name" required error={errors.fullName}>
                   <Input
+                    id="reg-fullName"
                     value={form.fullName}
                     onChange={(e) => set('fullName', e.target.value)}
                     placeholder="As stated by the patient"
@@ -314,15 +315,16 @@ export default function PatientRegistration() {
                   />
                 </Field>
                 <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Age" error={errors.age} hint="Years">
+                  <Field htmlFor="reg-age" label="Age" error={errors.age} hint="Years">
                     <Input
+                      id="reg-age"
                       type="number" min={0} max={120} value={form.age}
                       onChange={(e) => set('age', e.target.value)}
                       invalid={Boolean(errors.age)}
                     />
                   </Field>
-                  <Field label="Gender">
-                    <Select value={form.gender} onChange={(e) => set('gender', e.target.value)}>
+                  <Field htmlFor="reg-gender" label="Gender">
+                    <Select id="reg-gender" value={form.gender} onChange={(e) => set('gender', e.target.value)}>
                       <option value="">Not stated</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
@@ -337,12 +339,14 @@ export default function PatientRegistration() {
             {step.id === 'diabetes' && (
               <div className="space-y-5">
                 <Field
+                  htmlFor="reg-diabetesHistory"
                   label="Diabetes history"
                   required
                   error={errors.diabetesHistory}
                   hint="Select Unknown if the patient is unsure — it is a real answer, not a blank."
                 >
                   <Select
+                    id="reg-diabetesHistory"
                     value={form.diabetesHistory}
                     onChange={(e) => setDiabetesHistory(e.target.value)}
                     invalid={Boolean(errors.diabetesHistory)}
@@ -360,24 +364,26 @@ export default function PatientRegistration() {
                       Duration and HbA1c help a reviewer interpret a borderline result.
                     </p>
                     <div className="grid gap-5 sm:grid-cols-2">
-                      <Field label="Diabetes type">
-                        <Select value={form.diabetesType} onChange={(e) => set('diabetesType', e.target.value)}>
+                      <Field htmlFor="reg-diabetesType" label="Diabetes type">
+                        <Select id="reg-diabetesType" value={form.diabetesType} onChange={(e) => set('diabetesType', e.target.value)}>
                           <option value="">Not stated</option>
                           <option value="type1">Type 1</option>
                           <option value="type2">Type 2</option>
                           <option value="gestational">Gestational</option>
                         </Select>
                       </Field>
-                      <Field label="Duration" hint="Years since diagnosis" error={errors.diabetesDurationYears}>
+                      <Field htmlFor="reg-diabetesDurationYears" label="Duration" hint="Years since diagnosis" error={errors.diabetesDurationYears}>
                         <Input
+                          id="reg-diabetesDurationYears"
                           type="number" min={0} max={90} value={form.diabetesDurationYears}
                           onChange={(e) => set('diabetesDurationYears', e.target.value)}
                           invalid={Boolean(errors.diabetesDurationYears)}
                         />
                       </Field>
                     </div>
-                    <Field label="HbA1c" hint="Percentage, if a recent reading is available" error={errors.hba1c}>
+                    <Field htmlFor="reg-hba1c" label="HbA1c" hint="Percentage, if a recent reading is available" error={errors.hba1c}>
                       <Input
+                        id="reg-hba1c"
                         type="number" step="0.1" min={3} max={20} value={form.hba1c}
                         onChange={(e) => set('hba1c', e.target.value)}
                         className="max-w-[200px]"
@@ -396,8 +402,9 @@ export default function PatientRegistration() {
 
             {step.id === 'contact' && (
               <div className="space-y-5">
-                <Field label="Phone number" error={errors.phone} hint="Used to match against existing records">
+                <Field htmlFor="reg-phone" label="Phone number" error={errors.phone} hint="Used to match against existing records">
                   <Input
+                    id="reg-phone"
                     type="tel" value={form.phone}
                     onChange={(e) => set('phone', e.target.value)}
                     placeholder="10-digit mobile"
@@ -407,8 +414,9 @@ export default function PatientRegistration() {
                 {geoError && <Alert tone="warning" title="Location list unavailable">{geoError}</Alert>}
 
                 <div className="grid gap-5 sm:grid-cols-3">
-                  <Field label="State" error={errors.state}>
+                  <Field htmlFor="reg-state" label="State" error={errors.state}>
                     <Select
+                      id="reg-state"
                       value={form.state}
                       onChange={(e) => setState(e.target.value)}
                       invalid={Boolean(errors.state)}
@@ -420,11 +428,13 @@ export default function PatientRegistration() {
                   </Field>
 
                   <Field
+                    htmlFor="reg-district"
                     label="District"
                     error={errors.district}
                     hint={!form.state ? 'Select a state first' : undefined}
                   >
                     <Select
+                      id="reg-district"
                       value={form.district}
                       onChange={(e) => set('district', e.target.value)}
                       invalid={Boolean(errors.district)}
@@ -437,8 +447,8 @@ export default function PatientRegistration() {
 
                   {/* Village stays free text: India has ~640,000 villages and no
                       bundled list would stay current. See the migration notes. */}
-                  <Field label="Village" hint="As the patient states it">
-                    <Input value={form.village} onChange={(e) => set('village', e.target.value)} />
+                  <Field htmlFor="reg-village" label="Village" hint="As the patient states it">
+                    <Input id="reg-village" value={form.village} onChange={(e) => set('village', e.target.value)} />
                   </Field>
                 </div>
               </div>

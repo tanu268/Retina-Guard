@@ -19,10 +19,14 @@ import type { Role } from '../../types';
 
 import HoverRevealCards from '../../components/ui/cards';
 
+import technicianImg from '../../assets/Technician.jpeg';
+import reviewerImg from '../../assets/Opthmologist.jpeg';
+import adminImg from '../../assets/Administrator.jpeg';
+
 const ROLES: { id: Exclude<Role, 'district'>; label: string; blurb: string; icon: typeof ScanEye; image: string }[] = [
-  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye, image: '/img/technician.jpg' },
-  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope, image: '/img/ophthalmologist.jpg' },
-  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog, image: '/img/administrator.jpg' },
+  { id: 'technician', label: 'Technician', blurb: 'Register patients, capture retinal images, and submit cases for review.', icon: ScanEye, image: technicianImg },
+  { id: 'reviewer', label: 'Ophthalmologist', blurb: 'Validate AI findings against the evidence and issue the final report.', icon: Stethoscope, image: reviewerImg },
+  { id: 'admin', label: 'Administrator', blurb: 'Manage users, monitor capacity, and oversee the screening network.', icon: UserCog, image: adminImg },
 ];
 
 export default function Login() {
@@ -32,6 +36,7 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
 
   const chooseRole = async (role: Exclude<Role, 'district'>) => {
+    console.log('CHOOSEROLE TRIGGERED', role);
     setError(null);
     if (user?.role === role) {
       navigate(ROLE_HOME[role]);
@@ -86,17 +91,21 @@ export default function Login() {
 
         <div className="mt-10">
           <HoverRevealCards 
-            items={ROLES.map(({ id, label, blurb, icon, image }) => ({
+            items={ROLES.map(({ id, label, blurb, icon: Icon, image }) => ({
               id,
               title: label,
               subtitle: blurb,
               imageUrl: image,
-              icon: icon,
+              icon: Icon,
               onClick: () => chooseRole(id as Exclude<Role, 'district'>)
             }))}
           />
         </div>
 
+        <p className="mt-10 flex items-center gap-2 font-ui text-[13px] text-[var(--color-ink-subtle)]">
+          <ShieldCheck className="h-4 w-4" strokeWidth={1.75} />
+          AI-assisted screening aid — every result requires human review.
+        </p>
       </div>
     </div>
   );

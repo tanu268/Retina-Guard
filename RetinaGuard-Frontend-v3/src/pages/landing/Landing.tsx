@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Activity, BarChart3, Building2, CheckCircle2, ChevronRight, ClipboardList, Cpu, Database,
+  BarChart3, Building2, CheckCircle2, ChevronRight, ClipboardList, Cpu, Database,
   Eye, FileText, Layers, ListChecks, MapPin, ScanEye,
   ShieldCheck, Stethoscope, UserCog, UserPlus, Users,
 } from 'lucide-react';
@@ -11,7 +11,6 @@ import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
-import uviLogo from '../../assets/uvi-logo.png';
 import uviLogoFooter from '../../assets/uvi-logo-footer.jpg';
 
 /* ═══════════════════════════════════════════════════════════════════════════

@@ -174,14 +174,14 @@ export function Spinner({ size = 16, className }: { size?: number; className?: s
 // ── Form fields ───────────────────────────────────────────────────────────
 
 export function Field({
-  label, hint, error, required, children, className,
+  label, hint, error, required, children, className, htmlFor
 }: {
   label: string; hint?: string; error?: string | null;
-  required?: boolean; children: ReactNode; className?: string;
+  required?: boolean; children: ReactNode; className?: string; htmlFor?: string;
 }) {
   return (
     <div className={cx('flex flex-col gap-1.5', className)}>
-      <label className="text-[13px] font-medium text-slate-700">
+      <label htmlFor={htmlFor} className="text-[13px] font-medium text-slate-700">
         {label}
         {required && <span className="text-red-600 ml-0.5" aria-hidden="true">*</span>}
       </label>

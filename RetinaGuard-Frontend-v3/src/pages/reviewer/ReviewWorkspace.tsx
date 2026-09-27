@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '../../lib/query';
 import { analysisService, imageService, reviewService } from '../../services/api';
-import { HttpError, API_BASE } from '../../lib/http';
+import { HttpError } from '../../lib/http';
 import { cx, formatPercent, isTrue } from '../../lib/format';
 import {
   DR_GRADES, REFERRAL_URGENCIES, REVIEW_DECISIONS, gradeByCode, lintClinicalText,
