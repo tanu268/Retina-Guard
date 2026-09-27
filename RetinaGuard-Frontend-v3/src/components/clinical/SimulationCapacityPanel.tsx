@@ -1,7 +1,8 @@
-﻿import {
+import {
   Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
 import { useQuery } from '../../lib/query';
+import { http } from '../../lib/http';
 import { Card } from '../ui';
 import { MetricCard } from './indicators';
 import { IconAlert, IconBrain, IconQueue, IconUsers } from '../ui/icons';
@@ -11,11 +12,7 @@ import { IconAlert, IconBrain, IconQueue, IconUsers } from '../ui/icons';
  */
 const simulationApi = {
   results: async () => {
-    const res = await fetch('http://localhost:3000/simulation/results', {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    });
-    if (!res.ok) throw new Error('Failed to fetch simulation results');
-    return res.json();
+    return http.get<any>('/simulation/results');
   }
 };
 
