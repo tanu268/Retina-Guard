@@ -2,10 +2,13 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
+const { spawn } = require('child_process');
 const ort = require('onnxruntime-node');
 const { preprocessImage } = require('../preprocess');
 const logger = require('../../utils/logger');
 const { gradeByCode } = require('../../matlab/contracts');
+
+const GRADCAM_SCRIPT = path.resolve(__dirname, '../retinaguard_gradcam.py');
 
 // Set log level for ORT to reduce noise if needed
 ort.env.logLevel = 'warning';
@@ -154,12 +157,84 @@ class OnnxAdapter {
   }
 
   async generateGradCAM(req) {
-    return {
-      heatmapPath: null,
-      regions: [],
-      targetLayer: 'layer4',
-      peakIntensity: 0
-    };
+    // req: { imagePath, sha256, outputPath, drGradeCode }
+    const { imagePath, outputPath, drGradeCode } = req;
+
+    if (this.healthState !== 'READY') {
+      logger.warn({ adapter: this.name }, 'generateGradCAM skipped — adapter not READY');
+      return { heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
+               gradcamAvailable: false, gradcamUnavailableReason: 'ADAPTER_NOT_READY' };
+    }
+
+    if (!outputPath) {
+      logger.warn({ adapter: this.name }, 'generateGradCAM skipped — no outputPath provided');
+      return { heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
+               gradcamAvailable: false, gradcamUnavailableReason: 'NO_OUTPUT_PATH' };
+    }
+
+    // Ensure the target directory exists
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+    const classIdx = Number.isInteger(drGradeCode) ? drGradeCode : 0;
+
+    return new Promise((resolve) => {
+      const args = [
+        GRADCAM_SCRIPT,
+        '--model',  this.modelPath,
+        '--image',  imagePath,
+        '--class',  String(classIdx),
+        '--output', outputPath,
+        '--size',   '384',
+      ];
+
+      let stdout = '';
+      let stderr = '';
+      const proc = spawn('python3', args);
+      proc.stdout.on('data', (d) => { stdout += d.toString(); });
+      proc.stderr.on('data', (d) => { stderr += d.toString(); });
+
+      proc.on('close', (code) => {
+        let parsed = null;
+        try { parsed = JSON.parse(stdout.trim()); } catch { /* non-JSON output */ }
+
+        if (code !== 0 || !parsed?.cam_available) {
+          const reason = parsed?.reason || `EXIT_CODE_${code}`;
+          logger.warn({ adapter: this.name, reason, stderr: stderr.slice(0, 400) },
+            'Grad-CAM generation failed — explanation unavailable');
+          return resolve({
+            heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
+            gradcamAvailable: false, gradcamUnavailableReason: reason,
+          });
+        }
+
+        const peak = parsed.peak_yx_cam_space || [null, null];
+        logger.info({
+          adapter: this.name, class: classIdx, camShape: parsed.cam_shape,
+          peakY: peak[0], peakX: peak[1], inBorder: parsed.peak_in_border,
+        }, 'Grad-CAM generated');
+
+        resolve({
+          heatmapPath: outputPath,
+          regions: parsed.regions || [],
+          targetLayer: parsed.target_layer,
+          peakIntensity: parsed.cam_max != null ? parseFloat((parsed.cam_max).toFixed(4)) : null,
+          gradcamAvailable: true,
+          camShape: parsed.cam_shape,
+          overlaySize: parsed.overlay_size,
+          featureMapShape: parsed.feature_map_shape,
+          peakInBorder: parsed.peak_in_border,
+          classIdx,
+        });
+      });
+
+      proc.on('error', (err) => {
+        logger.error({ adapter: this.name, err: err.message }, 'Failed to spawn Grad-CAM process');
+        resolve({
+          heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
+          gradcamAvailable: false, gradcamUnavailableReason: 'SPAWN_ERROR',
+        });
+      });
+    });
   }
 
   /**

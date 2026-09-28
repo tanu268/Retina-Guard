@@ -26,7 +26,7 @@ function buildCasesController({
 }) {
   const createCase = asyncHandler(async (req, res) => {
     if (!req.file) throw new ValidationError('An image file is required (field name: image)');
-    const { patient_id, consultation_id, laterality, site_id, device_id } = req.body;
+    const { patient_id, consultation_id, laterality, site_id, device_id, identity_confirmed } = req.body;
 
     let consultationId = consultation_id;
     try {
@@ -35,7 +35,8 @@ function buildCasesController({
         const consultation = await consultationService.create({
           patientId: patient_id,
           siteId: site_id || 'DEFAULT_SITE',
-          deviceId: device_id || 'DEFAULT_DEVICE'
+          deviceId: device_id || 'DEFAULT_DEVICE',
+          identityConfirmed: identity_confirmed === 'true' || identity_confirmed === true
         }, req.user, req);
         consultationId = consultation.id;
         logger.info({ case_uuid: consultationId }, 'case.created');

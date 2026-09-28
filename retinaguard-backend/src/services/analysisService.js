@@ -144,6 +144,22 @@ class AnalysisService {
       sync_state: 'pending',
     });
 
+    const layers = [];
+    if (pipeline.gradcam) {
+      layers.push({ layer: 'gradcam', artifact_path: pipeline.gradcam.heatmapPath, artifact_type: 'png',
+        payload: { regions: pipeline.gradcam.regions, targetLayer: pipeline.gradcam.targetLayer, peakIntensity: pipeline.gradcam.peakIntensity } });
+    }
+    if (pipeline.lesionEvidence) {
+      layers.push({ layer: 'lesion', artifact_type: 'json',
+        payload: { lesions: pipeline.lesionEvidence.lesions, counts: pipeline.lesionEvidence.counts, totalLesions: pipeline.lesionEvidence.totalLesions } });
+    }
+    if (pipeline.anatomy) {
+      layers.push({ layer: 'anatomy', artifact_type: 'json', payload: pipeline.anatomy });
+    }
+    if (layers.length > 0) {
+      await this.explain.replaceForAnalysis(analysis.id, layers);
+    }
+
     await this.consultations.update(image.consultation_id, { status: 'awaiting_review', triage_priority: triagePriority });
     await this.sync.enqueue({ entityType: 'analysis_result', entityId: analysis.id, operation: 'update', payload: updated });
     await this.audit.record({
