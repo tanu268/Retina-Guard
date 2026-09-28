@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RetinaGuard Quality Annotation Schema",
+  "type": "object",
+  "properties": {
+    "image_id": {
+      "type": "string",
+      "description": "Unique identifier of the fundus image (e.g., APTOS ID)."
+    },
+    "source_split": {
+      "type": "string",
+      "enum": ["APTOS_TRAIN"],
+      "description": "Must be exclusively APTOS_TRAIN. Validation and test splits are strictly forbidden."
+    },
+    "annotator_id": {
+      "type": "string",
+      "description": "Unique identifier of the clinical annotator or adjudicator."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of annotation."
+    },
+    "annotation_version": {
+      "type": "string",
+      "description": "Version of the annotation protocol used."
+    },
+    "adjudication_status": {
+      "type": "string",
+      "enum": ["PRIMARY_1", "PRIMARY_2", "ADJUDICATED", "RE_GRADE"],
+      "description": "Indicates if this is an initial independent grade, an adjudication, or a quality-control re-grade."
+    },
+    "overall_grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "UNCERTAIN"],
+      "description": "A = acceptable, B = usable with limitations, C = ungradeable/reject, UNCERTAIN = annotator abstains."
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "field_coverage": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "focus_blur": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "fine_structure": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "illumination": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "exposure": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "contrast": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "colour_balance": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "landmark_visibility": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "artifact_burden": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "decodability": { "enum": ["PASS", "FAIL", "UNCERTAIN"] }
+      },
+      "required": [
+        "field_coverage", "focus_blur", "fine_structure", "illumination", 
+        "exposure", "contrast", "colour_balance", "landmark_visibility", 
+        "artifact_burden", "decodability"
+      ]
+    },
+    "rejection_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "insufficient_fov",
+          "severe_blur",
+          "fine_vessels_unresolved",
+          "severe_illumination_gradient",
+          "severe_underexposure",
+          "severe_overexposure",
+          "low_contrast_haze",
+          "severe_color_cast",
+          "landmark_not_visible",
+          "severe_artifact",
+          "corrupt_file"
+        ]
+      },
+      "description": "Explicit reasons for C-grade or B-grade assignments."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional clinical notes or justification."
+    }
+  },
+  "required": [
+    "image_id", "source_split", "annotator_id", "timestamp", 
+    "annotation_version", "adjudication_status", "overall_grade", 
+    "dimensions", "rejection_reasons"
+  ]
+}
