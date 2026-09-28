@@ -99,7 +99,7 @@ const WORKFLOW = [
       { icon: UserPlus, name: 'Register Patient', desc: 'Create a secure patient record with validated demographic information.' },
       { icon: Eye, name: 'Capture Retina', desc: 'Acquire left and right eye fundus images using the retinal camera.' },
       { icon: CheckCircle2, name: 'Quality Check', desc: 'Verify image quality before AI processing.' },
-      { icon: Cpu, name: 'AI Analysis', desc: 'Generate explainable predictions with lesion localization.' },
+      { icon: Cpu, name: 'AI Analysis', desc: 'Generate explainable predictions with AI attention visualization.' },
       { icon: ClipboardList, name: 'Submit for Review', desc: 'Forward prioritized cases to the ophthalmologist.' },
     ],
   },

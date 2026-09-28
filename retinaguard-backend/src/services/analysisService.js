@@ -104,8 +104,9 @@ class AnalysisService {
       sync_state: 'pending',
     });
 
+    const relativeGradcamPath = gradcam.heatmapPath ? path.relative(this.storage.root, gradcam.heatmapPath) : null;
     await this.explain.replaceForAnalysis(analysis.id, [
-      { layer: 'gradcam', artifact_path: gradcam.heatmapPath, artifact_type: 'png',
+      { layer: 'gradcam', artifact_path: relativeGradcamPath, artifact_type: 'png',
         payload: { regions: gradcam.regions, targetLayer: gradcam.targetLayer, peakIntensity: gradcam.peakIntensity } },
       { layer: 'lesion', artifact_type: 'json',
         payload: { lesions: lesionEvidence.lesions, counts: lesionEvidence.counts, totalLesions: lesionEvidence.totalLesions } },
@@ -146,7 +147,8 @@ class AnalysisService {
 
     const layers = [];
     if (pipeline.gradcam) {
-      layers.push({ layer: 'gradcam', artifact_path: pipeline.gradcam.heatmapPath, artifact_type: 'png',
+      const relativeGradcamPath = pipeline.gradcam.heatmapPath ? path.relative(this.storage.root, pipeline.gradcam.heatmapPath) : null;
+      layers.push({ layer: 'gradcam', artifact_path: relativeGradcamPath, artifact_type: 'png',
         payload: { regions: pipeline.gradcam.regions, targetLayer: pipeline.gradcam.targetLayer, peakIntensity: pipeline.gradcam.peakIntensity } });
     }
     if (pipeline.lesionEvidence) {

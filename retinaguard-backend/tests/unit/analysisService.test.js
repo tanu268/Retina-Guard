@@ -63,6 +63,10 @@ describe('AnalysisService', () => {
       expect(analysis.grade_probabilities).toHaveLength(5);
       const explain = await container.services.analysisService.getExplainability(analysis.id);
       expect(explain.gradcam).toBeTruthy();
+      if (explain.gradcam.artifact_path) {
+        expect(explain.gradcam.artifact_path).not.toMatch(/^\//);
+        expect(explain.gradcam.artifact_path).not.toMatch(/^[A-Za-z]:\\/);
+      }
       expect(explain.lesion).toBeTruthy();
       expect(explain.anatomy).toBeTruthy();
     } else {
