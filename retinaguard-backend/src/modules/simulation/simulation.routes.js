@@ -115,7 +115,69 @@ function buildSimulationRouter(deps) {
     })
   );
 
+
+  /**
+   * @openapi
+   * /simulation/run:
+   *   post:
+   *     tags: [Simulation]
+   *     summary: Execute a live MATLAB/SimEvents simulation run
+   *     description: >
+   *       Launches matlab -batch to run run_retinaguard_sim.m against the
+   *       RetinaGuard Day 2 SimEvents model. Waits for completion and returns
+   *       fresh results labelled source='live-matlab'.
+   *       Returns 503 if MATLAB is unavailable. Returns 409 if a run is already
+   *       in progress.
+   *     security: [{ bearerAuth: [] }]
+   *     responses:
+   *       200: { description: Fresh simulation results }
+   *       409: { description: Simulation already running }
+   *       500: { description: MATLAB execution failed }
+   *       503: { description: No results produced }
+   */
+  router.post(
+    '/run',
+    auth,
+    authorize('admin'),
+    asyncHandler(async (req, res) => {
+      if (svc.isRunning()) {
+        return res.status(409).json({
+          error: 'SIMULATION_ALREADY_RUNNING',
+          message: 'A simulation is already running. Please wait for it to complete.',
+        });
+      }
+      try {
+        const data     = await svc.runLiveSimulation();
+        const summaries = svc.getSummaries();
+        return res.json({
+          success:  true,
+          source:   data.source,
+          simulation: {
+            status:         'completed',
+            model:          'RetinaGuard_SimEvents_Day2',
+            scenario:       data.scenario  || summaries[0]?.name,
+            stop_time_min:  data.stop_time_min || 480,
+            n_replications: data.n_replications || null,
+            generated_at:   data.generated_at  || null,
+          },
+          summaries,
+          count: summaries.length,
+        });
+      } catch (err) {
+        if (err.message === 'SIMULATION_ALREADY_RUNNING') {
+          return res.status(409).json({ error: 'SIMULATION_ALREADY_RUNNING', message: err.message });
+        }
+        // MATLAB not found or execution failed – surface clearly, do NOT fake results
+        return res.status(500).json({
+          error:   'SIMULATION_FAILED',
+          message: err.message,
+          hint:    'Ensure MATLAB R2026a is installed and accessible. Set MATLAB_EXECUTABLE env var if needed.',
+        });
+      }
+    })
+  );
   return router;
 }
 
 module.exports = buildSimulationRouter;
+

@@ -1,4 +1,4 @@
-﻿{
+{
   "_comment": "RetinaGuard SimEvents default scenario configuration. All parameters match the verified Day 2 model.",
   "scenario_name": "Default",
   "simulation_stop_time_min": 480,
