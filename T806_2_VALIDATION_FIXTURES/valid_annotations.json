@@ -1,0 +1,69 @@
+[
+  {
+    "image_id": "test_1",
+    "source_split": "APTOS_TRAIN",
+    "annotator_id": "dr_smith",
+    "timestamp": "2026-09-28T12:00:00Z",
+    "annotation_version": "1.0",
+    "adjudication_status": "PRIMARY_1",
+    "overall_grade": "A",
+    "dimensions": {
+      "field_coverage": "PASS",
+      "focus_blur": "PASS",
+      "fine_structure": "PASS",
+      "illumination": "PASS",
+      "exposure": "PASS",
+      "contrast": "PASS",
+      "colour_balance": "PASS",
+      "landmark_visibility": "PASS",
+      "artifact_burden": "PASS",
+      "decodability": "PASS"
+    },
+    "rejection_reasons": []
+  },
+  {
+    "image_id": "test_2",
+    "source_split": "APTOS_TRAIN",
+    "annotator_id": "dr_smith",
+    "timestamp": "2026-09-28T12:05:00Z",
+    "annotation_version": "1.0",
+    "adjudication_status": "PRIMARY_1",
+    "overall_grade": "B",
+    "dimensions": {
+      "field_coverage": "PASS",
+      "focus_blur": "FAIL",
+      "fine_structure": "FAIL",
+      "illumination": "PASS",
+      "exposure": "PASS",
+      "contrast": "PASS",
+      "colour_balance": "PASS",
+      "landmark_visibility": "PASS",
+      "artifact_burden": "PASS",
+      "decodability": "PASS"
+    },
+    "rejection_reasons": ["severe_blur"]
+  },
+  {
+    "image_id": "test_3",
+    "source_split": "APTOS_TRAIN",
+    "annotator_id": "dr_jones",
+    "timestamp": "2026-09-28T12:10:00Z",
+    "annotation_version": "1.0",
+    "adjudication_status": "ADJUDICATED",
+    "adjudication_reason": "Clinician 1 marked blur, Clinician 2 marked usable. Adjudicator confirms Usable with blur.",
+    "overall_grade": "B",
+    "dimensions": {
+      "field_coverage": "PASS",
+      "focus_blur": "FAIL",
+      "fine_structure": "PASS",
+      "illumination": "PASS",
+      "exposure": "PASS",
+      "contrast": "PASS",
+      "colour_balance": "PASS",
+      "landmark_visibility": "PASS",
+      "artifact_burden": "PASS",
+      "decodability": "PASS"
+    },
+    "rejection_reasons": ["severe_blur"]
+  }
+]

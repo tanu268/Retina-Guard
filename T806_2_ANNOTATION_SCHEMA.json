@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "RetinaGuard Quality Annotation Schema",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "image_id": {
       "type": "string",
@@ -28,7 +29,11 @@
     "adjudication_status": {
       "type": "string",
       "enum": ["PRIMARY_1", "PRIMARY_2", "ADJUDICATED", "RE_GRADE"],
-      "description": "Indicates if this is an initial independent grade, an adjudication, or a quality-control re-grade."
+      "description": "PRIMARY_1/2: initial independent grade. ADJUDICATED: resolved by senior clinician. RE_GRADE: blind 10% intra-rater re-annotation."
+    },
+    "adjudication_reason": {
+      "type": "string",
+      "description": "Explicit clinical rationale for the adjudication decision. Required if adjudication_status is ADJUDICATED."
     },
     "overall_grade": {
       "type": "string",
@@ -37,21 +42,22 @@
     },
     "dimensions": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
-        "field_coverage": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "focus_blur": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "fine_structure": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "illumination": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "exposure": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "contrast": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "colour_balance": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "landmark_visibility": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "artifact_burden": { "enum": ["PASS", "FAIL", "UNCERTAIN"] },
-        "decodability": { "enum": ["PASS", "FAIL", "UNCERTAIN"] }
+        "field_coverage": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "focus_blur": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "fine_structure": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "illumination": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "exposure": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "contrast": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "colour_balance": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "landmark_visibility": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "artifact_burden": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] },
+        "decodability": { "type": "string", "enum": ["PASS", "FAIL", "UNCERTAIN"] }
       },
       "required": [
-        "field_coverage", "focus_blur", "fine_structure", "illumination", 
-        "exposure", "contrast", "colour_balance", "landmark_visibility", 
+        "field_coverage", "focus_blur", "fine_structure", "illumination",
+        "exposure", "contrast", "colour_balance", "landmark_visibility",
         "artifact_burden", "decodability"
       ]
     },
@@ -73,7 +79,7 @@
           "corrupt_file"
         ]
       },
-      "description": "Explicit reasons for C-grade or B-grade assignments."
+      "description": "Predefined degradation/rejection reasons contributing to a B or C assignment."
     },
     "notes": {
       "type": "string",
@@ -81,8 +87,18 @@
     }
   },
   "required": [
-    "image_id", "source_split", "annotator_id", "timestamp", 
-    "annotation_version", "adjudication_status", "overall_grade", 
+    "image_id", "source_split", "annotator_id", "timestamp",
+    "annotation_version", "adjudication_status", "overall_grade",
     "dimensions", "rejection_reasons"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": { "adjudication_status": { "const": "ADJUDICATED" } }
+      },
+      "then": {
+        "required": ["adjudication_reason"]
+      }
+    }
   ]
 }
