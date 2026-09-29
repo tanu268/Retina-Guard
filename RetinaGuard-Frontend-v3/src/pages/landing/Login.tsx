@@ -81,6 +81,12 @@ export default function Login() {
           <p className="mt-4 max-w-2xl font-body text-base leading-[var(--leading-body)] text-[var(--color-ink-muted)]">
             Each role opens a different part of the screening workflow.
           </p>
+          {import.meta.env.VITE_MVP_NO_AUTH === 'true' && (
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-amber-100 text-amber-800 text-xs font-bold tracking-wider uppercase rounded shadow-sm border border-amber-200">
+              <ShieldCheck className="w-4 h-4" />
+              MVP Demo Mode — Authentication Disabled
+            </div>
+          )}
         </motion.div>
 
         {error && (

@@ -2,9 +2,24 @@
 const { UnauthorizedError } = require('../utils/errors');
 
 /** Verifies the bearer access token and attaches req.user. */
-function authenticate({ tokenService, userRepository }) {
+function authenticate({ tokenService, userRepository, config }) {
   return async (req, res, next) => {
     try {
+      if (config && config.mvpNoAuth) {
+        const mvpRole = req.get('x-mvp-role');
+        if (mvpRole) {
+          req.user = {
+            id: 'mvp-demo-user',
+            username: `demo-${mvpRole}`,
+            role: mvpRole,
+            is_active: true,
+            facility_id: config.node.siteId
+          };
+          req.tokenPayload = { sub: 'mvp-demo-user', role: mvpRole };
+          return next();
+        }
+      }
+
       const header = req.get('authorization') || '';
       const [scheme, token] = header.split(' ');
       if (scheme !== 'Bearer' || !token) throw new UnauthorizedError('Missing bearer token');

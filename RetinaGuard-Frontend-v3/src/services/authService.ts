@@ -35,6 +35,22 @@ function persist(data: AuthResponse) {
 export const authService = {
   /** Sign in as a role using the seeded demo account. */
   async loginAsRole(role: string): Promise<AuthResponse> {
+    if (import.meta.env.VITE_MVP_NO_AUTH === 'true') {
+      const data = {
+        accessToken: 'mvp-dummy-token',
+        refreshToken: 'mvp-dummy-token',
+        user: {
+          id: 'mvp-demo-user',
+          username: `demo-${role}`,
+          role: role as Role,
+          is_active: true,
+          facility_id: import.meta.env.VITE_SITE_ID || 'PHC-UNREGISTERED'
+        }
+      } as AuthResponse;
+      persist(data);
+      return data;
+    }
+
     const credentials = DEMO_CREDENTIALS[role];
     if (!credentials) throw new Error(`No demo account configured for role "${role}".`);
     const data = await http.publicPost<AuthResponse>('/auth/login', credentials);

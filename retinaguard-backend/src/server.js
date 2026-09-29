@@ -13,6 +13,20 @@ async function start() {
   const app = buildApp(container);
   const httpServer = http.createServer(app);
 
+  if (config.mvpNoAuth) {
+    try {
+      container.repos.userRepository.db.run(`
+        INSERT INTO users (id, username, password_hash, full_name, role, facility_id, is_active)
+        VALUES ('mvp-demo-user', 'demo-mvp', 'nopassword', 'MVP Demo User', 'technician', ?, 1)
+        ON CONFLICT(id) DO NOTHING;
+      `, [config.node.siteId]);
+      logger.info('MVP_NO_AUTH enabled: injected mvp-demo-user');
+    } catch (err) {
+      logger.error({ err }, 'Failed to inject mvp-demo-user');
+    }
+  }
+
+
   attachWebsocket(httpServer, {
     tokenService: container.services.tokenService,
     userRepository: container.repos.userRepository,

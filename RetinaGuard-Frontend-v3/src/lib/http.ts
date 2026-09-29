@@ -116,6 +116,17 @@ async function request<T>(
 
   const headers: Record<string, string> = {};
   if (!opts?.noAuth && access) headers.Authorization = `Bearer ${access}`;
+
+  if (import.meta.env.VITE_MVP_NO_AUTH === 'true') {
+    try {
+      const userStr = localStorage.getItem('rg_user');
+      if (userStr) {
+        const user = JSON.parse(userStr);
+        if (user.role) headers['X-MVP-Role'] = user.role;
+      }
+    } catch {}
+  }
+
   if (!opts?.isFormData) headers['Content-Type'] = 'application/json';
   if (opts?.accept) headers.Accept = opts.accept;
   // Guards against a double-tap on "Save" over a slow rural link.

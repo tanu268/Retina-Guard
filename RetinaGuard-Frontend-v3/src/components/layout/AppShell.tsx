@@ -259,7 +259,13 @@ export function AppShell({ children }: { children: ReactNode }) {
               </span>
             </div>
 
-            <div className="flex-1" />
+            <div className="flex-1 flex justify-center">
+              {import.meta.env.VITE_MVP_NO_AUTH === 'true' && (
+                <span className="hidden sm:inline-flex px-3 py-1 bg-amber-100 text-amber-800 text-[11px] font-bold tracking-wider uppercase rounded shadow-sm border border-amber-200">
+                  MVP Demo Mode — Authentication Disabled
+                </span>
+              )}
+            </div>
 
             <div className="flex items-center gap-2 shrink-0">
               <SyncIndicator state={networkState} pending={pendingCount} compact />

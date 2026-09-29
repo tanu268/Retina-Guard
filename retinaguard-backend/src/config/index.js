@@ -13,6 +13,7 @@ const config = {
   env,
   isTest: env === 'test',
   isProd: env === 'production',
+  mvpNoAuth: bool(process.env.MVP_NO_AUTH, false),
   root,
   port: num(process.env.PORT, 4000),
   logLevel: process.env.LOG_LEVEL || (env === 'test' ? 'silent' : 'info'),
