@@ -6,6 +6,7 @@ import { cx } from '../../lib/format';
 import { Button } from '../ui';
 import { AnchorNavLink } from '../ui/NavLink';
 
+
 const SECTIONS = [
   { id: 'home', label: 'Home' },
   { id: 'features', label: 'Features' },

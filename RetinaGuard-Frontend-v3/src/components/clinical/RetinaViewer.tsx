@@ -199,7 +199,7 @@ export function RetinaViewer({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
             <Toggle
-              label="Grad-CAM" checked={active.has('gradcam')}
+              label="Class Activation Map (CAM)" checked={active.has('gradcam')}
               onChange={() => toggle('gradcam')} accent={LAYER_COLORS.gradcam}
               disabled={regions.length === 0}
             />
@@ -303,7 +303,7 @@ export function RetinaViewer({
                 </>
               )}
 
-              {/* Grad-CAM attention */}
+              {/* CAM attention */}
               <AnimatePresence>
                 {active.has('gradcam') && regions.map((r, i) => (
                   <motion.g

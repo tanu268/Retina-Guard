@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
 import { cx } from '../../lib/format';
 
+
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
   { href: '#roles', label: 'Roles' },

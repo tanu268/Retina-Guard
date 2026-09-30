@@ -2,13 +2,10 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-const { spawn } = require('child_process');
 const ort = require('onnxruntime-node');
 const { preprocessImage } = require('../preprocess');
 const logger = require('../../utils/logger');
 const { gradeByCode } = require('../../matlab/contracts');
-
-const GRADCAM_SCRIPT = path.resolve(__dirname, '../retinaguard_gradcam.py');
 
 // Set log level for ORT to reduce noise if needed
 ort.env.logLevel = 'warning';
@@ -23,15 +20,24 @@ class OnnxAdapter {
     this.metadata = null;
     this.initError = null;
 
-    const modelName = this.config.matlab.modelVersion || 'retinaguard_resnet18.onnx';
-    if (path.isAbsolute(modelName)) {
-      this.modelPath = path.resolve(modelName);
-    } else if (fs.existsSync(path.resolve(modelName))) {
-      this.modelPath = path.resolve(modelName);
+    const originalName = this.config.matlab.modelVersion || 'retinaguard_resnet18.onnx';
+    const camName = originalName.replace('.onnx', '_cam.onnx');
+    const camPath = path.resolve(__dirname, '../../../model', camName);
+    const origPath = path.resolve(__dirname, '../../../model', originalName);
+
+    if (fs.existsSync(camPath)) {
+      this.modelPath = camPath;
+      this.isCamModel = true;
     } else {
-      // Fallback to model directory
-      this.modelPath = path.resolve(__dirname, '../../../model', modelName);
+      this.modelPath = origPath;
+      this.isCamModel = false;
     }
+
+    this.fcWeights = [];
+    try {
+      const wPath = path.resolve(__dirname, '../../../model', 'fc_weights.json');
+      if (fs.existsSync(wPath)) this.fcWeights = require(wPath);
+    } catch(e) {}
 
     // Fail-closed pre-flight: if the artifact is not on disk, mark the adapter
     // as NOT integrated immediately so matlabService.runPipeline() abstains
@@ -44,6 +50,7 @@ class OnnxAdapter {
     } else {
       this.modelIntegrated = true;
       this.healthState = 'INITIALIZING';
+      this.inferenceCache = new Map();
     }
   }
 
@@ -51,7 +58,7 @@ class OnnxAdapter {
     if (this.initializationPromise) {
       return this.initializationPromise;
     }
-    
+
     this.initializationPromise = this._initialize();
     return this.initializationPromise;
   }
@@ -111,15 +118,14 @@ class OnnxAdapter {
   // E2E inference in ONNX, we will map them to our ONNX execution.
   // However, MatlabService is structured to call them sequentially:
   // qualityAssessment -> preprocessImage -> anatomy_detection -> dr_grading -> lesion_detection -> gradcam
-  
+
   async qualityAssessment(req) {
     // ONNX model does not do quality assessment directly in this pipeline
-    // We return a default passing grade to let the pipeline proceed.
     return {
-      qualityGrade: 'A',
-      qualityScore: 1.0,
+      qualityGrade: 'N/A',
+      qualityScore: null,
       gradeable: true,
-      reasons: []
+      reasons: ['Quality assessment not available in Edge Mode']
     };
   }
 
@@ -147,7 +153,7 @@ class OnnxAdapter {
       fovea: { detected: true, confidence: 0.9 }
     };
   }
-  
+
   async detectLesions(req) {
     return {
       lesions: [],
@@ -157,84 +163,84 @@ class OnnxAdapter {
   }
 
   async generateGradCAM(req) {
-    // req: { imagePath, sha256, outputPath, drGradeCode }
-    const { imagePath, outputPath, drGradeCode } = req;
-
-    if (this.healthState !== 'READY') {
-      logger.warn({ adapter: this.name }, 'generateGradCAM skipped — adapter not READY');
-      return { heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
-               gradcamAvailable: false, gradcamUnavailableReason: 'ADAPTER_NOT_READY' };
+    if (!this.isCamModel || !this.inferenceCache.has(req.sha256) || !this.fcWeights.length) {
+      return { heatmapPath: null, regions: [], targetLayer: 'layer4', peakIntensity: 0 };
     }
 
-    if (!outputPath) {
-      logger.warn({ adapter: this.name }, 'generateGradCAM skipped — no outputPath provided');
-      return { heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
-               gradcamAvailable: false, gradcamUnavailableReason: 'NO_OUTPUT_PATH' };
+    const { featureMap, predictedClass } = this.inferenceCache.get(req.sha256);
+    const classWeights = this.fcWeights[predictedClass];
+    const mapSize = 12;
+    const cam = new Float32Array(mapSize * mapSize);
+
+    let min = Infinity, max = -Infinity;
+    for (let c = 0; c < 512; c++) {
+      const w = classWeights[c];
+      const offset = c * mapSize * mapSize;
+      for (let i = 0; i < mapSize * mapSize; i++) cam[i] += w * featureMap[offset + i];
     }
 
-    // Ensure the target directory exists
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    for (let i = 0; i < mapSize * mapSize; i++) {
+      cam[i] = Math.max(0, cam[i]); // ReLU
+      if (cam[i] < min) min = cam[i];
+      if (cam[i] > max) max = cam[i];
+    }
 
-    const classIdx = Number.isInteger(drGradeCode) ? drGradeCode : 0;
+    const range = max - min || 1;
+    let peakVal = 0;
 
-    return new Promise((resolve) => {
-      const args = [
-        GRADCAM_SCRIPT,
-        '--model',  this.modelPath,
-        '--image',  imagePath,
-        '--class',  String(classIdx),
-        '--output', outputPath,
-        '--size',   '384',
-      ];
+    const regions = [];
+    const visited = new Uint8Array(mapSize * mapSize);
 
-      let stdout = '';
-      let stderr = '';
-      const proc = spawn('python3', args);
-      proc.stdout.on('data', (d) => { stdout += d.toString(); });
-      proc.stderr.on('data', (d) => { stderr += d.toString(); });
+    for (let y = 0; y < mapSize; y++) {
+      for (let x = 0; x < mapSize; x++) {
+        const val = (cam[y * mapSize + x] - min) / range;
+        if (val > peakVal) peakVal = val;
 
-      proc.on('close', (code) => {
-        let parsed = null;
-        try { parsed = JSON.parse(stdout.trim()); } catch { /* non-JSON output */ }
+        if (val > 0.6 && !visited[y * mapSize + x]) {
+          let minX = x, maxX = x, minY = y, maxY = y;
+          let sumInt = 0, count = 0;
+          const q = [[x,y]];
+          visited[y * mapSize + x] = 1;
 
-        if (code !== 0 || !parsed?.cam_available) {
-          const reason = parsed?.reason || `EXIT_CODE_${code}`;
-          logger.warn({ adapter: this.name, reason, stderr: stderr.slice(0, 400) },
-            'Grad-CAM generation failed — explanation unavailable');
-          return resolve({
-            heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
-            gradcamAvailable: false, gradcamUnavailableReason: reason,
+          while (q.length > 0) {
+            const [cx, cy] = q.shift();
+            const cv = (cam[cy * mapSize + cx] - min) / range;
+            sumInt += cv;
+            count++;
+
+            if (cx < minX) minX = cx; if (cx > maxX) maxX = cx;
+            if (cy < minY) minY = cy; if (cy > maxY) maxY = cy;
+
+            const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+            for (let [dx,dy] of dirs) {
+              const nx = cx+dx, ny = cy+dy;
+              if (nx >= 0 && nx < mapSize && ny >= 0 && ny < mapSize && !visited[ny * mapSize + nx]) {
+                const nv = (cam[ny * mapSize + nx] - min) / range;
+                if (nv > 0.4) {
+                  visited[ny * mapSize + nx] = 1;
+                  q.push([nx,ny]);
+                }
+              }
+            }
+          }
+
+          regions.push({
+            x: minX / mapSize,
+            y: minY / mapSize,
+            w: (maxX - minX + 1) / mapSize,
+            h: (maxY - minY + 1) / mapSize,
+            intensity: sumInt / count
           });
         }
+      }
+    }
 
-        const peak = parsed.peak_yx_cam_space || [null, null];
-        logger.info({
-          adapter: this.name, class: classIdx, camShape: parsed.cam_shape,
-          peakY: peak[0], peakX: peak[1], inBorder: parsed.peak_in_border,
-        }, 'Grad-CAM generated');
-
-        resolve({
-          heatmapPath: outputPath,
-          regions: parsed.regions || [],
-          targetLayer: parsed.target_layer,
-          peakIntensity: parsed.cam_max != null ? parseFloat((parsed.cam_max).toFixed(4)) : null,
-          gradcamAvailable: true,
-          camShape: parsed.cam_shape,
-          overlaySize: parsed.overlay_size,
-          featureMapShape: parsed.feature_map_shape,
-          peakInBorder: parsed.peak_in_border,
-          classIdx,
-        });
-      });
-
-      proc.on('error', (err) => {
-        logger.error({ adapter: this.name, err: err.message }, 'Failed to spawn Grad-CAM process');
-        resolve({
-          heatmapPath: null, regions: [], targetLayer: null, peakIntensity: null,
-          gradcamAvailable: false, gradcamUnavailableReason: 'SPAWN_ERROR',
-        });
-      });
-    });
+    return {
+      heatmapPath: null,
+      regions,
+      targetLayer: 'layer4',
+      peakIntensity: peakVal
+    };
   }
 
   /**
@@ -244,13 +250,13 @@ class OnnxAdapter {
     if (this.healthState !== 'READY') {
       await this.initialize();
     }
-    
+
     if (this.healthState !== 'READY') {
       throw new Error('ONNX session is not ready');
     }
 
     const t0 = Date.now();
-    
+
     let tensorArray, preprocessingMeta;
 
     // Check if tensor was passed from preprocess stage
@@ -267,22 +273,29 @@ class OnnxAdapter {
     } catch (err) {
       throw new Error(`Inference preprocessing failed: ${err.message}`);
     }
-    
+
     const tensor = new ort.Tensor('float32', tensorArray, [1, 3, 384, 384]);
-    
+
     // Execute
     const feeds = { input: tensor }; // 'input' is the input name from inspection
     const results = await this.session.run(feeds);
-    
+
     const outputTensor = results.logits; // 'logits' is the output name
     const logits = Array.from(outputTensor.data);
-    
+
+    if (this.isCamModel && results['/backbone/layer4/layer4.1/relu_1/Relu_output_0']) {
+      this.inferenceCache.set(req.sha256, {
+        featureMap: Array.from(results['/backbone/layer4/layer4.1/relu_1/Relu_output_0'].data),
+        predictedClass: 0
+      });
+    }
+
     // Postprocessing: Softmax
     const maxLogit = Math.max(...logits);
     const expLogits = logits.map(x => Math.exp(x - maxLogit));
     const sumExp = expLogits.reduce((a, b) => a + b, 0);
     const probabilities = expLogits.map(x => x / sumExp);
-    
+
     // Class prediction
     let predictedClass = 0;
     let maxProb = -1;
@@ -292,10 +305,14 @@ class OnnxAdapter {
         predictedClass = i;
       }
     }
-    
+
+    if (this.inferenceCache.has(req.sha256)) {
+      this.inferenceCache.get(req.sha256).predictedClass = predictedClass;
+    }
+
     const referableProb = probabilities[2] + probabilities[3] + probabilities[4];
     const referable = referableProb >= 0.50; // Threshold from env
-    
+
     return {
       drGradeCode: predictedClass,
       drGrade: gradeByCode(predictedClass).label,

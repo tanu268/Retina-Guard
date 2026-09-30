@@ -208,7 +208,7 @@ export default function AiAnalysis() {
                 </p>
                 <p className="text-[13px] text-slate-500 mt-1 max-w-lg leading-relaxed">
                   The pipeline runs preprocessing, anatomy detection, DR grading,
-                  lesion evidence and Grad-CAM. A low-confidence or contradictory
+                  lesion evidence and CAM. A low-confidence or contradictory
                   result abstains rather than publishing a grade.
                 </p>
               </div>
@@ -233,7 +233,7 @@ export default function AiAnalysis() {
             <div className="flex-1">
               <p className="text-[14px] font-medium text-slate-900">Running the screening pipeline…</p>
               <p className="text-[12px] text-slate-500 mt-0.5">
-                Preprocessing → anatomy → grading → lesions → Grad-CAM
+                Preprocessing → anatomy → grading → lesions → CAM
               </p>
             </div>
           </div>

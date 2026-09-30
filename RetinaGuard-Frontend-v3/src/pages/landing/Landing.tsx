@@ -11,6 +11,7 @@ import heroImage from '../../assets/hero.png';
 import { TEAM, initialsOf } from '../../data/team';
 import { cx } from '../../lib/format';
 import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
+
 import uviLogoFooter from '../../assets/uvi-logo-footer.jpg';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -99,7 +100,7 @@ const WORKFLOW = [
       { icon: UserPlus, name: 'Register Patient', desc: 'Create a secure patient record with validated demographic information.' },
       { icon: Eye, name: 'Capture Retina', desc: 'Acquire left and right eye fundus images using the retinal camera.' },
       { icon: CheckCircle2, name: 'Quality Check', desc: 'Verify image quality before AI processing.' },
-      { icon: Cpu, name: 'AI Analysis', desc: 'Generate explainable predictions with AI attention visualization.' },
+      { icon: Cpu, name: 'AI Analysis', desc: 'Generate explainable predictions with lesion localization.' },
       { icon: ClipboardList, name: 'Submit for Review', desc: 'Forward prioritized cases to the ophthalmologist.' },
     ],
   },

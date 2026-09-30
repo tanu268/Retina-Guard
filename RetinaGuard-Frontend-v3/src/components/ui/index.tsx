@@ -176,8 +176,8 @@ export function Spinner({ size = 16, className }: { size?: number; className?: s
 export function Field({
   label, hint, error, required, children, className, htmlFor
 }: {
-  label: string; hint?: string; error?: string | null;
-  required?: boolean; children: ReactNode; className?: string; htmlFor?: string;
+  label: string; hint?: string; htmlFor?: string; error?: string | null;
+  required?: boolean; children: ReactNode; className?: string;
 }) {
   return (
     <div className={cx('flex flex-col gap-1.5', className)}>

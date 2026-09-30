@@ -203,5 +203,5 @@ export const PIPELINE_STAGES: Array<{ key: string; label: string }> = [
   { key: 'anatomy_detection', label: 'Anatomy detection' },
   { key: 'dr_grading', label: 'DR grading' },
   { key: 'lesion_detection', label: 'Lesion detection' },
-  { key: 'gradcam', label: 'Grad-CAM' },
+  { key: 'gradcam', label: 'Class Activation Map (CAM)' },
 ];
