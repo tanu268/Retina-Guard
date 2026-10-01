@@ -55,6 +55,11 @@ async function uploadAndAnalyze(page, consultationId) {
   await uploadPromise;
   await page.waitForSelector('text=Ready for analysis');
 
+  const textContent = await page.locator('body').textContent();
+  if (textContent.includes('Quality A') || textContent.includes('100.0%') || textContent.includes('Suitable for screening')) {
+    throw new Error('HONESTY VIOLATION: UI rendered fake "Quality A" or "100.0%" when no validated quality model is integrated.');
+  }
+
   await page.getByRole('button', { name: 'Run AI analysis' }).click();
   await page.waitForURL(`**/analysis/${consultationId}`);
   const analysisPromise = page.waitForResponse(res => res.url().includes('/analysis/run') && res.request().method() === 'POST');

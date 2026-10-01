@@ -22,7 +22,7 @@ const DR_GRADES = Object.freeze([
   { code: 4, key: 'pdr',            label: 'PDR',             referable: true,  priority: 'P0' },
 ]);
 
-const QUALITY_GRADES = Object.freeze(['A', 'B', 'C']);
+const QUALITY_GRADES = Object.freeze(['A', 'B', 'C', 'N/A']);
 
 /** Actionable recapture reasons. The technician must be told what to fix, not just "bad image". */
 const QUALITY_REASON_CODES = Object.freeze({
@@ -84,7 +84,7 @@ function assertQualityResponse(res) {
   const errors = [];
   if (!res || typeof res !== 'object') return ['Response is not an object'];
   if (!QUALITY_GRADES.includes(res.qualityGrade)) errors.push('qualityGrade must be A, B or C');
-  if (typeof res.qualityScore !== 'number') errors.push('qualityScore must be a number');
+  if (res.qualityScore !== null && typeof res.qualityScore !== 'number') errors.push('qualityScore must be a number or null');
   if (!Array.isArray(res.reasons)) errors.push('reasons must be an array');
   return errors;
 }

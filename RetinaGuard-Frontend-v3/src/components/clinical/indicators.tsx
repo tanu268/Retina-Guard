@@ -153,7 +153,8 @@ export function QualityGauge({
   showGuidance?: boolean;
 }) {
   const pct = typeof score === 'number' ? Math.max(0, Math.min(1, score)) : 0;
-  const colour = grade ? QUALITY_COLORS[grade] : '#94a3b8';
+  const isNA = !grade || grade === ('N/A' as any);
+  const colour = !isNA ? QUALITY_COLORS[grade!] : '#94a3b8';
   const stroke = 9;
   const r = (size - stroke) / 2 - 4;
   const circumference = 2 * Math.PI * r;
@@ -181,7 +182,7 @@ export function QualityGauge({
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-[34px] font-bold leading-none" style={{ color: colour }}>
-            {grade ?? '—'}
+            {isNA ? 'N/A' : grade}
           </span>
           <span className="text-[12px] text-slate-500 tnum mt-1">
             {typeof score === 'number' ? formatPercent(score, 1) : 'Not assessed'}
@@ -198,7 +199,7 @@ export function QualityGauge({
 }
 
 export function QualityBadge({ grade, size }: { grade: QualityGrade | null | undefined; size?: 'sm' | 'md' }) {
-  if (!grade) return <StatusBadge tone="neutral" size={size}>Quality not assessed</StatusBadge>;
+  if (!grade || grade === ('N/A' as any)) return <StatusBadge tone="neutral" size={size}>Quality not assessed</StatusBadge>;
   const tone: BadgeTone = grade === 'A' ? 'success' : grade === 'B' ? 'warning' : 'danger';
   return <StatusBadge tone={tone} size={size}>Quality {grade}</StatusBadge>;
 }
