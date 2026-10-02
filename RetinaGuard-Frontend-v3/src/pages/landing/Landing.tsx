@@ -132,7 +132,7 @@ export default function Landing() {
   const navigate = useNavigate();
   const startScreening = () => navigate('/login');
   const learnMore = () => {
-    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+    navigate('/clinical-evidence');
   };
 
   return (
@@ -192,7 +192,7 @@ export default function Landing() {
                   onClick={learnMore}
                   className="inline-flex h-[48px] items-center justify-center rounded-none border border-white bg-transparent px-8 text-[14px] font-bold uppercase tracking-[1.5px] text-white transition-colors hover:bg-white/10"
                 >
-                  Learn More
+                  Clinical Evidence
                 </button>
               </div>
             </motion.div>

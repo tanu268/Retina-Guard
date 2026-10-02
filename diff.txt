@@ -1,0 +1,184 @@
+﻿diff --git a/RetinaGuard-Frontend-v3/src/components/clinical/indicators.tsx b/RetinaGuard-Frontend-v3/src/components/clinical/indicators.tsx
+index c3caa0d..02ed4fb 100644
+--- a/RetinaGuard-Frontend-v3/src/components/clinical/indicators.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/clinical/indicators.tsx
+@@ -7,7 +7,6 @@ import {
+ import type {
+   AbstainReason, ConsultationStatus, DrGradeCode, QualityGrade, SqlBool, SyncState, TriagePriority,
+ } from '../../types';
+-import { GlowCard } from '../ui/spotlight-card';
+ import { IconAlert, IconCheck, IconClock, IconSync, IconWifiOff } from '../ui/icons';
+ 
+ /* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+diff --git a/RetinaGuard-Frontend-v3/src/components/landing/LandingNav.tsx b/RetinaGuard-Frontend-v3/src/components/landing/LandingNav.tsx
+index 05b0c06..02f7a50 100644
+--- a/RetinaGuard-Frontend-v3/src/components/landing/LandingNav.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/landing/LandingNav.tsx
+@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
+ import { cx } from '../../lib/format';
+ import { Button } from '../ui';
+ import { AnchorNavLink } from '../ui/NavLink';
+-import uviLogo from '../../assets/uvi-logo.png';
+-
+ const SECTIONS = [
+   { id: 'home', label: 'Home' },
+   { id: 'features', label: 'Features' },
+diff --git a/RetinaGuard-Frontend-v3/src/components/landing/Navbar.tsx b/RetinaGuard-Frontend-v3/src/components/landing/Navbar.tsx
+index 8847c51..7b3d150 100644
+--- a/RetinaGuard-Frontend-v3/src/components/landing/Navbar.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/landing/Navbar.tsx
+@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
+ import { ArrowRight } from 'lucide-react';
+ import { Button } from '../ui';
+ import { cx } from '../../lib/format';
+-import uviLogo from '../../assets/uvi-logo.png';
+-
+ const NAV_LINKS = [
+   { href: '#home', label: 'Home' },
+   { href: '#roles', label: 'Roles' },
+diff --git a/RetinaGuard-Frontend-v3/src/components/layout/AppShell.tsx b/RetinaGuard-Frontend-v3/src/components/layout/AppShell.tsx
+index 64cf2fc..51606c6 100644
+--- a/RetinaGuard-Frontend-v3/src/components/layout/AppShell.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/layout/AppShell.tsx
+@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react';
+ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+ import { useAuth } from '../../contexts/AuthContext';
+ import { useSync } from '../../contexts/SyncContext';
+-import { cx, initials, titleCase } from '../../lib/format';
++import { cx, initials } from '../../lib/format';
+ import type { Role } from '../../types';
+ import { Button } from '../ui';
+ import { SyncIndicator } from '../clinical/indicators';
+diff --git a/RetinaGuard-Frontend-v3/src/components/ui/cards-demo.tsx b/RetinaGuard-Frontend-v3/src/components/ui/cards-demo.tsx
+index a7d11bb..b10fd80 100644
+--- a/RetinaGuard-Frontend-v3/src/components/ui/cards-demo.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/ui/cards-demo.tsx
+@@ -1,5 +1,4 @@
+-import React from 'react';
+-import HoverRevealCards, { CardItem } from './cards';
++import HoverRevealCards, { type CardItem } from './cards';
+ 
+ const demoItems: CardItem[] = [
+   {
+diff --git a/RetinaGuard-Frontend-v3/src/components/ui/demo.tsx b/RetinaGuard-Frontend-v3/src/components/ui/demo.tsx
+index fa1ff0f..d08b1b1 100644
+--- a/RetinaGuard-Frontend-v3/src/components/ui/demo.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/ui/demo.tsx
+@@ -1,4 +1,3 @@
+-import * as React from "react";
+ import { ResourceCardsGrid } from "./resource-cards-grid";
+ import type { ResourceCardItem } from "./resource-cards-grid";
+ 
+diff --git a/RetinaGuard-Frontend-v3/src/components/ui/sidebar.tsx b/RetinaGuard-Frontend-v3/src/components/ui/sidebar.tsx
+index b537794..6f1379a 100644
+--- a/RetinaGuard-Frontend-v3/src/components/ui/sidebar.tsx
++++ b/RetinaGuard-Frontend-v3/src/components/ui/sidebar.tsx
+@@ -1,4 +1,4 @@
+-import React, { useState } from 'react';
++import { useState } from 'react';
+ import { 
+   Menu, 
+   X, 
+diff --git a/RetinaGuard-Frontend-v3/src/pages/landing/Landing.tsx b/RetinaGuard-Frontend-v3/src/pages/landing/Landing.tsx
+index 6dfacfb..3be4a54 100644
+--- a/RetinaGuard-Frontend-v3/src/pages/landing/Landing.tsx
++++ b/RetinaGuard-Frontend-v3/src/pages/landing/Landing.tsx
+@@ -1,7 +1,7 @@
+ import { useNavigate } from 'react-router-dom';
+ import { motion } from 'framer-motion';
+ import {
+-  Activity, BarChart3, Building2, CheckCircle2, ChevronRight, ClipboardList, Cpu, Database,
++  BarChart3, Building2, CheckCircle2, ChevronRight, ClipboardList, Cpu, Database,
+   Eye, FileText, Layers, ListChecks, MapPin, ScanEye,
+   ShieldCheck, Stethoscope, UserCog, UserPlus, Users,
+ } from 'lucide-react';
+@@ -11,7 +11,6 @@ import heroImage from '../../assets/hero.png';
+ import { TEAM, initialsOf } from '../../data/team';
+ import { cx } from '../../lib/format';
+ import { TextHoverEffect, FooterBackgroundGradient } from '../../components/ui/hover-footer';
+-import uviLogo from '../../assets/uvi-logo.png';
+ import uviLogoFooter from '../../assets/uvi-logo-footer.jpg';
+ 
+ /* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+diff --git a/RetinaGuard-Frontend-v3/src/pages/landing/Login.tsx b/RetinaGuard-Frontend-v3/src/pages/landing/Login.tsx
+index 7b2ccef..2ef445a 100644
+--- a/RetinaGuard-Frontend-v3/src/pages/landing/Login.tsx
++++ b/RetinaGuard-Frontend-v3/src/pages/landing/Login.tsx
+@@ -91,13 +91,9 @@ export default function Login() {
+               title: label,
+               subtitle: blurb,
+               imageUrl: image,
+-              icon: (
+-                <span className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 rounded-lg text-white backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-110">
+-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+-                </span>
+-              )
++              icon: Icon,
++              onClick: () => chooseRole(id as Exclude<Role, 'district'>)
+             }))}
+-            onItemClick={(id) => chooseRole(id as Exclude<Role, 'district'>)}
+           />
+         </div>
+ 
+diff --git a/RetinaGuard-Frontend-v3/src/pages/technician/PatientRegistration.tsx b/RetinaGuard-Frontend-v3/src/pages/technician/PatientRegistration.tsx
+index 263413c..ad2308b 100644
+--- a/RetinaGuard-Frontend-v3/src/pages/technician/PatientRegistration.tsx
++++ b/RetinaGuard-Frontend-v3/src/pages/technician/PatientRegistration.tsx
+@@ -7,7 +7,7 @@ import { cx } from '../../lib/format';
+ import {
+   Alert, Button, Card, Divider, Field, Input, SectionHeader, Select,
+ } from '../../components/ui';
+-import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck, IconUserPlus } from '../../components/ui/icons';
++import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck } from '../../components/ui/icons';
+ import type { CreatePatientRequest, Patient } from '../../types';
+ 
+ /* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+diff --git a/RetinaGuard-Frontend-v3/tests/integration/workflow.test.tsx b/RetinaGuard-Frontend-v3/tests/integration/workflow.test.tsx
+index 0d73840..a8d22c5 100644
+--- a/RetinaGuard-Frontend-v3/tests/integration/workflow.test.tsx
++++ b/RetinaGuard-Frontend-v3/tests/integration/workflow.test.tsx
+@@ -13,6 +13,7 @@ vi.mock('../../src/services/authService', () => ({
+     getStoredUser: vi.fn(),
+     isAuthenticated: vi.fn(),
+     loginAsRole: vi.fn(),
++    me: vi.fn(),
+   },
+   ROLE_HOME: { technician: '/app/technician', reviewer: '/app/review/queue' }
+ }));
+@@ -32,13 +33,16 @@ vi.mock('../../src/services/api', () => ({
+ describe('Frontend Workflows and Safety', () => {
+   beforeEach(() => {
+     vi.clearAllMocks();
++    window.history.pushState({}, '', '/');
+   });
+ 
+   it('TECH-001: Authentication routes correctly', async () => {
+-    vi.mocked(authService.authService.getCurrentUser).mockResolvedValue(null);
++    window.history.pushState({}, '', '/login');
++    vi.mocked(authService.authService.isAuthenticated).mockReturnValue(false);
+     vi.mocked(authService.authService.getStoredUser).mockReturnValue(null);
++    vi.mocked(authService.authService.me).mockResolvedValue(null as any);
+     render(<App />);
+-    expect(await screen.findByText(/Sign In/i)).toBeInTheDocument();
++    expect(await screen.findByText(/Sign In/i, {}, { timeout: 4000 })).toBeInTheDocument();
+   });
+ 
+   it('TECH-002: Technician case creation and upload/preview', async () => {
+@@ -60,14 +64,14 @@ describe('Frontend Workflows and Safety', () => {
+       referable: null,
+       abstained: true
+     };
+-    
++
+     render(<AnalysisResultPanel analysis={analysis as any} />);
+-    
++
+     expect(screen.queryByText('Grade 0')).not.toBeInTheDocument();
+     expect(screen.queryByText('0%')).not.toBeInTheDocument();
+     expect(screen.queryByText(/normal/i)).not.toBeInTheDocument();
+   });
+-  
++
+   it('SYNC-001: Offline/sync state rendering', async () => {
+     const { default: SyncMonitor } = await import('../../src/pages/shared/SyncMonitor');
+     render(

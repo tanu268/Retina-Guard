@@ -15,6 +15,7 @@ import { Spinner } from './components/ui';
    charting bundle. */
 const Landing = lazy(() => import('./pages/landing/Landing'));
 const Login = lazy(() => import('./pages/landing/Login'));
+const ClinicalEvidence = lazy(() => import('./pages/landing/ClinicalEvidence'));
 
 const TechnicianDashboard = lazy(() => import('./pages/technician/TechnicianDashboard'));
 const PatientRegistration = lazy(() => import('./pages/technician/PatientRegistration'));
@@ -85,6 +86,7 @@ export default function App() {
               <Routes>
                 {/* Public */}
                 <Route path="/" element={<Landing />} />
+                <Route path="/clinical-evidence" element={<ClinicalEvidence />} />
                 <Route path="/login" element={<Login />} />
 
                 {/* Workspace */}
