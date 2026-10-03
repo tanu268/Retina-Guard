@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * simulation.routes.js
@@ -142,8 +142,10 @@ function buildSimulationRouter(deps) {
     asyncHandler(async (req, res) => {
       if (svc.isRunning()) {
         return res.status(409).json({
-          error: 'SIMULATION_ALREADY_RUNNING',
-          message: 'A simulation is already running. Please wait for it to complete.',
+          error: {
+            code:    'SIMULATION_ALREADY_RUNNING',
+            message: 'A simulation is already running. Please wait for it to complete.',
+          },
         });
       }
       try {
@@ -165,13 +167,20 @@ function buildSimulationRouter(deps) {
         });
       } catch (err) {
         if (err.message === 'SIMULATION_ALREADY_RUNNING') {
-          return res.status(409).json({ error: 'SIMULATION_ALREADY_RUNNING', message: err.message });
+          return res.status(409).json({
+            error: {
+              code:    'SIMULATION_ALREADY_RUNNING',
+              message: 'A simulation is already running. Please wait for it to complete.',
+            },
+          });
         }
         // MATLAB not found or execution failed – surface clearly, do NOT fake results
         return res.status(500).json({
-          error:   'SIMULATION_FAILED',
-          message: err.message,
-          hint:    'Ensure MATLAB R2026a is installed and accessible. Set MATLAB_EXECUTABLE env var if needed.',
+          error: {
+            code:    'SIMULATION_FAILED',
+            message: err.message,
+            hint:    'Ensure MATLAB R2026a is installed and accessible. Set MATLAB_EXECUTABLE env var if needed.',
+          },
         });
       }
     })

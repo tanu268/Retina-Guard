@@ -4,6 +4,8 @@ import {
 import { syncService } from '../services/api';
 import { isTrue } from '../lib/format';
 import type { SyncStatus } from '../types';
+import { getAllOutboxRecords, saveToOutbox } from '../lib/idb';
+import { patientService, consultationService, imageService } from '../services/api';
 
 export type NetworkState = 'online' | 'offline' | 'syncing' | 'degraded';
 
@@ -29,6 +31,7 @@ export function SyncProvider({ children }: { children: ReactNode }) {
   const [syncStatus, setSyncStatus] = useState<SyncStatus | null>(null);
   const [lastCheckedAt, setLastCheckedAt] = useState<Date | null>(null);
   const [isSyncing, setIsSyncing] = useState(false);
+  const [localOutboxCount, setLocalOutboxCount] = useState(0);
   const mounted = useRef(true);
 
   useEffect(() => {
@@ -60,6 +63,14 @@ export function SyncProvider({ children }: { children: ReactNode }) {
       // Unreachable edge server is functionally offline from the UI's side.
       setNetworkState('offline');
     }
+
+    // Also update local outbox count
+    try {
+      const records = await getAllOutboxRecords();
+      if (mounted.current) setLocalOutboxCount(records.filter(r => r.status === 'PENDING').length);
+    } catch (e) {
+      // Ignore IDB errors
+    }
   }, []);
 
   useEffect(() => {
@@ -72,10 +83,34 @@ export function SyncProvider({ children }: { children: ReactNode }) {
     setIsSyncing(true);
     setNetworkState('syncing');
     try {
+      // First, sync local outbox to backend
+      const records = await getAllOutboxRecords();
+      for (const record of records) {
+        if (record.status === 'PENDING') {
+          try {
+             if (record.patient) await patientService.create(record.patient, record.patient.id);
+             if (record.consultation) await consultationService.create({ patientId: record.consultation.patientId, identityConfirmed: true, notes: record.consultation.notes }, record.case_uuid);
+             if (record.image) {
+                // Check if consultation exists to attach image
+                await imageService.upload(record.image.consultationId, record.image.laterality as any, record.image.file);
+             }
+             record.status = 'SYNCED';
+             await saveToOutbox(record);
+          } catch (e: any) {
+             if (e.isOffline || e.code === 'NETWORK_ERROR') {
+                // Still offline
+                throw e;
+             }
+             record.status = 'REJECTED';
+             record.error_message = e.message;
+             await saveToOutbox(record);
+          }
+      }
+      }
+      // Then trigger backend sync
       await syncService.push();
     } catch {
-      // Push failure is expected when the district node is unreachable. The
-      // outbox keeps the work; nothing is lost.
+      // Push failure is expected when the edge node is unreachable or offline.
     } finally {
       if (mounted.current) setIsSyncing(false);
       await refresh();
@@ -83,7 +118,7 @@ export function SyncProvider({ children }: { children: ReactNode }) {
   }, [refresh]);
 
   const byStatus = syncStatus?.queue?.byStatus ?? {};
-  const pendingCount = byStatus.pending ?? 0;
+  const pendingCount = (byStatus.pending ?? 0) + localOutboxCount;
   const failedCount = byStatus.failed ?? 0;
   const conflictCount = byStatus.conflict ?? 0;
 

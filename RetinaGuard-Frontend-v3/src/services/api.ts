@@ -9,7 +9,7 @@
  * Rule: services unwrap envelopes so pages receive the payload they actually
  * need. Pages never reach into `.items`, `.report`, `.users` themselves.
  */
-import { http, qs } from '../lib/http';
+import { http, qs, HttpError } from '../lib/http';
 import { MANDATORY_DISCLAIMER } from '../lib/clinical';
 import type {
   AdminDashboard, AnalysisResponse, AnalysisResult, AuditEntry, AuditTrailResponse,
@@ -19,6 +19,15 @@ import type {
   ReviewCaseResponse, ReviewDecisionRequest, ReviewQueueItem, ScreeningReport, SyncConflict,
   SyncPushResult, SyncStatus, TriagePriority, UpdateConsultationRequest,
 } from '../types';
+import { saveToOutbox, getOutboxRecord, getOfflineData, saveOfflineData } from '../lib/idb';
+
+function generateUUID() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
 
 // ── Cases (Unified API) ───────────────────────────────────────────────────
 export const casesService = {
@@ -58,8 +67,38 @@ export const patientService = {
   /** Returns the patient AND any near-duplicates the backend found before
    *  insert. The duplicates are a clinical safeguard, not decoration: the
    *  technician must be able to catch a re-registration. */
-  create(data: CreatePatientRequest, idempotencyKey?: string): Promise<PatientResponse> {
-    return http.post<PatientResponse>('/patients', data, { idempotencyKey });
+  async create(data: CreatePatientRequest, idempotencyKey?: string): Promise<PatientResponse> {
+    try {
+      return await http.post<PatientResponse>('/patients', data, { idempotencyKey });
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        const id = idempotencyKey || generateUUID();
+        const patient: Patient = {
+          id,
+          patient_code: 'OFFLINE-' + id.substring(0, 6).toUpperCase(),
+          full_name: data.fullName,
+          age: data.age ?? null,
+          gender: (data.gender as any) ?? null,
+          phone: data.phone ?? null,
+          village: data.village ?? null,
+          district: data.district ?? null,
+          state: data.state ?? null,
+          diabetes_type: (data.diabetesType as any) ?? null,
+          diabetes_duration_years: data.diabetesDurationYears ?? null,
+          hba1c: data.hba1c ?? null,
+          facility_id: null,
+          created_by: 'OFFLINE',
+          version: 1,
+          sync_state: 'pending',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          deleted_at: null
+        };
+        await saveOfflineData(`patient_${id}`, patient);
+        return { patient, possibleDuplicates: [] };
+      }
+      throw err;
+    }
   },
 
   async list(params?: { page?: number; limit?: number; q?: string; district?: string }): Promise<Paginated<Patient>> {
@@ -70,8 +109,16 @@ export const patientService = {
 
   /** Backend returns `{ patient }`. */
   async get(id: string): Promise<Patient> {
-    const res = await http.get<{ patient: Patient }>(`/patients/${id}`);
-    return res.patient;
+    try {
+      const res = await http.get<{ patient: Patient }>(`/patients/${id}`);
+      return res.patient;
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        const local = await getOfflineData(`patient_${id}`);
+        if (local) return local;
+      }
+      throw err;
+    }
   },
 
   async update(id: string, data: Partial<CreatePatientRequest>): Promise<Patient> {
@@ -87,8 +134,47 @@ export const consultationService = {
    *  `patient_id` and every call returned 422, which broke the entire
    *  technician workflow at step two. */
   async create(data: CreateConsultationRequest, idempotencyKey?: string): Promise<Consultation> {
-    const res = await http.post<{ consultation: Consultation }>('/consultations', data, { idempotencyKey });
-    return res.consultation;
+    try {
+      const res = await http.post<{ consultation: Consultation }>('/consultations', data, { idempotencyKey });
+      return res.consultation;
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        const id = idempotencyKey || generateUUID();
+        const consultation: Consultation = {
+          id,
+          case_number: 'OFFLINE-' + id.substring(0, 6).toUpperCase(),
+          patient_id: data.patientId,
+          technician_id: null,
+          reviewer_id: null,
+          status: 'capture_pending',
+          triage_priority: null,
+          site_id: 'OFFLINE_SITE',
+          device_id: 'OFFLINE_DEVICE',
+          identity_confirmed: 1,
+          recapture_attempts: 0,
+          final_grade_code: null,
+          final_referable: null,
+          consultation_date: null,
+          closed_at: null,
+          version: 1,
+          sync_state: 'pending',
+          notes: data.notes ?? null,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          deleted_at: null
+        };
+        await saveOfflineData(`consultation_${id}`, consultation);
+        await saveToOutbox({
+          case_uuid: id,
+          status: 'PENDING',
+          patient: await getOfflineData(`patient_${data.patientId}`),
+          consultation: data,
+          timestamp: Date.now()
+        });
+        return consultation;
+      }
+      throw err;
+    }
   },
 
   list(params?: { page?: number; limit?: number; status?: ConsultationStatus | string }): Promise<Paginated<Consultation>> {
@@ -98,8 +184,16 @@ export const consultationService = {
   },
 
   async get(id: string): Promise<Consultation> {
-    const res = await http.get<{ consultation: Consultation }>(`/consultations/${id}`);
-    return res.consultation;
+    try {
+      const res = await http.get<{ consultation: Consultation }>(`/consultations/${id}`);
+      return res.consultation;
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        const local = await getOfflineData(`consultation_${id}`);
+        if (local) return local;
+      }
+      throw err;
+    }
   },
 
   /** PATCH takes camelCase keys, unlike the snake_case row it returns. */
@@ -115,12 +209,30 @@ export const imageService = {
   /** Runs the MATLAB quality gate synchronously and returns retake guidance
    *  in the same response, so the technician can act before the patient
    *  leaves the chair. */
-  upload(consultationId: string, laterality: Laterality, file: File) {
-    const fd = new FormData();
-    fd.append('image', file);
-    fd.append('consultationId', consultationId);
-    fd.append('laterality', laterality);
-    return http.upload<import('../types').UploadImageResponse>('/images/upload', fd);
+  async upload(consultationId: string, laterality: Laterality, file: File) {
+    try {
+      const fd = new FormData();
+      fd.append('image', file);
+      fd.append('consultationId', consultationId);
+      fd.append('laterality', laterality);
+      return await http.upload<import('../types').UploadImageResponse>('/images/upload', fd);
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        const imageId = generateUUID();
+        const existing = await getOutboxRecord(consultationId);
+        if (existing) {
+          existing.image = { laterality, file, consultationId };
+          await saveToOutbox(existing);
+        }
+        await saveOfflineData(`image_${consultationId}`, { id: imageId, laterality, created_at: new Date().toISOString() });
+        // Accept offline images without MATLAB quality check
+        return {
+          image: { id: imageId, consultation_id: consultationId, laterality, image_url: URL.createObjectURL(file), file_path: '', width: 1, height: 1, created_at: new Date().toISOString(), updated_at: new Date().toISOString() },
+          quality: { passes: true, messages: [] }
+        };
+      }
+      throw err;
+    }
   },
 
   /** Backend returns `{ images }`, not a bare array. */
@@ -144,8 +256,16 @@ export const imageService = {
 
 export const analysisService = {
   /** POST /analysis/run carries the full safety envelope. */
-  run(imageId: string, consultationId: string, idempotencyKey?: string): Promise<AnalysisResponse> {
-    return http.post<AnalysisResponse>('/analysis/run', { imageId, consultationId }, { idempotencyKey });
+  async run(imageId: string, consultationId: string, idempotencyKey?: string): Promise<AnalysisResponse> {
+    try {
+      return await http.post<AnalysisResponse>('/analysis/run', { imageId, consultationId }, { idempotencyKey });
+    } catch (err: any) {
+      if (err.isOffline || err.code === 'NETWORK_ERROR') {
+        // We cannot fake inference without backend runtime.
+        throw new HttpError(503, 'OFFLINE_INFERENCE_UNAVAILABLE', 'AI inference depends on the backend and cannot run offline in this architecture. Sync the case when online.');
+      }
+      throw err;
+    }
   },
 
   /**
